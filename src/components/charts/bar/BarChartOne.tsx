@@ -1,110 +1,67 @@
 "use client";
 import React from "react";
-
 import { ApexOptions } from "apexcharts";
-
 import dynamic from "next/dynamic";
-// Dynamically import the ReactApexChart component
+
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-export default function BarChartOne() {
+export default function GenderDonutChart() {
   const options: ApexOptions = {
-    colors: ["#465fff"],
     chart: {
-      fontFamily: "Outfit, sans-serif",
-      type: "bar",
+      type: "donut",
       height: 180,
-      toolbar: {
-        show: false,
-      },
+      fontFamily: "Outfit, sans-serif",
     },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: "39%",
-        borderRadius: 5,
-        borderRadiusApplication: "end",
+    labels: ["Boys", "Girls"],
+    colors: ["#3B82F6", "#EC4899"],
+    legend: {
+      show: true,
+      position: "bottom",
+      fontSize: "12px",
+      markers: {
+      size: 10,
       },
     },
     dataLabels: {
       enabled: false,
     },
-    stroke: {
-      show: true,
-      width: 4,
-      colors: ["transparent"],
-    },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-    },
-    legend: {
-      show: true,
-      position: "top",
-      horizontalAlign: "left",
-      fontFamily: "Outfit",
-    },
-    yaxis: {
-      title: {
-        text: undefined,
-      },
-    },
-    grid: {
-      yaxis: {
-        lines: {
-          show: true,
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "64%",
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              label: "Students",
+              fontSize: "12px",
+              color: "white",
+              formatter: () => "100%",
+            },
+          },
         },
       },
     },
-    fill: {
-      opacity: 1,
-    },
-
     tooltip: {
-      x: {
-        show: false,
-      },
       y: {
-        formatter: (val: number) => `${val}`,
+        formatter: (val: number) => `${val}%`,
       },
+    },
+    stroke: {
+      width: 0,
     },
   };
-  const series = [
-    {
-      name: "Sales",
-      data: [168, 385, 201, 298, 187, 195, 291, 110, 215, 390, 280, 112],
-    },
-  ];
+
+  const series = [55, 45]; 
+
   return (
-    <div className="max-w-full overflow-x-auto custom-scrollbar">
-      <div id="chartOne" className="min-w-[1000px]">
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="bar"
-          height={180}
-        />
-      </div>
-    </div>
+    <ReactApexChart
+      options={options}
+      series={series}
+      type="donut"
+      height={300}
+    />
   );
 }

@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
     name: "Students",
     icon: <GraduationCap />,
     subItems: [
-      { name: "All Students", path: "/students", icon: <UsersRound/> },
+      { name: "All Students", path: "/students/allstudents", icon: <UsersRound/> },
       { name: "Add Student", path: "/students/add", icon:<UserRoundPlus /> },
             { name: "Remove Student", path: "/students/Remove", icon:<UserRoundMinus /> },
 

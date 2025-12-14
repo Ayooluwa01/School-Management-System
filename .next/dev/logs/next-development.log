@@ -1,0 +1,428 @@
+[00:11:58.045] Server  LOG      ✓ Ready in 416.4s
+[00:12:03.536] Server  LOG      ○ Compiling /dashboard ...
+[00:30:01.297] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[00:30:32.119] Server  LOG      ✓ Compiled in 1309ms
+[00:30:41.949] Server  LOG      ✓ Compiled in 26ms
+[00:32:09.777] Server  LOG      ✓ Compiled in 1851ms
+[00:32:34.761] Server  LOG      ✓ Compiled in 1751ms
+[00:32:55.031] Server  LOG      ✓ Compiled in 2.4s
+[00:33:06.562] Server  LOG      ✓ Compiled in 6s
+[00:33:15.391] Server  LOG      ✓ Compiled in 1388ms
+[00:34:06.219] Server  LOG      ✓ Compiled in 1949ms
+[00:36:28.929] Server  LOG      ✓ Compiled in 1918ms
+[00:36:46.127] Server  LOG      ✓ Compiled in 412ms
+[00:37:00.612] Server  LOG      ✓ Compiled in 1231ms
+[00:37:30.130] Server  LOG      ✓ Compiled in 1099ms
+[00:37:44.086] Server  LOG      ✓ Compiled in 1552ms
+[00:48:44.529] Server  LOG      ✓ Compiled in 5.7s
+[00:53:44.965] Server  LOG      ✓ Compiled in 9.4s
+[00:56:50.005] Server  LOG      ✓ Compiled in 5.5s
+[00:56:52.999] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[00:59:20.823] Server  LOG      ✓ Compiled in 846ms
+[00:59:24.736] Server  LOG      ✓ Compiled in 444ms
+[00:59:32.981] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[00:59:32.981] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:00:33.342] Server  LOG      ✓ Compiled in 1975ms
+[01:00:48.942] Server  LOG      ✓ Compiled in 0ms
+[01:04:01.662] Server  LOG      ✓ Compiled in 2.2s
+[01:05:03.961] Server  LOG      ✓ Compiled in 1632ms
+[01:07:13.450] Server  LOG      ✓ Compiled in 161ms
+[01:07:57.402] Server  LOG      ○ Compiling /_not-found/page ...
+[01:09:14.724] Server  LOG      ✓ Compiled in 222ms
+[01:10:12.763] Server  LOG      ✓ Compiled in 1277ms
+[01:11:45.356] Server  LOG      ✓ Compiled in 371ms
+[01:14:02.498] Server  LOG      ✓ Compiled in 2.9s
+[01:15:33.497] Server  LOG      ✓ Compiled in 5.5s
+[01:16:12.831] Server  LOG      ✓ Compiled in 1280ms
+[01:17:09.846] Server  LOG      ✓ Compiled in 250ms
+[01:18:14.969] Server  LOG      ✓ Compiled in 3.5s
+[01:19:41.414] Server  LOG      ✓ Compiled in 1010ms
+[01:20:31.251] Server  LOG      ✓ Compiled in 657ms
+[01:21:26.843] Server  LOG      ✓ Compiled in 420ms
+[01:24:11.081] Server  LOG      ✓ Compiled in 874ms
+[01:25:28.685] Server  LOG      ✓ Compiled in 1382ms
+[01:26:02.280] Server  LOG      ✓ Compiled in 195ms
+[01:27:35.364] Server  LOG      ✓ Compiled in 295ms
+[01:27:48.369] Server  LOG      ✓ Compiled in 305ms
+[01:28:06.549] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:28:43.849] Server  LOG      ✓ Compiled in 518ms
+[01:28:55.240] Server  LOG      ✓ Compiled in 442ms
+[01:30:03.107] Server  LOG      ✓ Compiled in 286ms
+[01:31:50.389] Server  LOG      ✓ Compiled in 440ms
+[01:34:40.517] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.523] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.529] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.531] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.534] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.535] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.538] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.539] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.607] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.609] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.612] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.612] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.615] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.615] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.617] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.618] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.620] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:40.623] Server  ERROR    ⨯ ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:34:49.352] Browser ERROR   ./src/app/(admin)/dashboard/page.tsx:3:1
+Module not found: Can't resolve '@/components/charts/StatisticsChart'
+  1 | import Calendar from "@/components/calendar/Calendar";
+  2 | import ComponentCard from "@/components/common/ComponentCard";
+> 3 | import StatisticsChart from "@/components/charts/StatisticsChart";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function Dashboard() {
+  6 |   return (
+
+Import map: aliased to relative './src/components/charts/StatisticsChart' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found
+[01:35:04.749] Server  LOG      ✓ Compiled in 620ms
+[01:36:15.822] Server  LOG      ✓ Compiled in 612ms
+[01:36:27.862] Server  LOG      ✓ Compiled in 107ms
+[01:38:23.079] Server  LOG      ✓ Compiled in 873ms
+[01:42:08.373] Server  LOG      ✓ Compiled in 3.1s
+[01:42:14.559] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:42:14.560] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_esm_bb852398.js from module [project]/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[01:43:05.441] Server  LOG      ✓ Compiled in 1314ms
+[01:43:29.336] Server  LOG      ✓ Compiled in 293ms
+[01:43:36.638] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./src/components/charts/bar/BarChartOne.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:43:36.741] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:43:59.042] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:44:04.229] Server  LOG      ✓ Compiled in 0ms
+[01:44:13.818] Server  LOG      ✓ Compiled in 273ms
+[01:44:30.408] Server  LOG      ✓ Compiled in 485ms
+[01:45:52.377] Server  WARN     ⚠ Cross origin request detected from 192.168.122.198 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[01:45:52.622] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:47:17.444] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:47:49.829] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:47:52.157] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_esm_197b3b63.js from module [project]/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[01:48:29.352] Server  LOG      ✓ Compiled in 586ms
+[01:48:42.508] Server  LOG      ✓ Compiled in 406ms
+[01:51:55.145] Server  LOG      ✓ Compiled in 289ms
+[01:52:22.327] Server  LOG      ✓ Compiled in 119ms
+[01:52:48.927] Server  LOG      ✓ Compiled in 267ms
+[01:52:56.758] Server  LOG      ✓ Compiled in 160ms
+[01:53:30.094] Server  LOG      ✓ Compiled in 284ms
+[01:53:41.881] Server  LOG      ✓ Compiled in 224ms
+[01:53:55.639] Server  LOG      ✓ Compiled in 465ms
+[01:54:05.495] Server  LOG      ✓ Compiled in 287ms
+[01:54:13.212] Server  LOG      ✓ Compiled in 141ms
+[01:54:24.487] Server  LOG      ✓ Compiled in 310ms
+[01:54:32.542] Server  LOG      ✓ Compiled in 223ms
+[01:54:40.721] Server  LOG      ✓ Compiled in 102ms
+[01:55:00.707] Server  LOG      ✓ Compiled in 457ms
+[01:55:08.728] Server  LOG      ✓ Compiled in 264ms
+[01:55:52.381] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:00:20.888] Server  LOG      ✓ Compiled in 456ms
+[02:00:44.836] Server  LOG      ✓ Compiled in 453ms
+[02:01:51.312] Server  LOG      ✓ Compiled in 884ms
+[02:01:56.913] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[02:01:56.913] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_esm_b61b4bc5.js from module [project]/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[02:04:34.893] Server  LOG      ✓ Compiled in 1365ms
+[02:05:09.325] Server  LOG      ✓ Compiled in 318ms
+[02:05:28.313] Server  LOG      ✓ Compiled in 454ms
+[02:05:38.143] Server  LOG      ✓ Compiled in 197ms
+[02:06:02.848] Server  LOG      ✓ Compiled in 170ms
+[02:07:33.181] Server  LOG      ✓ Compiled in 5.2s
+[02:07:36.572] Server  LOG      ✓ Compiled in 5ms
+[02:07:50.274] Server  LOG      ✓ Compiled in 579ms
+[02:08:44.685] Server  LOG      ✓ Compiled in 486ms
+[02:08:49.320] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[02:08:49.321] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_esm_bfaa7fa5.js from module [project]/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[02:09:24.136] Server  LOG      ✓ Compiled in 620ms
+[02:09:58.558] Server  LOG      ✓ Compiled in 833ms
+[02:10:26.612] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[02:10:33.328] Server  LOG      ✓ Compiled in 30ms
+[02:11:07.626] Server  LOG      ✓ Compiled in 858ms
+[02:11:18.624] Server  LOG      ✓ Compiled in 284ms
+[02:11:24.253] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[02:11:24.253] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[02:11:24.253] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_esm_bfaa7fa5.js from module [project]/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[02:12:21.479] Server  LOG      ✓ Compiled in 511ms
+[02:13:41.475] Server  LOG      ✓ Compiled in 278ms
+[02:18:06.672] Server  LOG      ✓ Compiled in 0ms
+[02:18:12.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:20.746] Server  LOG      ✓ Compiled in 663ms
+[02:20:14.717] Server  LOG      ✓ Compiled in 0ms
+[02:20:20.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:23:36.957] Server  LOG      ✓ Compiled in 323ms
+[02:24:44.266] Server  LOG      ✓ Compiled in 1648ms
+[02:25:02.926] Server  LOG      ✓ Compiled in 236ms
+[02:25:19.571] Server  LOG      ✓ Compiled in 185ms
+[02:25:40.489] Server  LOG      ✓ Compiled in 1008ms
+[02:25:57.037] Server  LOG      ✓ Compiled in 859ms
