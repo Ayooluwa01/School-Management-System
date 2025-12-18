@@ -41,12 +41,12 @@ const topStudents = [
 
 export default function TopStudentsList() {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-4 h-[320px] flex flex-col">
+    <div className="rounded-xl border border-gray-200 bg-white p-4 max-h-[150px] flex flex-col">
       <h3 className="text-sm font-semibold text-gray-800 mb-3">
         Top Students
       </h3>
 
-      <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
+      <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar ">
         {topStudents.map((student, index) => (
           <div
             key={student.id}

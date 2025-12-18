@@ -738,3 +738,41 @@ span.flatpickr-weekday,
   opacity: 0.8;
   cursor: grabbing; /* Changes the cursor to indicate dragging */
 }
+
+/* Ultra-compact react-calendar */
+.tiny-calendar {
+  width: 100%;
+  border: none;
+  font-size: 10px;
+}
+
+.tiny-calendar .react-calendar__navigation {
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.tiny-calendar .react-calendar__navigation button {
+  font-size: 10px;
+  min-width: 24px;
+}
+
+.tiny-calendar .react-calendar__month-view__weekdays {
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.tiny-calendar .react-calendar__tile {
+  padding: 4px 0;
+  height: 22px;
+}
+
+.tiny-calendar .react-calendar__tile--now {
+  background: rgba(139, 92, 246, 0.15);
+  border-radius: 6px;
+}
+
+.tiny-calendar .react-calendar__tile--active {
+  background: rgb(139, 92, 246);
+  color: white;
+  border-radius: 6px;
+}

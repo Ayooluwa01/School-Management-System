@@ -7,14 +7,14 @@ export default function FinancialOverview() {
     {
       id: 1,
       title: "Total Income",
-      amount: "₦5,250,000",
+      amount: "₦0.00",
       icon: <ArrowUp size={20} />,
       iconColor: "text-green-500",
     },
     {
       id: 2,
       title: "Total Outcome",
-      amount: "₦3,180,000",
+      amount: "₦0.00",
       icon: <ArrowDown size={20} />,
       iconColor: "text-red-500",
     },
@@ -34,7 +34,6 @@ export default function FinancialOverview() {
               <span className="text-lg font-semibold text-gray-800">{item.amount}</span>
             </div>
           </div>
-          <DollarSign size={24} className="text-gray-300" />
         </div>
       ))}
     </div>

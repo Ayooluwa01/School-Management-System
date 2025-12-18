@@ -1,0 +1,13 @@
+__turbopack_load_page_chunks__("/_app", [
+  "static/chunks/290b9_next_dist_compiled_30af3449._.js",
+  "static/chunks/290b9_next_dist_shared_lib_5b78ad09._.js",
+  "static/chunks/290b9_next_dist_client_3532fb95._.js",
+  "static/chunks/290b9_next_dist_36b6d118._.js",
+  "static/chunks/290b9_next_app_d62c0575.js",
+  "static/chunks/[next]_entry_page-loader_ts_aa5923e5._.js",
+  "static/chunks/290b9_react-dom_b5b15b19._.js",
+  "static/chunks/290b9_ca3a5ab1._.js",
+  "static/chunks/[root-of-the-server]__cc2704fc._.js",
+  "static/chunks/School Management System_pages__app_2da965e7._.js",
+  "static/chunks/turbopack-School Management System_pages__app_2caa2953._.js"
+])

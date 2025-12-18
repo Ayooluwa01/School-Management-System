@@ -1,283 +1,202 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import {
-  EventInput,
-  DateSelectArg,
-  EventClickArg,
-  EventContentArg,
-} from "@fullcalendar/core";
-import { useModal } from "@/hooks/useModal";
-import { Modal } from "@/components/ui/modal";
 
-interface CalendarEvent extends EventInput {
-  extendedProps: {
-    calendar: string;
-  };
-}
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css"; // We import this, then override it below
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 
-const Calendar: React.FC = () => {
-  const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(
-    null
-  );
-  const [eventTitle, setEventTitle] = useState("");
-  const [eventStartDate, setEventStartDate] = useState("");
-  const [eventEndDate, setEventEndDate] = useState("");
-  const [eventLevel, setEventLevel] = useState("");
-  const [events, setEvents] = useState<CalendarEvent[]>([]);
-  const calendarRef = useRef<FullCalendar>(null);
-  const { isOpen, openModal, closeModal } = useModal();
+type ValuePiece = Date | null;
+type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-  const calendarsEvents = {
-    Danger: "danger",
-    Success: "success",
-    Primary: "primary",
-    Warning: "warning",
-  };
+// Mock Data
+const events = [
+  { date: "2025-01-10", title: "Staff Meeting", time: "10:00 AM" },
+  { date: "2025-01-15", title: "Mid-Term Test", time: "All Day" },
+  { date: "2025-01-20", title: "PTA Meeting", time: "4:00 PM" },
+];
 
-  useEffect(() => {
-    // Initialize with some events
-    setEvents([
-      {
-        id: "1",
-        title: "Event Conf.",
-        start: new Date().toISOString().split("T")[0],
-        extendedProps: { calendar: "Danger" },
-      },
-      {
-        id: "2",
-        title: "Meeting",
-        start: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        extendedProps: { calendar: "Success" },
-      },
-      {
-        id: "3",
-        title: "Workshop",
-        start: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        end: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        extendedProps: { calendar: "Primary" },
-      },
-    ]);
-  }, []);
+export default function TinyCalendar() {
+  const [value, onChange] = useState<Value>(new Date());
 
-  const handleDateSelect = (selectInfo: DateSelectArg) => {
-    resetModalFields();
-    setEventStartDate(selectInfo.startStr);
-    setEventEndDate(selectInfo.endStr || selectInfo.startStr);
-    openModal();
-  };
+  const selectedDate =
+    value instanceof Date ? value.toISOString().split("T")[0] : null;
 
-  const handleEventClick = (clickInfo: EventClickArg) => {
-    const event = clickInfo.event;
-    setSelectedEvent(event as unknown as CalendarEvent);
-    setEventTitle(event.title);
-    setEventStartDate(event.start?.toISOString().split("T")[0] || "");
-    setEventEndDate(event.end?.toISOString().split("T")[0] || "");
-    setEventLevel(event.extendedProps.calendar);
-    openModal();
-  };
-
-  const handleAddOrUpdateEvent = () => {
-    if (selectedEvent) {
-      // Update existing event
-      setEvents((prevEvents) =>
-        prevEvents.map((event) =>
-          event.id === selectedEvent.id
-            ? {
-                ...event,
-                title: eventTitle,
-                start: eventStartDate,
-                end: eventEndDate,
-                extendedProps: { calendar: eventLevel },
-              }
-            : event
-        )
-      );
-    } else {
-      // Add new event
-      const newEvent: CalendarEvent = {
-        id: Date.now().toString(),
-        title: eventTitle,
-        start: eventStartDate,
-        end: eventEndDate,
-        allDay: true,
-        extendedProps: { calendar: eventLevel },
-      };
-      setEvents((prevEvents) => [...prevEvents, newEvent]);
-    }
-    closeModal();
-    resetModalFields();
-  };
-
-  const resetModalFields = () => {
-    setEventTitle("");
-    setEventStartDate("");
-    setEventEndDate("");
-    setEventLevel("");
-    setSelectedEvent(null);
-  };
+  // Find events for the selected day
+  const dayEvents = events.filter((e) => e.date === selectedDate);
 
   return (
-    <div className="rounded-2xl border  border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03]">
-      <div className="custom-calendar">
-        <FullCalendar
-          ref={calendarRef}
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView="dayGridMonth"
-          headerToolbar={{
-            left: "prev,next addEventButton",
-            center: "title",
-            right: "dayGridMonth,timeGridWeek,timeGridDay",
+    <div className="flex flex-col gap-4">
+      {/* 1. The Calendar Card */}
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-xl  border-gray-100 dark:border-gray-700">
+        
+        {/* Custom CSS overrides for React-Calendar */}
+        <style jsx global>{`
+          .react-calendar {
+            width: 100% !important;
+            background: none !important;
+            border: none !important;
+            font-family: inherit;
+          }
+          
+          /* Header Navigation */
+          .react-calendar__navigation {
+            display: flex;
+            margin-bottom: 1rem;
+          }
+          .react-calendar__navigation button {
+            min-width: 30px;
+            background: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151; /* gray-700 */
+          }
+          .dark .react-calendar__navigation button {
+            color: #d1d5db; /* gray-300 */
+          }
+          .react-calendar__navigation button:enabled:hover,
+          .react-calendar__navigation button:enabled:focus {
+            background-color: #f3f4f6; /* gray-100 */
+            border-radius: 8px;
+          }
+          .dark .react-calendar__navigation button:enabled:hover {
+            background-color: #374151; /* gray-700 */
+          }
+
+          /* Days of Week (Mon, Tue...) */
+          .react-calendar__month-view__weekdays {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9ca3af; /* gray-400 */
+            text-decoration: none !important; 
+          }
+          .react-calendar__month-view__weekdays__weekday abbr {
+             text-decoration: none;
+          }
+
+          /* Tiles (The actual days) */
+          .react-calendar__tile {
+            padding: 10px 6px;
+            font-size: 0.875rem;
+            color: #4b5563; /* gray-600 */
+            border-radius: 8px;
+            transition: all 0.2s;
+            position: relative;
+          }
+          .dark .react-calendar__tile {
+            color: #9ca3af; /* gray-400 */
+          }
+          
+          /* Hover state */
+          .react-calendar__tile:enabled:hover,
+          .react-calendar__tile:enabled:focus {
+            background-color: #f3f4f6;
+            color: #111827;
+          }
+          .dark .react-calendar__tile:enabled:hover {
+            background-color: #374151;
+            color: #fff;
+          }
+
+          /* "Today" styling */
+          .react-calendar__tile--now {
+            background: #eff6ff !important; /* blue-50 */
+            color: #2563eb !important; /* blue-600 */
+            font-weight: bold;
+          }
+          .dark .react-calendar__tile--now {
+             background: #1e3a8a !important; /* blue-900 */
+             color: #60a5fa !important; /* blue-400 */
+          }
+
+          /* "Selected" styling (Overrides Today) */
+          .react-calendar__tile--active {
+            background: #7c3aed !important; /* purple-600 */
+            color: white !important;
+            box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);
+          }
+          .react-calendar__tile--active:enabled:hover,
+          .react-calendar__tile--active:enabled:focus {
+            background: #6d28d9 !important; /* purple-700 */
+          }
+        `}</style>
+
+        <Calendar
+          onChange={onChange}
+          value={value}
+          locale="en-US"
+          next2Label={null} // Hide the double arrow (>>)
+          prev2Label={null} // Hide the double arrow (<<)
+          prevLabel={<ChevronLeft className="w-4 h-4" />}
+          nextLabel={<ChevronRight className="w-4 h-4" />}
+          showNeighboringMonth={false} // Clean look
+          minDetail="year" // Disallow zooming out too far
+          
+          // Logic for the Dot Indicator
+          tileClassName={({ date, view }) => {
+            if (view === "month") {
+              const dateString = date.toISOString().split("T")[0];
+              // Check if this date is in our events array
+              if (events.some((e) => e.date === dateString)) {
+                return "has-event"; 
+              }
+            }
+            return null;
           }}
-          events={events}
-          selectable={true}
-          select={handleDateSelect}
-          eventClick={handleEventClick}
-          eventContent={renderEventContent}
-          customButtons={{
-            addEventButton: {
-              text: "Add Event +",
-              click: openModal,
-            },
+          
+          // Render the actual dot inside the tile
+          tileContent={({ date, view }) => {
+            if (view === "month") {
+              const dateString = date.toISOString().split("T")[0];
+              if (events.some((e) => e.date === dateString)) {
+                return (
+                  <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
+                    <div className="w-1 h-1 bg-purple-500 rounded-full" />
+                  </div>
+                );
+              }
+            }
+            return null;
           }}
         />
       </div>
-      <Modal
-        isOpen={isOpen}
-        onClose={closeModal}
-        className="max-w-[700px] p-6 lg:p-10"
-      >
-        <div className="flex flex-col px-2 overflow-y-auto custom-scrollbar">
-          <div>
-            <h5 className="mb-2 font-semibold text-gray-800 modal-title text-theme-xl dark:text-white/90 lg:text-2xl">
-              {selectedEvent ? "Edit Event" : "Add Event"}
-            </h5>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Plan your next big moment: schedule or edit an event to stay on
-              track
-            </p>
-          </div>
-          <div className="mt-8">
-            <div>
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                  Event Title
-                </label>
-                <input
-                  id="event-title"
-                  type="text"
-                  value={eventTitle}
-                  onChange={(e) => setEventTitle(e.target.value)}
-                  className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                />
-              </div>
-            </div>
-            <div className="mt-6">
-              <label className="block mb-4 text-sm font-medium text-gray-700 dark:text-gray-400">
-                Event Color
-              </label>
-              <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-                {Object.entries(calendarsEvents).map(([key, value]) => (
-                  <div key={key} className="n-chk">
-                    <div
-                      className={`form-check form-check-${value} form-check-inline`}
-                    >
-                      <label
-                        className="flex items-center text-sm text-gray-700 form-check-label dark:text-gray-400"
-                        htmlFor={`modal${key}`}
-                      >
-                        <span className="relative">
-                          <input
-                            className="sr-only form-check-input"
-                            type="radio"
-                            name="event-level"
-                            value={key}
-                            id={`modal${key}`}
-                            checked={eventLevel === key}
-                            onChange={() => setEventLevel(key)}
-                          />
-                          <span className="flex items-center justify-center w-5 h-5 mr-2 border border-gray-300 rounded-full box dark:border-gray-700">
-                            <span
-                              className={`h-2 w-2 rounded-full bg-white ${
-                                eventLevel === key ? "block" : "hidden"
-                              }`}  
-                            ></span>
-                          </span>
-                        </span>
-                        {key}
-                      </label>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
-            <div className="mt-6">
-              <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                Enter Start Date
-              </label>
-              <div className="relative">
-                <input
-                  id="event-start-date"
-                  type="date"
-                  value={eventStartDate}
-                  onChange={(e) => setEventStartDate(e.target.value)}
-                  className="dark:bg-dark-900 h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pl-4 pr-11 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                />
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                Enter End Date
-              </label>
-              <div className="relative">
-                <input
-                  id="event-end-date"
-                  type="date"
-                  value={eventEndDate}
-                  onChange={(e) => setEventEndDate(e.target.value)}
-                  className="dark:bg-dark-900 h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pl-4 pr-11 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 mt-6 modal-footer sm:justify-end">
-            <button
-              onClick={closeModal}
-              type="button"
-              className="flex w-full justify-center rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] sm:w-auto"
-            >
-              Close
-            </button>
-            <button
-              onClick={handleAddOrUpdateEvent}
-              type="button"
-              className="btn btn-success btn-update-event flex w-full justify-center rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 sm:w-auto"
-            >
-              {selectedEvent ? "Update Changes" : "Add Event"}
-            </button>
-          </div>
+      {/* 2. The Events List (Agenda) */}
+      <div className="bg-white dark:bg-gray-800 px-4 py-3 rounded-xl  border border-gray-100 dark:border-gray-700">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+            Events for {value instanceof Date ? value.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'Selected Date'}
+          </h3>
+          <MoreHorizontal className="w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-600" />
         </div>
-      </Modal>
+
+        <div className="flex flex-col gap-3">
+          {dayEvents.length > 0 ? (
+            dayEvents.map((event, index) => (
+              <div
+                key={index}
+                className="p-3 rounded-lg border-l-4 border-purple-500 bg-gray-50 dark:bg-gray-700/50 flex flex-col gap-1"
+              >
+                <div className="flex justify-between items-center">
+                   <h4 className="text-xs font-bold text-gray-800 dark:text-gray-100">
+                     {event.title}
+                   </h4>
+                   <span className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">
+                     {event.time}
+                   </span>
+                </div>
+                <p className="text-[10px] text-gray-400">
+                   Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            ))
+          ) : (
+            <div className="text-center py-4">
+               <p className="text-xs text-gray-400">No events scheduled.</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
-};
-
-const renderEventContent = (eventInfo: EventContentArg) => {
-  const colorClass = `fc-bg-${eventInfo.event.extendedProps.calendar.toLowerCase()}`;
-  return (
-    <div
-      className={`event-fc-color flex fc-event-main ${colorClass} p-1 rounded-sm`}
-    >
-      <div className="fc-daygrid-event-dot"></div>
-      <div className="fc-event-time">{eventInfo.timeText}</div>
-      <div className="fc-event-title">{eventInfo.event.title}</div>
-    </div>
-  );
-};
-
-export default Calendar;
+}
