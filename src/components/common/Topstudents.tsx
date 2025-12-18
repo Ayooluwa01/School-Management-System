@@ -41,7 +41,7 @@ const topStudents = [
 
 export default function TopStudentsList() {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-4 max-h-[150px] flex flex-col">
+    <div className="rounded-xl border border-gray-200 bg-white p-4 max-h-[500px] flex flex-col">
       <h3 className="text-sm font-semibold text-gray-800 mb-3">
         Top Students
       </h3>

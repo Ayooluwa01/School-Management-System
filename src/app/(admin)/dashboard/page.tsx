@@ -9,7 +9,6 @@ import MonthlySalesChart from "@/components/common/Financialchart";
 import NotificationsPanel from "@/components/common/Notification";
 import TopStudentsList from "@/components/common/Topstudents";
 import TinyCalendar from "@/components/calendar/Calendar";
-// import { Animations } from "@/components/common/Animations"; // Uncomment if used
 
 export default function Dashboard() {
   return (
@@ -58,7 +57,6 @@ export default function Dashboard() {
              <div className="col-span-1 md:col-span-2">
                 <MonthlySalesChart />
              </div>
-             {/* If FinancialOverview is small, it can sit here, or move it up */}
              <div className="col-span-1 md:col-span-2">
                 <FinancialOverview />
              </div>
