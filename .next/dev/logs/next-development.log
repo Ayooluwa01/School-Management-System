@@ -7042,3 +7042,613 @@ Import trace:
     ./School Management System/src/app/layout.tsx
 
 
+[01:20:18.797] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:20:18.799] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:08.590] Server  LOG      ✓ Compiled in 4.4s
+[01:22:15.067] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:15.068] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:16.089] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/dashboard. Falling back to browser navigation. {}
+[01:22:16.232] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:16.233] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:25.670] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:26.396] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:26.396] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:22:29.461] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[01:25:12.284] Server  LOG      ✓ Compiled in 1157ms
+[01:26:39.986] Server  LOG      ✓ Compiled in 3.7s
+[01:26:40.151] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:40.151] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:44.685] Browser ERROR   unhandledRejection: undefined
+[01:26:44.685] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/290b9_react-apexcharts_dist_react-apexcharts_esm_82e78278.js from module [project]/School Management System/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry, async loader)
+[01:26:45.581] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.582] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.755] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.756] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.757] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.757] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.758] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.758] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.758] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.758] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:26:45.767] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[01:28:14.863] Server  LOG      ✓ Compiled in 823ms
+[01:28:23.756] Server  LOG      ✓ Compiled in 262ms
+[01:28:28.864] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:28.865] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.182] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.182] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.185] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.515] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.516] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:28:35.738] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[01:29:16.702] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:16.703] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:19.451] Server  LOG      ✓ Compiled in 2.6s
+[01:29:22.977] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:22.979] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:22.980] Server  LOG      ✓ Compiled in 209ms
+[01:29:23.298] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.298] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.300] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.300] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.301] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.301] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.301] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.301] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:29:23.320] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[01:29:36.633] Browser LOG     Sending Announcement: hh
+
+[01:30:40.808] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
+[01:30:40.809] Server  WARN     ⚠ [next]/internal/font/google/outfit_43d50961.module.css
+next/font: warning:
+Failed to download `Outfit` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/outfit_43d50961.module.css
+    [next]/internal/font/google/outfit_43d50961.js
+    ./School Management System/src/app/layout.tsx
+
+
