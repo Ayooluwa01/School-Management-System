@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start-db":"json-server --watch db.json --port 4000"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.19",

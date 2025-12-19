@@ -1,0 +1,542 @@
+[
+  {
+    "staff_id": 1,
+    "staff_no": "STF0001",
+    "name": "Ebun Olarewaju",
+    "sex": "Female",
+    "address": "161 Independence Avenue, Kano, Kano State",
+    "phone": "+234228934637",
+    "date_of_birth": "1986-03-07",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 2,
+    "staff_no": "STF0002",
+    "name": "Nkemdilim Madu",
+    "sex": "Male",
+    "address": "136 Independence Avenue, Lagos, Lagos State",
+    "phone": "+234210873423",
+    "date_of_birth": "1979-03-19",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 3,
+    "staff_no": "STF0003",
+    "name": "Amarachi Enahoro",
+    "sex": "Male",
+    "address": "31 Ahmadu Bello Way, Benin City, Edo State",
+    "phone": "+234721169839",
+    "date_of_birth": "1999-09-06",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 4,
+    "staff_no": "STF0004",
+    "name": "Bashir Omolayo",
+    "sex": "Male",
+    "address": "46 Herbert Macaulay Way, Enugu, Enugu State",
+    "phone": "+234236545999",
+    "date_of_birth": "1973-06-18",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 5,
+    "staff_no": "STF0005",
+    "name": "Adesoji Ezeonu",
+    "sex": "Male",
+    "address": "108 Marina Road, Ibadan, Oyo State",
+    "phone": "+234141194449",
+    "date_of_birth": "1990-12-18",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 6,
+    "staff_no": "STF0006",
+    "name": "Yemi Olatunji",
+    "sex": "Male",
+    "address": "64 Broad Street, Port Harcourt, Rivers State",
+    "phone": "+234287614496",
+    "date_of_birth": "1997-12-23",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 7,
+    "staff_no": "STF0007",
+    "name": "Omotola Chima",
+    "sex": "Male",
+    "address": "120 Ogui Road, Kaduna, Kaduna State",
+    "phone": "+234459427182",
+    "date_of_birth": "1990-01-12",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 8,
+    "staff_no": "STF0008",
+    "name": "Oluwole Suleiman",
+    "sex": "Male",
+    "address": "57 Ahmadu Bello Way, Enugu, Enugu State",
+    "phone": "+234844397209",
+    "date_of_birth": "1974-04-24",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 9,
+    "staff_no": "STF0009",
+    "name": "Tosin Okonkwo",
+    "sex": "Male",
+    "address": "189 Independence Avenue, Kaduna, Kaduna State",
+    "phone": "+234349248936",
+    "date_of_birth": "1970-07-08",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 10,
+    "staff_no": "STF0010",
+    "name": "Adeyemi Kamalu",
+    "sex": "Female",
+    "address": "82 Independence Avenue, Enugu, Enugu State",
+    "phone": "+234741839291",
+    "date_of_birth": "1989-09-25",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 11,
+    "staff_no": "STF0011",
+    "name": "Onyeka Onyeneke",
+    "sex": "Male",
+    "address": "61 Marina Road, Abuja, FCT",
+    "phone": "+234227279500",
+    "date_of_birth": "1986-01-03",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 12,
+    "staff_no": "STF0012",
+    "name": "Afolabi Idiagbon",
+    "sex": "Male",
+    "address": "31 Adeola Odeku Street, Kaduna, Kaduna State",
+    "phone": "+234959997953",
+    "date_of_birth": "1999-12-03",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 13,
+    "staff_no": "STF0013",
+    "name": "Bamidele Kayode",
+    "sex": "Male",
+    "address": "9 Independence Avenue, Enugu, Enugu State",
+    "phone": "+234643784811",
+    "date_of_birth": "1976-01-08",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 14,
+    "staff_no": "STF0014",
+    "name": "Eno Okafor",
+    "sex": "Female",
+    "address": "175 Herbert Macaulay Way, Kano, Kano State",
+    "phone": "+234244186029",
+    "date_of_birth": "1987-01-28",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 15,
+    "staff_no": "STF0015",
+    "name": "Linda Adeola",
+    "sex": "Female",
+    "address": "146 Adeola Odeku Street, Benin City, Edo State",
+    "phone": "+234404444836",
+    "date_of_birth": "1990-05-15",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 16,
+    "staff_no": "STF0016",
+    "name": "Emeka Okongwu",
+    "sex": "Male",
+    "address": "171 Adeola Odeku Street, Lagos, Lagos State",
+    "phone": "+234592586413",
+    "date_of_birth": "1980-01-24",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 17,
+    "staff_no": "STF0017",
+    "name": "Funmilayo Oladipo",
+    "sex": "Female",
+    "address": "59 Allen Avenue, Kano, Kano State",
+    "phone": "+234456091414",
+    "date_of_birth": "1991-11-14",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 18,
+    "staff_no": "STF0018",
+    "name": "Ike Tinubu",
+    "sex": "Male",
+    "address": "120 Allen Avenue, Port Harcourt, Rivers State",
+    "phone": "+234757673182",
+    "date_of_birth": "1978-11-14",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 19,
+    "staff_no": "STF0019",
+    "name": "Iniobong Ebuka",
+    "sex": "Female",
+    "address": "185 Allen Avenue, Abuja, FCT",
+    "phone": "+234881289907",
+    "date_of_birth": "1994-08-14",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 20,
+    "staff_no": "STF0020",
+    "name": "Grace Nwogu",
+    "sex": "Female",
+    "address": "190 Adeola Odeku Street, Lagos, Lagos State",
+    "phone": "+234109902426",
+    "date_of_birth": "1997-06-27",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 21,
+    "staff_no": "STF0021",
+    "name": "Bolaji Nwankwo",
+    "sex": "Male",
+    "address": "179 Marina Road, Enugu, Enugu State",
+    "phone": "+234246515670",
+    "date_of_birth": "1973-06-28",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 22,
+    "staff_no": "STF0022",
+    "name": "Jide Uzochukwu",
+    "sex": "Male",
+    "address": "68 Herbert Macaulay Way, Abuja, FCT",
+    "phone": "+234547094129",
+    "date_of_birth": "1974-06-14",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 23,
+    "staff_no": "STF0023",
+    "name": "Ayo Nwachukwu",
+    "sex": "Female",
+    "address": "157 Ogui Road, Benin City, Edo State",
+    "phone": "+234417853493",
+    "date_of_birth": "1986-06-13",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 24,
+    "staff_no": "STF0024",
+    "name": "Chukwudi Mikel",
+    "sex": "Male",
+    "address": "87 Ogui Road, Kano, Kano State",
+    "phone": "+234546808178",
+    "date_of_birth": "1989-04-03",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 25,
+    "staff_no": "STF0025",
+    "name": "Olubunmi Obi",
+    "sex": "Male",
+    "address": "85 Broad Street, Benin City, Edo State",
+    "phone": "+234420744220",
+    "date_of_birth": "1977-07-27",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 26,
+    "staff_no": "STF0026",
+    "name": "Adeola Ugochukwu",
+    "sex": "Female",
+    "address": "146 Ogui Road, Lagos, Lagos State",
+    "phone": "+234497142963",
+    "date_of_birth": "1974-08-10",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 27,
+    "staff_no": "STF0027",
+    "name": "Chibuike Ogbonna",
+    "sex": "Male",
+    "address": "79 Independence Avenue, Abuja, FCT",
+    "phone": "+234967666386",
+    "date_of_birth": "1982-02-23",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 28,
+    "staff_no": "STF0028",
+    "name": "Mojeed Olajide",
+    "sex": "Male",
+    "address": "130 Allen Avenue, Abuja, FCT",
+    "phone": "+234916830968",
+    "date_of_birth": "1997-07-17",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 29,
+    "staff_no": "STF0029",
+    "name": "Oluwaseun Onuoha",
+    "sex": "Female",
+    "address": "58 Marina Road, Abuja, FCT",
+    "phone": "+234566826851",
+    "date_of_birth": "1993-02-18",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 30,
+    "staff_no": "STF0030",
+    "name": "Zainab Olatunji",
+    "sex": "Female",
+    "address": "111 Ahmadu Bello Way, Kaduna, Kaduna State",
+    "phone": "+234538607906",
+    "date_of_birth": "1986-06-18",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 31,
+    "staff_no": "STF0031",
+    "name": "Rakiya Soyinka",
+    "sex": "Female",
+    "address": "170 Adeola Odeku Street, Benin City, Edo State",
+    "phone": "+234144252191",
+    "date_of_birth": "1999-02-12",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 32,
+    "staff_no": "STF0032",
+    "name": "Mary Obinna",
+    "sex": "Female",
+    "address": "191 Allen Avenue, Enugu, Enugu State",
+    "phone": "+234686611931",
+    "date_of_birth": "1972-09-26",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 33,
+    "staff_no": "STF0033",
+    "name": "Adebayo Nkiru",
+    "sex": "Male",
+    "address": "32 Ahmadu Bello Way, Kaduna, Kaduna State",
+    "phone": "+234711037621",
+    "date_of_birth": "1991-06-22",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 34,
+    "staff_no": "STF0034",
+    "name": "Oladele Oyebola",
+    "sex": "Male",
+    "address": "92 Adeola Odeku Street, Lagos, Lagos State",
+    "phone": "+234296814845",
+    "date_of_birth": "1977-09-04",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 35,
+    "staff_no": "STF0035",
+    "name": "Wale Akinwale",
+    "sex": "Male",
+    "address": "87 Ahmadu Bello Way, Port Harcourt, Rivers State",
+    "phone": "+234979405456",
+    "date_of_birth": "1997-06-13",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 36,
+    "staff_no": "STF0036",
+    "name": "Ebubechukwu Osuji",
+    "sex": "Female",
+    "address": "200 Adeola Odeku Street, Ibadan, Oyo State",
+    "phone": "+234120768258",
+    "date_of_birth": "1991-10-06",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 37,
+    "staff_no": "STF0037",
+    "name": "Ajoke Omeje",
+    "sex": "Female",
+    "address": "188 Independence Avenue, Kaduna, Kaduna State",
+    "phone": "+234677747580",
+    "date_of_birth": "1973-09-28",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 38,
+    "staff_no": "STF0038",
+    "name": "Sani Yinka",
+    "sex": "Male",
+    "address": "185 Marina Road, Port Harcourt, Rivers State",
+    "phone": "+234697747814",
+    "date_of_birth": "1985-11-06",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 39,
+    "staff_no": "STF0039",
+    "name": "Yetunde Falade",
+    "sex": "Female",
+    "address": "106 Marina Road, Enugu, Enugu State",
+    "phone": "+234713583061",
+    "date_of_birth": "1993-04-11",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 40,
+    "staff_no": "STF0040",
+    "name": "Ruth Oseni",
+    "sex": "Female",
+    "address": "167 Ahmadu Bello Way, Ibadan, Oyo State",
+    "phone": "+234546504289",
+    "date_of_birth": "1971-11-10",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 41,
+    "staff_no": "STF0041",
+    "name": "Celestine Ofoegbu",
+    "sex": "Male",
+    "address": "147 Marina Road, Benin City, Edo State",
+    "phone": "+234864419140",
+    "date_of_birth": "1980-12-11",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 42,
+    "staff_no": "STF0042",
+    "name": "Afolake Ekechi",
+    "sex": "Female",
+    "address": "74 Independence Avenue, Abuja, FCT",
+    "phone": "+234117356267",
+    "date_of_birth": "1981-03-23",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 43,
+    "staff_no": "STF0043",
+    "name": "Aduke Maduabuchi",
+    "sex": "Female",
+    "address": "116 Independence Avenue, Enugu, Enugu State",
+    "phone": "+234476654243",
+    "date_of_birth": "1985-09-15",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 44,
+    "staff_no": "STF0044",
+    "name": "Oluwatobiloba Nwagwu",
+    "sex": "Male",
+    "address": "13 Herbert Macaulay Way, Benin City, Edo State",
+    "phone": "+234827268115",
+    "date_of_birth": "1978-10-10",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 45,
+    "staff_no": "STF0045",
+    "name": "Ayomide Onyeagba",
+    "sex": "Male",
+    "address": "137 Marina Road, Lagos, Lagos State",
+    "phone": "+234260815453",
+    "date_of_birth": "1994-12-17",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 46,
+    "staff_no": "STF0046",
+    "name": "Chisom Osahon",
+    "sex": "Male",
+    "address": "165 Ahmadu Bello Way, Abuja, FCT",
+    "phone": "+234530667536",
+    "date_of_birth": "1979-08-11",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 47,
+    "staff_no": "STF0047",
+    "name": "Usman Orji",
+    "sex": "Male",
+    "address": "97 Independence Avenue, Benin City, Edo State",
+    "phone": "+234715752960",
+    "date_of_birth": "1990-12-03",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 48,
+    "staff_no": "STF0048",
+    "name": "Oluwakemi Onyebuchi",
+    "sex": "Female",
+    "address": "4 Herbert Macaulay Way, Port Harcourt, Rivers State",
+    "phone": "+234248295541",
+    "date_of_birth": "1979-11-22",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 49,
+    "staff_no": "STF0049",
+    "name": "Francisca Emenalo",
+    "sex": "Female",
+    "address": "52 Adeola Odeku Street, Enugu, Enugu State",
+    "phone": "+234559006432",
+    "date_of_birth": "1970-08-17",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 50,
+    "staff_no": "STF0050",
+    "name": "Olumide Onanuga",
+    "sex": "Male",
+    "address": "38 Independence Avenue, Benin City, Edo State",
+    "phone": "+234489505798",
+    "date_of_birth": "1994-01-09",
+    "role": "Teacher"
+  },
+  {
+    "staff_id": 51,
+    "staff_no": "STF0051",
+    "name": "Adetola Jamiu",
+    "sex": "Male",
+    "address": "142 Ahmadu Bello Way, Benin City, Edo State",
+    "phone": "+234795547813",
+    "date_of_birth": "1989-02-28",
+    "role": "Gateman"
+  },
+  {
+    "staff_id": 52,
+    "staff_no": "STF0052",
+    "name": "Ego Ashiru",
+    "sex": "Female",
+    "address": "38 Independence Avenue, Kano, Kano State",
+    "phone": "+234460252529",
+    "date_of_birth": "1978-05-09",
+    "role": "Cook"
+  },
+  {
+    "staff_id": 53,
+    "staff_no": "STF0053",
+    "name": "Sola Shehu",
+    "sex": "Male",
+    "address": "60 Ahmadu Bello Way, Port Harcourt, Rivers State",
+    "phone": "+234862461047",
+    "date_of_birth": "1975-12-28",
+    "role": "Accountant"
+  },
+  {
+    "staff_id": 54,
+    "staff_no": "STF0054",
+    "name": "Ebele Oshodi",
+    "sex": "Female",
+    "address": "21 Broad Street, Lagos, Lagos State",
+    "phone": "+234932185312",
+    "date_of_birth": "1976-07-09",
+    "role": "Bursar"
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "class_id": 1,
+    "class_name": "JSS1A",
+    "arm": "A",
+    "class_code": "JSS1-A",
+    "classroom_staff_id": 1
+  },
+  {
+    "class_id": 2,
+    "class_name": "JSS1B",
+    "arm": "B",
+    "class_code": "JSS1-B",
+    "classroom_staff_id": 2
+  },
+  {
+    "class_id": 3,
+    "class_name": "JSS1C",
+    "arm": "C",
+    "class_code": "JSS1-C",
+    "classroom_staff_id": 3
+  },
+  {
+    "class_id": 4,
+    "class_name": "JSS1D",
+    "arm": "D",
+    "class_code": "JSS1-D",
+    "classroom_staff_id": 4
+  },
+  {
+    "class_id": 5,
+    "class_name": "JSS2A",
+    "arm": "A",
+    "class_code": "JSS2-A",
+    "classroom_staff_id": 5
+  },
+  {
+    "class_id": 6,
+    "class_name": "JSS2B",
+    "arm": "B",
+    "class_code": "JSS2-B",
+    "classroom_staff_id": 6
+  },
+  {
+    "class_id": 7,
+    "class_name": "JSS2C",
+    "arm": "C",
+    "class_code": "JSS2-C",
+    "classroom_staff_id": 7
+  },
+  {
+    "class_id": 8,
+    "class_name": "JSS2D",
+    "arm": "D",
+    "class_code": "JSS2-D",
+    "classroom_staff_id": 8
+  },
+  {
+    "class_id": 9,
+    "class_name": "JSS3A",
+    "arm": "A",
+    "class_code": "JSS3-A",
+    "classroom_staff_id": 9
+  },
+  {
+    "class_id": 10,
+    "class_name": "JSS3B",
+    "arm": "B",
+    "class_code": "JSS3-B",
+    "classroom_staff_id": 10
+  },
+  {
+    "class_id": 11,
+    "class_name": "JSS3C",
+    "arm": "C",
+    "class_code": "JSS3-C",
+    "classroom_staff_id": 11
+  },
+  {
+    "class_id": 12,
+    "class_name": "JSS3D",
+    "arm": "D",
+    "class_code": "JSS3-D",
+    "classroom_staff_id": 12
+  },
+  {
+    "class_id": 13,
+    "class_name": "SS1A",
+    "arm": "A",
+    "class_code": "SS1-A",
+    "classroom_staff_id": 13
+  },
+  {
+    "class_id": 14,
+    "class_name": "SS1B",
+    "arm": "B",
+    "class_code": "SS1-B",
+    "classroom_staff_id": 14
+  },
+  {
+    "class_id": 15,
+    "class_name": "SS1C",
+    "arm": "C",
+    "class_code": "SS1-C",
+    "classroom_staff_id": 15
+  },
+  {
+    "class_id": 16,
+    "class_name": "SS1D",
+    "arm": "D",
+    "class_code": "SS1-D",
+    "classroom_staff_id": 16
+  },
+  {
+    "class_id": 17,
+    "class_name": "SS2A",
+    "arm": "A",
+    "class_code": "SS2-A",
+    "classroom_staff_id": 17
+  },
+  {
+    "class_id": 18,
+    "class_name": "SS2B",
+    "arm": "B",
+    "class_code": "SS2-B",
+    "classroom_staff_id": 18
+  },
+  {
+    "class_id": 19,
+    "class_name": "SS2C",
+    "arm": "C",
+    "class_code": "SS2-C",
+    "classroom_staff_id": 19
+  },
+  {
+    "class_id": 20,
+    "class_name": "SS2D",
+    "arm": "D",
+    "class_code": "SS2-D",
+    "classroom_staff_id": 20
+  },
+  {
+    "class_id": 21,
+    "class_name": "SS3A",
+    "arm": "A",
+    "class_code": "SS3-A",
+    "classroom_staff_id": 21
+  },
+  {
+    "class_id": 22,
+    "class_name": "SS3B",
+    "arm": "B",
+    "class_code": "SS3-B",
+    "classroom_staff_id": 22
+  },
+  {
+    "class_id": 23,
+    "class_name": "SS3C",
+    "arm": "C",
+    "class_code": "SS3-C",
+    "classroom_staff_id": 23
+  },
+  {
+    "class_id": 24,
+    "class_name": "SS3D",
+    "arm": "D",
+    "class_code": "SS3-D",
+    "classroom_staff_id": 24
+  }
+]

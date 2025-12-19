@@ -1,6 +1,8 @@
 "use client";
 
 import { Edit2, Trash2, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface ListProps {
   currentStudents: any[];
@@ -23,6 +25,8 @@ export function List({
   startIndex,
   endIndex,
 }: ListProps) {
+    const router = useRouter();
+
   return (
     <div className="overflow-x-auto">
       {/* TABLE */}
@@ -41,8 +45,10 @@ export function List({
           {currentStudents.map((student) => (
             <tr
               key={student.student_id}
-              className="hover:bg-gray-50 transition"
-            >
+              className="hover:bg-gray-50 transition cursor-pointer"
+               onClick={() =>
+    router.push(`/students/profile/${student.admission_no}`)
+               }>
               <td className="px-4 py-3">{student.admission_no}</td>
               <td className="px-4 py-3 font-medium">{student.name}</td>
               <td className="px-4 py-3">{student.class_id}</td>

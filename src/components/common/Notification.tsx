@@ -28,8 +28,7 @@ export default function NotificationsPanel() {
 
   const handleSend = () => {
     if (!announcement.trim()) return;
-    console.log("Sending Announcement:", announcement);
-    setAnnouncement(""); // Clear after send
+    setAnnouncement(""); 
   };
 
   return (
@@ -42,12 +41,10 @@ export default function NotificationsPanel() {
           </div>
           <h3 className="text-sm font-bold text-gray-800 tracking-tight">Notice Board</h3>
         </div>
-        <span className="bg-blue-600 text-[10px] font-bold text-white px-2 py-0.5 rounded-full">
-          {notifications.length} NEW
-        </span>
+       
       </div>
 
-      {/* NOTIFICATION LIST (Scrollable area) */}
+      {/* NOTIFICATION LIST  */}
       <div className="flex-1 overflow-y-auto custom-scrollbar">
         {notifications.map((item, index) => (
           <div
@@ -76,7 +73,7 @@ export default function NotificationsPanel() {
         ))}
       </div>
 
-      {/* CREATE ANNOUNCEMENT BOX (Footer) */}
+      {/* CREATE ANNOUNCEMENT BOX */}
       <div className="p-4 bg-gray-50/80 border-t border-gray-100">
         <div className="flex items-center gap-2 mb-2">
           <Megaphone size={14} className="text-blue-600" />

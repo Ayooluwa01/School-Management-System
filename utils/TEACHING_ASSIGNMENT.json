@@ -1,0 +1,1730 @@
+[
+  {
+    "id": 1,
+    "staff_id": 1,
+    "subject_id": 1,
+    "class_id": 1
+  },
+  {
+    "id": 2,
+    "staff_id": 2,
+    "subject_id": 2,
+    "class_id": 1
+  },
+  {
+    "id": 3,
+    "staff_id": 3,
+    "subject_id": 26,
+    "class_id": 1
+  },
+  {
+    "id": 4,
+    "staff_id": 4,
+    "subject_id": 27,
+    "class_id": 1
+  },
+  {
+    "id": 5,
+    "staff_id": 5,
+    "subject_id": 30,
+    "class_id": 1
+  },
+  {
+    "id": 6,
+    "staff_id": 6,
+    "subject_id": 11,
+    "class_id": 1
+  },
+  {
+    "id": 7,
+    "staff_id": 7,
+    "subject_id": 13,
+    "class_id": 1
+  },
+  {
+    "id": 8,
+    "staff_id": 8,
+    "subject_id": 22,
+    "class_id": 1
+  },
+  {
+    "id": 9,
+    "staff_id": 9,
+    "subject_id": 24,
+    "class_id": 1
+  },
+  {
+    "id": 10,
+    "staff_id": 10,
+    "subject_id": 28,
+    "class_id": 1
+  },
+  {
+    "id": 11,
+    "staff_id": 11,
+    "subject_id": 23,
+    "class_id": 1
+  },
+  {
+    "id": 12,
+    "staff_id": 12,
+    "subject_id": 20,
+    "class_id": 1
+  },
+  {
+    "id": 13,
+    "staff_id": 13,
+    "subject_id": 1,
+    "class_id": 2
+  },
+  {
+    "id": 14,
+    "staff_id": 14,
+    "subject_id": 2,
+    "class_id": 2
+  },
+  {
+    "id": 15,
+    "staff_id": 15,
+    "subject_id": 26,
+    "class_id": 2
+  },
+  {
+    "id": 16,
+    "staff_id": 16,
+    "subject_id": 27,
+    "class_id": 2
+  },
+  {
+    "id": 17,
+    "staff_id": 17,
+    "subject_id": 30,
+    "class_id": 2
+  },
+  {
+    "id": 18,
+    "staff_id": 18,
+    "subject_id": 11,
+    "class_id": 2
+  },
+  {
+    "id": 19,
+    "staff_id": 19,
+    "subject_id": 13,
+    "class_id": 2
+  },
+  {
+    "id": 20,
+    "staff_id": 20,
+    "subject_id": 22,
+    "class_id": 2
+  },
+  {
+    "id": 21,
+    "staff_id": 21,
+    "subject_id": 24,
+    "class_id": 2
+  },
+  {
+    "id": 22,
+    "staff_id": 22,
+    "subject_id": 28,
+    "class_id": 2
+  },
+  {
+    "id": 23,
+    "staff_id": 23,
+    "subject_id": 23,
+    "class_id": 2
+  },
+  {
+    "id": 24,
+    "staff_id": 24,
+    "subject_id": 20,
+    "class_id": 2
+  },
+  {
+    "id": 25,
+    "staff_id": 25,
+    "subject_id": 1,
+    "class_id": 3
+  },
+  {
+    "id": 26,
+    "staff_id": 26,
+    "subject_id": 2,
+    "class_id": 3
+  },
+  {
+    "id": 27,
+    "staff_id": 27,
+    "subject_id": 26,
+    "class_id": 3
+  },
+  {
+    "id": 28,
+    "staff_id": 28,
+    "subject_id": 27,
+    "class_id": 3
+  },
+  {
+    "id": 29,
+    "staff_id": 29,
+    "subject_id": 30,
+    "class_id": 3
+  },
+  {
+    "id": 30,
+    "staff_id": 30,
+    "subject_id": 11,
+    "class_id": 3
+  },
+  {
+    "id": 31,
+    "staff_id": 31,
+    "subject_id": 13,
+    "class_id": 3
+  },
+  {
+    "id": 32,
+    "staff_id": 32,
+    "subject_id": 22,
+    "class_id": 3
+  },
+  {
+    "id": 33,
+    "staff_id": 33,
+    "subject_id": 24,
+    "class_id": 3
+  },
+  {
+    "id": 34,
+    "staff_id": 34,
+    "subject_id": 28,
+    "class_id": 3
+  },
+  {
+    "id": 35,
+    "staff_id": 35,
+    "subject_id": 23,
+    "class_id": 3
+  },
+  {
+    "id": 36,
+    "staff_id": 36,
+    "subject_id": 20,
+    "class_id": 3
+  },
+  {
+    "id": 37,
+    "staff_id": 37,
+    "subject_id": 1,
+    "class_id": 4
+  },
+  {
+    "id": 38,
+    "staff_id": 38,
+    "subject_id": 2,
+    "class_id": 4
+  },
+  {
+    "id": 39,
+    "staff_id": 39,
+    "subject_id": 26,
+    "class_id": 4
+  },
+  {
+    "id": 40,
+    "staff_id": 40,
+    "subject_id": 27,
+    "class_id": 4
+  },
+  {
+    "id": 41,
+    "staff_id": 41,
+    "subject_id": 30,
+    "class_id": 4
+  },
+  {
+    "id": 42,
+    "staff_id": 42,
+    "subject_id": 11,
+    "class_id": 4
+  },
+  {
+    "id": 43,
+    "staff_id": 43,
+    "subject_id": 13,
+    "class_id": 4
+  },
+  {
+    "id": 44,
+    "staff_id": 44,
+    "subject_id": 22,
+    "class_id": 4
+  },
+  {
+    "id": 45,
+    "staff_id": 45,
+    "subject_id": 24,
+    "class_id": 4
+  },
+  {
+    "id": 46,
+    "staff_id": 46,
+    "subject_id": 28,
+    "class_id": 4
+  },
+  {
+    "id": 47,
+    "staff_id": 47,
+    "subject_id": 23,
+    "class_id": 4
+  },
+  {
+    "id": 48,
+    "staff_id": 48,
+    "subject_id": 20,
+    "class_id": 4
+  },
+  {
+    "id": 49,
+    "staff_id": 49,
+    "subject_id": 1,
+    "class_id": 5
+  },
+  {
+    "id": 50,
+    "staff_id": 50,
+    "subject_id": 2,
+    "class_id": 5
+  },
+  {
+    "id": 51,
+    "staff_id": 1,
+    "subject_id": 26,
+    "class_id": 5
+  },
+  {
+    "id": 52,
+    "staff_id": 2,
+    "subject_id": 27,
+    "class_id": 5
+  },
+  {
+    "id": 53,
+    "staff_id": 3,
+    "subject_id": 30,
+    "class_id": 5
+  },
+  {
+    "id": 54,
+    "staff_id": 4,
+    "subject_id": 11,
+    "class_id": 5
+  },
+  {
+    "id": 55,
+    "staff_id": 5,
+    "subject_id": 13,
+    "class_id": 5
+  },
+  {
+    "id": 56,
+    "staff_id": 6,
+    "subject_id": 22,
+    "class_id": 5
+  },
+  {
+    "id": 57,
+    "staff_id": 7,
+    "subject_id": 24,
+    "class_id": 5
+  },
+  {
+    "id": 58,
+    "staff_id": 8,
+    "subject_id": 28,
+    "class_id": 5
+  },
+  {
+    "id": 59,
+    "staff_id": 9,
+    "subject_id": 23,
+    "class_id": 5
+  },
+  {
+    "id": 60,
+    "staff_id": 10,
+    "subject_id": 20,
+    "class_id": 5
+  },
+  {
+    "id": 61,
+    "staff_id": 11,
+    "subject_id": 1,
+    "class_id": 6
+  },
+  {
+    "id": 62,
+    "staff_id": 12,
+    "subject_id": 2,
+    "class_id": 6
+  },
+  {
+    "id": 63,
+    "staff_id": 13,
+    "subject_id": 26,
+    "class_id": 6
+  },
+  {
+    "id": 64,
+    "staff_id": 14,
+    "subject_id": 27,
+    "class_id": 6
+  },
+  {
+    "id": 65,
+    "staff_id": 15,
+    "subject_id": 30,
+    "class_id": 6
+  },
+  {
+    "id": 66,
+    "staff_id": 16,
+    "subject_id": 11,
+    "class_id": 6
+  },
+  {
+    "id": 67,
+    "staff_id": 17,
+    "subject_id": 13,
+    "class_id": 6
+  },
+  {
+    "id": 68,
+    "staff_id": 18,
+    "subject_id": 22,
+    "class_id": 6
+  },
+  {
+    "id": 69,
+    "staff_id": 19,
+    "subject_id": 24,
+    "class_id": 6
+  },
+  {
+    "id": 70,
+    "staff_id": 20,
+    "subject_id": 28,
+    "class_id": 6
+  },
+  {
+    "id": 71,
+    "staff_id": 21,
+    "subject_id": 23,
+    "class_id": 6
+  },
+  {
+    "id": 72,
+    "staff_id": 22,
+    "subject_id": 20,
+    "class_id": 6
+  },
+  {
+    "id": 73,
+    "staff_id": 23,
+    "subject_id": 1,
+    "class_id": 7
+  },
+  {
+    "id": 74,
+    "staff_id": 24,
+    "subject_id": 2,
+    "class_id": 7
+  },
+  {
+    "id": 75,
+    "staff_id": 25,
+    "subject_id": 26,
+    "class_id": 7
+  },
+  {
+    "id": 76,
+    "staff_id": 26,
+    "subject_id": 27,
+    "class_id": 7
+  },
+  {
+    "id": 77,
+    "staff_id": 27,
+    "subject_id": 30,
+    "class_id": 7
+  },
+  {
+    "id": 78,
+    "staff_id": 28,
+    "subject_id": 11,
+    "class_id": 7
+  },
+  {
+    "id": 79,
+    "staff_id": 29,
+    "subject_id": 13,
+    "class_id": 7
+  },
+  {
+    "id": 80,
+    "staff_id": 30,
+    "subject_id": 22,
+    "class_id": 7
+  },
+  {
+    "id": 81,
+    "staff_id": 31,
+    "subject_id": 24,
+    "class_id": 7
+  },
+  {
+    "id": 82,
+    "staff_id": 32,
+    "subject_id": 28,
+    "class_id": 7
+  },
+  {
+    "id": 83,
+    "staff_id": 33,
+    "subject_id": 23,
+    "class_id": 7
+  },
+  {
+    "id": 84,
+    "staff_id": 34,
+    "subject_id": 20,
+    "class_id": 7
+  },
+  {
+    "id": 85,
+    "staff_id": 35,
+    "subject_id": 1,
+    "class_id": 8
+  },
+  {
+    "id": 86,
+    "staff_id": 36,
+    "subject_id": 2,
+    "class_id": 8
+  },
+  {
+    "id": 87,
+    "staff_id": 37,
+    "subject_id": 26,
+    "class_id": 8
+  },
+  {
+    "id": 88,
+    "staff_id": 38,
+    "subject_id": 27,
+    "class_id": 8
+  },
+  {
+    "id": 89,
+    "staff_id": 39,
+    "subject_id": 30,
+    "class_id": 8
+  },
+  {
+    "id": 90,
+    "staff_id": 40,
+    "subject_id": 11,
+    "class_id": 8
+  },
+  {
+    "id": 91,
+    "staff_id": 41,
+    "subject_id": 13,
+    "class_id": 8
+  },
+  {
+    "id": 92,
+    "staff_id": 42,
+    "subject_id": 22,
+    "class_id": 8
+  },
+  {
+    "id": 93,
+    "staff_id": 43,
+    "subject_id": 24,
+    "class_id": 8
+  },
+  {
+    "id": 94,
+    "staff_id": 44,
+    "subject_id": 28,
+    "class_id": 8
+  },
+  {
+    "id": 95,
+    "staff_id": 45,
+    "subject_id": 23,
+    "class_id": 8
+  },
+  {
+    "id": 96,
+    "staff_id": 46,
+    "subject_id": 20,
+    "class_id": 8
+  },
+  {
+    "id": 97,
+    "staff_id": 47,
+    "subject_id": 1,
+    "class_id": 9
+  },
+  {
+    "id": 98,
+    "staff_id": 48,
+    "subject_id": 2,
+    "class_id": 9
+  },
+  {
+    "id": 99,
+    "staff_id": 49,
+    "subject_id": 26,
+    "class_id": 9
+  },
+  {
+    "id": 100,
+    "staff_id": 50,
+    "subject_id": 27,
+    "class_id": 9
+  },
+  {
+    "id": 101,
+    "staff_id": 1,
+    "subject_id": 30,
+    "class_id": 9
+  },
+  {
+    "id": 102,
+    "staff_id": 2,
+    "subject_id": 11,
+    "class_id": 9
+  },
+  {
+    "id": 103,
+    "staff_id": 3,
+    "subject_id": 13,
+    "class_id": 9
+  },
+  {
+    "id": 104,
+    "staff_id": 4,
+    "subject_id": 22,
+    "class_id": 9
+  },
+  {
+    "id": 105,
+    "staff_id": 5,
+    "subject_id": 24,
+    "class_id": 9
+  },
+  {
+    "id": 106,
+    "staff_id": 6,
+    "subject_id": 28,
+    "class_id": 9
+  },
+  {
+    "id": 107,
+    "staff_id": 7,
+    "subject_id": 23,
+    "class_id": 9
+  },
+  {
+    "id": 108,
+    "staff_id": 8,
+    "subject_id": 20,
+    "class_id": 9
+  },
+  {
+    "id": 109,
+    "staff_id": 9,
+    "subject_id": 1,
+    "class_id": 10
+  },
+  {
+    "id": 110,
+    "staff_id": 10,
+    "subject_id": 2,
+    "class_id": 10
+  },
+  {
+    "id": 111,
+    "staff_id": 11,
+    "subject_id": 26,
+    "class_id": 10
+  },
+  {
+    "id": 112,
+    "staff_id": 12,
+    "subject_id": 27,
+    "class_id": 10
+  },
+  {
+    "id": 113,
+    "staff_id": 13,
+    "subject_id": 30,
+    "class_id": 10
+  },
+  {
+    "id": 114,
+    "staff_id": 14,
+    "subject_id": 11,
+    "class_id": 10
+  },
+  {
+    "id": 115,
+    "staff_id": 15,
+    "subject_id": 13,
+    "class_id": 10
+  },
+  {
+    "id": 116,
+    "staff_id": 16,
+    "subject_id": 22,
+    "class_id": 10
+  },
+  {
+    "id": 117,
+    "staff_id": 17,
+    "subject_id": 24,
+    "class_id": 10
+  },
+  {
+    "id": 118,
+    "staff_id": 18,
+    "subject_id": 28,
+    "class_id": 10
+  },
+  {
+    "id": 119,
+    "staff_id": 19,
+    "subject_id": 23,
+    "class_id": 10
+  },
+  {
+    "id": 120,
+    "staff_id": 20,
+    "subject_id": 20,
+    "class_id": 10
+  },
+  {
+    "id": 121,
+    "staff_id": 21,
+    "subject_id": 1,
+    "class_id": 11
+  },
+  {
+    "id": 122,
+    "staff_id": 22,
+    "subject_id": 2,
+    "class_id": 11
+  },
+  {
+    "id": 123,
+    "staff_id": 23,
+    "subject_id": 26,
+    "class_id": 11
+  },
+  {
+    "id": 124,
+    "staff_id": 24,
+    "subject_id": 27,
+    "class_id": 11
+  },
+  {
+    "id": 125,
+    "staff_id": 25,
+    "subject_id": 30,
+    "class_id": 11
+  },
+  {
+    "id": 126,
+    "staff_id": 26,
+    "subject_id": 11,
+    "class_id": 11
+  },
+  {
+    "id": 127,
+    "staff_id": 27,
+    "subject_id": 13,
+    "class_id": 11
+  },
+  {
+    "id": 128,
+    "staff_id": 28,
+    "subject_id": 22,
+    "class_id": 11
+  },
+  {
+    "id": 129,
+    "staff_id": 29,
+    "subject_id": 24,
+    "class_id": 11
+  },
+  {
+    "id": 130,
+    "staff_id": 30,
+    "subject_id": 28,
+    "class_id": 11
+  },
+  {
+    "id": 131,
+    "staff_id": 31,
+    "subject_id": 23,
+    "class_id": 11
+  },
+  {
+    "id": 132,
+    "staff_id": 32,
+    "subject_id": 20,
+    "class_id": 11
+  },
+  {
+    "id": 133,
+    "staff_id": 33,
+    "subject_id": 1,
+    "class_id": 12
+  },
+  {
+    "id": 134,
+    "staff_id": 34,
+    "subject_id": 2,
+    "class_id": 12
+  },
+  {
+    "id": 135,
+    "staff_id": 35,
+    "subject_id": 26,
+    "class_id": 12
+  },
+  {
+    "id": 136,
+    "staff_id": 36,
+    "subject_id": 27,
+    "class_id": 12
+  },
+  {
+    "id": 137,
+    "staff_id": 37,
+    "subject_id": 30,
+    "class_id": 12
+  },
+  {
+    "id": 138,
+    "staff_id": 38,
+    "subject_id": 11,
+    "class_id": 12
+  },
+  {
+    "id": 139,
+    "staff_id": 39,
+    "subject_id": 13,
+    "class_id": 12
+  },
+  {
+    "id": 140,
+    "staff_id": 40,
+    "subject_id": 22,
+    "class_id": 12
+  },
+  {
+    "id": 141,
+    "staff_id": 41,
+    "subject_id": 24,
+    "class_id": 12
+  },
+  {
+    "id": 142,
+    "staff_id": 42,
+    "subject_id": 28,
+    "class_id": 12
+  },
+  {
+    "id": 143,
+    "staff_id": 43,
+    "subject_id": 23,
+    "class_id": 12
+  },
+  {
+    "id": 144,
+    "staff_id": 44,
+    "subject_id": 20,
+    "class_id": 12
+  },
+  {
+    "id": 145,
+    "staff_id": 45,
+    "subject_id": 1,
+    "class_id": 13
+  },
+  {
+    "id": 146,
+    "staff_id": 46,
+    "subject_id": 2,
+    "class_id": 13
+  },
+  {
+    "id": 147,
+    "staff_id": 47,
+    "subject_id": 3,
+    "class_id": 13
+  },
+  {
+    "id": 148,
+    "staff_id": 48,
+    "subject_id": 4,
+    "class_id": 13
+  },
+  {
+    "id": 149,
+    "staff_id": 49,
+    "subject_id": 5,
+    "class_id": 13
+  },
+  {
+    "id": 150,
+    "staff_id": 50,
+    "subject_id": 7,
+    "class_id": 13
+  },
+  {
+    "id": 151,
+    "staff_id": 1,
+    "subject_id": 10,
+    "class_id": 13
+  },
+  {
+    "id": 152,
+    "staff_id": 2,
+    "subject_id": 12,
+    "class_id": 13
+  },
+  {
+    "id": 153,
+    "staff_id": 3,
+    "subject_id": 19,
+    "class_id": 13
+  },
+  {
+    "id": 154,
+    "staff_id": 4,
+    "subject_id": 13,
+    "class_id": 13
+  },
+  {
+    "id": 155,
+    "staff_id": 5,
+    "subject_id": 18,
+    "class_id": 13
+  },
+  {
+    "id": 156,
+    "staff_id": 6,
+    "subject_id": 24,
+    "class_id": 13
+  },
+  {
+    "id": 157,
+    "staff_id": 7,
+    "subject_id": 1,
+    "class_id": 14
+  },
+  {
+    "id": 158,
+    "staff_id": 8,
+    "subject_id": 2,
+    "class_id": 14
+  },
+  {
+    "id": 159,
+    "staff_id": 9,
+    "subject_id": 3,
+    "class_id": 14
+  },
+  {
+    "id": 160,
+    "staff_id": 10,
+    "subject_id": 4,
+    "class_id": 14
+  },
+  {
+    "id": 161,
+    "staff_id": 11,
+    "subject_id": 5,
+    "class_id": 14
+  },
+  {
+    "id": 162,
+    "staff_id": 12,
+    "subject_id": 7,
+    "class_id": 14
+  },
+  {
+    "id": 163,
+    "staff_id": 13,
+    "subject_id": 10,
+    "class_id": 14
+  },
+  {
+    "id": 164,
+    "staff_id": 14,
+    "subject_id": 12,
+    "class_id": 14
+  },
+  {
+    "id": 165,
+    "staff_id": 15,
+    "subject_id": 19,
+    "class_id": 14
+  },
+  {
+    "id": 166,
+    "staff_id": 16,
+    "subject_id": 13,
+    "class_id": 14
+  },
+  {
+    "id": 167,
+    "staff_id": 17,
+    "subject_id": 18,
+    "class_id": 14
+  },
+  {
+    "id": 168,
+    "staff_id": 18,
+    "subject_id": 24,
+    "class_id": 14
+  },
+  {
+    "id": 169,
+    "staff_id": 19,
+    "subject_id": 1,
+    "class_id": 15
+  },
+  {
+    "id": 170,
+    "staff_id": 20,
+    "subject_id": 2,
+    "class_id": 15
+  },
+  {
+    "id": 171,
+    "staff_id": 21,
+    "subject_id": 3,
+    "class_id": 15
+  },
+  {
+    "id": 172,
+    "staff_id": 22,
+    "subject_id": 4,
+    "class_id": 15
+  },
+  {
+    "id": 173,
+    "staff_id": 23,
+    "subject_id": 5,
+    "class_id": 15
+  },
+  {
+    "id": 174,
+    "staff_id": 24,
+    "subject_id": 7,
+    "class_id": 15
+  },
+  {
+    "id": 175,
+    "staff_id": 25,
+    "subject_id": 10,
+    "class_id": 15
+  },
+  {
+    "id": 176,
+    "staff_id": 26,
+    "subject_id": 12,
+    "class_id": 15
+  },
+  {
+    "id": 177,
+    "staff_id": 27,
+    "subject_id": 19,
+    "class_id": 15
+  },
+  {
+    "id": 178,
+    "staff_id": 28,
+    "subject_id": 13,
+    "class_id": 15
+  },
+  {
+    "id": 179,
+    "staff_id": 29,
+    "subject_id": 18,
+    "class_id": 15
+  },
+  {
+    "id": 180,
+    "staff_id": 30,
+    "subject_id": 24,
+    "class_id": 15
+  },
+  {
+    "id": 181,
+    "staff_id": 31,
+    "subject_id": 1,
+    "class_id": 16
+  },
+  {
+    "id": 182,
+    "staff_id": 32,
+    "subject_id": 2,
+    "class_id": 16
+  },
+  {
+    "id": 183,
+    "staff_id": 33,
+    "subject_id": 3,
+    "class_id": 16
+  },
+  {
+    "id": 184,
+    "staff_id": 34,
+    "subject_id": 4,
+    "class_id": 16
+  },
+  {
+    "id": 185,
+    "staff_id": 35,
+    "subject_id": 5,
+    "class_id": 16
+  },
+  {
+    "id": 186,
+    "staff_id": 36,
+    "subject_id": 7,
+    "class_id": 16
+  },
+  {
+    "id": 187,
+    "staff_id": 37,
+    "subject_id": 10,
+    "class_id": 16
+  },
+  {
+    "id": 188,
+    "staff_id": 38,
+    "subject_id": 12,
+    "class_id": 16
+  },
+  {
+    "id": 189,
+    "staff_id": 39,
+    "subject_id": 19,
+    "class_id": 16
+  },
+  {
+    "id": 190,
+    "staff_id": 40,
+    "subject_id": 13,
+    "class_id": 16
+  },
+  {
+    "id": 191,
+    "staff_id": 41,
+    "subject_id": 18,
+    "class_id": 16
+  },
+  {
+    "id": 192,
+    "staff_id": 42,
+    "subject_id": 24,
+    "class_id": 16
+  },
+  {
+    "id": 193,
+    "staff_id": 43,
+    "subject_id": 1,
+    "class_id": 17
+  },
+  {
+    "id": 194,
+    "staff_id": 44,
+    "subject_id": 2,
+    "class_id": 17
+  },
+  {
+    "id": 195,
+    "staff_id": 45,
+    "subject_id": 3,
+    "class_id": 17
+  },
+  {
+    "id": 196,
+    "staff_id": 46,
+    "subject_id": 4,
+    "class_id": 17
+  },
+  {
+    "id": 197,
+    "staff_id": 47,
+    "subject_id": 5,
+    "class_id": 17
+  },
+  {
+    "id": 198,
+    "staff_id": 48,
+    "subject_id": 7,
+    "class_id": 17
+  },
+  {
+    "id": 199,
+    "staff_id": 49,
+    "subject_id": 10,
+    "class_id": 17
+  },
+  {
+    "id": 200,
+    "staff_id": 50,
+    "subject_id": 12,
+    "class_id": 17
+  },
+  {
+    "id": 201,
+    "staff_id": 1,
+    "subject_id": 19,
+    "class_id": 17
+  },
+  {
+    "id": 202,
+    "staff_id": 2,
+    "subject_id": 13,
+    "class_id": 17
+  },
+  {
+    "id": 203,
+    "staff_id": 3,
+    "subject_id": 18,
+    "class_id": 17
+  },
+  {
+    "id": 204,
+    "staff_id": 4,
+    "subject_id": 24,
+    "class_id": 17
+  },
+  {
+    "id": 205,
+    "staff_id": 5,
+    "subject_id": 1,
+    "class_id": 18
+  },
+  {
+    "id": 206,
+    "staff_id": 6,
+    "subject_id": 2,
+    "class_id": 18
+  },
+  {
+    "id": 207,
+    "staff_id": 7,
+    "subject_id": 3,
+    "class_id": 18
+  },
+  {
+    "id": 208,
+    "staff_id": 8,
+    "subject_id": 4,
+    "class_id": 18
+  },
+  {
+    "id": 209,
+    "staff_id": 9,
+    "subject_id": 5,
+    "class_id": 18
+  },
+  {
+    "id": 210,
+    "staff_id": 10,
+    "subject_id": 7,
+    "class_id": 18
+  },
+  {
+    "id": 211,
+    "staff_id": 11,
+    "subject_id": 10,
+    "class_id": 18
+  },
+  {
+    "id": 212,
+    "staff_id": 12,
+    "subject_id": 12,
+    "class_id": 18
+  },
+  {
+    "id": 213,
+    "staff_id": 13,
+    "subject_id": 19,
+    "class_id": 18
+  },
+  {
+    "id": 214,
+    "staff_id": 14,
+    "subject_id": 13,
+    "class_id": 18
+  },
+  {
+    "id": 215,
+    "staff_id": 15,
+    "subject_id": 18,
+    "class_id": 18
+  },
+  {
+    "id": 216,
+    "staff_id": 16,
+    "subject_id": 24,
+    "class_id": 18
+  },
+  {
+    "id": 217,
+    "staff_id": 17,
+    "subject_id": 1,
+    "class_id": 19
+  },
+  {
+    "id": 218,
+    "staff_id": 18,
+    "subject_id": 2,
+    "class_id": 19
+  },
+  {
+    "id": 219,
+    "staff_id": 19,
+    "subject_id": 3,
+    "class_id": 19
+  },
+  {
+    "id": 220,
+    "staff_id": 20,
+    "subject_id": 4,
+    "class_id": 19
+  },
+  {
+    "id": 221,
+    "staff_id": 21,
+    "subject_id": 5,
+    "class_id": 19
+  },
+  {
+    "id": 222,
+    "staff_id": 22,
+    "subject_id": 7,
+    "class_id": 19
+  },
+  {
+    "id": 223,
+    "staff_id": 23,
+    "subject_id": 10,
+    "class_id": 19
+  },
+  {
+    "id": 224,
+    "staff_id": 24,
+    "subject_id": 12,
+    "class_id": 19
+  },
+  {
+    "id": 225,
+    "staff_id": 25,
+    "subject_id": 19,
+    "class_id": 19
+  },
+  {
+    "id": 226,
+    "staff_id": 26,
+    "subject_id": 13,
+    "class_id": 19
+  },
+  {
+    "id": 227,
+    "staff_id": 27,
+    "subject_id": 18,
+    "class_id": 19
+  },
+  {
+    "id": 228,
+    "staff_id": 28,
+    "subject_id": 24,
+    "class_id": 19
+  },
+  {
+    "id": 229,
+    "staff_id": 29,
+    "subject_id": 1,
+    "class_id": 20
+  },
+  {
+    "id": 230,
+    "staff_id": 30,
+    "subject_id": 2,
+    "class_id": 20
+  },
+  {
+    "id": 231,
+    "staff_id": 31,
+    "subject_id": 3,
+    "class_id": 20
+  },
+  {
+    "id": 232,
+    "staff_id": 32,
+    "subject_id": 4,
+    "class_id": 20
+  },
+  {
+    "id": 233,
+    "staff_id": 33,
+    "subject_id": 5,
+    "class_id": 20
+  },
+  {
+    "id": 234,
+    "staff_id": 34,
+    "subject_id": 7,
+    "class_id": 20
+  },
+  {
+    "id": 235,
+    "staff_id": 35,
+    "subject_id": 10,
+    "class_id": 20
+  },
+  {
+    "id": 236,
+    "staff_id": 36,
+    "subject_id": 12,
+    "class_id": 20
+  },
+  {
+    "id": 237,
+    "staff_id": 37,
+    "subject_id": 19,
+    "class_id": 20
+  },
+  {
+    "id": 238,
+    "staff_id": 38,
+    "subject_id": 13,
+    "class_id": 20
+  },
+  {
+    "id": 239,
+    "staff_id": 39,
+    "subject_id": 18,
+    "class_id": 20
+  },
+  {
+    "id": 240,
+    "staff_id": 40,
+    "subject_id": 24,
+    "class_id": 20
+  },
+  {
+    "id": 241,
+    "staff_id": 41,
+    "subject_id": 1,
+    "class_id": 21
+  },
+  {
+    "id": 242,
+    "staff_id": 42,
+    "subject_id": 2,
+    "class_id": 21
+  },
+  {
+    "id": 243,
+    "staff_id": 43,
+    "subject_id": 3,
+    "class_id": 21
+  },
+  {
+    "id": 244,
+    "staff_id": 44,
+    "subject_id": 4,
+    "class_id": 21
+  },
+  {
+    "id": 245,
+    "staff_id": 45,
+    "subject_id": 5,
+    "class_id": 21
+  },
+  {
+    "id": 246,
+    "staff_id": 46,
+    "subject_id": 7,
+    "class_id": 21
+  },
+  {
+    "id": 247,
+    "staff_id": 47,
+    "subject_id": 10,
+    "class_id": 21
+  },
+  {
+    "id": 248,
+    "staff_id": 48,
+    "subject_id": 12,
+    "class_id": 21
+  },
+  {
+    "id": 249,
+    "staff_id": 49,
+    "subject_id": 19,
+    "class_id": 21
+  },
+  {
+    "id": 250,
+    "staff_id": 50,
+    "subject_id": 13,
+    "class_id": 21
+  },
+  {
+    "id": 251,
+    "staff_id": 1,
+    "subject_id": 18,
+    "class_id": 21
+  },
+  {
+    "id": 252,
+    "staff_id": 2,
+    "subject_id": 24,
+    "class_id": 21
+  },
+  {
+    "id": 253,
+    "staff_id": 3,
+    "subject_id": 1,
+    "class_id": 22
+  },
+  {
+    "id": 254,
+    "staff_id": 4,
+    "subject_id": 2,
+    "class_id": 22
+  },
+  {
+    "id": 255,
+    "staff_id": 5,
+    "subject_id": 3,
+    "class_id": 22
+  },
+  {
+    "id": 256,
+    "staff_id": 6,
+    "subject_id": 4,
+    "class_id": 22
+  },
+  {
+    "id": 257,
+    "staff_id": 7,
+    "subject_id": 5,
+    "class_id": 22
+  },
+  {
+    "id": 258,
+    "staff_id": 8,
+    "subject_id": 7,
+    "class_id": 22
+  },
+  {
+    "id": 259,
+    "staff_id": 9,
+    "subject_id": 10,
+    "class_id": 22
+  },
+  {
+    "id": 260,
+    "staff_id": 10,
+    "subject_id": 12,
+    "class_id": 22
+  },
+  {
+    "id": 261,
+    "staff_id": 11,
+    "subject_id": 19,
+    "class_id": 22
+  },
+  {
+    "id": 262,
+    "staff_id": 12,
+    "subject_id": 13,
+    "class_id": 22
+  },
+  {
+    "id": 263,
+    "staff_id": 13,
+    "subject_id": 18,
+    "class_id": 22
+  },
+  {
+    "id": 264,
+    "staff_id": 14,
+    "subject_id": 24,
+    "class_id": 22
+  },
+  {
+    "id": 265,
+    "staff_id": 15,
+    "subject_id": 1,
+    "class_id": 23
+  },
+  {
+    "id": 266,
+    "staff_id": 16,
+    "subject_id": 2,
+    "class_id": 23
+  },
+  {
+    "id": 267,
+    "staff_id": 17,
+    "subject_id": 3,
+    "class_id": 23
+  },
+  {
+    "id": 268,
+    "staff_id": 18,
+    "subject_id": 4,
+    "class_id": 23
+  },
+  {
+    "id": 269,
+    "staff_id": 19,
+    "subject_id": 5,
+    "class_id": 23
+  },
+  {
+    "id": 270,
+    "staff_id": 20,
+    "subject_id": 7,
+    "class_id": 23
+  },
+  {
+    "id": 271,
+    "staff_id": 21,
+    "subject_id": 10,
+    "class_id": 23
+  },
+  {
+    "id": 272,
+    "staff_id": 22,
+    "subject_id": 12,
+    "class_id": 23
+  },
+  {
+    "id": 273,
+    "staff_id": 23,
+    "subject_id": 19,
+    "class_id": 23
+  },
+  {
+    "id": 274,
+    "staff_id": 24,
+    "subject_id": 13,
+    "class_id": 23
+  },
+  {
+    "id": 275,
+    "staff_id": 25,
+    "subject_id": 18,
+    "class_id": 23
+  },
+  {
+    "id": 276,
+    "staff_id": 26,
+    "subject_id": 24,
+    "class_id": 23
+  },
+  {
+    "id": 277,
+    "staff_id": 27,
+    "subject_id": 1,
+    "class_id": 24
+  },
+  {
+    "id": 278,
+    "staff_id": 28,
+    "subject_id": 2,
+    "class_id": 24
+  },
+  {
+    "id": 279,
+    "staff_id": 29,
+    "subject_id": 3,
+    "class_id": 24
+  },
+  {
+    "id": 280,
+    "staff_id": 30,
+    "subject_id": 4,
+    "class_id": 24
+  },
+  {
+    "id": 281,
+    "staff_id": 31,
+    "subject_id": 5,
+    "class_id": 24
+  },
+  {
+    "id": 282,
+    "staff_id": 32,
+    "subject_id": 7,
+    "class_id": 24
+  },
+  {
+    "id": 283,
+    "staff_id": 33,
+    "subject_id": 10,
+    "class_id": 24
+  },
+  {
+    "id": 284,
+    "staff_id": 34,
+    "subject_id": 12,
+    "class_id": 24
+  },
+  {
+    "id": 285,
+    "staff_id": 35,
+    "subject_id": 19,
+    "class_id": 24
+  },
+  {
+    "id": 286,
+    "staff_id": 36,
+    "subject_id": 13,
+    "class_id": 24
+  },
+  {
+    "id": 287,
+    "staff_id": 37,
+    "subject_id": 18,
+    "class_id": 24
+  },
+  {
+    "id": 288,
+    "staff_id": 38,
+    "subject_id": 24,
+    "class_id": 24
+  }
+]

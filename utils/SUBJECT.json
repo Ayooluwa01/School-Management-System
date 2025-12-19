@@ -1,0 +1,152 @@
+[
+  {
+    "subject_id": 1,
+    "subject_name": "Mathematics",
+    "subject_code": "MTH"
+  },
+  {
+    "subject_id": 2,
+    "subject_name": "English Language",
+    "subject_code": "ENG"
+  },
+  {
+    "subject_id": 3,
+    "subject_name": "Biology",
+    "subject_code": "BIO"
+  },
+  {
+    "subject_id": 4,
+    "subject_name": "Chemistry",
+    "subject_code": "CHM"
+  },
+  {
+    "subject_id": 5,
+    "subject_name": "Physics",
+    "subject_code": "PHY"
+  },
+  {
+    "subject_id": 6,
+    "subject_name": "Agricultural Science",
+    "subject_code": "AGR"
+  },
+  {
+    "subject_id": 7,
+    "subject_name": "Economics",
+    "subject_code": "ECO"
+  },
+  {
+    "subject_id": 8,
+    "subject_name": "Commerce",
+    "subject_code": "COM"
+  },
+  {
+    "subject_id": 9,
+    "subject_name": "Accounting",
+    "subject_code": "ACC"
+  },
+  {
+    "subject_id": 10,
+    "subject_name": "Government",
+    "subject_code": "GOV"
+  },
+  {
+    "subject_id": 11,
+    "subject_name": "Civic Education",
+    "subject_code": "CIV"
+  },
+  {
+    "subject_id": 12,
+    "subject_name": "Geography",
+    "subject_code": "GEO"
+  },
+  {
+    "subject_id": 13,
+    "subject_name": "Christian Religious Studies",
+    "subject_code": "CRS"
+  },
+  {
+    "subject_id": 14,
+    "subject_name": "Islamic Religious Studies",
+    "subject_code": "IRS"
+  },
+  {
+    "subject_id": 15,
+    "subject_name": "Yoruba",
+    "subject_code": "YOR"
+  },
+  {
+    "subject_id": 16,
+    "subject_name": "Igbo",
+    "subject_code": "IGB"
+  },
+  {
+    "subject_id": 17,
+    "subject_name": "Hausa",
+    "subject_code": "HAU"
+  },
+  {
+    "subject_id": 18,
+    "subject_name": "French",
+    "subject_code": "FRE"
+  },
+  {
+    "subject_id": 19,
+    "subject_name": "Literature in English",
+    "subject_code": "LIT"
+  },
+  {
+    "subject_id": 20,
+    "subject_name": "Fine Arts",
+    "subject_code": "ART"
+  },
+  {
+    "subject_id": 21,
+    "subject_name": "Music",
+    "subject_code": "MUS"
+  },
+  {
+    "subject_id": 22,
+    "subject_name": "Physical Education",
+    "subject_code": "PHE"
+  },
+  {
+    "subject_id": 23,
+    "subject_name": "Home Economics",
+    "subject_code": "HEC"
+  },
+  {
+    "subject_id": 24,
+    "subject_name": "Computer Studies",
+    "subject_code": "CMP"
+  },
+  {
+    "subject_id": 25,
+    "subject_name": "Technical Drawing",
+    "subject_code": "TDR"
+  },
+  {
+    "subject_id": 26,
+    "subject_name": "Basic Science",
+    "subject_code": "BSC"
+  },
+  {
+    "subject_id": 27,
+    "subject_name": "Basic Technology",
+    "subject_code": "BTC"
+  },
+  {
+    "subject_id": 28,
+    "subject_name": "Business Studies",
+    "subject_code": "BUS"
+  },
+  {
+    "subject_id": 29,
+    "subject_name": "History",
+    "subject_code": "HIS"
+  },
+  {
+    "subject_id": 30,
+    "subject_name": "Social Studies",
+    "subject_code": "SOS"
+  }
+]

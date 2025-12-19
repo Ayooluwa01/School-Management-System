@@ -1,6 +1,5 @@
 import React from "react";
 import { GraduationCap, UserCog, Users } from "lucide-react";
-
 // Components
 import ComponentCard from "@/components/common/ComponentCard";
 import GenderDonutChart from "@/components/common/Popluationchart";
@@ -9,23 +8,27 @@ import MonthlySalesChart from "@/components/common/Financialchart";
 import NotificationsPanel from "@/components/common/Notification";
 import TopStudentsList from "@/components/common/Topstudents";
 import TinyCalendar from "@/components/calendar/Calendar";
+import { fetch } from "../../../../libs/api";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  // Fetch all students and staffs
+  const student=await fetch('')
+  const Teacher=await fetch('staff?role=Teacher')
   return (
-    <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-50/50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-25 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
       
       {/* ===== SECTION 1: KEY METRICS (KPIs) ===== */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard 
           icon={<GraduationCap className="w-5 h-5 text-blue-600" />}
           label="Students"
-          value="5,909"
+          value={student.count || '----------'}
           color="blue"
         />
         <StatCard 
           icon={<Users className="w-5 h-5 text-green-600" />}
           label="Teachers"
-          value="60"
+          value={Teacher.count || '----------'}
           color="green"
         />
         <StatCard 
@@ -100,9 +103,10 @@ export default function Dashboard() {
   );
 }
 
-// --- Internal Helper Component for the Top Cards ---
-// This keeps the main code clean and makes cards look identical
-function StatCard({ icon, label, value, color }) {
+
+
+
+function StatCard({ icon, label, value, color }:any) {
   // Dynamic color map for backgrounds
   const colorMap = {
     blue: "bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800",
