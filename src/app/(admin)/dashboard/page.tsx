@@ -8,12 +8,13 @@ import MonthlySalesChart from "@/components/common/Financialchart";
 import NotificationsPanel from "@/components/common/Notification";
 import TopStudentsList from "@/components/common/Topstudents";
 import TinyCalendar from "@/components/calendar/Calendar";
-import { fetch } from "../../../../libs/api";
+import { Fetch } from "../../../../libs/api";
 
 export default async function Dashboard() {
   // Fetch all students and staffs
-  const student=await fetch('')
-  const Teacher=await fetch('staff?role=Teacher')
+  const student=await Fetch('student')
+  const Teacher=await Fetch('staff?role=Teacher')
+  const Staffs=await Fetch('/staff')
   return (
     <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-25 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
       
@@ -22,19 +23,19 @@ export default async function Dashboard() {
         <StatCard 
           icon={<GraduationCap className="w-5 h-5 text-blue-600" />}
           label="Students"
-          value={student.count || '----------'}
+          value={student.count ||0}
           color="blue"
         />
         <StatCard 
           icon={<Users className="w-5 h-5 text-green-600" />}
           label="Teachers"
-          value={Teacher.count || '----------'}
+          value={Teacher.count || 0}
           color="green"
         />
         <StatCard 
           icon={<UserCog className="w-5 h-5 text-purple-600" />}
           label="Staff"
-          value="65"
+          value={Staffs.count || 0}
           color="purple"
         />
       </div>
