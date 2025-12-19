@@ -47,7 +47,7 @@ export function List({
               key={student.student_id}
               className="hover:bg-gray-50 transition cursor-pointer"
                onClick={() =>
-    router.push(`/students/profile/${student.admission_no}`)
+    router.push(`/students/profile/${student.student_id}`)
                }>
               <td className="px-4 py-3">{student.admission_no}</td>
               <td className="px-4 py-3 font-medium">{student.name}</td>

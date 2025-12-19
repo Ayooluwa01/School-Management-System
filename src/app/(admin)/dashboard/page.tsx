@@ -14,7 +14,7 @@ export default async function Dashboard() {
   // Fetch all students and staffs
   const student=await Fetch('student')
   const Teacher=await Fetch('staff?role=Teacher')
-  const Staffs=await Fetch('/staff')
+  const Staffs=await Fetch('staff')
   return (
     <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-25 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
       
