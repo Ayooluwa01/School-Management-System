@@ -390,3 +390,150 @@ The export fetch was not found in module [project]/School Management System/libs
 The module has no exports at all.
 All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
 [01:12:47.819] Server  LOG      ○ Compiling /_error ...
+[01:15:04.411] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:04.411] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:04.411] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:06.103] Server  ERROR    ⨯ ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[01:15:06.554] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:07.445] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:07.445] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:07.567] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:09.319] Browser ERROR   uncaughtError: Error: ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[01:15:09.546] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[01:15:10.611] Browser ERROR   ./School Management System/src/app/(admin)/dashboard/page.tsx:11:1
+Export fetch doesn't exist in target module
+   9 | import TopStudentsList from "@/components/common/Topstudents";
+  10 | import TinyCalendar from "@/components/calendar/Calendar";
+> 11 | import { fetch } from "../../../../libs/api";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  12 |
+  13 | export default async function Dashboard() {
+  14 |   // Fetch all students and staffs
+
+The export fetch was not found in module [project]/School Management System/libs/api.ts [app-rsc] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
