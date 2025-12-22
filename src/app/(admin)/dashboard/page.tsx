@@ -9,6 +9,10 @@ import NotificationsPanel from "@/components/common/Notification";
 import TopStudentsList from "@/components/common/Topstudents";
 import TinyCalendar from "@/components/calendar/Calendar";
 import { Fetch } from "../../../../libs/api";
+import UserAddressCard from "@/components/user-profile/UserAddressCard";
+import UserInfoCard from "@/components/user-profile/UserInfoCard";
+import Badge from "@/components/ui/badge/Badge";
+import Alert from "@/components/ui/alert/Alert";
 
 export default async function Dashboard() {
   // Fetch all students and staffs
@@ -17,7 +21,8 @@ export default async function Dashboard() {
   const Staffs=await Fetch('staff')
   return (
     <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-25 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-      
+      {/* <UserAddressCard /> */}
+      {/* <UserInfoCard /> */}
       {/* ===== SECTION 1: KEY METRICS (KPIs) ===== */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <StatCard 

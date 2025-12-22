@@ -4,6 +4,6 @@ import Teacher from '@/assets/animations/Teacher.json'
 import Lottie from "lottie-react"
 export  function Animations() {
   return (
-           <Lottie animationData={Teacher} autoPlay loop size={100}/>
+           <Lottie animationData={Teacher} autoPlay loop size={20} className='items-center justify-center '/>
   )
 }

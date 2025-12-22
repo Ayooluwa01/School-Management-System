@@ -1,17 +1,8 @@
 import React from "react";
-import { Fetch } from '../../../../../../../libs/api';
-import { 
-  User, 
-  Calendar, 
-  Hash, 
-  GraduationCap, 
-  Award, 
-  BookOpen,
-  Mail,
-  ArrowUpRight,
-  Info
-} from "lucide-react";
-import ComponentCard from "@/components/common/ComponentCard";
+import { Fetch } from '../../../../../../../libs/api'; 
+import { User, Calendar, Hash, GraduationCap, MapPin, Phone } from "lucide-react";
+import StudentProfileView from "@/components/common/Reusables/Studentprofile";
+
 export interface Student {
   student_id: number;
   admission_no: string;
@@ -26,176 +17,141 @@ interface ClassRoom {
   class_name: string;
   arm: string;
   class_code: string;
-  classroom_staff_id: number;
 }
 
-interface Result {
-  result_id: number;
-  subject_id: number;
-  term: string;
-  test1: number;
-  test2: number;
-  exam: number;
-  total: number;
-  grade: string;
-}
+
+// ... imports
+
+
 
 export default async function StudentProfile(props: any) {
   const { id } = await props.params;
 
-  // Fetching Data
+  // --- 1. FETCH BASIC DATA (Keep your existing API calls) ---
   const studentRes = await Fetch(`student?student_id=${id}`);
   const student = studentRes.data[0] as Student;
 
   const classRes = await Fetch(`class?clas_id=${student.class_id}`);
   const classData = classRes.data as ClassRoom;
+  
+  const studentResult = await Fetch(`result?student_id=${id}`);
+  const rawResults = Array.isArray(studentResult.data) ? studentResult.data : [studentResult.data];
 
-let studentResult=await Fetch(`result?student_id=${id}`)
-const Result=studentResult.data as Result
-console.log("Student Result-",Result)
+  // --- 2. MOCK DATA FOR NEW FEATURES (Replace with API calls later) ---
+  const mockFees = [
+    { id: 1, title: "1st Term Tuition", amount: 1500, paid: 1500, status: "paid", date: "2024-09-01" },
+    { id: 2, title: "Uniform & Books", amount: 450, paid: 450, status: "paid", date: "2024-09-05" },
+    { id: 3, title: "2nd Term Tuition", amount: 1500, paid: 250, status: "partial", date: "2025-01-05" },
+  ];
 
-  // Placeholder for Results - in a real app, you'd fetch this
-  const results = []; // Assume your sample data comes from a fetch here
+  const mockAttendance = {
+    total_days: 120,
+    present: 112,
+    absent: 5,
+    late: 3,
+    history: [
+      { date: "2025-01-20", status: "present" },
+      { date: "2025-01-19", status: "late", reason: "Bus breakdown" },
+      { date: "2025-01-18", status: "absent", reason: "Sick leave" },
+      { date: "2025-01-17", status: "present" },
+    ]
+  };
+
+  const mockRemarks = [
+    { id: 1, teacher: "Mr. Johnson", role: "Class Teacher", date: "Dec 15, 2024", sentiment: "positive", comment: "An excellent student who participates actively in class discussions. Keep up the good work." },
+    { id: 2, teacher: "Mrs. Davis", role: "Principal", date: "Nov 10, 2024", sentiment: "neutral", comment: "Discipline has improved significantly this term." },
+  ];
+
+
+  // Mock Data for the Profile Component
+const mockProfileData = {
+  student: {
+    dob: student?.date_of_birth, // From your API
+    gender: student?.sex,        // From your API
+    blood_group: "O+",
+    genotype: "AA",
+    nationality: "Nigerian",
+    state_of_origin: "Lagos",
+    lga: "Ikeja",
+    religion: "Christianity",
+  },
+  contact: {
+    address: "124, Herbert Macaulay Way",
+    city: "Yaba, Lagos",
+    email: `${student?.admission_no.toLowerCase()}@school.com`,
+    phone: "08012345678",
+  },
+  guardian: {
+    father_name: "Mr. John Doe",
+    mother_name: "Mrs. Jane Doe",
+    father_phone: "08055555555",
+    mother_phone: "08099999999",
+    email: "parents@gmail.com",
+    occupation: "Civil Servant",
+    address: "Same as student",
+  },
+  medical: {
+    allergies: "Peanuts",
+    disabilities: "None",
+    blood_group: "O+",
+  }
+};
 
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-6 antialiased">
+    <div className="max-w-7xl mx-auto p-4 md:p-6 space-y-8 bg-gray-50/50 min-h-screen">
       
-      {/* 1. HERO SECTION */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 p-8 text-white shadow-xl">
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+      {/* ===== HERO SECTION ===== */}
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 shadow-2xl text-white">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
         
-        <div className="relative flex flex-col md:flex-row items-center gap-8">
-          {/* Profile Image/Avatar */}
-          <div className="relative">
-            <div className="h-32 w-32 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 shadow-2xl">
-              <User size={64} className="text-white" />
+        <div className="relative z-10 p-8 md:p-10 flex flex-col md:flex-row gap-8">
+            {/* Avatar Area */}
+            <div className="flex-shrink-0">
+               <div className="h-36 w-36 rounded-2xl border-4 border-white/10 bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg">
+                   <User size={64} className="text-white/90" />
+               </div>
             </div>
-            <div className="absolute -bottom-2 -right-2 bg-emerald-500 p-2 rounded-lg border-4 border-indigo-900 shadow-lg">
-              <div className="h-3 w-3 bg-white rounded-full animate-pulse" />
-            </div>
-          </div>
 
-          {/* Identity */}
-          <div className="text-center md:text-left space-y-2">
-            <div className="flex flex-wrap justify-center md:justify-start gap-2">
-              <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/10">
-                Student Profile - {student.name}
-              </span>
-            </div>
-            <h1 className="text-4xl font-black tracking-tight">{student.name}</h1>
-            <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 text-blue-100 text-sm font-medium">
-              <div className="flex items-center gap-1.5">
-                <Hash size={16} className="opacity-70" />
-                {student.admission_no}
-              </div>
-              <div className="flex items-center gap-1.5">
-                <GraduationCap size={16} className="opacity-70" />
-                {classData.class_name} ({classData.arm})
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Calendar size={16} className="opacity-70" />
-                DOB: {student.date_of_birth}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            {/* Info Area */}
+            <div className="flex-1 flex flex-col justify-center space-y-4">
+                <div>
+                   <h1 className="text-4xl font-black tracking-tight">{student?.name || "Student Name"}</h1>
+                   <p className="text-blue-200 text-lg font-medium">{classData?.class_name} {classData?.arm}</p>
+                </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* 2. SIDEBAR - PERSONAL DETAILS */}
-        <div className="space-y-6">
-          <ComponentCard title="Information" desc="Basic bio-data">
-            <div className="space-y-4">
-              <DetailRow label="Gender" value={student.sex} />
-              <DetailRow label="Class Code" value={classData.class_code} />
-              <DetailRow label="Admission Date" value="Sept 2023" />
-              <DetailRow label="Status" value="Active" isStatus />
-            </div>
-            <button className="w-full mt-4 py-2 bg-gray-50 dark:bg-white/5 text-gray-600 dark:text-gray-300 rounded-xl text-xs font-bold hover:bg-gray-100 transition-colors">
-              Edit Profile
-            </button>
-          </ComponentCard>
-
-          <ComponentCard title="Performance Summary">
-            <div className="flex items-center justify-between p-4 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl border border-emerald-100 dark:border-emerald-500/20">
-              <div>
-                <p className="text-[10px] font-bold text-emerald-600 uppercase">Average Score</p>
-                <h4 className="text-2xl font-black text-emerald-700 dark:text-emerald-400">72.4%</h4>
-              </div>
-              <Award size={32} className="text-emerald-500 opacity-50" />
-            </div>
-          </ComponentCard>
-        </div>
-
-        {/* 3. MAIN CONTENT - ACADEMIC RESULTS */}
-        <div className="lg:col-span-2 space-y-6">
-          <ComponentCard 
-            title="Academic Transcript" 
-            desc="Recent examination results"
-         
-          >
-            <div className="overflow-x-auto -mx-6 sm:mx-0">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-gray-100 dark:border-white/5">
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Subject ID</th>
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Term</th>
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Tests</th>
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Exam</th>
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Total</th>
-                    <th className="pb-4 px-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-right">Grade</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-50 dark:divide-white/5">
-                  {/* Mapping samples of your result data */}
-                  {[1, 2, 3].map((res) => (
-                    <tr key={res} className="group hover:bg-gray-50/50 dark:hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4">
-                        <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded-lg bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-blue-600">
-                            <BookOpen size={14} />
-                          </div>
-                          <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Subject #{res}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-4 text-xs font-medium text-gray-500">Term 1</td>
-                      <td className="py-4 px-4 text-center text-sm font-medium">33.0</td>
-                      <td className="py-4 px-4 text-center text-sm font-medium">45.0</td>
-                      <td className="py-4 px-4 text-center">
-                        <span className="text-sm font-bold text-blue-600 italic">78.0</span>
-                      </td>
-                      <td className="py-4 px-4 text-right">
-                        <span className="inline-block px-2.5 py-1 rounded-md bg-blue-600 text-white text-[10px] font-black">A</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                {/* Badges */}
+                <div className="flex flex-wrap gap-3">
+                    <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg border border-white/5 text-sm">
+                        <Hash size={14} className="text-blue-300"/> <span>{student?.admission_no}</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg border border-white/5 text-sm">
+                        <Calendar size={14} className="text-blue-300"/> <span>{student?.date_of_birth}</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg border border-white/5 text-sm">
+                        <MapPin size={14} className="text-blue-300"/> <span>Lagos, NG</span>
+                    </div>
+                </div>
             </div>
             
-            <div className="mt-4 p-4 bg-gray-50 dark:bg-white/5 rounded-2xl flex items-center gap-3">
-               <Info size={16} className="text-blue-500" />
-               <p className="text-[11px] text-gray-500">Only showing validated results for the 2023/2024 Session.</p>
+            {/* Quick Stat (Right side) */}
+            <div className="hidden lg:flex flex-col justify-center items-end border-l border-white/10 pl-8">
+                <span className="text-blue-300 text-sm font-medium uppercase tracking-wider">Current Status</span>
+                <span className="text-3xl font-bold text-emerald-400">Active</span>
+                <div className="mt-2 flex items-center gap-2 text-xs text-blue-200 bg-blue-900/50 px-2 py-1 rounded">
+                   <Phone size={12} /> Contact Parent
+                </div>
             </div>
-          </ComponentCard>
         </div>
       </div>
-    </div>
-  );
-}
 
-// Sub-component for clean rows
-function DetailRow({ label, value, isStatus = false }: { label: string, value: string, isStatus?: boolean }) {
-  return (
-    <div className="flex justify-between items-center py-1">
-      <span className="text-xs font-medium text-gray-400">{label}</span>
-      {isStatus ? (
-        <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold uppercase">
-          {value}
-        </span>
-      ) : (
-        <span className="text-sm font-bold text-gray-700 dark:text-gray-200">{value}</span>
-      )}
+      <StudentProfileView 
+         results={rawResults.length > 0 ? rawResults : []} 
+         profileData={mockProfileData}
+         fees={mockFees}
+         attendance={mockAttendance}
+         remarks={mockRemarks}
+      />
+
     </div>
   );
 }
