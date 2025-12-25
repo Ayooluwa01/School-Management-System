@@ -17,15 +17,15 @@ import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
 import { Modal } from "@/components/ui/modal";
 import { useModal } from "@/hooks/useModal";
+import { useRouter } from "next/navigation";
 
-// Define the shape of a Teacher Object
 export interface TeacherType {
   teacher_id: number;
   name: string;
   email: string;
   phone: string;
-  subjects: string[]; // Array of strings e.g. ["Math", "Physics"]
-  classes: string[];  // Array of strings e.g. ["JSS 1", "SSS 2"]
+  subjects: string[];
+  classes: string[]; 
   status: "Active" | "On Leave";
 }
 
@@ -52,6 +52,7 @@ export function TeacherList({
 }: TeacherListProps) {
   const { isOpen, openModal, closeModal } = useModal();
   const [selectedTeacher, setSelectedTeacher] = useState<TeacherType | null>(null);
+    const router = useRouter();
 
   // Handle opening the modal with specific teacher data
   const handleEditClick = (teacher: TeacherType) => {
@@ -88,8 +89,8 @@ export function TeacherList({
               {/* Profile Column */}
               <td className="px-4 py-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
-                    {teacher.name.charAt(0)}
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold" onClick={()=>router.push(`/teachers/profile/${teacher.teacher_id}`)}>
+                  {teacher.name.charAt(0)}
                   </div>
                   <div>
                     <div className="font-medium text-gray-900">{teacher.name}</div>

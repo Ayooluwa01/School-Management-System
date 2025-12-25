@@ -626,9 +626,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$button$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/src/components/ui/button/Button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$modal$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/src/components/ui/modal/index.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$hooks$2f$useModal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/src/hooks/useModal.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -640,6 +642,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
     _s();
     const { isOpen, openModal, closeModal } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$hooks$2f$useModal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useModal"])();
     const [selectedTeacher, setSelectedTeacher] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     // Handle opening the modal with specific teacher data
     const handleEditClick = (teacher)=>{
         setSelectedTeacher(teacher);
@@ -665,7 +668,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Profile"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 75,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -673,7 +676,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Contact"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 76,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -681,7 +684,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Workload (Subjects & Classes)"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -689,7 +692,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Status"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 78,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -697,18 +700,18 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Actions"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 79,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                            lineNumber: 73,
+                            lineNumber: 74,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                        lineNumber: 72,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -723,10 +726,11 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold",
+                                                    onClick: ()=>router.push(`/teachers/profile/${teacher.teacher_id}`),
                                                     children: teacher.name.charAt(0)
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 92,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -736,7 +740,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             children: teacher.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 95,
+                                                            lineNumber: 96,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -747,24 +751,24 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 96,
+                                                            lineNumber: 97,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 95,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 90,
+                                            lineNumber: 91,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -780,20 +784,20 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             className: "text-gray-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 107,
+                                                            lineNumber: 108,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: teacher.email
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 108,
+                                                            lineNumber: 109,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 106,
+                                                    lineNumber: 107,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -804,31 +808,31 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             className: "text-gray-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 111,
+                                                            lineNumber: 112,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: teacher.phone
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 112,
+                                                            lineNumber: 113,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 111,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -844,7 +848,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             className: "text-purple-500 mt-1 shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 122,
+                                                            lineNumber: 123,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -854,18 +858,18 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                                     children: sub
                                                                 }, idx, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                                    lineNumber: 125,
+                                                                    lineNumber: 126,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 124,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 121,
+                                                    lineNumber: 122,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -876,7 +880,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                             className: "text-orange-500 mt-1 shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 133,
+                                                            lineNumber: 134,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -886,29 +890,29 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                                     children: cls
                                                                 }, idx, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                                    lineNumber: 136,
+                                                                    lineNumber: 137,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 135,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 132,
+                                                    lineNumber: 133,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 119,
+                                            lineNumber: 120,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 119,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -918,12 +922,12 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: teacher.status
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 147,
+                                            lineNumber: 148,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                        lineNumber: 146,
+                                        lineNumber: 147,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -939,12 +943,12 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                         size: 16
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 167,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 161,
+                                                    lineNumber: 162,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -955,40 +959,40 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                                         size: 16
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 175,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 170,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 161,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                        lineNumber: 159,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, teacher.teacher_id, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 84,
+                                lineNumber: 85,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                        lineNumber: 82,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1002,7 +1006,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                 children: startIndex + 1
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 186,
+                                lineNumber: 187,
                                 columnNumber: 19
                             }, this),
                             " to",
@@ -1011,7 +1015,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                 children: Math.min(endIndex, totalCount)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 187,
+                                lineNumber: 188,
                                 columnNumber: 11
                             }, this),
                             " of",
@@ -1020,14 +1024,14 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                 children: totalCount
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 188,
+                                lineNumber: 189,
                                 columnNumber: 11
                             }, this),
                             " teachers"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                        lineNumber: 185,
+                        lineNumber: 186,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1041,12 +1045,12 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 197,
+                                    lineNumber: 198,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 192,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1059,7 +1063,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 200,
+                                lineNumber: 201,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1070,24 +1074,24 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 209,
+                                    lineNumber: 210,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                lineNumber: 204,
+                                lineNumber: 205,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                        lineNumber: 191,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                lineNumber: 184,
+                lineNumber: 185,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$modal$2f$index$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Modal"], {
@@ -1102,7 +1106,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                             children: "Edit Teacher Details"
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                            lineNumber: 217,
+                            lineNumber: 218,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1115,7 +1119,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: "Full Name"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 223,
+                                            lineNumber: 224,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1123,13 +1127,13 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             defaultValue: selectedTeacher?.name
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 224,
+                                            lineNumber: 225,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 223,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1139,7 +1143,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: "Email Address"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 228,
+                                            lineNumber: 229,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1147,13 +1151,13 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             defaultValue: selectedTeacher?.email
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 230,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 228,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1163,7 +1167,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: "Phone Number"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 233,
+                                            lineNumber: 234,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1171,13 +1175,13 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             defaultValue: selectedTeacher?.phone
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 235,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 232,
+                                    lineNumber: 233,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1187,7 +1191,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: "Subjects (Comma separated)"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 238,
+                                            lineNumber: 239,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1195,13 +1199,13 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             defaultValue: selectedTeacher?.subjects.join(", ")
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 239,
+                                            lineNumber: 240,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 237,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1211,7 +1215,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             children: "Assigned Classes (Comma separated)"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 244,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1219,19 +1223,19 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                             defaultValue: selectedTeacher?.classes.join(", ")
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                            lineNumber: 244,
+                                            lineNumber: 245,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 242,
+                                    lineNumber: 243,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                            lineNumber: 221,
+                            lineNumber: 222,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1244,7 +1248,7 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 249,
+                                    lineNumber: 250,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$button$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1253,36 +1257,37 @@ function TeacherList({ teachers, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Save Changes"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                                    lineNumber: 252,
+                                    lineNumber: 253,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                            lineNumber: 248,
+                            lineNumber: 249,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                    lineNumber: 216,
+                    lineNumber: 217,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-                lineNumber: 215,
+                lineNumber: 216,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Teacherlist.tsx",
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 5
     }, this);
 }
-_s(TeacherList, "b+Rz33v/bD2wYkTGErs6ScOZtN4=", false, function() {
+_s(TeacherList, "0Vj/lRI46Mug/ZHgVzllSK5JwJs=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$hooks$2f$useModal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useModal"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$hooks$2f$useModal$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useModal"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
 _c = TeacherList;

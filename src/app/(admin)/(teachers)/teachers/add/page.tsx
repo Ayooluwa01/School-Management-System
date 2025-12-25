@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { 
   User, Briefcase, GraduationCap, Camera, 
-  ArrowRight, Save, X, ChevronRight, BookOpen, CreditCard 
+  ArrowRight, Save, X, ChevronRight, BookOpen, CreditCard ,Shield
 } from "lucide-react";
 
 type SectionType = "personal" | "professional" | "employment";
@@ -76,12 +76,12 @@ export default function RegisterTeacher() {
               
               <div className="flex flex-col-reverse md:flex-row gap-10">
                 <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-                  <FormInput label="Full Name" placeholder="e.g. Dr. Sarah Benson" required />
-                  <FormInput label="Email Address" type="email" placeholder="sarah.b@school.com" required />
-                  <FormInput label="Phone Number" placeholder="+234..." required />
-                  <FormInput label="Date of Birth" type="date" required />
-                  <FormInput label="Gender" type="select" options={["Male", "Female"]} />
-                  <FormInput label="Marital Status" type="select" options={["Single", "Married", "Other"]} />
+                  <FormInput label="Full Name" placeholder="e.g. Dr. Sarah Benson" required disabled={false} />
+                  <FormInput label="Email Address" type="email" placeholder="sarah.b@school.com" required disabled={false} />
+                  <FormInput label="Phone Number" placeholder="+234..." required disabled={false} />
+                  <FormInput label="Date of Birth" type="date" required disabled={false} />
+                  <FormInput label="Gender" type="select" options={["Male", "Female"]} disabled={false} />
+                  <FormInput label="Marital Status" type="select" options={["Single", "Married", "Other"]} disabled={false} />
                 </div>
 
                 <div className="w-full md:w-48 shrink-0">
@@ -90,7 +90,7 @@ export default function RegisterTeacher() {
               </div>
 
               <div className="grid grid-cols-1 gap-6">
-                 <FormInput label="Residential Address" placeholder="Enter full home address..." />
+                 <FormInput label="Residential Address" placeholder="Enter full home address..." disabled={false} />
               </div>
             </div>
           )}
@@ -105,23 +105,13 @@ export default function RegisterTeacher() {
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormInput label="Highest Qualification" placeholder="e.g. B.Sc(Ed) Mathematics" required />
-                  <FormInput label="Years of Experience" placeholder="e.g. 5 Years" />
-                  <FormInput label="Primary Subject" type="select" options={["Mathematics", "English", "Physics", "Biology", "Fine Arts"]} />
-                  <FormInput label="Secondary Subject" type="select" options={["None", "Mathematics", "English", "Civic Education"]} />
+                  <FormInput label="Highest Qualification" placeholder="e.g. B.Sc(Ed) Mathematics" required disabled={false} />
+                  <FormInput label="Years of Experience" placeholder="e.g. 5 Years" disabled={false} />
+                  <FormInput label="Primary Subject" type="select" options={["Mathematics", "English", "Physics", "Biology", "Fine Arts"]} disabled={false} />
+                  <FormInput label="Secondary Subject" type="select" options={["None", "Mathematics", "English", "Civic Education"]} disabled={false} />
               </div>
 
-              <div className="p-5 bg-zinc-50 rounded-xl border border-zinc-100 space-y-4">
-                <div className="flex items-center gap-2">
-                  <BookOpen size={16} className="text-zinc-400" />
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500">Class Assignments</h4>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                   <FormInput label="Assigned Class 1" type="select" options={["JSS 1", "JSS 2", "SSS 1"]} />
-                   <FormInput label="Assigned Class 2" type="select" options={["None", "JSS 1", "JSS 2", "SSS 1"]} />
-                   <FormInput label="Assigned Class 3" type="select" options={["None", "JSS 1", "JSS 2", "SSS 1"]} />
-                </div>
-              </div>
+          
             </div>
           )}
 
@@ -135,10 +125,10 @@ export default function RegisterTeacher() {
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <FormInput label="Staff ID Number" placeholder="e.g. TCH/2024/001" />
-                 <FormInput label="Date of Appointment" type="date" required />
-                 <FormInput label="Employment Status" type="select" options={["Full-Time", "Part-Time", "Contract"]} />
-                 <FormInput label="Designation" placeholder="e.g. Senior Tutor" />
+                 <FormInput label="Staff ID Number" placeholder="e.g. Autogenerated" disabled={true} />
+                 <FormInput label="Date of Appointment" type="date" required disabled={false} />
+                 <FormInput label="Employment Status" type="select" options={["Full-Time", "Part-Time", "Contract"]} disabled={false} />
+                 <FormInput label="Designation" placeholder="e.g. Senior Tutor" disabled={false} />
               </div>
 
               <div className="h-px bg-zinc-100" />
@@ -149,8 +139,8 @@ export default function RegisterTeacher() {
                       <CreditCard size={16} className="text-zinc-400" />
                       <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500">Payment Details</h4>
                     </div>
-                    <FormInput label="Bank Name" placeholder="e.g. Zenith Bank" />
-                    <FormInput label="Account Number" placeholder="0123456789" />
+                    <FormInput label="Bank Name" placeholder="e.g. Zenith Bank" disabled={false} />
+                    <FormInput label="Account Number" placeholder="0123456789" disabled={false} />
                   </div>
 
                   <div className="space-y-6">
@@ -158,8 +148,8 @@ export default function RegisterTeacher() {
                       <Shield size={16} className="text-zinc-400" />
                       <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-500">Emergency Contact</h4>
                     </div>
-                    <FormInput label="Next of Kin Name" placeholder="Full Name" />
-                    <FormInput label="Next of Kin Phone" placeholder="+234..." />
+                    <FormInput label="Next of Kin Name" placeholder="Full Name" disabled={false} />
+                    <FormInput label="Next of Kin Phone" placeholder="+234..." disabled={false} />
                   </div>
               </div>
             </div>
@@ -225,7 +215,7 @@ function SectionHeader({ icon, title, subtitle }: { icon: any, title: string, su
   );
 }
 
-function FormInput({ label, placeholder, type = "text", required, options }: { label: string, placeholder?: string, type?: string, required?: boolean, options?: string[] }) {
+function FormInput({ label, placeholder, type = "text", required, options,disabled }: { label: string, placeholder?: string, type?: string, required?: boolean, options?: string[],disabled:boolean }) {
   return (
     <div className="space-y-1.5">
       <label className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">
@@ -244,6 +234,7 @@ function FormInput({ label, placeholder, type = "text", required, options }: { l
         <input 
           type={type} 
           placeholder={placeholder} 
+          disabled={disabled || false}
           className="w-full bg-white border border-zinc-200 text-zinc-900 text-sm rounded-lg px-3 py-2.5 outline-none focus:border-zinc-400 focus:ring-4 focus:ring-zinc-100 transition-all placeholder:text-zinc-300 font-medium"
         />
       )}

@@ -6,11 +6,9 @@ import {
   X, AlertCircle, ChevronDown
 } from "lucide-react";
 
-// Move static data outside to prevent re-calculation on every render
 const ALPHABET = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
 
 // --- MEMOIZED SUB-COMPONENTS ---
-
 const StatCard = React.memo(({ icon, label, value }: any) => (
   <div className="bg-white p-5 rounded-xl border border-zinc-200 flex items-center gap-4">
     <div className="w-10 h-10 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-500 border border-zinc-100">
