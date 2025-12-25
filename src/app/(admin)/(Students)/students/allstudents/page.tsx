@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import { List } from "@/components/common/Reusables/Lists";
 import { Fetch } from "../../../../../../libs/api";
+import {notify} from "@/components/common/Toast"
+import { PageHeader } from "@/components/common/Reusables/pageHeader";
+
 
 export default function Allstudents() {
   const [students, setStudents] = useState<any>([]);
@@ -75,7 +78,6 @@ async function getStudents() {
   /*                        EFFECT: Runs ONLY when needed                       */
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
-    
       getClasses(); // run once
     getStudents();
   }, [currentPage, selectedClass, selectedSex, searchTerm]);
@@ -87,23 +89,12 @@ async function getStudents() {
 
   const classOptions = ["All", ...Array.from(new Set(classes.map((c: any) => c.class_id)))];
 
+    notify.success("Record Saved", "Student registration has been finalized.");
+
   return (
     <div className="max-w-6xl mx-auto antialiased">
       {/* PAGE HEADER */}
-      <div className="mb-6 flex items-center justify-between px-2">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-            Student Directory
-          </h1>
-          <p className="text-sm text-gray-500">
-            Manage and view all registered students
-          </p>
-        </div>
-        <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg flex items-center gap-2 text-sm font-medium border border-blue-100">
-          <Users size={16} />
-        </div>
-      </div>
-
+<PageHeader Directory='Student Directory' text=' Manage and view all registered students'/>
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         {/* TOOLBAR */}
         <div className="p-5 bg-white border-b border-gray-100 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -182,8 +173,7 @@ async function getStudents() {
             totalPages={totalPages}
             totalCount={totalCount}
             startIndex={1}
-            endIndex={2}
-          />
+            endIndex={2}         />
         </div>
       </div>
     </div>

@@ -69,7 +69,7 @@ const navItems: NavItem[] = [
   subItems: [
     {
       name: "All Teachers",
-      path: "/teachers",
+      path: "/teachers/all",
       icon: <List size={16} />,
     },
     {

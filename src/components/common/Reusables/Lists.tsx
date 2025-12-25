@@ -22,6 +22,7 @@ interface ListProps {
   totalCount: number;
   startIndex: number;
   endIndex: number;
+  children: React.ReactNode;
 }
 
 export function List({
@@ -33,6 +34,7 @@ export function List({
   totalCount,
   startIndex,
   endIndex,
+  children
 }: ListProps) {
     const router = useRouter();
   const { isOpen, openModal, closeModal } = useModal();
