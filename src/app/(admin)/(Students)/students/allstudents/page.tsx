@@ -12,6 +12,7 @@ import { List } from "@/components/common/Reusables/Lists";
 import { Fetch } from "../../../../../../libs/api";
 import {notify} from "@/components/common/Toast"
 import { PageHeader } from "@/components/common/Reusables/pageHeader";
+import api from "../../../../../../libs/axios";
 
 
 export default function Allstudents() {
@@ -32,33 +33,26 @@ export default function Allstudents() {
   /* -------------------------------------------------------------------------- */
   /*                            Fetch STUDENTS (API)                             */
   /* -------------------------------------------------------------------------- */
-async function getStudents() {
+
+const getStudents = async ( currentPage:number) => {
+  const offset = (currentPage - 1) * itemsPerPage;
+
   try {
-    const offset = (currentPage - 1) * itemsPerPage;
+    const response = await api.get('/students/all_students', {
+      params: {
+        limit: itemsPerPage,
+        offset,
+      },
+    });
 
-    // Base URL with pagination
-    let url = `student?_start=${offset}&_limit=${itemsPerPage}`;
+    setStudents(response.data);
+    setTotalCount(3000); 
 
-    // Conditionally add filters
-    if (selectedClass && selectedClass !== "All") {
-      url += `&class_id=${selectedClass}`;
-    }
-
-    if (selectedSex && selectedSex !== "All") {
-      url += `&sex=${selectedSex}`;
-    }
-
-    if (searchTerm) {
-      url += `&q=${searchTerm}`; 
-    }
-
-    const student = await Fetch(url);
-    setStudents(student.data);
-    setTotalCount(3000);
-  } catch (error) {
-    console.error("Error:", error);
+  } catch (err) {
+    console.error(err);
   }
-}
+};
+
 
 
   /* -------------------------------------------------------------------------- */
@@ -79,7 +73,7 @@ async function getStudents() {
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
       getClasses(); // run once
-    getStudents();
+    getStudents(currentPage as number);
   }, [currentPage, selectedClass, selectedSex, searchTerm]);
 
   /* ---------------- DELETE HANDLER ---------------- */
@@ -89,7 +83,6 @@ async function getStudents() {
 
   const classOptions = ["All", ...Array.from(new Set(classes.map((c: any) => c.class_id)))];
 
-    notify.success("Record Saved", "Student registration has been finalized.");
 
   return (
     <div className="max-w-6xl mx-auto antialiased">

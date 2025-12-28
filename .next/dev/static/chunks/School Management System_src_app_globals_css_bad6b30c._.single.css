@@ -3102,11 +3102,6 @@
     line-height: calc(var(--spacing) * 6);
   }
 
-  .leading-\[20px\] {
-    --tw-leading: 20px;
-    line-height: 20px;
-  }
-
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
