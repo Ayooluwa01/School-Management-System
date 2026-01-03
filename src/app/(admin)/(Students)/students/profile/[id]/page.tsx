@@ -1,4 +1,3 @@
-import React from "react";
 import { Fetch } from '../../../../../../../libs/api'; 
 import { User, Calendar, Hash, GraduationCap, MapPin, Phone } from "lucide-react";
 import StudentProfileView from "@/components/common/Reusables/Studentprofile";
@@ -26,16 +25,11 @@ interface ClassRoom {
 
 export default async function StudentProfile(props: any) {
   const { id } = await props.params;
-
-  // --- 1. FETCH BASIC DATA (Keep your existing API calls) ---
-  const studentRes = await Fetch(`student?student_id=${id}`);
-  const student = studentRes.data[0] as Student;
-
-  const classRes = await Fetch(`class?clas_id=${student.class_id}`);
-  const classData = classRes.data as ClassRoom;
   
-  const studentResult = await Fetch(`result?student_id=${id}`);
-  const rawResults = Array.isArray(studentResult.data) ? studentResult.data : [studentResult.data];
+  const studentRes = await Fetch(`students/${id}`);
+  const student = studentRes.data;
+
+  
 
   // --- 2. MOCK DATA FOR NEW FEATURES (Replace with API calls later) ---
   const mockFees = [
@@ -64,38 +58,38 @@ export default async function StudentProfile(props: any) {
 
 
   // Mock Data for the Profile Component
-const mockProfileData = {
-  student: {
-    dob: student?.date_of_birth, // From your API
-    gender: student?.sex,        // From your API
-    blood_group: "O+",
-    genotype: "AA",
-    nationality: "Nigerian",
-    state_of_origin: "Lagos",
-    lga: "Ikeja",
-    religion: "Christianity",
-  },
-  contact: {
-    address: "124, Herbert Macaulay Way",
-    city: "Yaba, Lagos",
-    email: `${student?.admission_no.toLowerCase()}@school.com`,
-    phone: "08012345678",
-  },
-  guardian: {
-    father_name: "Mr. John Doe",
-    mother_name: "Mrs. Jane Doe",
-    father_phone: "08055555555",
-    mother_phone: "08099999999",
-    email: "parents@gmail.com",
-    occupation: "Civil Servant",
-    address: "Same as student",
-  },
-  medical: {
-    allergies: "Peanuts",
-    disabilities: "None",
-    blood_group: "O+",
-  }
-};
+// const mockProfileData = {
+//   student: {
+//     dob: student?.date_of_birth, // From your API
+//     gender: student?.sex,        // From your API
+//     blood_group: "O+",
+//     genotype: "AA",
+//     nationality: "Nigerian",
+//     state_of_origin: "Lagos",
+//     lga: "Ikeja",
+//     religion: "Christianity",
+//   },
+//   contact: {
+//     address: "124, Herbert Macaulay Way",
+//     city: "Yaba, Lagos",
+//     email: `${student?.admission_no.toLowerCase()}@school.com`,
+//     phone: "08012345678",
+//   },
+//   guardian: {
+//     father_name: "Mr. John Doe",
+//     mother_name: "Mrs. Jane Doe",
+//     father_phone: "08055555555",
+//     mother_phone: "08099999999",
+//     email: "parents@gmail.com",
+//     occupation: "Civil Servant",
+//     address: "Same as student",
+//   },
+//   medical: {
+//     allergies: "Peanuts",
+//     disabilities: "None",
+//     blood_group: "O+",
+//   }
+// };
 
   return (
     <div className="max-w-7xl mx-auto p-4 md:p-6 space-y-8 bg-gray-50/50 min-h-screen">
@@ -116,7 +110,7 @@ const mockProfileData = {
             <div className="flex-1 flex flex-col justify-center space-y-4">
                 <div>
                    <h1 className="text-4xl font-black tracking-tight">{student?.name || "Student Name"}</h1>
-                   <p className="text-blue-200 text-lg font-medium">{classData?.class_name} {classData?.arm}</p>
+                   <p className="text-blue-200 text-lg font-medium">{student?.class_name} {student?.arm}</p>
                 </div>
 
                 {/* Badges */}
@@ -145,8 +139,8 @@ const mockProfileData = {
       </div>
 
       <StudentProfileView 
-         results={rawResults.length > 0 ? rawResults : []} 
-         profileData={mockProfileData}
+         results={[]} 
+         profileData={student}
          fees={mockFees}
          attendance={mockAttendance}
          remarks={mockRemarks}

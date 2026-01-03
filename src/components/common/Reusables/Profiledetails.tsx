@@ -7,7 +7,6 @@ import {
 
 export default function ProfileDetails({ data }: { data: any }) {
   if (!data) return null;
-
   return (
     <div className="space-y-8 py-4 ">
       
@@ -28,24 +27,26 @@ export default function ProfileDetails({ data }: { data: any }) {
         {/* PERSONAL INFO */}
         <Section title="Identity" icon={<User size={16} />}>
            <div className="grid grid-cols-2 gap-y-6">
-              <InfoItem label="Date of Birth" value={data.student.dob} />
-              <InfoItem label="Gender" value={data.student.gender} />
-              <InfoItem label="Nationality" value={data.student.nationality} />
-              <InfoItem label="State of Origin" value={data.student.state_of_origin} />
-              <InfoItem label="LGA" value={data.student.lga} />
-              <InfoItem label="Religion" value={data.student.religion} />
+              <InfoItem label="Date of Birth" value={data.
+date_of_birth
+} />
+              <InfoItem label="Gender" value={data.gender} />
+              <InfoItem label="Nationality" value={data.nationality} />
+              <InfoItem label="State of Origin" value={data.state_of_origin} />
+              <InfoItem label="LGA" value={data.lga} />
+              <InfoItem label="Religion" value={data.religion} />
            </div>
         </Section>
 
         {/* CONTACT INFO */}
         <Section title="Reach" icon={<MapPin size={16} />}>
            <div className="space-y-6">
-              <InfoItem label="Address" value={data.contact.address} />
+              <InfoItem label="Address" value={data.address} />
               <div className="grid grid-cols-2">
-                <InfoItem label="City" value={data.contact.city} />
-                <InfoItem label="Phone" value={data.contact.phone} />
+                <InfoItem label="City" value={''} />
+                <InfoItem label="Phone" value={''} />
               </div>
-              <InfoItem label="Email" value={data.contact.email} icon={<Mail size={12}/>} />
+              <InfoItem label="Email" value={''} icon={<Mail size={12}/>} />
            </div>
         </Section>
 
@@ -53,31 +54,34 @@ export default function ProfileDetails({ data }: { data: any }) {
         <Section title="Family" icon={<Shield size={16} />}>
            <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
-                  <InfoItem label="Father" value={data.guardian.father_name} />
-                  <InfoItem label="Phone" value={data.guardian.father_phone} isAccent />
+                  <InfoItem label="Father" value={data.fathers_name} />
+                  <InfoItem label="Phone" value={data.fathers_number} isAccent />
               </div>
               <div className="h-px bg-zinc-50" />
               <div className="grid grid-cols-2 gap-4">
-                  <InfoItem label="Mother" value={data.guardian.mother_name} />
-                  <InfoItem label="Phone" value={data.guardian.mother_phone} isAccent />
+                  <InfoItem label="Mother" value={data.mothers_name
+} />
+                  <InfoItem label="Phone" value={data.mothers_number
+} isAccent />
               </div>
-              <div className="grid grid-cols-2">
+              {/* <div className="grid grid-cols-2">
                  <InfoItem label="Occupation" value={data.guardian.occupation} icon={<Briefcase size={12}/>} />
                  <InfoItem label="Email" value={data.guardian.email} />
-              </div>
+              </div> */}
            </div>
         </Section>
 
         {/* MEDICAL INFO */}
         <Section title="Health" icon={<HeartPulse size={16} />}>
            <div className="grid grid-cols-2 gap-y-6">
-              <InfoItem label="Blood Group" value={data.medical.blood_group} />
-              <InfoItem label="Genotype" value={data.student.genotype} />
+              <InfoItem label="Blood Group" value={data.blood_group
+} />
+              <InfoItem label="Genotype" value={data.genotype} />
               <div className="col-span-2">
-                 <InfoItem label="Allergies" value={data.medical.allergies} />
+                 <InfoItem label="Allergies" value={''} />
               </div>
               <div className="col-span-2">
-                 <InfoItem label="Conditions" value={data.medical.disabilities} />
+                 <InfoItem label="Conditions" value={''} />
               </div>
            </div>
         </Section>

@@ -139,6 +139,7 @@
     --color-blue-900: #1c398e;
     --color-indigo-50: #eef2ff;
     --color-indigo-100: #e0e7ff;
+    --color-indigo-200: #c7d2ff;
     --color-indigo-400: #7d87ff;
     --color-indigo-500: #625fff;
     --color-indigo-600: #4f39f6;
@@ -318,6 +319,7 @@
       --color-blue-900: lab(26.1542% 15.7545 -51.5504);
       --color-indigo-50: lab(95.4818% .411302 -6.78529);
       --color-indigo-100: lab(91.6577% 1.04591 -12.7199);
+      --color-indigo-200: lab(84.4329% 3.18977 -23.9688);
       --color-indigo-400: lab(59.866% 22.4834 -64.4485);
       --color-indigo-500: lab(48.295% 38.3129 -81.9673);
       --color-indigo-600: lab(38.4009% 52.6132 -92.3857);
@@ -1816,6 +1818,10 @@
     column-gap: calc(var(--spacing) * 6);
   }
 
+  .gap-x-8 {
+    column-gap: calc(var(--spacing) * 8);
+  }
+
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
@@ -1838,6 +1844,10 @@
 
   .gap-y-6 {
     row-gap: calc(var(--spacing) * 6);
+  }
+
+  .gap-y-8 {
+    row-gap: calc(var(--spacing) * 8);
   }
 
   .gap-y-10 {
@@ -1912,6 +1922,10 @@
 
   .rounded-md {
     border-radius: var(--radius-md);
+  }
+
+  .rounded-sm {
+    border-radius: var(--radius-sm);
   }
 
   .rounded-xl {
@@ -2946,6 +2960,10 @@
     padding-right: 84px;
   }
 
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
   }
@@ -3344,6 +3362,10 @@
     color: var(--color-indigo-700);
   }
 
+  .text-indigo-900 {
+    color: var(--color-indigo-900);
+  }
+
   .text-orange-400 {
     color: var(--color-orange-400);
   }
@@ -3576,6 +3598,22 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
+  .shadow-indigo-200 {
+    --tw-shadow-color: #c7d2ff;
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    .shadow-indigo-200 {
+      --tw-shadow-color: lab(84.4329% 3.18977 -23.9688);
+    }
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .shadow-indigo-200 {
+      --tw-shadow-color: color-mix(in oklab, var(--color-indigo-200) var(--tw-shadow-alpha), transparent);
+    }
+  }
+
   .shadow-zinc-200 {
     --tw-shadow-color: #e4e4e7;
   }
@@ -3714,6 +3752,11 @@
   .duration-300 {
     --tw-duration: .3s;
     transition-duration: .3s;
+  }
+
+  .duration-500 {
+    --tw-duration: .5s;
+    transition-duration: .5s;
   }
 
   .ease-in-out {

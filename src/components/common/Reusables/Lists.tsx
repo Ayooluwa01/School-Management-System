@@ -11,7 +11,6 @@ import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import { Activestudent } from "../../../../zustand/Activestudent";
-import { Backend } from "../../../../libs/api";
 
 interface ListProps {
   currentStudents: any[];
@@ -56,10 +55,7 @@ openModal()
   }}
 
 
-  // 
-  async function connectBackend(){
-    const backend=await Backend(`school/${student_id}`)
-  }
+
   return (
     <div className="overflow-x-auto">
       {/* TABLE */}
@@ -85,7 +81,7 @@ openModal()
     router.push(`/students/profile/${student.student_id}`)
                }> 
                {student.name}</td>
-              <td className="px-4 py-3">{student.class_id}</td>
+              <td className="px-4 py-3">{student.class_name}</td>
 
               <td className="px-4 py-3 text-center">
                 <span
@@ -197,7 +193,7 @@ openModal()
               <Button size="sm" variant="outline" onClick={closeModal}>
                 Close
               </Button>
-              <Button size="sm" onClick={()=>connectBackend()}>
+              <Button size="sm">
                 Save Changes
               </Button>
             </div>

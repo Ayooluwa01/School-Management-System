@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -19,7 +20,7 @@ export default function Allstudents() {
   const [students, setStudents] = useState<any>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedClass, setSelectedClass] = useState("All");
-  const [selectedSex, setSelectedSex] = useState("All");
+  const [selectedSex, setSelectedSex] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const [classes, setClasses] = useState<any>([]);
@@ -34,7 +35,7 @@ export default function Allstudents() {
   /*                            Fetch STUDENTS (API)                             */
   /* -------------------------------------------------------------------------- */
 
-const getStudents = async ( currentPage:number) => {
+const getStudents = async () => {
   const offset = (currentPage - 1) * itemsPerPage;
 
   try {
@@ -42,6 +43,8 @@ const getStudents = async ( currentPage:number) => {
       params: {
         limit: itemsPerPage,
         offset,
+        name:searchTerm,
+        gender:selectedSex
       },
     });
 
@@ -54,28 +57,39 @@ const getStudents = async ( currentPage:number) => {
 };
 
 
+// const search=async()=>{
+//    const offset = (currentPage - 1) * itemsPerPage;
+
+//   try {
+//     const response = await api.get('/students/all_students', {
+//       params: {
+//         limit: itemsPerPage,
+//         offset,
+//       },
+//     });
+
+//     setStudents(response.data);
+//     setTotalCount(3000); 
+
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
 
   /* -------------------------------------------------------------------------- */
   /*                            Fetch CLASSES (API)                              */
   /* -------------------------------------------------------------------------- */
-  async function getClasses() {
-    try {
-      const res = await Fetch("class");
-      setClasses(res.data);
-      console.log(classes)
-    } catch (error) {
-      console.error("Classes error:", error);
-    }
-  }
 
   /* -------------------------------------------------------------------------- */
   /*                        EFFECT: Runs ONLY when needed                       */
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
-      getClasses(); // run once
-    getStudents(currentPage as number);
-  }, [currentPage, selectedClass, selectedSex, searchTerm]);
+        getStudents();
+  }, [currentPage, selectedClass, selectedSex,searchTerm]);
 
+  useEffect(()=>{
+setStudents([])
+  },[searchTerm])
   /* ---------------- DELETE HANDLER ---------------- */
   const handleDelete = (id: any) => {
     setStudents((prev: any) => prev.filter((s: any) => s.student_id !== id));
@@ -93,7 +107,7 @@ const getStudents = async ( currentPage:number) => {
         <div className="p-5 bg-white border-b border-gray-100 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           
           {/* SEARCH BOX */}
-          <div className="relative group flex-grow max-w-md">
+          <div className="relative group grow max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
             <input
               type="text"
@@ -115,7 +129,7 @@ const getStudents = async ( currentPage:number) => {
               </span>
             </div>
 
-            {/* CLASS SELECT */}
+            {/* CLASS SELECT
             <div className="relative">
               <select
                 className="appearance-none pl-3 pr-8 py-2 border border-gray-200 rounded-lg text-sm bg-white hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/10 cursor-pointer transition-all"
@@ -135,7 +149,7 @@ const getStudents = async ( currentPage:number) => {
                   ))}
               </select>
               <ArrowDownWideNarrow className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-gray-400 pointer-events-none" />
-            </div>
+            </div> */}
 
             {/* SEX SELECT */}
             <div className="relative">
@@ -166,7 +180,7 @@ const getStudents = async ( currentPage:number) => {
             totalPages={totalPages}
             totalCount={totalCount}
             startIndex={1}
-            endIndex={2}         />
+            endIndex={2}        />
         </div>
       </div>
     </div>
