@@ -706,10 +706,6 @@
     top: calc(var(--spacing) * 3);
   }
 
-  .top-28 {
-    top: calc(var(--spacing) * 28);
-  }
-
   .top-32 {
     top: calc(var(--spacing) * 32);
   }
@@ -1812,12 +1808,6 @@
     margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
   }
 
-  :where(.space-y-20 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 20) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 20) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
   .gap-x-6 {
     column-gap: calc(var(--spacing) * 6);
   }
@@ -1922,10 +1912,6 @@
 
   .rounded-md {
     border-radius: var(--radius-md);
-  }
-
-  .rounded-sm {
-    border-radius: var(--radius-sm);
   }
 
   .rounded-xl {
@@ -4127,12 +4113,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-indigo-50:hover {
-      background-color: var(--color-indigo-50);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-indigo-50\/30:hover {
       background-color: #eef2ff4d;
     }
@@ -4141,12 +4121,6 @@
       .hover\:bg-indigo-50\/30:hover {
         background-color: color-mix(in oklab, var(--color-indigo-50) 30%, transparent);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-indigo-700:hover {
-      background-color: var(--color-indigo-700);
     }
   }
 
@@ -4651,12 +4625,6 @@
   }
 
   @media (min-width: 768px) {
-    .md\:sticky {
-      position: sticky;
-    }
-  }
-
-  @media (min-width: 768px) {
     .md\:col-span-1 {
       grid-column: span 1 / span 1;
     }
@@ -4719,12 +4687,6 @@
   @media (min-width: 768px) {
     .md\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 768px) {
-    .md\:grid-cols-\[240px_1fr\] {
-      grid-template-columns: 240px 1fr;
     }
   }
 

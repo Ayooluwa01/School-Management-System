@@ -16,6 +16,150 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
+"[project]/School Management System/src/components/common/Reusables/Preloader.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SaveModal",
+    ()=>SaveModal
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-client] (ecmascript) <export default as CheckCircle2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/circle-alert.js [app-client] (ecmascript) <export default as AlertCircle>");
+;
+;
+const SaveModal = ({ status })=>{
+    if (status === 'idle') return null;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/40 backdrop-blur-sm animate-in fade-in duration-300",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 flex flex-col items-center text-center transform transition-all scale-100",
+            children: [
+                status === 'saving' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-4",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                className: "animate-spin text-indigo-600",
+                                size: 32
+                            }, void 0, false, {
+                                fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                                lineNumber: 19,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 18,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                            className: "text-lg font-bold text-zinc-900",
+                            children: "In progress..."
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 21,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-zinc-500 text-sm mt-2",
+                            children: "Please wait while we enroll the student."
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 22,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true),
+                status === 'success' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-4 animate-in zoom-in duration-300",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
+                                className: "text-green-600",
+                                size: 32
+                            }, void 0, false, {
+                                fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                                lineNumber: 29,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 28,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                            className: "text-lg font-bold text-zinc-900",
+                            children: "Registration Complete!"
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 31,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-zinc-500 text-sm mt-2",
+                            children: "The student has been successfully added."
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 32,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true),
+                status === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
+                                className: "text-red-600",
+                                size: 32
+                            }, void 0, false, {
+                                fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                                lineNumber: 39,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 38,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                            className: "text-lg font-bold text-zinc-900",
+                            children: "Submission Failed"
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 41,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-zinc-500 text-sm mt-2",
+                            children: "Please check your connection and try again."
+                        }, void 0, false, {
+                            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+                            lineNumber: 42,
+                            columnNumber: 13
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, void 0, true)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+            lineNumber: 14,
+            columnNumber: 7
+        }, ("TURBOPACK compile-time value", void 0))
+    }, void 0, false, {
+        fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
+        lineNumber: 13,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_c = SaveModal;
+var _c;
+__turbopack_context__.k.register(_c, "SaveModal");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
 "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -30,20 +174,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/camera.js [app-client] (ecmascript) <export default as Camera>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chevron-down.js [app-client] (ecmascript) <export default as ChevronDown>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-client] (ecmascript) <export default as CheckCircle2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/circle-alert.js [app-client] (ecmascript) <export default as AlertCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$libs$2f$axios$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/libs/axios.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$common$2f$Reusables$2f$Preloader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/src/components/common/Reusables/Preloader.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
+;
 const CLASS_OPTIONS = [
-    "JSS 1",
-    "JSS 2",
-    "JSS 3",
+    "JSS1",
+    "JSS2",
+    "JSS3",
     "SSS 1 (Science)",
     "SSS 1 (Art)",
     "SSS 1 (Commercial)",
@@ -85,132 +228,6 @@ const INITIAL_STATE = {
     guardianOcc: "",
     guardianEmail: ""
 };
-// --- MEMOIZED COMPONENTS ---
-const SaveModal = ({ status })=>{
-    if (status === 'idle') return null;
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 z-[100] flex items-center justify-center bg-zinc-900/40 backdrop-blur-sm animate-in fade-in duration-300",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 flex flex-col items-center text-center transform transition-all scale-100",
-            children: [
-                status === 'saving' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-4",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                className: "animate-spin text-indigo-600",
-                                size: 32
-                            }, void 0, false, {
-                                fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 45,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 44,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-lg font-bold text-zinc-900",
-                            children: "Saving Record..."
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 47,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-zinc-500 text-sm mt-2",
-                            children: "Please wait while we enroll the student."
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 48,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true),
-                status === 'success' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-4 animate-in zoom-in duration-300",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
-                                className: "text-green-600",
-                                size: 32
-                            }, void 0, false, {
-                                fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 55,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 54,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-lg font-bold text-zinc-900",
-                            children: "Registration Complete!"
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 57,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-zinc-500 text-sm mt-2",
-                            children: "The student has been successfully added."
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 58,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true),
-                status === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
-                                className: "text-red-600",
-                                size: 32
-                            }, void 0, false, {
-                                fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 65,
-                                columnNumber: 15
-                            }, ("TURBOPACK compile-time value", void 0))
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 64,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-lg font-bold text-zinc-900",
-                            children: "Submission Failed"
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 67,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-zinc-500 text-sm mt-2",
-                            children: "Please check your connection and try again."
-                        }, void 0, false, {
-                            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 68,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-            lineNumber: 40,
-            columnNumber: 7
-        }, ("TURBOPACK compile-time value", void 0))
-    }, void 0, false, {
-        fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 39,
-        columnNumber: 5
-    }, ("TURBOPACK compile-time value", void 0));
-};
-_c = SaveModal;
 const NavItem = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ label, active, onClick })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
         onClick: onClick,
         type: "button",
@@ -218,10 +235,10 @@ const NavItem = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$Sc
         children: label
     }, void 0, false, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 77,
+        lineNumber: 38,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0)));
-_c1 = NavItem;
+_c = NavItem;
 NavItem.displayName = "NavItem";
 const SectionHeader = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ icon, title, subtitle })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex items-start gap-5 mb-8 pb-6 border-b border-zinc-100",
@@ -231,7 +248,7 @@ const SectionHeader = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 93,
+                lineNumber: 54,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -242,7 +259,7 @@ const SectionHeader = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 97,
+                        lineNumber: 58,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -250,22 +267,22 @@ const SectionHeader = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5
                         children: subtitle
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 98,
+                        lineNumber: 59,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 96,
+                lineNumber: 57,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 92,
+        lineNumber: 53,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0)));
-_c2 = SectionHeader;
+_c1 = SectionHeader;
 SectionHeader.displayName = "SectionHeader";
 // OPTIMIZED INPUT GROUP: Uses defaultValue to prevent re-renders
 const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ label, name, defaultValue, onChange, placeholder, type = "text", required, options, fullWidth, className })=>{
@@ -282,13 +299,13 @@ const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                         children: "*"
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 112,
+                        lineNumber: 73,
                         columnNumber: 30
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 111,
+                lineNumber: 72,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -310,7 +327,7 @@ const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 124,
+                                    lineNumber: 85,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 options?.map((opt)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -318,13 +335,13 @@ const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                                         children: opt
                                     }, opt, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 125,
+                                        lineNumber: 86,
                                         columnNumber: 46
                                     }, ("TURBOPACK compile-time value", void 0)))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 118,
+                            lineNumber: 79,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -332,7 +349,7 @@ const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 127,
+                            lineNumber: 88,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -345,27 +362,26 @@ const InputGroup = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f
                     className: "w-full px-4 py-3 rounded-xl bg-zinc-50/50 border border-zinc-200 text-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all placeholder:text-zinc-300"
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                    lineNumber: 130,
+                    lineNumber: 91,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 115,
+                lineNumber: 76,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 110,
+        lineNumber: 71,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 });
-_c3 = InputGroup;
+_c2 = InputGroup;
 InputGroup.displayName = "InputGroup";
 function RegisterStudent() {
     _s();
     const [activeSection, setActiveSection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("personal");
-    // PERFORMANCE FIX: Use Ref instead of State for form data to eliminate typing lag
     const formRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(INITIAL_STATE);
     const [saveStatus, setSaveStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('idle');
     // PERFORMANCE FIX: This updates the Ref silently without triggering a re-render
@@ -380,7 +396,6 @@ function RegisterStudent() {
     }["RegisterStudent.useCallback[handleInputChange]"], []);
     async function handleSave() {
         setSaveStatus('saving');
-        // Retrieve data from Ref
         const formData = formRef.current;
         const payload = {
             firstName: formData.firstName,
@@ -395,7 +410,7 @@ function RegisterStudent() {
             bloodGroup: formData.bloodGroup,
             genotype: formData.genotype,
             class_id: formData.assignedClass,
-            arm: formData.arm,
+            class_arm: formData.arm,
             fatherName: formData.fatherName,
             fatherPhone: formData.fatherPhone,
             motherName: formData.motherName,
@@ -423,11 +438,11 @@ function RegisterStudent() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-[#FDFDFE] text-zinc-900 font-sans selection:bg-indigo-100",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SaveModal, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$common$2f$Reusables$2f$Preloader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SaveModal"], {
                 status: saveStatus
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 212,
+                lineNumber: 171,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -443,7 +458,7 @@ function RegisterStudent() {
                                     children: "ES"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 218,
+                                    lineNumber: 177,
                                     columnNumber: 14
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -453,7 +468,7 @@ function RegisterStudent() {
                                             children: "Enroll System"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 181,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -461,19 +476,19 @@ function RegisterStudent() {
                                             children: "New Student Registration"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 223,
+                                            lineNumber: 182,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 221,
+                                    lineNumber: 180,
                                     columnNumber: 14
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 217,
+                            lineNumber: 176,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -484,7 +499,7 @@ function RegisterStudent() {
                                     children: "Discard"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -498,30 +513,30 @@ function RegisterStudent() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 233,
+                                            lineNumber: 192,
                                             columnNumber: 75
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 228,
+                                    lineNumber: 187,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 226,
+                            lineNumber: 185,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                    lineNumber: 216,
+                    lineNumber: 175,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 215,
+                lineNumber: 174,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +554,7 @@ function RegisterStudent() {
                                         onClick: ()=>setActiveSection("personal")
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 203,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
@@ -548,13 +563,13 @@ function RegisterStudent() {
                                         onClick: ()=>setActiveSection("guardian")
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 245,
+                                        lineNumber: 204,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 243,
+                                lineNumber: 202,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -566,25 +581,25 @@ function RegisterStudent() {
                                             children: "Tip:"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 250,
+                                            lineNumber: 209,
                                             columnNumber: 15
                                         }, this),
                                         " Ensure the passport photograph is under 2MB and clear."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 249,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 248,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 242,
+                        lineNumber: 201,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -599,14 +614,14 @@ function RegisterStudent() {
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 266,
+                                            lineNumber: 225,
                                             columnNumber: 34
                                         }, void 0),
                                         title: "Personal Details",
                                         subtitle: "Enter the student's legal name and biological information used for official records."
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 225,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -624,7 +639,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 270,
+                                                        lineNumber: 229,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -636,7 +651,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 271,
+                                                        lineNumber: 230,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -654,12 +669,12 @@ function RegisterStudent() {
                                                                     onChange: handleInputChange
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 276,
+                                                                    lineNumber: 235,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 275,
+                                                                lineNumber: 234,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -674,18 +689,18 @@ function RegisterStudent() {
                                                                     onChange: handleInputChange
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 279,
+                                                                    lineNumber: 238,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 278,
+                                                                lineNumber: 237,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 274,
+                                                        lineNumber: 233,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -697,7 +712,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 242,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -709,13 +724,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 284,
+                                                        lineNumber: 243,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 269,
+                                                lineNumber: 228,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -726,7 +741,7 @@ function RegisterStudent() {
                                                         children: "Passport"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 248,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -738,12 +753,12 @@ function RegisterStudent() {
                                                                     size: 20
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 292,
+                                                                    lineNumber: 251,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 291,
+                                                                lineNumber: 250,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -751,25 +766,25 @@ function RegisterStudent() {
                                                                 children: "Upload"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 294,
+                                                                lineNumber: 253,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 249,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 288,
+                                                lineNumber: 247,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 268,
+                                        lineNumber: 227,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -785,7 +800,7 @@ function RegisterStudent() {
                                                 fullWidth: true
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 300,
+                                                lineNumber: 259,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -799,7 +814,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 311,
+                                                        lineNumber: 270,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -810,7 +825,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 312,
+                                                        lineNumber: 271,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -821,7 +836,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 313,
+                                                        lineNumber: 272,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -832,13 +847,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 314,
+                                                        lineNumber: 273,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 310,
+                                                lineNumber: 269,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -849,19 +864,19 @@ function RegisterStudent() {
                                                 onChange: handleInputChange
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 317,
+                                                lineNumber: 276,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 299,
+                                        lineNumber: 258,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 265,
+                                lineNumber: 224,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -873,14 +888,14 @@ function RegisterStudent() {
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 323,
+                                            lineNumber: 282,
                                             columnNumber: 34
                                         }, void 0),
                                         title: "Guardian Units",
                                         subtitle: "Emergency contacts and sponsor details."
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 323,
+                                        lineNumber: 282,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -898,19 +913,19 @@ function RegisterStudent() {
                                                                     className: "w-2 h-2 rounded-full bg-blue-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 329,
+                                                                    lineNumber: 288,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Father's Details"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                            lineNumber: 328,
+                                                            lineNumber: 287,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 327,
+                                                        lineNumber: 286,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -921,7 +936,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 332,
+                                                        lineNumber: 291,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -932,13 +947,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 333,
+                                                        lineNumber: 292,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 326,
+                                                lineNumber: 285,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -953,19 +968,19 @@ function RegisterStudent() {
                                                                     className: "w-2 h-2 rounded-full bg-pink-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 298,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Mother's Details"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                            lineNumber: 338,
+                                                            lineNumber: 297,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 337,
+                                                        lineNumber: 296,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -976,7 +991,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 342,
+                                                        lineNumber: 301,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -987,13 +1002,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 343,
+                                                        lineNumber: 302,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 336,
+                                                lineNumber: 295,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1007,7 +1022,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 347,
+                                                        lineNumber: 306,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1018,58 +1033,57 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 348,
+                                                        lineNumber: 307,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 346,
+                                                lineNumber: 305,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 325,
+                                        lineNumber: 284,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 322,
+                                lineNumber: 281,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 256,
+                        lineNumber: 215,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 239,
+                lineNumber: 198,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 210,
+        lineNumber: 169,
         columnNumber: 5
     }, this);
 }
 _s(RegisterStudent, "d9y0WRL0pGZv1AoX0tucxUcorzo=");
-_c4 = RegisterStudent;
-var _c, _c1, _c2, _c3, _c4;
-__turbopack_context__.k.register(_c, "SaveModal");
-__turbopack_context__.k.register(_c1, "NavItem");
-__turbopack_context__.k.register(_c2, "SectionHeader");
-__turbopack_context__.k.register(_c3, "InputGroup");
-__turbopack_context__.k.register(_c4, "RegisterStudent");
+_c3 = RegisterStudent;
+var _c, _c1, _c2, _c3;
+__turbopack_context__.k.register(_c, "NavItem");
+__turbopack_context__.k.register(_c1, "SectionHeader");
+__turbopack_context__.k.register(_c2, "InputGroup");
+__turbopack_context__.k.register(_c3, "RegisterStudent");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
 ]);
 
-//# sourceMappingURL=School%20Management%20System_ff4cacd6._.js.map
+//# sourceMappingURL=School%20Management%20System_9d766e7a._.js.map
