@@ -19,7 +19,7 @@ export const SaveModal = ({ status }: { status: 'idle' | 'saving' | 'success' | 
               <Loader2 className="animate-spin text-indigo-600" size={32} />
             </div>
             <h3 className="text-lg font-bold text-zinc-900">In progress...</h3>
-            <p className="text-zinc-500 text-sm mt-2">Please wait while we enroll the student.</p>
+            <p className="text-zinc-500 text-sm mt-2">Please wait hold on....</p>
           </>
         )}
 
@@ -29,7 +29,7 @@ export const SaveModal = ({ status }: { status: 'idle' | 'saving' | 'success' | 
               <CheckCircle2 className="text-green-600" size={32} />
             </div>
             <h3 className="text-lg font-bold text-zinc-900">Registration Complete!</h3>
-            <p className="text-zinc-500 text-sm mt-2">The student has been successfully added.</p>
+            <p className="text-zinc-500 text-sm mt-2">The action was successful.</p>
           </>
         )}
 

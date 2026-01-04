@@ -14,3 +14,34 @@ export async function Fetch<T>(endpoint: string) {
 
 
 
+
+
+
+
+// Fetch all classes
+export async function fetchClasses() {
+  try {
+    const res = await api.get("/class/all_classes");
+    const classList = res.data;
+    return {
+      classCount: classList.length,
+      classList, 
+    };
+  } catch (error: any) {
+    throw new Error("Failed to fetch classes");
+  }
+}
+
+// Fetch all students
+export async function fetchStudents() {
+  try {
+    const res = await api.get("/students/all_students");
+    const studentList = res.data;
+    return {
+      studentCount: studentList.length,
+      studentList
+    };
+  } catch (error: any) {
+    throw new Error("Failed to fetch students");
+  }
+}

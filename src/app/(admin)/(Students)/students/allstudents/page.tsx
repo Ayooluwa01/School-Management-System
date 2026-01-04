@@ -10,18 +10,19 @@ import {
   Users
 } from "lucide-react";
 import { List } from "@/components/common/Reusables/Lists";
-import { Fetch } from "../../../../../../libs/api";
-import {notify} from "@/components/common/Toast"
+import { Fetch, fetchClasses } from "../../../../../../libs/api";
 import { PageHeader } from "@/components/common/Reusables/pageHeader";
 import api from "../../../../../../libs/axios";
+import { SaveModal } from "@/components/common/Reusables/Preloader";
 
 
 export default function Allstudents() {
   const [students, setStudents] = useState<any>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedClass, setSelectedClass] = useState("All");
+  const [selectedClass, setSelectedClass] = useState("");
   const [selectedSex, setSelectedSex] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
 
   const [classes, setClasses] = useState<any>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -42,9 +43,7 @@ const getStudents = async () => {
     const response = await api.get('/students/all_students', {
       params: {
         limit: itemsPerPage,
-        offset,
-        name:searchTerm,
-        gender:selectedSex
+        offset
       },
     });
 
@@ -57,50 +56,94 @@ const getStudents = async () => {
 };
 
 
-// const search=async()=>{
-//    const offset = (currentPage - 1) * itemsPerPage;
-
-//   try {
-//     const response = await api.get('/students/all_students', {
-//       params: {
-//         limit: itemsPerPage,
-//         offset,
-//       },
-//     });
-
-//     setStudents(response.data);
-//     setTotalCount(3000); 
-
-//   } catch (err) {
-//     console.error(err);
-//   }
-// }
-
-  /* -------------------------------------------------------------------------- */
-  /*                            Fetch CLASSES (API)                              */
-  /* -------------------------------------------------------------------------- */
-
   /* -------------------------------------------------------------------------- */
   /*                        EFFECT: Runs ONLY when needed                       */
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
         getStudents();
-  }, [currentPage, selectedClass, selectedSex,searchTerm]);
+  }, [currentPage]);
+
+
+// Fetch all classes
+useEffect(() => {
+  async function loadData() {
+  try {
+      const { classList } = await fetchClasses(); 
+setClasses(classList)      
+    } catch (err) {
+      setClasses([]);
+    }
+  }
+
+
+  loadData();
+}, []);
+
+
+// Filter student
+useEffect(() => {
+
+  if(selectedSex==='All'){
+    setSelectedSex('')
+  }else{
+      const handler = setTimeout(async () => {
+    const offset = (currentPage - 1) * itemsPerPage;
+
+    try {
+      const response = await api.get('/students/filter_student', {
+        params: {
+          limit: itemsPerPage,
+          offset,
+          name: searchTerm,
+          gender: selectedSex,
+          class_id: selectedClass,
+        },
+      });
+
+      setStudents(response.data);
+      setTotalCount(3000);
+    } catch (err) {
+      console.error(err);
+    }
+  }, 800); 
+  return () => clearTimeout(handler);
+  }
+
+
+}, [searchTerm, selectedClass, selectedSex,currentPage]);
+
+
 
   useEffect(()=>{
 setStudents([])
   },[searchTerm])
   /* ---------------- DELETE HANDLER ---------------- */
-  const handleDelete = (id: any) => {
-    setStudents((prev: any) => prev.filter((s: any) => s.student_id !== id));
-  };
+const handleDelete = async (id: number) => {
+      setSaveStatus('saving');
+  try {
+    const res = await api.delete(`/students/delete/${id}`);
+    if (res.data.deleted) {
+          setSaveStatus('success');
+      
+      setTimeout(() => {
+        setSaveStatus('idle');
+     
+      }, 2000);
+    }
+  } catch (error) {
+      setSaveStatus('error');
+      setTimeout(() => setSaveStatus('idle'), 2500)
+  }
+};
 
-  const classOptions = ["All", ...Array.from(new Set(classes.map((c: any) => c.class_id)))];
 
 
   return (
     <div className="max-w-6xl mx-auto antialiased">
+            <SaveModal status={saveStatus} />
+      
       {/* PAGE HEADER */}
+
 <PageHeader Directory='Student Directory' text=' Manage and view all registered students'/>
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         {/* TOOLBAR */}
@@ -129,7 +172,6 @@ setStudents([])
               </span>
             </div>
 
-            {/* CLASS SELECT
             <div className="relative">
               <select
                 className="appearance-none pl-3 pr-8 py-2 border border-gray-200 rounded-lg text-sm bg-white hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/10 cursor-pointer transition-all"
@@ -140,16 +182,14 @@ setStudents([])
                 }}
               >
                 <option value="All">All Classes</option>
-                {classOptions
-                  .filter((c) => c !== "All")
-                  .map((cls) => (
-                    <option key={cls} value={cls}>
-                     {cls}
-                    </option>
-                  ))}
+  {classes.map((cls: any) => (
+    <option key={cls.class_id} value={cls.class_id}>
+      {cls.class_name} - {cls.arm}
+    </option>
+  ))}
               </select>
               <ArrowDownWideNarrow className="absolute right-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-gray-400 pointer-events-none" />
-            </div> */}
+            </div>
 
             {/* SEX SELECT */}
             <div className="relative">
@@ -161,7 +201,7 @@ setStudents([])
                   setCurrentPage(1);
                 }}
               >
-                <option value="All">All Genders</option>
+                <option value="All">All</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
