@@ -19,9 +19,7 @@ var _s = __turbopack_context__.k.signature();
 function ResultViewer({ results }) {
     _s();
     const [activeTerm, setActiveTerm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("1");
-    // Filter results based on the active term
     const filteredResults = results.filter((r)=>r.term === activeTerm);
-    // Helper to color grades
     const getGradeColor = (grade)=>{
         switch(grade){
             case "A":
@@ -51,14 +49,14 @@ function ResultViewer({ results }) {
                                         className: "w-5 h-5 text-blue-600"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 39,
                                         columnNumber: 14
                                     }, this),
                                     "Academic Transcript"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 40,
+                                lineNumber: 38,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -66,13 +64,13 @@ function ResultViewer({ results }) {
                                 children: "Select a term to view performance"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 44,
+                                lineNumber: 42,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -93,18 +91,18 @@ function ResultViewer({ results }) {
                                 ]
                             }, term, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 50,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                        lineNumber: 48,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 38,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -121,7 +119,7 @@ function ResultViewer({ results }) {
                                         children: "Subject"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -129,7 +127,7 @@ function ResultViewer({ results }) {
                                         children: "Test 1"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -137,7 +135,7 @@ function ResultViewer({ results }) {
                                         children: "Test 2"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -145,7 +143,7 @@ function ResultViewer({ results }) {
                                         children: "Exam"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -153,7 +151,7 @@ function ResultViewer({ results }) {
                                         children: "Total"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -161,18 +159,18 @@ function ResultViewer({ results }) {
                                         children: "Grade"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 76,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 72,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 71,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -191,12 +189,12 @@ function ResultViewer({ results }) {
                                                             size: 14
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                            lineNumber: 91,
+                                                            lineNumber: 89,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 88,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -204,18 +202,18 @@ function ResultViewer({ results }) {
                                                         children: res.subject_name || `Subject ${res.subject_id}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 91,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 87,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 86,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -223,7 +221,7 @@ function ResultViewer({ results }) {
                                             children: res.test1
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 96,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -231,7 +229,7 @@ function ResultViewer({ results }) {
                                             children: res.test2
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 99,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -239,7 +237,7 @@ function ResultViewer({ results }) {
                                             children: res.exam
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 102,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -249,12 +247,12 @@ function ResultViewer({ results }) {
                                                 children: res.total
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 106,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 107,
+                                            lineNumber: 105,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -264,18 +262,18 @@ function ResultViewer({ results }) {
                                                 children: res.grade
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 111,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 110,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, res.result_id, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 82,
                                     columnNumber: 17
                                 }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -288,7 +286,7 @@ function ResultViewer({ results }) {
                                                 className: "w-8 h-8 mb-2 opacity-50"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 123,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -299,39 +297,39 @@ function ResultViewer({ results }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 124,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 122,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 121,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 122,
+                                lineNumber: 120,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 81,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                    lineNumber: 70,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 69,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -346,7 +344,7 @@ function ResultViewer({ results }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 138,
+                            lineNumber: 136,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -360,30 +358,30 @@ function ResultViewer({ results }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 137,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 139,
+                            lineNumber: 137,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                    lineNumber: 137,
+                    lineNumber: 135,
                     columnNumber: 10
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 136,
+                lineNumber: 134,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-        lineNumber: 36,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
@@ -407,7 +405,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/shield.js [app-client] (ecmascript) <export default as Shield>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2d$pulse$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HeartPulse$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/heart-pulse.js [app-client] (ecmascript) <export default as HeartPulse>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/briefcase.js [app-client] (ecmascript) <export default as Briefcase>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pen$2d$line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PenLine$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/pen-line.js [app-client] (ecmascript) <export default as PenLine>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
 "use client";
@@ -428,7 +425,7 @@ function ProfileDetails({ data }) {
                                 children: "Student Profile"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                lineNumber: 17,
+                                lineNumber: 16,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -436,13 +433,13 @@ function ProfileDetails({ data }) {
                                 children: "Comprehensive record and background details"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                lineNumber: 18,
+                                lineNumber: 17,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 16,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -452,26 +449,26 @@ function ProfileDetails({ data }) {
                                 size: 14
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                lineNumber: 21,
+                                lineNumber: 20,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "Edit"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                lineNumber: 22,
+                                lineNumber: 21,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 20,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -483,7 +480,7 @@ function ProfileDetails({ data }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 29,
+                            lineNumber: 28,
                             columnNumber: 41
                         }, void 0),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -491,61 +488,61 @@ function ProfileDetails({ data }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Date of Birth",
-                                    value: data.student.dob
+                                    value: data.date_of_birth
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 31,
+                                    lineNumber: 30,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Gender",
-                                    value: data.student.gender
-                                }, void 0, false, {
-                                    fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 32,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                    label: "Nationality",
-                                    value: data.student.nationality
+                                    value: data.gender
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
                                     lineNumber: 33,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                    label: "State of Origin",
-                                    value: data.student.state_of_origin
+                                    label: "Nationality",
+                                    value: data.nationality
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
                                     lineNumber: 34,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                    label: "LGA",
-                                    value: data.student.lga
+                                    label: "State of Origin",
+                                    value: data.state_of_origin
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
                                     lineNumber: 35,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                    label: "Religion",
-                                    value: data.student.religion
+                                    label: "LGA",
+                                    value: data.lga
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
                                     lineNumber: 36,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
+                                    label: "Religion",
+                                    value: data.religion
+                                }, void 0, false, {
+                                    fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
+                                    lineNumber: 37,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 30,
+                            lineNumber: 29,
                             columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 29,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Section, {
@@ -554,7 +551,7 @@ function ProfileDetails({ data }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 38
                         }, void 0),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -562,10 +559,10 @@ function ProfileDetails({ data }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Address",
-                                    value: data.contact.address
+                                    value: data.address
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 44,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -573,50 +570,50 @@ function ProfileDetails({ data }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                             label: "City",
-                                            value: data.contact.city
+                                            value: ''
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 45,
+                                            lineNumber: 46,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                             label: "Phone",
-                                            value: data.contact.phone
+                                            value: ''
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 46,
+                                            lineNumber: 47,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 44,
+                                    lineNumber: 45,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Email",
-                                    value: data.contact.email,
+                                    value: '',
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
                                         size: 12
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                        lineNumber: 48,
-                                        columnNumber: 72
+                                        lineNumber: 49,
+                                        columnNumber: 56
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 49,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 42,
+                            lineNumber: 43,
                             columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Section, {
@@ -625,7 +622,7 @@ function ProfileDetails({ data }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 53,
+                            lineNumber: 54,
                             columnNumber: 39
                         }, void 0),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,32 +633,32 @@ function ProfileDetails({ data }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                             label: "Father",
-                                            value: data.guardian.father_name
+                                            value: data.fathers_name
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 56,
+                                            lineNumber: 57,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                             label: "Phone",
-                                            value: data.guardian.father_phone,
+                                            value: data.fathers_number,
                                             isAccent: true
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 57,
+                                            lineNumber: 58,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 56,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "h-px bg-zinc-50"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 60,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -669,68 +666,36 @@ function ProfileDetails({ data }) {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                             label: "Mother",
-                                            value: data.guardian.mother_name
-                                        }, void 0, false, {
-                                            fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 61,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                            label: "Phone",
-                                            value: data.guardian.mother_phone,
-                                            isAccent: true
+                                            value: data.mothers_name
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
                                             lineNumber: 62,
                                             columnNumber: 19
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 60,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                            label: "Occupation",
-                                            value: data.guardian.occupation,
-                                            icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__["Briefcase"], {
-                                                size: 12
-                                            }, void 0, false, {
-                                                fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                                lineNumber: 65,
-                                                columnNumber: 86
-                                            }, void 0)
-                                        }, void 0, false, {
-                                            fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 65,
-                                            columnNumber: 18
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
-                                            label: "Email",
-                                            value: data.guardian.email
+                                            label: "Phone",
+                                            value: data.mothers_number,
+                                            isAccent: true
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                            lineNumber: 66,
-                                            columnNumber: 18
+                                            lineNumber: 64,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 61,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 54,
+                            lineNumber: 55,
                             columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Section, {
@@ -739,7 +704,7 @@ function ProfileDetails({ data }) {
                             size: 16
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 72,
+                            lineNumber: 75,
                             columnNumber: 39
                         }, void 0),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -747,71 +712,71 @@ function ProfileDetails({ data }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Blood Group",
-                                    value: data.medical.blood_group
+                                    value: data.blood_group
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 77,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                     label: "Genotype",
-                                    value: data.student.genotype
+                                    value: data.genotype
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 79,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "col-span-2",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                         label: "Allergies",
-                                        value: data.medical.allergies
+                                        value: ''
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 81,
                                         columnNumber: 18
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 80,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "col-span-2",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InfoItem, {
                                         label: "Conditions",
-                                        value: data.medical.disabilities
+                                        value: ''
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 84,
                                         columnNumber: 18
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 83,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                            lineNumber: 73,
+                            lineNumber: 76,
                             columnNumber: 12
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 72,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 26,
+                lineNumber: 25,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-        lineNumber: 12,
+        lineNumber: 11,
         columnNumber: 5
     }, this);
 }
@@ -830,13 +795,13 @@ function Section({ title, icon, children }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                        lineNumber: 97,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 95,
+                lineNumber: 99,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -844,13 +809,13 @@ function Section({ title, icon, children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 99,
+                lineNumber: 103,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-        lineNumber: 94,
+        lineNumber: 98,
         columnNumber: 5
     }, this);
 }
@@ -867,7 +832,7 @@ function InfoItem({ label, value, isAccent, icon }) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 109,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -875,13 +840,13 @@ function InfoItem({ label, value, isAccent, icon }) {
                 children: value || "—"
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-                lineNumber: 112,
+                lineNumber: 116,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Profiledetails.tsx",
-        lineNumber: 108,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }
@@ -966,19 +931,19 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                lineNumber: 79,
+                                lineNumber: 78,
                                 columnNumber: 13
                             }, this),
                             tab.label
                         ]
                     }, tab.id, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 69,
+                        lineNumber: 68,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                lineNumber: 67,
+                lineNumber: 66,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -988,7 +953,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                         results: results
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 90,
+                        lineNumber: 89,
                         columnNumber: 12
                     }, this),
                     activeTab === "attendance" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1004,7 +969,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                             children: "Attendance Overview"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 99,
+                                            lineNumber: 98,
                                             columnNumber: 18
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1014,14 +979,14 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                     className: "absolute inset-0 rounded-full border-[10px] border-gray-100 dark:border-gray-700"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 102,
+                                                    lineNumber: 101,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute inset-0 rounded-full border-[10px] border-emerald-500 border-t-transparent border-l-transparent -rotate-45"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 103,
+                                                    lineNumber: 102,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1034,18 +999,18 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 104,
                                                         columnNumber: 24
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 103,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 99,
                                             columnNumber: 18
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1061,14 +1026,14 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                     className: "w-2 h-2 rounded-full bg-emerald-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 112,
+                                                                    lineNumber: 111,
                                                                     columnNumber: 79
                                                                 }, this),
                                                                 " Present"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 112,
+                                                            lineNumber: 111,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1079,13 +1044,13 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 113,
+                                                            lineNumber: 112,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 110,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1098,14 +1063,14 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                     className: "w-2 h-2 rounded-full bg-orange-400"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 116,
+                                                                    lineNumber: 115,
                                                                     columnNumber: 79
                                                                 }, this),
                                                                 " Late"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 116,
+                                                            lineNumber: 115,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1116,13 +1081,13 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 117,
+                                                            lineNumber: 116,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 115,
+                                                    lineNumber: 114,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1135,14 +1100,14 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                     className: "w-2 h-2 rounded-full bg-red-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 120,
+                                                                    lineNumber: 119,
                                                                     columnNumber: 79
                                                                 }, this),
                                                                 " Absent"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 120,
+                                                            lineNumber: 119,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1153,30 +1118,30 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 120,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 119,
+                                                    lineNumber: 118,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 109,
                                             columnNumber: 18
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                    lineNumber: 98,
+                                    lineNumber: 97,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                lineNumber: 97,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1189,12 +1154,12 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                             children: "Recent Activity"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 129,
                                             columnNumber: 18
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 128,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1211,24 +1176,24 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 55
                                                                 }, this) : day.status === "late" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 106
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$alert$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__AlertCircle$3e$__["AlertCircle"], {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                    lineNumber: 140,
+                                                                    lineNumber: 139,
                                                                     columnNumber: 127
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                lineNumber: 136,
+                                                                lineNumber: 135,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1238,7 +1203,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                         children: new Date(day.date).toDateString()
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                        lineNumber: 143,
+                                                                        lineNumber: 142,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     day.reason && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1249,19 +1214,19 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                        lineNumber: 144,
+                                                                        lineNumber: 143,
                                                                         columnNumber: 42
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                lineNumber: 142,
+                                                                lineNumber: 141,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 134,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1269,30 +1234,30 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         children: day.status
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 146,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                lineNumber: 134,
+                                                lineNumber: 133,
                                                 columnNumber: 20
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 131,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                lineNumber: 128,
+                                lineNumber: 127,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 95,
+                        lineNumber: 94,
                         columnNumber: 11
                     }, this),
                     activeTab === "finance" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1311,7 +1276,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                     children: "Fee Title"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 163,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1319,7 +1284,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                     children: "Date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 164,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1327,7 +1292,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                     children: "Amount"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 166,
+                                                    lineNumber: 165,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1335,18 +1300,18 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                     children: "Status"
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 166,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 162,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 161,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1358,7 +1323,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         children: fee.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 172,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1366,7 +1331,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         children: fee.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 173,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1377,7 +1342,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 174,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1387,39 +1352,39 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                             children: fee.status
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 176,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 175,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, fee.id, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                lineNumber: 172,
+                                                lineNumber: 171,
                                                 columnNumber: 23
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 169,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                lineNumber: 161,
+                                lineNumber: 160,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                            lineNumber: 160,
+                            lineNumber: 159,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 157,
+                        lineNumber: 156,
                         columnNumber: 12
                     }, this),
                     activeTab === "remarks" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1434,12 +1399,12 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                             children: remark.teacher.charAt(0)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                            lineNumber: 198,
+                                            lineNumber: 197,
                                             columnNumber: 23
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 196,
                                         columnNumber: 20
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1455,7 +1420,7 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                 children: remark.teacher
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                lineNumber: 205,
+                                                                lineNumber: 204,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1463,13 +1428,13 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                                 children: remark.role
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 205,
                                                                 columnNumber: 29
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 203,
                                                         columnNumber: 26
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1477,13 +1442,13 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                         children: remark.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 207,
                                                         columnNumber: 26
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 202,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1491,43 +1456,43 @@ function StudentProfileView({ results, fees, attendance, remarks, profileData })
                                                 children: remark.comment
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 209,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                        lineNumber: 202,
+                                        lineNumber: 201,
                                         columnNumber: 20
                                     }, this)
                                 ]
                             }, remark.id, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                                lineNumber: 196,
+                                lineNumber: 195,
                                 columnNumber: 17
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 194,
+                        lineNumber: 193,
                         columnNumber: 11
                     }, this),
                     activeTab === "profile" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$common$2f$Reusables$2f$Profiledetails$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         data: profileData
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                        lineNumber: 221,
+                        lineNumber: 220,
                         columnNumber: 4
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-                lineNumber: 86,
+                lineNumber: 85,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx",
-        lineNumber: 64,
+        lineNumber: 63,
         columnNumber: 5
     }, this);
 }

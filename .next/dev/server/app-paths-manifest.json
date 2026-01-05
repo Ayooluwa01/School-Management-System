@@ -1,9 +1,8 @@
 {
-  "/(admin)/(Class)/classes/page": "app/(admin)/(Class)/classes/page.js",
   "/(admin)/(Students)/students/add/page": "app/(admin)/(Students)/students/add/page.js",
   "/(admin)/(Students)/students/allstudents/page": "app/(admin)/(Students)/students/allstudents/page.js",
   "/(admin)/(Students)/students/profile/[id]/page": "app/(admin)/(Students)/students/profile/[id]/page.js",
-  "/(admin)/(Subjects)/subjects/page": "app/(admin)/(Subjects)/subjects/page.js",
+  "/(admin)/(teachers)/teachers/Upload_Result/page": "app/(admin)/(teachers)/teachers/Upload_Result/page.js",
   "/(admin)/(teachers)/teachers/add/page": "app/(admin)/(teachers)/teachers/add/page.js",
   "/(admin)/(teachers)/teachers/all/page": "app/(admin)/(teachers)/teachers/all/page.js",
   "/(admin)/(teachers)/teachers/assign/page": "app/(admin)/(teachers)/teachers/assign/page.js",
