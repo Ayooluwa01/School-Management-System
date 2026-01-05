@@ -278,7 +278,6 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/zustand/esm/react.mjs [app-ssr] (ecmascript)");
 ;
 const Activestudent = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])((set)=>({
-        // Initial Values
         student_id: 0,
         admission_no: '',
         name: '',
@@ -469,18 +468,12 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
         } catch (error) {}
     }
     const handleSave = async ()=>{
-        if (first_name || last_name) {
-            alert("First and Last name are required");
-            return;
-        }
         setIsSaving(true);
         const updateDto = {
             firstName: first_name,
             lastName: last_name,
             gender: gender,
             dateOfBirth: date_of_birth,
-            info_dob: date_of_birth,
-            admission_no: admission_no,
             class_id: Number(class_id),
             // Optionals
             nationality: nationality,
@@ -525,7 +518,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Admission No"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -533,7 +526,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Name"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -541,7 +534,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Class"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 130,
+                                    lineNumber: 124,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -549,7 +542,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Sex"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -557,18 +550,18 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     children: "Actions"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                            lineNumber: 127,
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 126,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -581,7 +574,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                         children: student.admission_no
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 136,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -590,7 +583,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                         children: student.name
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 143,
+                                        lineNumber: 137,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -598,7 +591,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                         children: student.class_name
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 141,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -609,12 +602,12 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                             children: student.sex
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 144,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 143,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -629,12 +622,12 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         size: 16
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 159,
                                                         columnNumber: 21
                                                     }, this)
-                                                }, student.class_id, false, {
+                                                }, student.student_id, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 158,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -644,40 +637,40 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         size: 16
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 167,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 163,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 157,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, student.student_id, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 138,
+                                lineNumber: 132,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 136,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                lineNumber: 125,
+                lineNumber: 119,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -691,7 +684,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: startIndex + 1
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 187,
+                                lineNumber: 181,
                                 columnNumber: 19
                             }, this),
                             " to",
@@ -700,7 +693,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: Math.min(endIndex, totalCount)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 188,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, this),
                             " of",
@@ -709,14 +702,14 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: totalCount
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 189,
+                                lineNumber: 183,
                                 columnNumber: 11
                             }, this),
                             " students"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 186,
+                        lineNumber: 180,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -730,12 +723,12 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 193,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 194,
+                                lineNumber: 188,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -748,7 +741,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 202,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -759,24 +752,24 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                     size: 16
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 205,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 206,
+                                lineNumber: 200,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 193,
+                        lineNumber: 187,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                lineNumber: 184,
+                lineNumber: 178,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$modal$2f$index$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Modal"], {
@@ -792,7 +785,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: "Edit Student Profile"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 220,
+                                lineNumber: 214,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -800,13 +793,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: admission_no
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 223,
+                                lineNumber: 217,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 219,
+                        lineNumber: 213,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -821,14 +814,14 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                 className: "w-2 h-2 rounded-full bg-blue-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 233,
+                                                lineNumber: 227,
                                                 columnNumber: 13
                                             }, this),
                                             " Personal Details"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 232,
+                                        lineNumber: 226,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -840,7 +833,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "First Name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 233,
                                                         columnNumber: 13
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -852,13 +845,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 235,
                                                         columnNumber: 3
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 232,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -867,7 +860,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Last Name"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 249,
+                                                        lineNumber: 243,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -878,13 +871,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 244,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 242,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -893,7 +886,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Date of Birth"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 259,
+                                                        lineNumber: 253,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -904,13 +897,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 260,
+                                                        lineNumber: 254,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 258,
+                                                lineNumber: 252,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -919,7 +912,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Gender"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 267,
+                                                        lineNumber: 261,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -934,7 +927,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Male"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 273,
+                                                                lineNumber: 267,
                                                                 columnNumber: 17
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -942,19 +935,19 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Female"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 274,
+                                                                lineNumber: 268,
                                                                 columnNumber: 17
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 268,
+                                                        lineNumber: 262,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 266,
+                                                lineNumber: 260,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -963,7 +956,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Class"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 280,
+                                                        lineNumber: 274,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -974,13 +967,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 275,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 279,
+                                                lineNumber: 273,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -989,7 +982,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Religion"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 288,
+                                                        lineNumber: 282,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1000,25 +993,25 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 283,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 287,
+                                                lineNumber: 281,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 235,
+                                        lineNumber: 229,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 231,
+                                lineNumber: 225,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1030,14 +1023,14 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                 className: "w-2 h-2 rounded-full bg-orange-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 301,
+                                                lineNumber: 295,
                                                 columnNumber: 13
                                             }, this),
                                             " Origin & Medical"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 300,
+                                        lineNumber: 294,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1050,7 +1043,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Nationality"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 306,
+                                                        lineNumber: 300,
                                                         columnNumber: 16
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1061,13 +1054,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 307,
+                                                        lineNumber: 301,
                                                         columnNumber: 16
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 305,
+                                                lineNumber: 299,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1077,7 +1070,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "State of Origin"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 315,
+                                                        lineNumber: 309,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1088,13 +1081,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 316,
+                                                        lineNumber: 310,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 314,
+                                                lineNumber: 308,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1104,7 +1097,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "LGA"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 323,
+                                                        lineNumber: 317,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1115,13 +1108,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 318,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 322,
+                                                lineNumber: 316,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1131,7 +1124,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Genotype"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 332,
+                                                        lineNumber: 326,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1143,13 +1136,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 333,
+                                                        lineNumber: 327,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 331,
+                                                lineNumber: 325,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1159,7 +1152,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Blood Group"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 341,
+                                                        lineNumber: 335,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1171,25 +1164,25 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 342,
+                                                        lineNumber: 336,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 340,
+                                                lineNumber: 334,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 297,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 299,
+                                lineNumber: 293,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1201,14 +1194,14 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                 className: "w-2 h-2 rounded-full bg-green-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 355,
+                                                lineNumber: 349,
                                                 columnNumber: 13
                                             }, this),
                                             " Guardian Info"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 354,
+                                        lineNumber: 348,
                                         columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1222,7 +1215,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Father's Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 361,
+                                                        lineNumber: 355,
                                                         columnNumber: 16
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1231,7 +1224,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 363,
+                                                                lineNumber: 357,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1243,13 +1236,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                     })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 364,
+                                                                lineNumber: 358,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 362,
+                                                        lineNumber: 356,
                                                         columnNumber: 16
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1258,7 +1251,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 372,
+                                                                lineNumber: 366,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1270,19 +1263,19 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                     })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 373,
+                                                                lineNumber: 367,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 371,
+                                                        lineNumber: 365,
                                                         columnNumber: 16
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 360,
+                                                lineNumber: 354,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1293,7 +1286,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Mother’s Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 384,
+                                                        lineNumber: 378,
                                                         columnNumber: 16
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1302,7 +1295,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 386,
+                                                                lineNumber: 380,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1314,13 +1307,13 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                     })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 387,
+                                                                lineNumber: 381,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 385,
+                                                        lineNumber: 379,
                                                         columnNumber: 16
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1329,7 +1322,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                 children: "Phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 395,
+                                                                lineNumber: 389,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1341,19 +1334,19 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                                     })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                                lineNumber: 396,
+                                                                lineNumber: 390,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 394,
+                                                        lineNumber: 388,
                                                         columnNumber: 16
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 383,
+                                                lineNumber: 377,
                                                 columnNumber: 13
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1363,7 +1356,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                         children: "Residential Address"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 407,
+                                                        lineNumber: 401,
                                                         columnNumber: 15
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$form$2f$input$2f$InputField$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1374,31 +1367,31 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                                             })
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                        lineNumber: 408,
+                                                        lineNumber: 402,
                                                         columnNumber: 15
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                                lineNumber: 406,
+                                                lineNumber: 400,
                                                 columnNumber: 13
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 351,
                                         columnNumber: 11
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 353,
+                                lineNumber: 347,
                                 columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 228,
+                        lineNumber: 222,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1411,7 +1404,7 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 422,
+                                lineNumber: 416,
                                 columnNumber: 9
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$ui$2f$button$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1426,37 +1419,37 @@ function List({ currentStudents, handleDelete, currentPage, setCurrentPage, tota
                                             className: "h-3 w-3 animate-spin rounded-full border-2 border-white/30 border-t-white"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                            lineNumber: 433,
+                                            lineNumber: 427,
                                             columnNumber: 12
                                         }, this),
                                         "Saving..."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                    lineNumber: 432,
+                                    lineNumber: 426,
                                     columnNumber: 9
                                 }, this) : "Save Changes"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                                lineNumber: 425,
+                                lineNumber: 419,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                        lineNumber: 421,
+                        lineNumber: 415,
                         columnNumber: 7
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-                lineNumber: 216,
+                lineNumber: 210,
                 columnNumber: 1
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/Lists.tsx",
-        lineNumber: 123,
+        lineNumber: 117,
         columnNumber: 5
     }, this);
 }

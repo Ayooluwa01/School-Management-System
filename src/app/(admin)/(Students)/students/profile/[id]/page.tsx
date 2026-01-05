@@ -31,7 +31,6 @@ export default async function StudentProfile(props: any) {
 
   
 
-  // --- 2. MOCK DATA FOR NEW FEATURES (Replace with API calls later) ---
   const mockFees = [
     { id: 1, title: "1st Term Tuition", amount: 1500, paid: 1500, status: "paid", date: "2024-09-01" },
     { id: 2, title: "Uniform & Books", amount: 450, paid: 450, status: "paid", date: "2024-09-05" },
@@ -56,40 +55,6 @@ export default async function StudentProfile(props: any) {
     { id: 2, teacher: "Mrs. Davis", role: "Principal", date: "Nov 10, 2024", sentiment: "neutral", comment: "Discipline has improved significantly this term." },
   ];
 
-
-  // Mock Data for the Profile Component
-// const mockProfileData = {
-//   student: {
-//     dob: student?.date_of_birth, // From your API
-//     gender: student?.sex,        // From your API
-//     blood_group: "O+",
-//     genotype: "AA",
-//     nationality: "Nigerian",
-//     state_of_origin: "Lagos",
-//     lga: "Ikeja",
-//     religion: "Christianity",
-//   },
-//   contact: {
-//     address: "124, Herbert Macaulay Way",
-//     city: "Yaba, Lagos",
-//     email: `${student?.admission_no.toLowerCase()}@school.com`,
-//     phone: "08012345678",
-//   },
-//   guardian: {
-//     father_name: "Mr. John Doe",
-//     mother_name: "Mrs. Jane Doe",
-//     father_phone: "08055555555",
-//     mother_phone: "08099999999",
-//     email: "parents@gmail.com",
-//     occupation: "Civil Servant",
-//     address: "Same as student",
-//   },
-//   medical: {
-//     allergies: "Peanuts",
-//     disabilities: "None",
-//     blood_group: "O+",
-//   }
-// };
 
   return (
     <div className="max-w-7xl mx-auto p-4 md:p-6 space-y-8 bg-gray-50/50 min-h-screen">

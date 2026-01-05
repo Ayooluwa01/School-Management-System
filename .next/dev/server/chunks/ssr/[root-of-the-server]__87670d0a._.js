@@ -144,7 +144,7 @@ const SaveModal = ({ status })=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-zinc-500 text-sm mt-2",
-                            children: "Please wait while we enroll the student."
+                            children: "Please wait hold on...."
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
                             lineNumber: 22,
@@ -179,7 +179,7 @@ const SaveModal = ({ status })=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-zinc-500 text-sm mt-2",
-                            children: "The student has been successfully added."
+                            children: "The action was successful."
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/Preloader.tsx",
                             lineNumber: 32,
@@ -493,8 +493,6 @@ function RegisterStudent() {
             setSaveStatus('success');
             setTimeout(()=>{
                 setSaveStatus('idle');
-            // Optional: Reset form visually if needed (requires key change or unmount)
-            // For now, we keep inputs as is to allow adding another student easily or manually clearing
             }, 2000);
         } catch (error) {
             console.error("Error submitting form:", error.response?.data || error.message);
@@ -510,7 +508,7 @@ function RegisterStudent() {
                 status: saveStatus
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 171,
+                lineNumber: 170,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,7 +524,7 @@ function RegisterStudent() {
                                     children: "ES"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 177,
+                                    lineNumber: 176,
                                     columnNumber: 14
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -536,7 +534,7 @@ function RegisterStudent() {
                                             children: "Enroll System"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 180,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -544,19 +542,19 @@ function RegisterStudent() {
                                             children: "New Student Registration"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 182,
+                                            lineNumber: 181,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 179,
                                     columnNumber: 14
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 176,
+                            lineNumber: 175,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -567,7 +565,7 @@ function RegisterStudent() {
                                     children: "Discard"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 185,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -581,30 +579,30 @@ function RegisterStudent() {
                                             size: 16
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 192,
+                                            lineNumber: 191,
                                             columnNumber: 75
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 187,
+                                    lineNumber: 186,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                            lineNumber: 185,
+                            lineNumber: 184,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                    lineNumber: 175,
+                    lineNumber: 174,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 174,
+                lineNumber: 173,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -622,7 +620,7 @@ function RegisterStudent() {
                                         onClick: ()=>setActiveSection("personal")
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 202,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NavItem, {
@@ -631,13 +629,13 @@ function RegisterStudent() {
                                         onClick: ()=>setActiveSection("guardian")
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 204,
+                                        lineNumber: 203,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 202,
+                                lineNumber: 201,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -649,25 +647,25 @@ function RegisterStudent() {
                                             children: "Tip:"
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 209,
+                                            lineNumber: 208,
                                             columnNumber: 15
                                         }, this),
                                         " Ensure the passport photograph is under 2MB and clear."
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 207,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 207,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 201,
+                        lineNumber: 200,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -682,14 +680,14 @@ function RegisterStudent() {
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 225,
+                                            lineNumber: 218,
                                             columnNumber: 34
                                         }, void 0),
                                         title: "Personal Details",
                                         subtitle: "Enter the student's legal name and biological information used for official records."
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 218,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -707,7 +705,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 229,
+                                                        lineNumber: 222,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -719,7 +717,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 230,
+                                                        lineNumber: 223,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,12 +735,12 @@ function RegisterStudent() {
                                                                     onChange: handleInputChange
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 235,
+                                                                    lineNumber: 228,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 234,
+                                                                lineNumber: 227,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -757,18 +755,18 @@ function RegisterStudent() {
                                                                     onChange: handleInputChange
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 238,
+                                                                    lineNumber: 231,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 237,
+                                                                lineNumber: 230,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 233,
+                                                        lineNumber: 226,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -780,7 +778,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 235,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -792,13 +790,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 243,
+                                                        lineNumber: 236,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 228,
+                                                lineNumber: 221,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -809,7 +807,7 @@ function RegisterStudent() {
                                                         children: "Passport"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 241,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -821,12 +819,12 @@ function RegisterStudent() {
                                                                     size: 20
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 251,
+                                                                    lineNumber: 244,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 250,
+                                                                lineNumber: 243,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -834,25 +832,25 @@ function RegisterStudent() {
                                                                 children: "Upload"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                lineNumber: 253,
+                                                                lineNumber: 246,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 249,
+                                                        lineNumber: 242,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 240,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 227,
+                                        lineNumber: 220,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -868,7 +866,7 @@ function RegisterStudent() {
                                                 fullWidth: true
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 259,
+                                                lineNumber: 252,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -882,7 +880,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 270,
+                                                        lineNumber: 263,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -893,7 +891,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 271,
+                                                        lineNumber: 264,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -904,7 +902,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 272,
+                                                        lineNumber: 265,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -915,13 +913,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 266,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 269,
+                                                lineNumber: 262,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -932,19 +930,19 @@ function RegisterStudent() {
                                                 onChange: handleInputChange
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 269,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 258,
+                                        lineNumber: 251,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 224,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -956,14 +954,14 @@ function RegisterStudent() {
                                             size: 24
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                            lineNumber: 282,
+                                            lineNumber: 275,
                                             columnNumber: 34
                                         }, void 0),
                                         title: "Guardian Units",
                                         subtitle: "Emergency contacts and sponsor details."
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 275,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -981,19 +979,19 @@ function RegisterStudent() {
                                                                     className: "w-2 h-2 rounded-full bg-blue-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 288,
+                                                                    lineNumber: 281,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Father's Details"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                            lineNumber: 287,
+                                                            lineNumber: 280,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 286,
+                                                        lineNumber: 279,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1004,7 +1002,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 291,
+                                                        lineNumber: 284,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1015,13 +1013,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 292,
+                                                        lineNumber: 285,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 285,
+                                                lineNumber: 278,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1036,19 +1034,19 @@ function RegisterStudent() {
                                                                     className: "w-2 h-2 rounded-full bg-pink-500"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                                    lineNumber: 298,
+                                                                    lineNumber: 291,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Mother's Details"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                            lineNumber: 297,
+                                                            lineNumber: 290,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 296,
+                                                        lineNumber: 289,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1059,7 +1057,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 301,
+                                                        lineNumber: 294,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1070,13 +1068,13 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 302,
+                                                        lineNumber: 295,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 295,
+                                                lineNumber: 288,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1090,7 +1088,7 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 306,
+                                                        lineNumber: 299,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(InputGroup, {
@@ -1101,43 +1099,43 @@ function RegisterStudent() {
                                                         onChange: handleInputChange
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                        lineNumber: 307,
+                                                        lineNumber: 300,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                                lineNumber: 305,
+                                                lineNumber: 298,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                        lineNumber: 284,
+                                        lineNumber: 277,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                                lineNumber: 281,
+                                lineNumber: 274,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                        lineNumber: 215,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-                lineNumber: 198,
+                lineNumber: 197,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/add/page.tsx",
-        lineNumber: 169,
+        lineNumber: 168,
         columnNumber: 5
     }, this);
 }

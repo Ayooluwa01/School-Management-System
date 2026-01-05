@@ -47,10 +47,12 @@ const [isSaving, setIsSaving] = useState(false);
 class_id,
     class_name,
     info_id,
-   
     first_name,
     last_name,
-  gender, nationality,  religion, blood_group,
+  gender, 
+  nationality, 
+   religion,
+    blood_group,
     genotype,  
     state_of_origin,
     lga,
@@ -73,19 +75,12 @@ console.log(first_name)
 
 
   const handleSave = async () => {
-    if (first_name || last_name) {
-    alert("First and Last name are required");
-      return;
-    }
-
     setIsSaving(true);
-
     const updateDto = {
       firstName:first_name,
       lastName:last_name,
       gender:gender, 
       dateOfBirth:date_of_birth,
-      info_dob:date_of_birth, 
       admission_no:admission_no,
       class_id: Number(class_id), 
      // Optionals
@@ -161,7 +156,7 @@ console.log(first_name)
 
               <td className="px-4 py-3 text-center">
                 <div className="flex justify-center gap-3">
-                  <button className="text-gray-500 hover:text-blue-600" onClick={()=>Toggleedit(student)} key={student.class_id}>
+                  <button className="text-gray-500 hover:text-blue-600" onClick={()=>Toggleedit(student)} key={student.student_id}>
                     <Edit2 size={16} />
            
                   </button>

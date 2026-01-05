@@ -154,8 +154,7 @@ export default function RegisterStudent() {
       
       setTimeout(() => {
         setSaveStatus('idle');
-        // Optional: Reset form visually if needed (requires key change or unmount)
-        // For now, we keep inputs as is to allow adding another student easily or manually clearing
+  
       }, 2000);
 
     } catch (error: any) {
@@ -213,12 +212,6 @@ export default function RegisterStudent() {
 
         {/* --- FORM BODY --- */}
         <main className="min-h-[600px]">
-          
-          {/* PERFORMANCE FIX: 
-              We use CSS 'hidden' instead of conditional rendering (&&).
-              This keeps the DOM nodes alive so data isn't lost when switching tabs,
-              and prevents expensive unmount/mount cycles.
-          */}
 
           {/* SECTION: PERSONAL */}
           <section id="personal" className={activeSection === 'personal' ? "block animate-in fade-in slide-in-from-bottom-6 duration-500 ease-out" : "hidden"}>

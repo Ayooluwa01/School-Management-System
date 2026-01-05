@@ -112,7 +112,11 @@ const __TURBOPACK__default__export__ = api;
 
 __turbopack_context__.s([
     "Fetch",
-    ()=>Fetch
+    ()=>Fetch,
+    "fetchClasses",
+    ()=>fetchClasses,
+    "fetchStudents",
+    ()=>fetchStudents
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$libs$2f$axios$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/libs/axios.ts [app-rsc] (ecmascript)");
 ;
@@ -124,6 +128,30 @@ async function Fetch(endpoint) {
     return {
         data
     };
+}
+async function fetchClasses() {
+    try {
+        const res = await __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$libs$2f$axios$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].get("/class/all_classes");
+        const classList = res.data;
+        return {
+            classCount: classList.length,
+            classList
+        };
+    } catch (error) {
+        throw new Error("Failed to fetch classes");
+    }
+}
+async function fetchStudents() {
+    try {
+        const res = await __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$libs$2f$axios$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].get("/students/all_students");
+        const studentList = res.data;
+        return {
+            studentCount: studentList.length,
+            studentList
+        };
+    } catch (error) {
+        throw new Error("Failed to fetch students");
+    }
 }
 }),
 "[project]/School Management System/src/components/common/Reusables/Studentprofile.tsx [app-rsc] (client reference proxy) <module evaluation>", ((__turbopack_context__) => {
@@ -185,7 +213,6 @@ async function StudentProfile(props) {
     const { id } = await props.params;
     const studentRes = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$libs$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fetch"])(`students/${id}`);
     const student = studentRes.data;
-    // --- 2. MOCK DATA FOR NEW FEATURES (Replace with API calls later) ---
     const mockFees = [
         {
             id: 1,
@@ -256,39 +283,6 @@ async function StudentProfile(props) {
             comment: "Discipline has improved significantly this term."
         }
     ];
-    // Mock Data for the Profile Component
-    // const mockProfileData = {
-    //   student: {
-    //     dob: student?.date_of_birth, // From your API
-    //     gender: student?.sex,        // From your API
-    //     blood_group: "O+",
-    //     genotype: "AA",
-    //     nationality: "Nigerian",
-    //     state_of_origin: "Lagos",
-    //     lga: "Ikeja",
-    //     religion: "Christianity",
-    //   },
-    //   contact: {
-    //     address: "124, Herbert Macaulay Way",
-    //     city: "Yaba, Lagos",
-    //     email: `${student?.admission_no.toLowerCase()}@school.com`,
-    //     phone: "08012345678",
-    //   },
-    //   guardian: {
-    //     father_name: "Mr. John Doe",
-    //     mother_name: "Mrs. Jane Doe",
-    //     father_phone: "08055555555",
-    //     mother_phone: "08099999999",
-    //     email: "parents@gmail.com",
-    //     occupation: "Civil Servant",
-    //     address: "Same as student",
-    //   },
-    //   medical: {
-    //     allergies: "Peanuts",
-    //     disabilities: "None",
-    //     blood_group: "O+",
-    //   }
-    // };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "max-w-7xl mx-auto p-4 md:p-6 space-y-8 bg-gray-50/50 min-h-screen",
         children: [
@@ -299,7 +293,7 @@ async function StudentProfile(props) {
                         className: "absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                        lineNumber: 99,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -314,17 +308,17 @@ async function StudentProfile(props) {
                                         className: "text-white/90"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 70,
                                         columnNumber: 20
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 69,
                                     columnNumber: 16
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                lineNumber: 103,
+                                lineNumber: 68,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -337,7 +331,7 @@ async function StudentProfile(props) {
                                                 children: student?.name || "Student Name"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 77,
                                                 columnNumber: 20
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -349,13 +343,13 @@ async function StudentProfile(props) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 78,
                                                 columnNumber: 20
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 76,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -369,7 +363,7 @@ async function StudentProfile(props) {
                                                         className: "text-blue-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 84,
                                                         columnNumber: 25
                                                     }, this),
                                                     " ",
@@ -377,13 +371,13 @@ async function StudentProfile(props) {
                                                         children: student?.admission_no
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 84,
                                                         columnNumber: 69
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 83,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -394,7 +388,7 @@ async function StudentProfile(props) {
                                                         className: "text-blue-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 87,
                                                         columnNumber: 25
                                                     }, this),
                                                     " ",
@@ -402,13 +396,13 @@ async function StudentProfile(props) {
                                                         children: student?.date_of_birth
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 87,
                                                         columnNumber: 73
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 86,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -419,7 +413,7 @@ async function StudentProfile(props) {
                                                         className: "text-blue-300"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 125,
+                                                        lineNumber: 90,
                                                         columnNumber: 25
                                                     }, this),
                                                     " ",
@@ -427,25 +421,25 @@ async function StudentProfile(props) {
                                                         children: "Lagos, NG"
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                        lineNumber: 125,
+                                                        lineNumber: 90,
                                                         columnNumber: 71
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 89,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                lineNumber: 110,
+                                lineNumber: 75,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -456,7 +450,7 @@ async function StudentProfile(props) {
                                         children: "Current Status"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 97,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -464,7 +458,7 @@ async function StudentProfile(props) {
                                         children: "Active"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 98,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -474,32 +468,32 @@ async function StudentProfile(props) {
                                                 size: 12
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 100,
                                                 columnNumber: 20
                                             }, this),
                                             " Contact Parent"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 99,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                                lineNumber: 131,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                        lineNumber: 101,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                lineNumber: 98,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$components$2f$common$2f$Reusables$2f$Studentprofile$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -510,13 +504,13 @@ async function StudentProfile(props) {
                 remarks: mockRemarks
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-                lineNumber: 141,
+                lineNumber: 106,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Students)/students/profile/[id]/page.tsx",
-        lineNumber: 95,
+        lineNumber: 60,
         columnNumber: 5
     }, this);
 }

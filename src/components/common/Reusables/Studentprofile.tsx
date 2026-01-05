@@ -86,7 +86,7 @@ export default function StudentProfileView({
         
         {/* --- VIEW: ACADEMICS --- */}
         {activeTab === "academics" && (
-           <ResultViewer results={results} />
+           <ResultViewer results={results} data={profileData} />
         )}
 
         {/* --- VIEW: ATTENDANCE --- */}

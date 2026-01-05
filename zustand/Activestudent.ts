@@ -40,36 +40,29 @@ export interface Student {
 }
 
 export const Activestudent = create<Student>((set) => ({
-    // Initial Values
-    student_id: 0, admission_no: '', name: '',  sex: '',  date_of_birth: '',  
+student_id: 0,
+admission_no: '',
+name: '',
+sex: '', 
+date_of_birth: '',  
 class_id: 0,
-    class_name: '',
-    info_id: 0,
-   
-    
-    
-   
-    first_name: '',
-    last_name: '',
-  gender: '', nationality: '',  religion: '', blood_group: '',
-    genotype: '', 
-   
-  
-    
-   
-   
-    state_of_origin: '',
-    lga: '',
-        fathers_name: '',
-    mothers_name: '',   fathers_number: '',
-    mothers_number: '',
-    address: '',
-
- 
-
-
+class_name: '',
+info_id: 0,
+first_name: '',
+last_name: '',
+gender: '',
+nationality: '', 
+religion: '', 
+blood_group: '',
+genotype: '', 
+state_of_origin: '',
+lga: '',
+fathers_name: '',
+mothers_name: '',  
+fathers_number: '',
+mothers_number: '',
+address: '',
     setStudent: (data) => set((state) => ({ ...state, ...data })),
-
     setstudent_id: (value) => set({ student_id: value }),
     setadmission_no: (value) => set({ admission_no: value }),
     setname: (value) => set({ name: value }),
