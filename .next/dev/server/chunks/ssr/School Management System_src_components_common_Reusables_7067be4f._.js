@@ -17,9 +17,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 ;
 function ResultViewer({ results }) {
     const [activeTerm, setActiveTerm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("1");
-    // Filter results based on the active term
     const filteredResults = results.filter((r)=>r.term === activeTerm);
-    // Helper to color grades
     const getGradeColor = (grade)=>{
         switch(grade){
             case "A":
@@ -49,14 +47,14 @@ function ResultViewer({ results }) {
                                         className: "w-5 h-5 text-blue-600"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 39,
                                         columnNumber: 14
                                     }, this),
                                     "Academic Transcript"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 40,
+                                lineNumber: 38,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -64,13 +62,13 @@ function ResultViewer({ results }) {
                                 children: "Select a term to view performance"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 44,
+                                lineNumber: 42,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -91,18 +89,18 @@ function ResultViewer({ results }) {
                                 ]
                             }, term, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 50,
+                                lineNumber: 48,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                        lineNumber: 48,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 38,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -119,7 +117,7 @@ function ResultViewer({ results }) {
                                         children: "Subject"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -127,7 +125,7 @@ function ResultViewer({ results }) {
                                         children: "Test 1"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -135,7 +133,7 @@ function ResultViewer({ results }) {
                                         children: "Test 2"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -143,7 +141,7 @@ function ResultViewer({ results }) {
                                         children: "Exam"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -151,7 +149,7 @@ function ResultViewer({ results }) {
                                         children: "Total"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -159,18 +157,18 @@ function ResultViewer({ results }) {
                                         children: "Grade"
                                     }, void 0, false, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 76,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 72,
+                                lineNumber: 70,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 71,
+                            lineNumber: 69,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -189,12 +187,12 @@ function ResultViewer({ results }) {
                                                             size: 14
                                                         }, void 0, false, {
                                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                            lineNumber: 91,
+                                                            lineNumber: 89,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 88,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -202,18 +200,18 @@ function ResultViewer({ results }) {
                                                         children: res.subject_name || `Subject ${res.subject_id}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 91,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 87,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 86,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -221,7 +219,7 @@ function ResultViewer({ results }) {
                                             children: res.test1
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 96,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -229,7 +227,7 @@ function ResultViewer({ results }) {
                                             children: res.test2
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 101,
+                                            lineNumber: 99,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -237,7 +235,7 @@ function ResultViewer({ results }) {
                                             children: res.exam
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 102,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -247,12 +245,12 @@ function ResultViewer({ results }) {
                                                 children: res.total
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 108,
+                                                lineNumber: 106,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 107,
+                                            lineNumber: 105,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -262,18 +260,18 @@ function ResultViewer({ results }) {
                                                 children: res.grade
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 111,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                            lineNumber: 112,
+                                            lineNumber: 110,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, res.result_id, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 84,
+                                    lineNumber: 82,
                                     columnNumber: 17
                                 }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -286,7 +284,7 @@ function ResultViewer({ results }) {
                                                 className: "w-8 h-8 mb-2 opacity-50"
                                             }, void 0, false, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 123,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -297,39 +295,39 @@ function ResultViewer({ results }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 124,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 122,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 121,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                lineNumber: 122,
+                                lineNumber: 120,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 81,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                    lineNumber: 70,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 69,
+                lineNumber: 67,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -344,7 +342,7 @@ function ResultViewer({ results }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 138,
+                            lineNumber: 136,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -358,30 +356,30 @@ function ResultViewer({ results }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 137,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                            lineNumber: 139,
+                            lineNumber: 137,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                    lineNumber: 137,
+                    lineNumber: 135,
                     columnNumber: 10
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-                lineNumber: 136,
+                lineNumber: 134,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/components/common/Reusables/ResultViewer.tsx",
-        lineNumber: 36,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }

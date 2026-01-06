@@ -6,22 +6,20 @@ import { BookOpen, AlertCircle, FileSpreadsheet } from "lucide-react";
 interface Result {
   result_id: number;
   subject_id: number;
-  term: string; // Assuming "1", "2", or "3"
-  test1: number;
+  term: string; 
+    test1: number;
   test2: number;
   exam: number;
   total: number;
   grade: string;
-  subject_name?: string; // Optional: helpful for display
+  subject_name?: string;
 }
 
 export default function ResultViewer({ results }: { results: Result[] }) {
   const [activeTerm, setActiveTerm] = useState("1");
 
-  // Filter results based on the active term
   const filteredResults = results.filter((r) => r.term === activeTerm);
 
-  // Helper to color grades
   const getGradeColor = (grade: string) => {
     switch (grade) {
       case "A": return "bg-emerald-100 text-emerald-700 border-emerald-200";

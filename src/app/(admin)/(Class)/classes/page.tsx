@@ -8,7 +8,6 @@ import {
 
 const ALPHABET = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
 
-// --- MEMOIZED SUB-COMPONENTS ---
 const StatCard = React.memo(({ icon, label, value }: any) => (
   <div className="bg-white p-5 rounded-xl border border-zinc-200 flex items-center gap-4">
     <div className="w-10 h-10 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-500 border border-zinc-100">
@@ -48,7 +47,6 @@ const TableRow = React.memo(({ item, onEdit, onDelete }: any) => (
 ));
 TableRow.displayName = "TableRow";
 
-// --- MAIN COMPONENT ---
 
 export default function Classes() {
   const [classes, setClasses] = useState([
@@ -56,13 +54,15 @@ export default function Classes() {
     { id: 2, name: "JSS 2", code: "B", teacher: "Deborah Cole", students: 28 },
   ]);
   
+
+  // const Staffs=await Fetch('staff')
+
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingClass, setEditingClass] = useState<any>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: "", code: "A", teacher: "" });
 
-  // Callbacks to prevent re-creating functions on every render
   const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   }, []);

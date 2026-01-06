@@ -1,14 +1,120 @@
-[00:07:18.378] Server  LOG      ✓ Ready in 301.1s
-[00:07:52.637] Server  LOG      ○ Compiling / ...
-[00:18:07.267] Server  LOG      ○ Compiling /_not-found/page ...
-[00:18:59.520] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
-[00:20:26.450] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
-[00:21:17.877] Server  LOG      ○ Compiling /students/add ...
-[00:27:14.126] Server  LOG      ○ Compiling /classes ...
-[00:31:14.998] Server  LOG      ○ Compiling /students/allstudents ...
-[00:31:31.315] Browser LOG     []
-[00:31:31.316] Browser LOG     []
-[00:31:37.011] Server  LOG      ○ Compiling /students/profile/[id] ...
-[00:32:19.536] Server  LOG      ✓ Compiled in 19.6s
-[00:36:12.981] Server  LOG      ○ Compiling /teachers/all ...
-[00:36:47.235] Browser ERROR   Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.
+[00:00:26.128] Server  LOG      ✓ Ready in 19.8s
+[00:01:44.987] Server  LOG      ○ Compiling / ...
+[00:04:05.546] Server  LOG      ○ Compiling /_not-found/page ...
+[00:04:22.235] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:08:46.045] Server  LOG      ○ Compiling /classes ...
+[00:11:19.550] Server  LOG      ✓ Compiled in 5.7s
+[00:11:23.446] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:11:32.157] Server  LOG      ○ Compiling /teachers/all ...
+[00:12:02.354] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:13:39.304] Server  LOG      ○ Compiling /subjects ...
+[00:14:48.010] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:48.070] Server  LOG      ✓ Compiled in 4s
+[00:14:48.217] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:52.593] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:16:12.995] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:16:13.010] Server  LOG      ✓ Compiled in 2.4s
+[00:16:18.907] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:18:33.072] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:18:33.075] Server  LOG      ✓ Compiled in 3.1s
+[00:18:36.779] Browser ERROR   unhandledRejection: undefined
+[00:18:38.975] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:19:45.321] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:45.341] Server  LOG      ✓ Compiled in 1818ms
+[00:19:45.430] Browser ERROR   unhandledRejection: undefined
+[00:19:53.138] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:20:18.189] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(teachers)/teachers/profile/[id]/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:20:18.216] Server  LOG      ✓ Compiled in 1002ms
+[00:20:21.800] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:22:08.687] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:22:15.160] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:24:18.180] Server  LOG      ✓ Compiled in 491ms
+[00:24:20.162] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:24:49.587] Server  LOG      ✓ Compiled in 406ms
+[00:24:51.197] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:25:10.215] Server  LOG      ✓ Compiled in 660ms
+[00:25:11.462] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:25:31.222] Server  LOG      ✓ Compiled in 319ms
+[00:25:31.875] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:26:00.204] Server  LOG      ✓ Compiled in 981ms
+[00:26:01.101] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:26:34.376] Server  LOG      ✓ Compiled in 408ms
+[00:26:45.865] Server  ERROR    ⨯ Error: The default export is not a React Component in "/Exams/Entry/page"
+[00:26:46.416] Server  ERROR    ⨯ Error: The default export is not a React Component in "/Exams/Entry/page"
+[00:26:49.834] Server  LOG      ○ Compiling /_error ...
+[00:26:57.614] Server  ERROR    ⨯ Error: The default export is not a React Component in "/Exams/Entry/page"
+[00:26:58.055] Server  ERROR    ⨯ Error: The default export is not a React Component in "/Exams/Entry/page"
+[00:26:59.164] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/Exams/Entry/page"
+[00:27:37.621] Browser LOG     Failed to fetch devPagesManifest {}
+[00:27:37.989] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:37.989] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:37.989] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:38.345] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:38.346] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:38.351] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:40.174] Browser WARN    Image with src "http://localhost:3000/images/shape/grid-01.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:27:40.175] Browser WARN    Image with src "http://localhost:3000/images/error/404.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:27:48.349] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:28:52.800] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.226] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Entry. Falling back to browser navigation. {}
+[00:28:54.227] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:28:57.263] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:31:07.311] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./School Management System/src/app/(admin)/(Examinations)/Exams/Report-cards/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:31:07.336] Server  LOG      ✓ Compiled in 489ms
+[00:31:09.760] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:31:46.861] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Report-cards. Falling back to browser navigation. {}
+[00:31:46.861] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/Exams/Report-cards. Falling back to browser navigation. {}
+[00:31:49.528] Server  LOG      ✓ Compiled in 1928ms
+[00:31:50.731] Server  LOG      ✓ Compiled in 1ms
+[00:31:51.748] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:33:13.774] Server  LOG      ✓ Compiled in 306ms
+[00:35:08.701] Server  LOG      ✓ Compiled in 230ms
+[00:36:17.169] Server  LOG      ✓ Compiled in 404ms
+[00:37:25.176] Server  LOG      ✓ Compiled in 174ms
+[00:39:35.498] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:39:35.933] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:39:38.233] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:39:40.922] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/images/avatar/avatar.png" "received" null
+[00:40:18.000] Browser ERROR   Classes error: {}
+[00:40:18.000] Browser ERROR   Error: {}
+[00:40:18.000] Browser ERROR   Classes error: {}
+[00:40:18.000] Browser ERROR   Error: {}

@@ -25,7 +25,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 const ALPHABET = Array.from({
     length: 26
 }, (_, i)=>String.fromCharCode(65 + i));
-// --- MEMOIZED SUB-COMPONENTS ---
 const StatCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].memo(({ icon, label, value })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "bg-white p-5 rounded-xl border border-zinc-200 flex items-center gap-4",
         children: [
@@ -34,7 +33,7 @@ const StatCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 14,
+                lineNumber: 13,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -44,7 +43,7 @@ const StatCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                         children: label
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                        lineNumber: 18,
+                        lineNumber: 17,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -52,19 +51,19 @@ const StatCard = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                         children: value
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                        lineNumber: 19,
+                        lineNumber: 18,
                         columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 17,
+                lineNumber: 16,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-        lineNumber: 13,
+        lineNumber: 12,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0)));
 StatCard.displayName = "StatCard";
@@ -81,7 +80,7 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                             children: item.code
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                            lineNumber: 29,
+                            lineNumber: 28,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -93,18 +92,18 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                            lineNumber: 32,
+                            lineNumber: 31,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                    lineNumber: 28,
+                    lineNumber: 27,
                     columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -112,7 +111,7 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                 children: item.teacher || "Unassigned"
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -123,7 +122,7 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 36,
+                lineNumber: 35,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -138,12 +137,12 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                                lineNumber: 40,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                            lineNumber: 39,
+                            lineNumber: 38,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -153,29 +152,29 @@ const TableRow = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$S
                                 size: 16
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                                lineNumber: 43,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                            lineNumber: 42,
+                            lineNumber: 41,
                             columnNumber: 9
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                    lineNumber: 38,
+                    lineNumber: 37,
                     columnNumber: 7
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/app/(admin)/(Class)/classes/page.tsx",
-        lineNumber: 26,
+        lineNumber: 25,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0)));
 TableRow.displayName = "TableRow";
@@ -196,6 +195,7 @@ function Classes() {
             students: 28
         }
     ]);
+    // const Staffs=await Fetch('staff')
     const [searchTerm, setSearchTerm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [isModalOpen, setIsModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingClass, setEditingClass] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -205,7 +205,6 @@ function Classes() {
         code: "A",
         teacher: ""
     });
-    // Callbacks to prevent re-creating functions on every render
     const handleSearch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((e)=>{
         setSearchTerm(e.target.value);
     }, []);

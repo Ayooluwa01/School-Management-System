@@ -54,16 +54,7 @@ const navItems: NavItem[] = [
       // { name: "Results", path: "/students/results", icon: <BookOpenCheck/> },
     ],
   },
- {
-  name: "Class",
-  icon: <Layers size={18} />,
-  path: "/classes",
-},
-
-
-
-
-{
+  {
   name: "Teachers",
   icon: <Users size={18} />,
   subItems: [
@@ -84,8 +75,12 @@ const navItems: NavItem[] = [
     },
 
   ],
-}
-,
+},
+ {
+  name: "Class",
+  icon: <Layers size={18} />,
+  path: "/classes",
+},
 {
   name: "Subject",
   icon: <BookOpen size={18} />,
@@ -96,6 +91,28 @@ const navItems: NavItem[] = [
   icon: <CalendarClock size={18} />,
   path: "/timetable",
 },
+{
+  name: "Examinations",
+  icon: <FileText size={18} />,
+  subItems: [
+    // {
+    //   name: "Exam Schedule",
+    //   path: "/Exams/Schedule",
+    //   icon: <CalendarDays size={16} />,
+    // },
+    {
+      name: "Result Entry",
+      path: "/Exams/Entry",
+      icon: <Table size={16} />,
+    },
+    {
+      name: "Report Cards",
+      path: "/Exams/Report-cards",
+      icon: <ClipboardCheck size={16} />,
+    },
+  ],
+}
+,
 {
   name: "Staffs",
   icon: <UserCog size={18} />,
@@ -118,28 +135,7 @@ const navItems: NavItem[] = [
   ],
 }
 ,
-{
-  name: "Examinations",
-  icon: <FileText size={18} />,
-  subItems: [
-    {
-      name: "Exam Schedule",
-      path: "/exams/schedule",
-      icon: <CalendarDays size={16} />,
-    },
-    {
-      name: "Result Entry",
-      path: "/exams/entry",
-      icon: <Table size={16} />,
-    },
-    {
-      name: "Report Cards",
-      path: "/exams/report-cards",
-      icon: <ClipboardCheck size={16} />,
-    },
-  ],
-}
-,
+
 
  
 

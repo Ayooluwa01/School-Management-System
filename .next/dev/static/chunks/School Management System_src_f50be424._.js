@@ -3490,7 +3490,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/credit-card.js [app-client] (ecmascript) <export default as CreditCard>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$list$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__List$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/list.js [app-client] (ecmascript) <export default as List>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$chart$2d$column$2d$increasing$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileBarChart$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-chart-column-increasing.js [app-client] (ecmascript) <export default as FileBarChart>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$days$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CalendarDays$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-days.js [app-client] (ecmascript) <export default as CalendarDays>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-client] (ecmascript) <export default as ClipboardCheck>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-text.js [app-client] (ecmascript) <export default as FileText>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__UserPlus$3e$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-plus.js [app-client] (ecmascript) <export default as UserPlus>");
@@ -3559,23 +3558,12 @@ const navItems = [
         ]
     },
     {
-        name: "Class",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
-            size: 18
-        }, void 0, false, {
-            fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 59,
-            columnNumber: 9
-        }, ("TURBOPACK compile-time value", void 0)),
-        path: "/classes"
-    },
-    {
         name: "Teachers",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
             size: 18
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 68,
+            lineNumber: 59,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0)),
         subItems: [
@@ -3586,7 +3574,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 73,
+                    lineNumber: 64,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3597,7 +3585,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 78,
+                    lineNumber: 69,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3608,11 +3596,22 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 83,
+                    lineNumber: 74,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             }
         ]
+    },
+    {
+        name: "Class",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
+            size: 18
+        }, void 0, false, {
+            fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
+            lineNumber: 81,
+            columnNumber: 9
+        }, ("TURBOPACK compile-time value", void 0)),
+        path: "/classes"
     },
     {
         name: "Subject",
@@ -3620,7 +3619,7 @@ const navItems = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 91,
+            lineNumber: 86,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0)),
         path: "/subjects"
@@ -3631,10 +3630,49 @@ const navItems = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 96,
+            lineNumber: 91,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0)),
         path: "/timetable"
+    },
+    {
+        name: "Examinations",
+        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
+            size: 18
+        }, void 0, false, {
+            fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
+            lineNumber: 96,
+            columnNumber: 9
+        }, ("TURBOPACK compile-time value", void 0)),
+        subItems: [
+            // {
+            //   name: "Exam Schedule",
+            //   path: "/Exams/Schedule",
+            //   icon: <CalendarDays size={16} />,
+            // },
+            {
+                name: "Result Entry",
+                path: "/Exams/Entry",
+                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$table$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Table$3e$__["Table"], {
+                    size: 16
+                }, void 0, false, {
+                    fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
+                    lineNumber: 106,
+                    columnNumber: 13
+                }, ("TURBOPACK compile-time value", void 0))
+            },
+            {
+                name: "Report Cards",
+                path: "/Exams/Report-cards",
+                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__["ClipboardCheck"], {
+                    size: 16
+                }, void 0, false, {
+                    fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
+                    lineNumber: 111,
+                    columnNumber: 13
+                }, ("TURBOPACK compile-time value", void 0))
+            }
+        ]
     },
     {
         name: "Staffs",
@@ -3642,7 +3680,7 @@ const navItems = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 101,
+            lineNumber: 118,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0)),
         subItems: [
@@ -3653,7 +3691,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 106,
+                    lineNumber: 123,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3664,7 +3702,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 111,
+                    lineNumber: 128,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3675,52 +3713,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 116,
-                    columnNumber: 13
-                }, ("TURBOPACK compile-time value", void 0))
-            }
-        ]
-    },
-    {
-        name: "Examinations",
-        icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"], {
-            size: 18
-        }, void 0, false, {
-            fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 123,
-            columnNumber: 9
-        }, ("TURBOPACK compile-time value", void 0)),
-        subItems: [
-            {
-                name: "Exam Schedule",
-                path: "/exams/schedule",
-                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$days$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CalendarDays$3e$__["CalendarDays"], {
-                    size: 16
-                }, void 0, false, {
-                    fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 128,
-                    columnNumber: 13
-                }, ("TURBOPACK compile-time value", void 0))
-            },
-            {
-                name: "Result Entry",
-                path: "/exams/entry",
-                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$table$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Table$3e$__["Table"], {
-                    size: 16
-                }, void 0, false, {
-                    fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
                     lineNumber: 133,
-                    columnNumber: 13
-                }, ("TURBOPACK compile-time value", void 0))
-            },
-            {
-                name: "Report Cards",
-                path: "/exams/report-cards",
-                icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__["ClipboardCheck"], {
-                    size: 16
-                }, void 0, false, {
-                    fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 138,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             }
@@ -3732,7 +3725,7 @@ const navItems = [
             size: 18
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 148,
+            lineNumber: 144,
             columnNumber: 9
         }, ("TURBOPACK compile-time value", void 0)),
         subItems: [
@@ -3743,7 +3736,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 153,
+                    lineNumber: 149,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3754,7 +3747,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 158,
+                    lineNumber: 154,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3765,7 +3758,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 163,
+                    lineNumber: 159,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3776,7 +3769,7 @@ const navItems = [
                     size: 16
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 168,
+                    lineNumber: 164,
                     columnNumber: 13
                 }, ("TURBOPACK compile-time value", void 0))
             }
@@ -3788,7 +3781,7 @@ const othersItems = [
         name: "Communication",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$plug$2d$in$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PlugInIcon$3e$__["PlugInIcon"], {}, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 189,
+            lineNumber: 185,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         subItems: [
@@ -3797,7 +3790,7 @@ const othersItems = [
                 path: "/communication/announcements",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$page$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PageIcon$3e$__["PageIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 191,
+                    lineNumber: 187,
                     columnNumber: 76
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3806,7 +3799,7 @@ const othersItems = [
                 path: "/communication/broadcast",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$plug$2d$in$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PlugInIcon$3e$__["PlugInIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 192,
+                    lineNumber: 188,
                     columnNumber: 70
                 }, ("TURBOPACK compile-time value", void 0))
             }
@@ -3816,7 +3809,7 @@ const othersItems = [
         name: "Settings",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$box$2d$cube$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BoxCubeIcon$3e$__["BoxCubeIcon"], {}, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 198,
+            lineNumber: 194,
             columnNumber: 11
         }, ("TURBOPACK compile-time value", void 0)),
         subItems: [
@@ -3825,7 +3818,7 @@ const othersItems = [
                 path: "/settings/school",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$grid$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__GridIcon$3e$__["GridIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 200,
+                    lineNumber: 196,
                     columnNumber: 65
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3834,7 +3827,7 @@ const othersItems = [
                 path: "/settings/session",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$calender$2d$line$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CalenderIcon$3e$__["CalenderIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 201,
+                    lineNumber: 197,
                     columnNumber: 68
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3843,7 +3836,7 @@ const othersItems = [
                 path: "/settings/grading",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$table$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableIcon$3e$__["TableIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 202,
+                    lineNumber: 198,
                     columnNumber: 66
                 }, ("TURBOPACK compile-time value", void 0))
             },
@@ -3852,7 +3845,7 @@ const othersItems = [
                 path: "/settings/roles",
                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$user$2d$circle$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__UserCircleIcon$3e$__["UserCircleIcon"], {}, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 203,
+                    lineNumber: 199,
                     columnNumber: 69
                 }, ("TURBOPACK compile-time value", void 0))
             }
@@ -3876,7 +3869,7 @@ const AppSidebar = ()=>{
                                     children: nav.icon
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 232,
+                                    lineNumber: 228,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 (isExpanded || isHovered || isMobileOpen) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3884,20 +3877,20 @@ const AppSidebar = ()=>{
                                     children: nav.name
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 242,
+                                    lineNumber: 238,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 (isExpanded || isHovered || isMobileOpen) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                     className: `ml-auto w-5 h-5 transition-transform duration-200  ${openSubmenu?.type === menuType && openSubmenu?.index === index ? "rotate-180 text-brand-500" : ""}`
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 245,
+                                    lineNumber: 241,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                            lineNumber: 220,
+                            lineNumber: 216,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)) : nav.path && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: nav.path,
@@ -3908,7 +3901,7 @@ const AppSidebar = ()=>{
                                     children: nav.icon
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 263,
+                                    lineNumber: 259,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 (isExpanded || isHovered || isMobileOpen) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3916,13 +3909,13 @@ const AppSidebar = ()=>{
                                     children: nav.name
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 273,
+                                    lineNumber: 269,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                            lineNumber: 257,
+                            lineNumber: 253,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0)),
                         nav.subItems && (isExpanded || isHovered || isMobileOpen) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3947,45 +3940,45 @@ const AppSidebar = ()=>{
                                                         children: subItem.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                                        lineNumber: 303,
+                                                        lineNumber: 299,
                                                         columnNumber: 9
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     subItem.name
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                                lineNumber: 302,
+                                                lineNumber: 298,
                                                 columnNumber: 7
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                            lineNumber: 294,
+                                            lineNumber: 290,
                                             columnNumber: 5
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, subItem.name, false, {
                                         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                        lineNumber: 293,
+                                        lineNumber: 289,
                                         columnNumber: 3
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                lineNumber: 291,
+                                lineNumber: 287,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                            lineNumber: 279,
+                            lineNumber: 275,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, nav.name, true, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 218,
+                    lineNumber: 214,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)))
         }, void 0, false, {
             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-            lineNumber: 216,
+            lineNumber: 212,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0));
     const [openSubmenu, setOpenSubmenu] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -4081,7 +4074,7 @@ const AppSidebar = ()=>{
                                     children: "Schl"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 415,
+                                    lineNumber: 411,
                                     columnNumber: 50
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " ",
@@ -4090,13 +4083,13 @@ const AppSidebar = ()=>{
                                     children: "Mgs"
                                 }, void 0, false, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 415,
+                                    lineNumber: 411,
                                     columnNumber: 93
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                            lineNumber: 415,
+                            lineNumber: 411,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false) : // <Image
@@ -4112,23 +4105,23 @@ const AppSidebar = ()=>{
                                 children: "Mgs"
                             }, void 0, false, {
                                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                lineNumber: 424,
+                                lineNumber: 420,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                        lineNumber: 424,
+                        lineNumber: 420,
                         columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                    lineNumber: 398,
+                    lineNumber: 394,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                lineNumber: 393,
+                lineNumber: 389,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4145,19 +4138,19 @@ const AppSidebar = ()=>{
                                             className: `mb-4 text-xs uppercase flex leading-5 text-gray-400 ${!isExpanded && !isHovered ? "lg:justify-center" : "justify-start"}`,
                                             children: isExpanded || isHovered || isMobileOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {}, void 0, false) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$horizontal$2d$dots$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HorizontaLDots$3e$__["HorizontaLDots"], {}, void 0, false, {
                                                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                                lineNumber: 441,
+                                                lineNumber: 437,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                            lineNumber: 432,
+                                            lineNumber: 428,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         renderMenuItems(navItems, "main")
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 431,
+                                    lineNumber: 427,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4167,47 +4160,47 @@ const AppSidebar = ()=>{
                                             className: `mb-4 text-xs uppercase flex leading-5 text-gray-400 ${!isExpanded && !isHovered ? "lg:justify-center" : "justify-start"}`,
                                             children: isExpanded || isHovered || isMobileOpen ? "Others" : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$icons$2f$horizontal$2d$dots$2e$svg$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HorizontaLDots$3e$__["HorizontaLDots"], {}, void 0, false, {
                                                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                                lineNumber: 458,
+                                                lineNumber: 454,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                            lineNumber: 448,
+                                            lineNumber: 444,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         renderMenuItems(othersItems, "others")
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                                    lineNumber: 447,
+                                    lineNumber: 443,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                            lineNumber: 430,
+                            lineNumber: 426,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                        lineNumber: 429,
+                        lineNumber: 425,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     isExpanded || isHovered || isMobileOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$src$2f$layout$2f$SidebarWidget$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                        lineNumber: 465,
+                        lineNumber: 461,
                         columnNumber: 52
                     }, ("TURBOPACK compile-time value", void 0)) : null
                 ]
             }, void 0, true, {
                 fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-                lineNumber: 428,
+                lineNumber: 424,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/School Management System/src/layout/AppSidebar.tsx",
-        lineNumber: 379,
+        lineNumber: 375,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
