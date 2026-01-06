@@ -9,8 +9,7 @@ import {
 import ResultViewer from "./ResultViewer"; // The component we made previously
 import ProfileDetails from "./Profiledetails";
 
-// --- MOCK INTERFACES ---
-// (In a real app, these come from your DB)
+
 interface Fee {
   id: number;
   title: string;
@@ -31,7 +30,7 @@ interface Attendance {
 interface Remark {
   id: number;
   teacher: string;
-  role: string; // e.g., "Form Teacher", "Principal"
+  role: string; 
   comment: string;
   date: string;
   sentiment: "positive" | "neutral" | "warning";
@@ -53,7 +52,7 @@ export default function StudentProfileView({
   const [activeTab, setActiveTab] = useState("profile");
 
   const tabs = [
-    { id: "profile", label: "Profile", icon: UserCog }, // <--- NEW TAB
+    { id: "profile", label: "Profile", icon: UserCog }, 
     { id: "academics", label: "Academics", icon: BookOpen },
     { id: "attendance", label: "Attendance", icon: Calendar },
     { id: "finance", label: "Financials", icon: DollarSign },
@@ -87,7 +86,7 @@ export default function StudentProfileView({
         
         {/* --- VIEW: ACADEMICS --- */}
         {activeTab === "academics" && (
-           <ResultViewer results={results} />
+           <ResultViewer results={results} data={profileData} />
         )}
 
         {/* --- VIEW: ATTENDANCE --- */}
@@ -98,7 +97,7 @@ export default function StudentProfileView({
               <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
                  <h3 className="text-gray-500 text-xs font-bold uppercase mb-4">Attendance Overview</h3>
                  <div className="relative h-32 w-32 mx-auto flex items-center justify-center">
-                    {/* Simple Donut representation */}
+
                     <div className="absolute inset-0 rounded-full border-[10px] border-gray-100 dark:border-gray-700"></div>
                     <div className="absolute inset-0 rounded-full border-[10px] border-emerald-500 border-t-transparent border-l-transparent -rotate-45"></div>
                     <div className="text-center">
