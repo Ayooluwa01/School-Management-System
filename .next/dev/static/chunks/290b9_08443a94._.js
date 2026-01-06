@@ -4896,111 +4896,6 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$chart$2d$column$2d$increasing$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-chart-column-increasing.js [app-client] (ecmascript)");
 }),
-"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-days.js [app-client] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-/**
- * @license lucide-react v0.561.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */ __turbopack_context__.s([
-    "__iconNode",
-    ()=>__iconNode,
-    "default",
-    ()=>CalendarDays
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-client] (ecmascript)");
-;
-const __iconNode = [
-    [
-        "path",
-        {
-            d: "M8 2v4",
-            key: "1cmpym"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M16 2v4",
-            key: "4m81vk"
-        }
-    ],
-    [
-        "rect",
-        {
-            width: "18",
-            height: "18",
-            x: "3",
-            y: "4",
-            rx: "2",
-            key: "1hopcy"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M3 10h18",
-            key: "8toen8"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M8 14h.01",
-            key: "6423bh"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M12 14h.01",
-            key: "1etili"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M16 14h.01",
-            key: "1gbofw"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M8 18h.01",
-            key: "lrp35t"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M12 18h.01",
-            key: "mhygvu"
-        }
-    ],
-    [
-        "path",
-        {
-            d: "M16 18h.01",
-            key: "kzsmim"
-        }
-    ]
-];
-const CalendarDays = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])("calendar-days", __iconNode);
-;
- //# sourceMappingURL=calendar-days.js.map
-}),
-"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-days.js [app-client] (ecmascript) <export default as CalendarDays>", ((__turbopack_context__) => {
-"use strict";
-
-__turbopack_context__.s([
-    "CalendarDays",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$days$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$days$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-days.js [app-client] (ecmascript)");
-}),
 "[project]/School Management System/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -5612,4 +5507,4 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2
 }),
 ]);
 
-//# sourceMappingURL=290b9_71674644._.js.map
+//# sourceMappingURL=290b9_08443a94._.js.map

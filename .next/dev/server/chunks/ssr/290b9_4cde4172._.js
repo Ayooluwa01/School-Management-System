@@ -9,120 +9,6 @@ function _interop_require_default(obj) {
 }
 exports._ = _interop_require_default;
 }),
-"[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-function _getRequireWildcardCache(nodeInterop) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function(nodeInterop) {
-        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop);
-}
-function _interop_require_wildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
-        default: obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-        __proto__: null
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj){
-        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-            if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-            else newObj[key] = obj[key];
-        }
-    }
-    newObj.default = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-exports._ = _interop_require_wildcard;
-}),
-"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactJsxRuntime; //# sourceMappingURL=react-jsx-runtime.js.map
-}),
-"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-dom.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactDOM; //# sourceMappingURL=react-dom.js.map
-}),
-"[project]/School Management System/node_modules/next/dist/shared/lib/side-effect.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: function() {
-        return SideEffect;
-    }
-});
-const _react = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-const isServer = ("TURBOPACK compile-time value", "undefined") === 'undefined';
-const useClientOnlyLayoutEffect = ("TURBOPACK compile-time truthy", 1) ? ()=>{} : "TURBOPACK unreachable";
-const useClientOnlyEffect = ("TURBOPACK compile-time truthy", 1) ? ()=>{} : "TURBOPACK unreachable";
-function SideEffect(props) {
-    const { headManager, reduceComponentsToState } = props;
-    function emitChange() {
-        if (headManager && headManager.mountedInstances) {
-            const headElements = _react.Children.toArray(Array.from(headManager.mountedInstances).filter(Boolean));
-            headManager.updateHead(reduceComponentsToState(headElements));
-        }
-    }
-    if ("TURBOPACK compile-time truthy", 1) {
-        headManager?.mountedInstances?.add(props.children);
-        emitChange();
-    }
-    useClientOnlyLayoutEffect(()=>{
-        headManager?.mountedInstances?.add(props.children);
-        return ()=>{
-            headManager?.mountedInstances?.delete(props.children);
-        };
-    });
-    // We need to call `updateHead` method whenever the `SideEffect` is trigger in all
-    // life-cycles: mount, update, unmount. However, if there are multiple `SideEffect`s
-    // being rendered, we only trigger the method from the last one.
-    // This is ensured by keeping the last unflushed `updateHead` in the `_pendingUpdate`
-    // singleton in the layout effect pass, and actually trigger it in the effect pass.
-    useClientOnlyLayoutEffect(()=>{
-        if (headManager) {
-            headManager._pendingUpdate = emitChange;
-        }
-        return ()=>{
-            if (headManager) {
-                headManager._pendingUpdate = emitChange;
-            }
-        };
-    });
-    useClientOnlyEffect(()=>{
-        if (headManager && headManager._pendingUpdate) {
-            headManager._pendingUpdate();
-            headManager._pendingUpdate = null;
-        }
-        return ()=>{
-            if (headManager && headManager._pendingUpdate) {
-                headManager._pendingUpdate();
-                headManager._pendingUpdate = null;
-            }
-        };
-    });
-    return null;
-} //# sourceMappingURL=side-effect.js.map
-}),
-"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['contexts'].HeadManagerContext; //# sourceMappingURL=head-manager-context.js.map
-}),
 "[project]/School Management System/node_modules/next/dist/shared/lib/utils/warn-once.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
@@ -145,168 +31,6 @@ if ("TURBOPACK compile-time truthy", 1) {
         warnings.add(msg);
     };
 } //# sourceMappingURL=warn-once.js.map
-}),
-"[project]/School Management System/node_modules/next/dist/shared/lib/head.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-0 && (module.exports = {
-    default: null,
-    defaultHead: null
-});
-function _export(target, all) {
-    for(var name in all)Object.defineProperty(target, name, {
-        enumerable: true,
-        get: all[name]
-    });
-}
-_export(exports, {
-    default: function() {
-        return _default;
-    },
-    defaultHead: function() {
-        return defaultHead;
-    }
-});
-const _interop_require_default = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-ssr] (ecmascript)");
-const _interop_require_wildcard = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"));
-const _sideeffect = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/side-effect.js [app-ssr] (ecmascript)"));
-const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.js [app-ssr] (ecmascript)");
-const _warnonce = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/utils/warn-once.js [app-ssr] (ecmascript)");
-function defaultHead() {
-    const head = [
-        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
-            charSet: "utf-8"
-        }, "charset"),
-        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
-            name: "viewport",
-            content: "width=device-width"
-        }, "viewport")
-    ];
-    return head;
-}
-function onlyReactElement(list, child) {
-    // React children can be "string" or "number" in this case we ignore them for backwards compat
-    if (typeof child === 'string' || typeof child === 'number') {
-        return list;
-    }
-    // Adds support for React.Fragment
-    if (child.type === _react.default.Fragment) {
-        return list.concat(_react.default.Children.toArray(child.props.children).reduce((fragmentList, fragmentChild)=>{
-            if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
-                return fragmentList;
-            }
-            return fragmentList.concat(fragmentChild);
-        }, []));
-    }
-    return list.concat(child);
-}
-const METATYPES = [
-    'name',
-    'httpEquiv',
-    'charSet',
-    'itemProp'
-];
-/*
- returns a function for filtering head child elements
- which shouldn't be duplicated, like <title/>
- Also adds support for deduplicated `key` properties
-*/ function unique() {
-    const keys = new Set();
-    const tags = new Set();
-    const metaTypes = new Set();
-    const metaCategories = {};
-    return (h)=>{
-        let isUnique = true;
-        let hasKey = false;
-        if (h.key && typeof h.key !== 'number' && h.key.indexOf('$') > 0) {
-            hasKey = true;
-            const key = h.key.slice(h.key.indexOf('$') + 1);
-            if (keys.has(key)) {
-                isUnique = false;
-            } else {
-                keys.add(key);
-            }
-        }
-        // eslint-disable-next-line default-case
-        switch(h.type){
-            case 'title':
-            case 'base':
-                if (tags.has(h.type)) {
-                    isUnique = false;
-                } else {
-                    tags.add(h.type);
-                }
-                break;
-            case 'meta':
-                for(let i = 0, len = METATYPES.length; i < len; i++){
-                    const metatype = METATYPES[i];
-                    if (!h.props.hasOwnProperty(metatype)) continue;
-                    if (metatype === 'charSet') {
-                        if (metaTypes.has(metatype)) {
-                            isUnique = false;
-                        } else {
-                            metaTypes.add(metatype);
-                        }
-                    } else {
-                        const category = h.props[metatype];
-                        const categories = metaCategories[metatype] || new Set();
-                        if ((metatype !== 'name' || !hasKey) && categories.has(category)) {
-                            isUnique = false;
-                        } else {
-                            categories.add(category);
-                            metaCategories[metatype] = categories;
-                        }
-                    }
-                }
-                break;
-        }
-        return isUnique;
-    };
-}
-/**
- *
- * @param headChildrenElements List of children of <Head>
- */ function reduceComponents(headChildrenElements) {
-    return headChildrenElements.reduce(onlyReactElement, []).reverse().concat(defaultHead().reverse()).filter(unique()).reverse().map((c, i)=>{
-        const key = c.key || i;
-        if ("TURBOPACK compile-time truthy", 1) {
-            // omit JSON-LD structured data snippets from the warning
-            if (c.type === 'script' && c.props['type'] !== 'application/ld+json') {
-                const srcMessage = c.props['src'] ? `<script> tag with src="${c.props['src']}"` : `inline <script>`;
-                (0, _warnonce.warnOnce)(`Do not add <script> tags using next/head (see ${srcMessage}). Use next/script instead. \nSee more info here: https://nextjs.org/docs/messages/no-script-tags-in-head-component`);
-            } else if (c.type === 'link' && c.props['rel'] === 'stylesheet') {
-                (0, _warnonce.warnOnce)(`Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="${c.props['href']}"). Use Document instead. \nSee more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component`);
-            }
-        }
-        return /*#__PURE__*/ _react.default.cloneElement(c, {
-            key
-        });
-    });
-}
-/**
- * This component injects elements to `<head>` of your page.
- * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
- */ function Head({ children }) {
-    const headManager = (0, _react.useContext)(_headmanagercontextsharedruntime.HeadManagerContext);
-    return /*#__PURE__*/ (0, _jsxruntime.jsx)(_sideeffect.default, {
-        reduceComponentsToState: reduceComponents,
-        headManager: headManager,
-        children: children
-    });
-}
-const _default = Head;
-if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
-    Object.defineProperty(exports.default, '__esModule', {
-        value: true
-    });
-    Object.assign(exports.default, exports);
-    module.exports = exports.default;
-} //# sourceMappingURL=head.js.map
 }),
 "[project]/School Management System/node_modules/next/dist/shared/lib/image-blur-svg.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -947,6 +671,282 @@ function getImgProps({ src, sizes, unoptimized = false, priority = false, preloa
         meta
     };
 } //# sourceMappingURL=get-img-props.js.map
+}),
+"[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interop_require_wildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+        __proto__: null
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj){
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+            else newObj[key] = obj[key];
+        }
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+exports._ = _interop_require_wildcard;
+}),
+"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactJsxRuntime; //# sourceMappingURL=react-jsx-runtime.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-dom.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactDOM; //# sourceMappingURL=react-dom.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/shared/lib/side-effect.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return SideEffect;
+    }
+});
+const _react = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+const isServer = ("TURBOPACK compile-time value", "undefined") === 'undefined';
+const useClientOnlyLayoutEffect = ("TURBOPACK compile-time truthy", 1) ? ()=>{} : "TURBOPACK unreachable";
+const useClientOnlyEffect = ("TURBOPACK compile-time truthy", 1) ? ()=>{} : "TURBOPACK unreachable";
+function SideEffect(props) {
+    const { headManager, reduceComponentsToState } = props;
+    function emitChange() {
+        if (headManager && headManager.mountedInstances) {
+            const headElements = _react.Children.toArray(Array.from(headManager.mountedInstances).filter(Boolean));
+            headManager.updateHead(reduceComponentsToState(headElements));
+        }
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        headManager?.mountedInstances?.add(props.children);
+        emitChange();
+    }
+    useClientOnlyLayoutEffect(()=>{
+        headManager?.mountedInstances?.add(props.children);
+        return ()=>{
+            headManager?.mountedInstances?.delete(props.children);
+        };
+    });
+    // We need to call `updateHead` method whenever the `SideEffect` is trigger in all
+    // life-cycles: mount, update, unmount. However, if there are multiple `SideEffect`s
+    // being rendered, we only trigger the method from the last one.
+    // This is ensured by keeping the last unflushed `updateHead` in the `_pendingUpdate`
+    // singleton in the layout effect pass, and actually trigger it in the effect pass.
+    useClientOnlyLayoutEffect(()=>{
+        if (headManager) {
+            headManager._pendingUpdate = emitChange;
+        }
+        return ()=>{
+            if (headManager) {
+                headManager._pendingUpdate = emitChange;
+            }
+        };
+    });
+    useClientOnlyEffect(()=>{
+        if (headManager && headManager._pendingUpdate) {
+            headManager._pendingUpdate();
+            headManager._pendingUpdate = null;
+        }
+        return ()=>{
+            if (headManager && headManager._pendingUpdate) {
+                headManager._pendingUpdate();
+                headManager._pendingUpdate = null;
+            }
+        };
+    });
+    return null;
+} //# sourceMappingURL=side-effect.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['contexts'].HeadManagerContext; //# sourceMappingURL=head-manager-context.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/shared/lib/head.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    defaultHead: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    default: function() {
+        return _default;
+    },
+    defaultHead: function() {
+        return defaultHead;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-ssr] (ecmascript)");
+const _interop_require_wildcard = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"));
+const _sideeffect = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/side-effect.js [app-ssr] (ecmascript)"));
+const _headmanagercontextsharedruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/head-manager-context.js [app-ssr] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/utils/warn-once.js [app-ssr] (ecmascript)");
+function defaultHead() {
+    const head = [
+        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
+            charSet: "utf-8"
+        }, "charset"),
+        /*#__PURE__*/ (0, _jsxruntime.jsx)("meta", {
+            name: "viewport",
+            content: "width=device-width"
+        }, "viewport")
+    ];
+    return head;
+}
+function onlyReactElement(list, child) {
+    // React children can be "string" or "number" in this case we ignore them for backwards compat
+    if (typeof child === 'string' || typeof child === 'number') {
+        return list;
+    }
+    // Adds support for React.Fragment
+    if (child.type === _react.default.Fragment) {
+        return list.concat(_react.default.Children.toArray(child.props.children).reduce((fragmentList, fragmentChild)=>{
+            if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
+                return fragmentList;
+            }
+            return fragmentList.concat(fragmentChild);
+        }, []));
+    }
+    return list.concat(child);
+}
+const METATYPES = [
+    'name',
+    'httpEquiv',
+    'charSet',
+    'itemProp'
+];
+/*
+ returns a function for filtering head child elements
+ which shouldn't be duplicated, like <title/>
+ Also adds support for deduplicated `key` properties
+*/ function unique() {
+    const keys = new Set();
+    const tags = new Set();
+    const metaTypes = new Set();
+    const metaCategories = {};
+    return (h)=>{
+        let isUnique = true;
+        let hasKey = false;
+        if (h.key && typeof h.key !== 'number' && h.key.indexOf('$') > 0) {
+            hasKey = true;
+            const key = h.key.slice(h.key.indexOf('$') + 1);
+            if (keys.has(key)) {
+                isUnique = false;
+            } else {
+                keys.add(key);
+            }
+        }
+        // eslint-disable-next-line default-case
+        switch(h.type){
+            case 'title':
+            case 'base':
+                if (tags.has(h.type)) {
+                    isUnique = false;
+                } else {
+                    tags.add(h.type);
+                }
+                break;
+            case 'meta':
+                for(let i = 0, len = METATYPES.length; i < len; i++){
+                    const metatype = METATYPES[i];
+                    if (!h.props.hasOwnProperty(metatype)) continue;
+                    if (metatype === 'charSet') {
+                        if (metaTypes.has(metatype)) {
+                            isUnique = false;
+                        } else {
+                            metaTypes.add(metatype);
+                        }
+                    } else {
+                        const category = h.props[metatype];
+                        const categories = metaCategories[metatype] || new Set();
+                        if ((metatype !== 'name' || !hasKey) && categories.has(category)) {
+                            isUnique = false;
+                        } else {
+                            categories.add(category);
+                            metaCategories[metatype] = categories;
+                        }
+                    }
+                }
+                break;
+        }
+        return isUnique;
+    };
+}
+/**
+ *
+ * @param headChildrenElements List of children of <Head>
+ */ function reduceComponents(headChildrenElements) {
+    return headChildrenElements.reduce(onlyReactElement, []).reverse().concat(defaultHead().reverse()).filter(unique()).reverse().map((c, i)=>{
+        const key = c.key || i;
+        if ("TURBOPACK compile-time truthy", 1) {
+            // omit JSON-LD structured data snippets from the warning
+            if (c.type === 'script' && c.props['type'] !== 'application/ld+json') {
+                const srcMessage = c.props['src'] ? `<script> tag with src="${c.props['src']}"` : `inline <script>`;
+                (0, _warnonce.warnOnce)(`Do not add <script> tags using next/head (see ${srcMessage}). Use next/script instead. \nSee more info here: https://nextjs.org/docs/messages/no-script-tags-in-head-component`);
+            } else if (c.type === 'link' && c.props['rel'] === 'stylesheet') {
+                (0, _warnonce.warnOnce)(`Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="${c.props['href']}"). Use Document instead. \nSee more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component`);
+            }
+        }
+        return /*#__PURE__*/ _react.default.cloneElement(c, {
+            key
+        });
+    });
+}
+/**
+ * This component injects elements to `<head>` of your page.
+ * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
+ */ function Head({ children }) {
+    const headManager = (0, _react.useContext)(_headmanagercontextsharedruntime.HeadManagerContext);
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(_sideeffect.default, {
+        reduceComponentsToState: reduceComponents,
+        headManager: headManager,
+        children: children
+    });
+}
+const _default = Head;
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=head.js.map
 }),
 "[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/image-config-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -3195,6 +3195,95 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     Object.assign(exports.default, exports);
     module.exports = exports.default;
 } //# sourceMappingURL=image-component.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/shared/lib/image-external.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    getImageProps: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    default: function() {
+        return _default;
+    },
+    getImageProps: function() {
+        return getImageProps;
+    }
+});
+const _interop_require_default = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-ssr] (ecmascript)");
+const _getimgprops = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/get-img-props.js [app-ssr] (ecmascript)");
+const _imagecomponent = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/image-component.js [app-ssr] (ecmascript)");
+const _imageloader = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/image-loader.js [app-ssr] (ecmascript)"));
+function getImageProps(imgProps) {
+    const { props } = (0, _getimgprops.getImgProps)(imgProps, {
+        defaultLoader: _imageloader.default,
+        // This is replaced by webpack define plugin
+        imgConf: ("TURBOPACK compile-time value", {
+            "deviceSizes": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 640),
+                ("TURBOPACK compile-time value", 750),
+                ("TURBOPACK compile-time value", 828),
+                ("TURBOPACK compile-time value", 1080),
+                ("TURBOPACK compile-time value", 1200),
+                ("TURBOPACK compile-time value", 1920),
+                ("TURBOPACK compile-time value", 2048),
+                ("TURBOPACK compile-time value", 3840)
+            ]),
+            "imageSizes": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 32),
+                ("TURBOPACK compile-time value", 48),
+                ("TURBOPACK compile-time value", 64),
+                ("TURBOPACK compile-time value", 96),
+                ("TURBOPACK compile-time value", 128),
+                ("TURBOPACK compile-time value", 256),
+                ("TURBOPACK compile-time value", 384)
+            ]),
+            "qualities": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", 75),
+                ("TURBOPACK compile-time value", 70),
+                ("TURBOPACK compile-time value", 70)
+            ]),
+            "path": ("TURBOPACK compile-time value", "/_next/image"),
+            "loader": ("TURBOPACK compile-time value", "default"),
+            "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
+            "unoptimized": ("TURBOPACK compile-time value", false),
+            "domains": ("TURBOPACK compile-time value", []),
+            "remotePatterns": ("TURBOPACK compile-time value", []),
+            "localPatterns": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", {
+                    "pathname": ("TURBOPACK compile-time value", "**"),
+                    "search": ("TURBOPACK compile-time value", "")
+                })
+            ])
+        })
+    });
+    // Normally we don't care about undefined props because we pass to JSX,
+    // but this exported function could be used by the end user for anything
+    // so we delete undefined props to clean it up a little.
+    for (const [key, value] of Object.entries(props)){
+        if (value === undefined) {
+            delete props[key];
+        }
+    }
+    return {
+        props
+    };
+}
+const _default = _imagecomponent.Image; //# sourceMappingURL=image-external.js.map
+}),
+"[project]/School Management System/node_modules/next/image.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/image-external.js [app-ssr] (ecmascript)");
 }),
 "[project]/School Management System/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -11442,6 +11531,3396 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=link.js.map
 }),
+"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/hooks-client-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['contexts'].HooksClientContext; //# sourceMappingURL=hooks-client-context.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/readonly-url-search-params.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * ReadonlyURLSearchParams implementation shared between client and server.
+ * This file is intentionally not marked as 'use client' or 'use server'
+ * so it can be imported by both environments.
+ */ /** @internal */ Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ReadonlyURLSearchParams", {
+    enumerable: true,
+    get: function() {
+        return ReadonlyURLSearchParams;
+    }
+});
+class ReadonlyURLSearchParamsError extends Error {
+    constructor(){
+        super('Method unavailable on `ReadonlyURLSearchParams`. Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams');
+    }
+}
+class ReadonlyURLSearchParams extends URLSearchParams {
+    /** @deprecated Method unavailable on `ReadonlyURLSearchParams`. Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams */ append() {
+        throw new ReadonlyURLSearchParamsError();
+    }
+    /** @deprecated Method unavailable on `ReadonlyURLSearchParams`. Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams */ delete() {
+        throw new ReadonlyURLSearchParamsError();
+    }
+    /** @deprecated Method unavailable on `ReadonlyURLSearchParams`. Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams */ set() {
+        throw new ReadonlyURLSearchParamsError();
+    }
+    /** @deprecated Method unavailable on `ReadonlyURLSearchParams`. Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams */ sort() {
+        throw new ReadonlyURLSearchParamsError();
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=readonly-url-search-params.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/server-inserted-html.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['contexts'].ServerInsertedHtml; //# sourceMappingURL=server-inserted-html.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/unrecognized-action-error.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    UnrecognizedActionError: null,
+    unstable_isUnrecognizedActionError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    UnrecognizedActionError: function() {
+        return UnrecognizedActionError;
+    },
+    unstable_isUnrecognizedActionError: function() {
+        return unstable_isUnrecognizedActionError;
+    }
+});
+class UnrecognizedActionError extends Error {
+    constructor(...args){
+        super(...args);
+        this.name = 'UnrecognizedActionError';
+    }
+}
+function unstable_isUnrecognizedActionError(error) {
+    return !!(error && typeof error === 'object' && error instanceof UnrecognizedActionError);
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=unrecognized-action-error.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/redirect-status-code.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "RedirectStatusCode", {
+    enumerable: true,
+    get: function() {
+        return RedirectStatusCode;
+    }
+});
+var RedirectStatusCode = /*#__PURE__*/ function(RedirectStatusCode) {
+    RedirectStatusCode[RedirectStatusCode["SeeOther"] = 303] = "SeeOther";
+    RedirectStatusCode[RedirectStatusCode["TemporaryRedirect"] = 307] = "TemporaryRedirect";
+    RedirectStatusCode[RedirectStatusCode["PermanentRedirect"] = 308] = "PermanentRedirect";
+    return RedirectStatusCode;
+}({});
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=redirect-status-code.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/redirect-error.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    REDIRECT_ERROR_CODE: null,
+    RedirectType: null,
+    isRedirectError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    REDIRECT_ERROR_CODE: function() {
+        return REDIRECT_ERROR_CODE;
+    },
+    RedirectType: function() {
+        return RedirectType;
+    },
+    isRedirectError: function() {
+        return isRedirectError;
+    }
+});
+const _redirectstatuscode = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect-status-code.js [app-ssr] (ecmascript)");
+const REDIRECT_ERROR_CODE = 'NEXT_REDIRECT';
+var RedirectType = /*#__PURE__*/ function(RedirectType) {
+    RedirectType["push"] = "push";
+    RedirectType["replace"] = "replace";
+    return RedirectType;
+}({});
+function isRedirectError(error) {
+    if (typeof error !== 'object' || error === null || !('digest' in error) || typeof error.digest !== 'string') {
+        return false;
+    }
+    const digest = error.digest.split(';');
+    const [errorCode, type] = digest;
+    const destination = digest.slice(2, -2).join(';');
+    const status = digest.at(-2);
+    const statusCode = Number(status);
+    return errorCode === REDIRECT_ERROR_CODE && (type === 'replace' || type === 'push') && typeof destination === 'string' && !isNaN(statusCode) && statusCode in _redirectstatuscode.RedirectStatusCode;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=redirect-error.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/redirect.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    getRedirectError: null,
+    getRedirectStatusCodeFromError: null,
+    getRedirectTypeFromError: null,
+    getURLFromRedirectError: null,
+    permanentRedirect: null,
+    redirect: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    getRedirectError: function() {
+        return getRedirectError;
+    },
+    getRedirectStatusCodeFromError: function() {
+        return getRedirectStatusCodeFromError;
+    },
+    getRedirectTypeFromError: function() {
+        return getRedirectTypeFromError;
+    },
+    getURLFromRedirectError: function() {
+        return getURLFromRedirectError;
+    },
+    permanentRedirect: function() {
+        return permanentRedirect;
+    },
+    redirect: function() {
+        return redirect;
+    }
+});
+const _redirectstatuscode = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect-status-code.js [app-ssr] (ecmascript)");
+const _redirecterror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect-error.js [app-ssr] (ecmascript)");
+const actionAsyncStorage = ("TURBOPACK compile-time truthy", 1) ? __turbopack_context__.r("[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)").actionAsyncStorage : "TURBOPACK unreachable";
+function getRedirectError(url, type, statusCode = _redirectstatuscode.RedirectStatusCode.TemporaryRedirect) {
+    const error = Object.defineProperty(new Error(_redirecterror.REDIRECT_ERROR_CODE), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.digest = `${_redirecterror.REDIRECT_ERROR_CODE};${type};${url};${statusCode};`;
+    return error;
+}
+function redirect(/** The URL to redirect to */ url, type) {
+    type ??= actionAsyncStorage?.getStore()?.isAction ? _redirecterror.RedirectType.push : _redirecterror.RedirectType.replace;
+    throw getRedirectError(url, type, _redirectstatuscode.RedirectStatusCode.TemporaryRedirect);
+}
+function permanentRedirect(/** The URL to redirect to */ url, type = _redirecterror.RedirectType.replace) {
+    throw getRedirectError(url, type, _redirectstatuscode.RedirectStatusCode.PermanentRedirect);
+}
+function getURLFromRedirectError(error) {
+    if (!(0, _redirecterror.isRedirectError)(error)) return null;
+    // Slices off the beginning of the digest that contains the code and the
+    // separating ';'.
+    return error.digest.split(';').slice(2, -2).join(';');
+}
+function getRedirectTypeFromError(error) {
+    if (!(0, _redirecterror.isRedirectError)(error)) {
+        throw Object.defineProperty(new Error('Not a redirect error'), "__NEXT_ERROR_CODE", {
+            value: "E260",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    return error.digest.split(';', 2)[1];
+}
+function getRedirectStatusCodeFromError(error) {
+    if (!(0, _redirecterror.isRedirectError)(error)) {
+        throw Object.defineProperty(new Error('Not a redirect error'), "__NEXT_ERROR_CODE", {
+            value: "E260",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    return Number(error.digest.split(';').at(-2));
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=redirect.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/http-access-fallback/http-access-fallback.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    HTTPAccessErrorStatus: null,
+    HTTP_ERROR_FALLBACK_ERROR_CODE: null,
+    getAccessFallbackErrorTypeByStatus: null,
+    getAccessFallbackHTTPStatus: null,
+    isHTTPAccessFallbackError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    HTTPAccessErrorStatus: function() {
+        return HTTPAccessErrorStatus;
+    },
+    HTTP_ERROR_FALLBACK_ERROR_CODE: function() {
+        return HTTP_ERROR_FALLBACK_ERROR_CODE;
+    },
+    getAccessFallbackErrorTypeByStatus: function() {
+        return getAccessFallbackErrorTypeByStatus;
+    },
+    getAccessFallbackHTTPStatus: function() {
+        return getAccessFallbackHTTPStatus;
+    },
+    isHTTPAccessFallbackError: function() {
+        return isHTTPAccessFallbackError;
+    }
+});
+const HTTPAccessErrorStatus = {
+    NOT_FOUND: 404,
+    FORBIDDEN: 403,
+    UNAUTHORIZED: 401
+};
+const ALLOWED_CODES = new Set(Object.values(HTTPAccessErrorStatus));
+const HTTP_ERROR_FALLBACK_ERROR_CODE = 'NEXT_HTTP_ERROR_FALLBACK';
+function isHTTPAccessFallbackError(error) {
+    if (typeof error !== 'object' || error === null || !('digest' in error) || typeof error.digest !== 'string') {
+        return false;
+    }
+    const [prefix, httpStatus] = error.digest.split(';');
+    return prefix === HTTP_ERROR_FALLBACK_ERROR_CODE && ALLOWED_CODES.has(Number(httpStatus));
+}
+function getAccessFallbackHTTPStatus(error) {
+    const httpStatus = error.digest.split(';')[1];
+    return Number(httpStatus);
+}
+function getAccessFallbackErrorTypeByStatus(status) {
+    switch(status){
+        case 401:
+            return 'unauthorized';
+        case 403:
+            return 'forbidden';
+        case 404:
+            return 'not-found';
+        default:
+            return;
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=http-access-fallback.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/not-found.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "notFound", {
+    enumerable: true,
+    get: function() {
+        return notFound;
+    }
+});
+const _httpaccessfallback = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/http-access-fallback/http-access-fallback.js [app-ssr] (ecmascript)");
+/**
+ * This function allows you to render the [not-found.js file](https://nextjs.org/docs/app/api-reference/file-conventions/not-found)
+ * within a route segment as well as inject a tag.
+ *
+ * `notFound()` can be used in
+ * [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components),
+ * [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers), and
+ * [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations).
+ *
+ * - In a Server Component, this will insert a `<meta name="robots" content="noindex" />` meta tag and set the status code to 404.
+ * - In a Route Handler or Server Action, it will serve a 404 to the caller.
+ *
+ * Read more: [Next.js Docs: `notFound`](https://nextjs.org/docs/app/api-reference/functions/not-found)
+ */ const DIGEST = `${_httpaccessfallback.HTTP_ERROR_FALLBACK_ERROR_CODE};404`;
+function notFound() {
+    const error = Object.defineProperty(new Error(DIGEST), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.digest = DIGEST;
+    throw error;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=not-found.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/forbidden.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "forbidden", {
+    enumerable: true,
+    get: function() {
+        return forbidden;
+    }
+});
+const _httpaccessfallback = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/http-access-fallback/http-access-fallback.js [app-ssr] (ecmascript)");
+// TODO: Add `forbidden` docs
+/**
+ * @experimental
+ * This function allows you to render the [forbidden.js file](https://nextjs.org/docs/app/api-reference/file-conventions/forbidden)
+ * within a route segment as well as inject a tag.
+ *
+ * `forbidden()` can be used in
+ * [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components),
+ * [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers), and
+ * [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations).
+ *
+ * Read more: [Next.js Docs: `forbidden`](https://nextjs.org/docs/app/api-reference/functions/forbidden)
+ */ const DIGEST = `${_httpaccessfallback.HTTP_ERROR_FALLBACK_ERROR_CODE};403`;
+function forbidden() {
+    if ("TURBOPACK compile-time truthy", 1) {
+        throw Object.defineProperty(new Error(`\`forbidden()\` is experimental and only allowed to be enabled when \`experimental.authInterrupts\` is enabled.`), "__NEXT_ERROR_CODE", {
+            value: "E488",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    const error = Object.defineProperty(new Error(DIGEST), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.digest = DIGEST;
+    throw error;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=forbidden.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/unauthorized.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "unauthorized", {
+    enumerable: true,
+    get: function() {
+        return unauthorized;
+    }
+});
+const _httpaccessfallback = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/http-access-fallback/http-access-fallback.js [app-ssr] (ecmascript)");
+// TODO: Add `unauthorized` docs
+/**
+ * @experimental
+ * This function allows you to render the [unauthorized.js file](https://nextjs.org/docs/app/api-reference/file-conventions/unauthorized)
+ * within a route segment as well as inject a tag.
+ *
+ * `unauthorized()` can be used in
+ * [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components),
+ * [Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers), and
+ * [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations).
+ *
+ *
+ * Read more: [Next.js Docs: `unauthorized`](https://nextjs.org/docs/app/api-reference/functions/unauthorized)
+ */ const DIGEST = `${_httpaccessfallback.HTTP_ERROR_FALLBACK_ERROR_CODE};401`;
+function unauthorized() {
+    if ("TURBOPACK compile-time truthy", 1) {
+        throw Object.defineProperty(new Error(`\`unauthorized()\` is experimental and only allowed to be used when \`experimental.authInterrupts\` is enabled.`), "__NEXT_ERROR_CODE", {
+            value: "E411",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    const error = Object.defineProperty(new Error(DIGEST), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.digest = DIGEST;
+    throw error;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=unauthorized.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/dynamic-rendering-utils.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    isHangingPromiseRejectionError: null,
+    makeDevtoolsIOAwarePromise: null,
+    makeHangingPromise: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    isHangingPromiseRejectionError: function() {
+        return isHangingPromiseRejectionError;
+    },
+    makeDevtoolsIOAwarePromise: function() {
+        return makeDevtoolsIOAwarePromise;
+    },
+    makeHangingPromise: function() {
+        return makeHangingPromise;
+    }
+});
+function isHangingPromiseRejectionError(err) {
+    if (typeof err !== 'object' || err === null || !('digest' in err)) {
+        return false;
+    }
+    return err.digest === HANGING_PROMISE_REJECTION;
+}
+const HANGING_PROMISE_REJECTION = 'HANGING_PROMISE_REJECTION';
+class HangingPromiseRejectionError extends Error {
+    constructor(route, expression){
+        super(`During prerendering, ${expression} rejects when the prerender is complete. Typically these errors are handled by React but if you move ${expression} to a different context by using \`setTimeout\`, \`after\`, or similar functions you may observe this error and you should handle it in that context. This occurred at route "${route}".`), this.route = route, this.expression = expression, this.digest = HANGING_PROMISE_REJECTION;
+    }
+}
+const abortListenersBySignal = new WeakMap();
+function makeHangingPromise(signal, route, expression) {
+    if (signal.aborted) {
+        return Promise.reject(new HangingPromiseRejectionError(route, expression));
+    } else {
+        const hangingPromise = new Promise((_, reject)=>{
+            const boundRejection = reject.bind(null, new HangingPromiseRejectionError(route, expression));
+            let currentListeners = abortListenersBySignal.get(signal);
+            if (currentListeners) {
+                currentListeners.push(boundRejection);
+            } else {
+                const listeners = [
+                    boundRejection
+                ];
+                abortListenersBySignal.set(signal, listeners);
+                signal.addEventListener('abort', ()=>{
+                    for(let i = 0; i < listeners.length; i++){
+                        listeners[i]();
+                    }
+                }, {
+                    once: true
+                });
+            }
+        });
+        // We are fine if no one actually awaits this promise. We shouldn't consider this an unhandled rejection so
+        // we attach a noop catch handler here to suppress this warning. If you actually await somewhere or construct
+        // your own promise out of it you'll need to ensure you handle the error when it rejects.
+        hangingPromise.catch(ignoreReject);
+        return hangingPromise;
+    }
+}
+function ignoreReject() {}
+function makeDevtoolsIOAwarePromise(underlying, requestStore, stage) {
+    if (requestStore.stagedRendering) {
+        // We resolve each stage in a timeout, so React DevTools will pick this up as IO.
+        return requestStore.stagedRendering.delayUntilStage(stage, undefined, underlying);
+    }
+    // in React DevTools if we resolve in a setTimeout we will observe
+    // the promise resolution as something that can suspend a boundary or root.
+    return new Promise((resolve)=>{
+        // Must use setTimeout to be considered IO React DevTools. setImmediate will not work.
+        setTimeout(()=>{
+            resolve(underlying);
+        }, 0);
+    });
+} //# sourceMappingURL=dynamic-rendering-utils.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/lib/router-utils/is-postpone.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isPostpone", {
+    enumerable: true,
+    get: function() {
+        return isPostpone;
+    }
+});
+const REACT_POSTPONE_TYPE = Symbol.for('react.postpone');
+function isPostpone(error) {
+    return typeof error === 'object' && error !== null && error.$$typeof === REACT_POSTPONE_TYPE;
+} //# sourceMappingURL=is-postpone.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// This has to be a shared module which is shared between client component error boundary and dynamic component
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    BailoutToCSRError: null,
+    isBailoutToCSRError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    BailoutToCSRError: function() {
+        return BailoutToCSRError;
+    },
+    isBailoutToCSRError: function() {
+        return isBailoutToCSRError;
+    }
+});
+const BAILOUT_TO_CSR = 'BAILOUT_TO_CLIENT_SIDE_RENDERING';
+class BailoutToCSRError extends Error {
+    constructor(reason){
+        super(`Bail out to client-side rendering: ${reason}`), this.reason = reason, this.digest = BAILOUT_TO_CSR;
+    }
+}
+function isBailoutToCSRError(err) {
+    if (typeof err !== 'object' || err === null || !('digest' in err)) {
+        return false;
+    }
+    return err.digest === BAILOUT_TO_CSR;
+} //# sourceMappingURL=bailout-to-csr.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/is-next-router-error.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isNextRouterError", {
+    enumerable: true,
+    get: function() {
+        return isNextRouterError;
+    }
+});
+const _httpaccessfallback = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/http-access-fallback/http-access-fallback.js [app-ssr] (ecmascript)");
+const _redirecterror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect-error.js [app-ssr] (ecmascript)");
+function isNextRouterError(error) {
+    return (0, _redirecterror.isRedirectError)(error) || (0, _httpaccessfallback.isHTTPAccessFallbackError)(error);
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=is-next-router-error.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/hooks-server-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    DynamicServerError: null,
+    isDynamicServerError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    DynamicServerError: function() {
+        return DynamicServerError;
+    },
+    isDynamicServerError: function() {
+        return isDynamicServerError;
+    }
+});
+const DYNAMIC_ERROR_CODE = 'DYNAMIC_SERVER_USAGE';
+class DynamicServerError extends Error {
+    constructor(description){
+        super(`Dynamic server usage: ${description}`), this.description = description, this.digest = DYNAMIC_ERROR_CODE;
+    }
+}
+function isDynamicServerError(err) {
+    if (typeof err !== 'object' || err === null || !('digest' in err) || typeof err.digest !== 'string') {
+        return false;
+    }
+    return err.digest === DYNAMIC_ERROR_CODE;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=hooks-server-context.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/static-generation-bailout.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    StaticGenBailoutError: null,
+    isStaticGenBailoutError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    StaticGenBailoutError: function() {
+        return StaticGenBailoutError;
+    },
+    isStaticGenBailoutError: function() {
+        return isStaticGenBailoutError;
+    }
+});
+const NEXT_STATIC_GEN_BAILOUT = 'NEXT_STATIC_GEN_BAILOUT';
+class StaticGenBailoutError extends Error {
+    constructor(...args){
+        super(...args), this.code = NEXT_STATIC_GEN_BAILOUT;
+    }
+}
+function isStaticGenBailoutError(error) {
+    if (typeof error !== 'object' || error === null || !('code' in error)) {
+        return false;
+    }
+    return error.code === NEXT_STATIC_GEN_BAILOUT;
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=static-generation-bailout.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/lib/framework/boundary-constants.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    METADATA_BOUNDARY_NAME: null,
+    OUTLET_BOUNDARY_NAME: null,
+    ROOT_LAYOUT_BOUNDARY_NAME: null,
+    VIEWPORT_BOUNDARY_NAME: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    METADATA_BOUNDARY_NAME: function() {
+        return METADATA_BOUNDARY_NAME;
+    },
+    OUTLET_BOUNDARY_NAME: function() {
+        return OUTLET_BOUNDARY_NAME;
+    },
+    ROOT_LAYOUT_BOUNDARY_NAME: function() {
+        return ROOT_LAYOUT_BOUNDARY_NAME;
+    },
+    VIEWPORT_BOUNDARY_NAME: function() {
+        return VIEWPORT_BOUNDARY_NAME;
+    }
+});
+const METADATA_BOUNDARY_NAME = '__next_metadata_boundary__';
+const VIEWPORT_BOUNDARY_NAME = '__next_viewport_boundary__';
+const OUTLET_BOUNDARY_NAME = '__next_outlet_boundary__';
+const ROOT_LAYOUT_BOUNDARY_NAME = '__next_root_layout_boundary__'; //# sourceMappingURL=boundary-constants.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/lib/scheduler.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    atLeastOneTask: null,
+    scheduleImmediate: null,
+    scheduleOnNextTick: null,
+    waitAtLeastOneReactRenderTask: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    atLeastOneTask: function() {
+        return atLeastOneTask;
+    },
+    scheduleImmediate: function() {
+        return scheduleImmediate;
+    },
+    scheduleOnNextTick: function() {
+        return scheduleOnNextTick;
+    },
+    waitAtLeastOneReactRenderTask: function() {
+        return waitAtLeastOneReactRenderTask;
+    }
+});
+const scheduleOnNextTick = (cb)=>{
+    // We use Promise.resolve().then() here so that the operation is scheduled at
+    // the end of the promise job queue, we then add it to the next process tick
+    // to ensure it's evaluated afterwards.
+    //
+    // This was inspired by the implementation of the DataLoader interface: https://github.com/graphql/dataloader/blob/d336bd15282664e0be4b4a657cb796f09bafbc6b/src/index.js#L213-L255
+    //
+    Promise.resolve().then(()=>{
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        else {
+            process.nextTick(cb);
+        }
+    });
+};
+const scheduleImmediate = (cb)=>{
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        setImmediate(cb);
+    }
+};
+function atLeastOneTask() {
+    return new Promise((resolve)=>scheduleImmediate(resolve));
+}
+function waitAtLeastOneReactRenderTask() {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        return new Promise((r)=>setImmediate(r));
+    }
+} //# sourceMappingURL=scheduler.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/shared/lib/invariant-error.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "InvariantError", {
+    enumerable: true,
+    get: function() {
+        return InvariantError;
+    }
+});
+class InvariantError extends Error {
+    constructor(message, options){
+        super(`Invariant: ${message.endsWith('.') ? message : message + '.'} This is a bug in Next.js.`, options);
+        this.name = 'InvariantError';
+    }
+} //# sourceMappingURL=invariant-error.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/app-render/staged-rendering.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    RenderStage: null,
+    StagedRenderingController: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    RenderStage: function() {
+        return RenderStage;
+    },
+    StagedRenderingController: function() {
+        return StagedRenderingController;
+    }
+});
+const _invarianterror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/invariant-error.js [app-ssr] (ecmascript)");
+const _promisewithresolvers = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/promise-with-resolvers.js [app-ssr] (ecmascript)");
+var RenderStage = /*#__PURE__*/ function(RenderStage) {
+    RenderStage[RenderStage["Static"] = 1] = "Static";
+    RenderStage[RenderStage["Runtime"] = 2] = "Runtime";
+    RenderStage[RenderStage["Dynamic"] = 3] = "Dynamic";
+    return RenderStage;
+}({});
+class StagedRenderingController {
+    constructor(abortSignal = null){
+        this.abortSignal = abortSignal;
+        this.currentStage = 1;
+        this.runtimeStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
+        this.dynamicStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
+        if (abortSignal) {
+            abortSignal.addEventListener('abort', ()=>{
+                const { reason } = abortSignal;
+                if (this.currentStage < 2) {
+                    this.runtimeStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
+                    ;
+                    this.runtimeStagePromise.reject(reason);
+                }
+                if (this.currentStage < 3) {
+                    this.dynamicStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
+                    ;
+                    this.dynamicStagePromise.reject(reason);
+                }
+            }, {
+                once: true
+            });
+        }
+    }
+    advanceStage(stage) {
+        // If we're already at the target stage or beyond, do nothing.
+        // (this can happen e.g. if sync IO advanced us to the dynamic stage)
+        if (this.currentStage >= stage) {
+            return;
+        }
+        this.currentStage = stage;
+        // Note that we might be going directly from Static to Dynamic,
+        // so we need to resolve the runtime stage as well.
+        if (stage >= 2) {
+            this.runtimeStagePromise.resolve();
+        }
+        if (stage >= 3) {
+            this.dynamicStagePromise.resolve();
+        }
+    }
+    getStagePromise(stage) {
+        switch(stage){
+            case 2:
+                {
+                    return this.runtimeStagePromise.promise;
+                }
+            case 3:
+                {
+                    return this.dynamicStagePromise.promise;
+                }
+            default:
+                {
+                    stage;
+                    throw Object.defineProperty(new _invarianterror.InvariantError(`Invalid render stage: ${stage}`), "__NEXT_ERROR_CODE", {
+                        value: "E881",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+        }
+    }
+    waitForStage(stage) {
+        return this.getStagePromise(stage);
+    }
+    delayUntilStage(stage, displayName, resolvedValue) {
+        const ioTriggerPromise = this.getStagePromise(stage);
+        const promise = makeDevtoolsIOPromiseFromIOTrigger(ioTriggerPromise, displayName, resolvedValue);
+        // Analogously to `makeHangingPromise`, we might reject this promise if the signal is invoked.
+        // (e.g. in the case where we don't want want the render to proceed to the dynamic stage and abort it).
+        // We shouldn't consider this an unhandled rejection, so we attach a noop catch handler here to suppress this warning.
+        if (this.abortSignal) {
+            promise.catch(ignoreReject);
+        }
+        return promise;
+    }
+}
+function ignoreReject() {}
+// TODO(restart-on-cache-miss): the layering of `delayUntilStage`,
+// `makeDevtoolsIOPromiseFromIOTrigger` and and `makeDevtoolsIOAwarePromise`
+// is confusing, we should clean it up.
+function makeDevtoolsIOPromiseFromIOTrigger(ioTrigger, displayName, resolvedValue) {
+    // If we create a `new Promise` and give it a displayName
+    // (with no userspace code above us in the stack)
+    // React Devtools will use it as the IO cause when determining "suspended by".
+    // In particular, it should shadow any inner IO that resolved/rejected the promise
+    // (in case of staged rendering, this will be the `setTimeout` that triggers the relevant stage)
+    const promise = new Promise((resolve, reject)=>{
+        ioTrigger.then(resolve.bind(null, resolvedValue), reject);
+    });
+    if (displayName !== undefined) {
+        // @ts-expect-error
+        promise.displayName = displayName;
+    }
+    return promise;
+} //# sourceMappingURL=staged-rendering.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * The functions provided by this module are used to communicate certain properties
+ * about the currently running code so that Next.js can make decisions on how to handle
+ * the current execution in different rendering modes such as pre-rendering, resuming, and SSR.
+ *
+ * Today Next.js treats all code as potentially static. Certain APIs may only make sense when dynamically rendering.
+ * Traditionally this meant deopting the entire render to dynamic however with PPR we can now deopt parts
+ * of a React tree as dynamic while still keeping other parts static. There are really two different kinds of
+ * Dynamic indications.
+ *
+ * The first is simply an intention to be dynamic. unstable_noStore is an example of this where
+ * the currently executing code simply declares that the current scope is dynamic but if you use it
+ * inside unstable_cache it can still be cached. This type of indication can be removed if we ever
+ * make the default dynamic to begin with because the only way you would ever be static is inside
+ * a cache scope which this indication does not affect.
+ *
+ * The second is an indication that a dynamic data source was read. This is a stronger form of dynamic
+ * because it means that it is inappropriate to cache this at all. using a dynamic data source inside
+ * unstable_cache should error. If you want to use some dynamic data inside unstable_cache you should
+ * read that data outside the cache and pass it in as an argument to the cached function.
+ */ Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    Postpone: null,
+    PreludeState: null,
+    abortAndThrowOnSynchronousRequestDataAccess: null,
+    abortOnSynchronousPlatformIOAccess: null,
+    accessedDynamicData: null,
+    annotateDynamicAccess: null,
+    consumeDynamicAccess: null,
+    createDynamicTrackingState: null,
+    createDynamicValidationState: null,
+    createHangingInputAbortSignal: null,
+    createRenderInBrowserAbortSignal: null,
+    delayUntilRuntimeStage: null,
+    formatDynamicAPIAccesses: null,
+    getFirstDynamicReason: null,
+    isDynamicPostpone: null,
+    isPrerenderInterruptedError: null,
+    logDisallowedDynamicError: null,
+    markCurrentScopeAsDynamic: null,
+    postponeWithTracking: null,
+    throwIfDisallowedDynamic: null,
+    throwToInterruptStaticGeneration: null,
+    trackAllowedDynamicAccess: null,
+    trackDynamicDataInDynamicRender: null,
+    trackSynchronousPlatformIOAccessInDev: null,
+    useDynamicRouteParams: null,
+    useDynamicSearchParams: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    Postpone: function() {
+        return Postpone;
+    },
+    PreludeState: function() {
+        return PreludeState;
+    },
+    abortAndThrowOnSynchronousRequestDataAccess: function() {
+        return abortAndThrowOnSynchronousRequestDataAccess;
+    },
+    abortOnSynchronousPlatformIOAccess: function() {
+        return abortOnSynchronousPlatformIOAccess;
+    },
+    accessedDynamicData: function() {
+        return accessedDynamicData;
+    },
+    annotateDynamicAccess: function() {
+        return annotateDynamicAccess;
+    },
+    consumeDynamicAccess: function() {
+        return consumeDynamicAccess;
+    },
+    createDynamicTrackingState: function() {
+        return createDynamicTrackingState;
+    },
+    createDynamicValidationState: function() {
+        return createDynamicValidationState;
+    },
+    createHangingInputAbortSignal: function() {
+        return createHangingInputAbortSignal;
+    },
+    createRenderInBrowserAbortSignal: function() {
+        return createRenderInBrowserAbortSignal;
+    },
+    delayUntilRuntimeStage: function() {
+        return delayUntilRuntimeStage;
+    },
+    formatDynamicAPIAccesses: function() {
+        return formatDynamicAPIAccesses;
+    },
+    getFirstDynamicReason: function() {
+        return getFirstDynamicReason;
+    },
+    isDynamicPostpone: function() {
+        return isDynamicPostpone;
+    },
+    isPrerenderInterruptedError: function() {
+        return isPrerenderInterruptedError;
+    },
+    logDisallowedDynamicError: function() {
+        return logDisallowedDynamicError;
+    },
+    markCurrentScopeAsDynamic: function() {
+        return markCurrentScopeAsDynamic;
+    },
+    postponeWithTracking: function() {
+        return postponeWithTracking;
+    },
+    throwIfDisallowedDynamic: function() {
+        return throwIfDisallowedDynamic;
+    },
+    throwToInterruptStaticGeneration: function() {
+        return throwToInterruptStaticGeneration;
+    },
+    trackAllowedDynamicAccess: function() {
+        return trackAllowedDynamicAccess;
+    },
+    trackDynamicDataInDynamicRender: function() {
+        return trackDynamicDataInDynamicRender;
+    },
+    trackSynchronousPlatformIOAccessInDev: function() {
+        return trackSynchronousPlatformIOAccessInDev;
+    },
+    useDynamicRouteParams: function() {
+        return useDynamicRouteParams;
+    },
+    useDynamicSearchParams: function() {
+        return useDynamicSearchParams;
+    }
+});
+const _react = /*#__PURE__*/ _interop_require_default(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"));
+const _hooksservercontext = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/hooks-server-context.js [app-ssr] (ecmascript)");
+const _staticgenerationbailout = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/static-generation-bailout.js [app-ssr] (ecmascript)");
+const _workunitasyncstorageexternal = __turbopack_context__.r("[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)");
+const _workasyncstorageexternal = __turbopack_context__.r("[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)");
+const _dynamicrenderingutils = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/dynamic-rendering-utils.js [app-ssr] (ecmascript)");
+const _boundaryconstants = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/lib/framework/boundary-constants.js [app-ssr] (ecmascript)");
+const _scheduler = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/lib/scheduler.js [app-ssr] (ecmascript)");
+const _bailouttocsr = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-ssr] (ecmascript)");
+const _invarianterror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/invariant-error.js [app-ssr] (ecmascript)");
+const _stagedrendering = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/app-render/staged-rendering.js [app-ssr] (ecmascript)");
+function _interop_require_default(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+const hasPostpone = typeof _react.default.unstable_postpone === 'function';
+function createDynamicTrackingState(isDebugDynamicAccesses) {
+    return {
+        isDebugDynamicAccesses,
+        dynamicAccesses: [],
+        syncDynamicErrorWithStack: null
+    };
+}
+function createDynamicValidationState() {
+    return {
+        hasSuspenseAboveBody: false,
+        hasDynamicMetadata: false,
+        hasDynamicViewport: false,
+        hasAllowedDynamic: false,
+        dynamicErrors: []
+    };
+}
+function getFirstDynamicReason(trackingState) {
+    var _trackingState_dynamicAccesses_;
+    return (_trackingState_dynamicAccesses_ = trackingState.dynamicAccesses[0]) == null ? void 0 : _trackingState_dynamicAccesses_.expression;
+}
+function markCurrentScopeAsDynamic(store, workUnitStore, expression) {
+    if (workUnitStore) {
+        switch(workUnitStore.type){
+            case 'cache':
+            case 'unstable-cache':
+                // Inside cache scopes, marking a scope as dynamic has no effect,
+                // because the outer cache scope creates a cache boundary. This is
+                // subtly different from reading a dynamic data source, which is
+                // forbidden inside a cache scope.
+                return;
+            case 'private-cache':
+                // A private cache scope is already dynamic by definition.
+                return;
+            case 'prerender-legacy':
+            case 'prerender-ppr':
+            case 'request':
+                break;
+            default:
+                workUnitStore;
+        }
+    }
+    // If we're forcing dynamic rendering or we're forcing static rendering, we
+    // don't need to do anything here because the entire page is already dynamic
+    // or it's static and it should not throw or postpone here.
+    if (store.forceDynamic || store.forceStatic) return;
+    if (store.dynamicShouldError) {
+        throw Object.defineProperty(new _staticgenerationbailout.StaticGenBailoutError(`Route ${store.route} with \`dynamic = "error"\` couldn't be rendered statically because it used \`${expression}\`. See more info here: https://nextjs.org/docs/app/building-your-application/rendering/static-and-dynamic#dynamic-rendering`), "__NEXT_ERROR_CODE", {
+            value: "E553",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if (workUnitStore) {
+        switch(workUnitStore.type){
+            case 'prerender-ppr':
+                return postponeWithTracking(store.route, expression, workUnitStore.dynamicTracking);
+            case 'prerender-legacy':
+                workUnitStore.revalidate = 0;
+                // We aren't prerendering, but we are generating a static page. We need
+                // to bail out of static generation.
+                const err = Object.defineProperty(new _hooksservercontext.DynamicServerError(`Route ${store.route} couldn't be rendered statically because it used ${expression}. See more info here: https://nextjs.org/docs/messages/dynamic-server-error`), "__NEXT_ERROR_CODE", {
+                    value: "E550",
+                    enumerable: false,
+                    configurable: true
+                });
+                store.dynamicUsageDescription = expression;
+                store.dynamicUsageStack = err.stack;
+                throw err;
+            case 'request':
+                if ("TURBOPACK compile-time truthy", 1) {
+                    workUnitStore.usedDynamic = true;
+                }
+                break;
+            default:
+                workUnitStore;
+        }
+    }
+}
+function throwToInterruptStaticGeneration(expression, store, prerenderStore) {
+    // We aren't prerendering but we are generating a static page. We need to bail out of static generation
+    const err = Object.defineProperty(new _hooksservercontext.DynamicServerError(`Route ${store.route} couldn't be rendered statically because it used \`${expression}\`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error`), "__NEXT_ERROR_CODE", {
+        value: "E558",
+        enumerable: false,
+        configurable: true
+    });
+    prerenderStore.revalidate = 0;
+    store.dynamicUsageDescription = expression;
+    store.dynamicUsageStack = err.stack;
+    throw err;
+}
+function trackDynamicDataInDynamicRender(workUnitStore) {
+    switch(workUnitStore.type){
+        case 'cache':
+        case 'unstable-cache':
+            // Inside cache scopes, marking a scope as dynamic has no effect,
+            // because the outer cache scope creates a cache boundary. This is
+            // subtly different from reading a dynamic data source, which is
+            // forbidden inside a cache scope.
+            return;
+        case 'private-cache':
+            // A private cache scope is already dynamic by definition.
+            return;
+        case 'prerender':
+        case 'prerender-runtime':
+        case 'prerender-legacy':
+        case 'prerender-ppr':
+        case 'prerender-client':
+            break;
+        case 'request':
+            if ("TURBOPACK compile-time truthy", 1) {
+                workUnitStore.usedDynamic = true;
+            }
+            break;
+        default:
+            workUnitStore;
+    }
+}
+function abortOnSynchronousDynamicDataAccess(route, expression, prerenderStore) {
+    const reason = `Route ${route} needs to bail out of prerendering at this point because it used ${expression}.`;
+    const error = createPrerenderInterruptedError(reason);
+    prerenderStore.controller.abort(error);
+    const dynamicTracking = prerenderStore.dynamicTracking;
+    if (dynamicTracking) {
+        dynamicTracking.dynamicAccesses.push({
+            // When we aren't debugging, we don't need to create another error for the
+            // stack trace.
+            stack: dynamicTracking.isDebugDynamicAccesses ? new Error().stack : undefined,
+            expression
+        });
+    }
+}
+function abortOnSynchronousPlatformIOAccess(route, expression, errorWithStack, prerenderStore) {
+    const dynamicTracking = prerenderStore.dynamicTracking;
+    abortOnSynchronousDynamicDataAccess(route, expression, prerenderStore);
+    // It is important that we set this tracking value after aborting. Aborts are executed
+    // synchronously except for the case where you abort during render itself. By setting this
+    // value late we can use it to determine if any of the aborted tasks are the task that
+    // called the sync IO expression in the first place.
+    if (dynamicTracking) {
+        if (dynamicTracking.syncDynamicErrorWithStack === null) {
+            dynamicTracking.syncDynamicErrorWithStack = errorWithStack;
+        }
+    }
+}
+function trackSynchronousPlatformIOAccessInDev(requestStore) {
+    // We don't actually have a controller to abort but we do the semantic equivalent by
+    // advancing the request store out of the prerender stage
+    if (requestStore.stagedRendering) {
+        // TODO: error for sync IO in the runtime stage
+        // (which is not currently covered by the validation render in `spawnDynamicValidationInDev`)
+        requestStore.stagedRendering.advanceStage(_stagedrendering.RenderStage.Dynamic);
+    }
+}
+function abortAndThrowOnSynchronousRequestDataAccess(route, expression, errorWithStack, prerenderStore) {
+    const prerenderSignal = prerenderStore.controller.signal;
+    if (prerenderSignal.aborted === false) {
+        // TODO it would be better to move this aborted check into the callsite so we can avoid making
+        // the error object when it isn't relevant to the aborting of the prerender however
+        // since we need the throw semantics regardless of whether we abort it is easier to land
+        // this way. See how this was handled with `abortOnSynchronousPlatformIOAccess` for a closer
+        // to ideal implementation
+        abortOnSynchronousDynamicDataAccess(route, expression, prerenderStore);
+        // It is important that we set this tracking value after aborting. Aborts are executed
+        // synchronously except for the case where you abort during render itself. By setting this
+        // value late we can use it to determine if any of the aborted tasks are the task that
+        // called the sync IO expression in the first place.
+        const dynamicTracking = prerenderStore.dynamicTracking;
+        if (dynamicTracking) {
+            if (dynamicTracking.syncDynamicErrorWithStack === null) {
+                dynamicTracking.syncDynamicErrorWithStack = errorWithStack;
+            }
+        }
+    }
+    throw createPrerenderInterruptedError(`Route ${route} needs to bail out of prerendering at this point because it used ${expression}.`);
+}
+function Postpone({ reason, route }) {
+    const prerenderStore = _workunitasyncstorageexternal.workUnitAsyncStorage.getStore();
+    const dynamicTracking = prerenderStore && prerenderStore.type === 'prerender-ppr' ? prerenderStore.dynamicTracking : null;
+    postponeWithTracking(route, reason, dynamicTracking);
+}
+function postponeWithTracking(route, expression, dynamicTracking) {
+    assertPostpone();
+    if (dynamicTracking) {
+        dynamicTracking.dynamicAccesses.push({
+            // When we aren't debugging, we don't need to create another error for the
+            // stack trace.
+            stack: dynamicTracking.isDebugDynamicAccesses ? new Error().stack : undefined,
+            expression
+        });
+    }
+    _react.default.unstable_postpone(createPostponeReason(route, expression));
+}
+function createPostponeReason(route, expression) {
+    return `Route ${route} needs to bail out of prerendering at this point because it used ${expression}. ` + `React throws this special object to indicate where. It should not be caught by ` + `your own try/catch. Learn more: https://nextjs.org/docs/messages/ppr-caught-error`;
+}
+function isDynamicPostpone(err) {
+    if (typeof err === 'object' && err !== null && typeof err.message === 'string') {
+        return isDynamicPostponeReason(err.message);
+    }
+    return false;
+}
+function isDynamicPostponeReason(reason) {
+    return reason.includes('needs to bail out of prerendering at this point because it used') && reason.includes('Learn more: https://nextjs.org/docs/messages/ppr-caught-error');
+}
+if (isDynamicPostponeReason(createPostponeReason('%%%', '^^^')) === false) {
+    throw Object.defineProperty(new Error('Invariant: isDynamicPostpone misidentified a postpone reason. This is a bug in Next.js'), "__NEXT_ERROR_CODE", {
+        value: "E296",
+        enumerable: false,
+        configurable: true
+    });
+}
+const NEXT_PRERENDER_INTERRUPTED = 'NEXT_PRERENDER_INTERRUPTED';
+function createPrerenderInterruptedError(message) {
+    const error = Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.digest = NEXT_PRERENDER_INTERRUPTED;
+    return error;
+}
+function isPrerenderInterruptedError(error) {
+    return typeof error === 'object' && error !== null && error.digest === NEXT_PRERENDER_INTERRUPTED && 'name' in error && 'message' in error && error instanceof Error;
+}
+function accessedDynamicData(dynamicAccesses) {
+    return dynamicAccesses.length > 0;
+}
+function consumeDynamicAccess(serverDynamic, clientDynamic) {
+    // We mutate because we only call this once we are no longer writing
+    // to the dynamicTrackingState and it's more efficient than creating a new
+    // array.
+    serverDynamic.dynamicAccesses.push(...clientDynamic.dynamicAccesses);
+    return serverDynamic.dynamicAccesses;
+}
+function formatDynamicAPIAccesses(dynamicAccesses) {
+    return dynamicAccesses.filter((access)=>typeof access.stack === 'string' && access.stack.length > 0).map(({ expression, stack })=>{
+        stack = stack.split('\n') // Remove the "Error: " prefix from the first line of the stack trace as
+        // well as the first 4 lines of the stack trace which is the distance
+        // from the user code and the `new Error().stack` call.
+        .slice(4).filter((line)=>{
+            // Exclude Next.js internals from the stack trace.
+            if (line.includes('node_modules/next/')) {
+                return false;
+            }
+            // Exclude anonymous functions from the stack trace.
+            if (line.includes(' (<anonymous>)')) {
+                return false;
+            }
+            // Exclude Node.js internals from the stack trace.
+            if (line.includes(' (node:')) {
+                return false;
+            }
+            return true;
+        }).join('\n');
+        return `Dynamic API Usage Debug - ${expression}:\n${stack}`;
+    });
+}
+function assertPostpone() {
+    if (!hasPostpone) {
+        throw Object.defineProperty(new Error(`Invariant: React.unstable_postpone is not defined. This suggests the wrong version of React was loaded. This is a bug in Next.js`), "__NEXT_ERROR_CODE", {
+            value: "E224",
+            enumerable: false,
+            configurable: true
+        });
+    }
+}
+function createRenderInBrowserAbortSignal() {
+    const controller = new AbortController();
+    controller.abort(Object.defineProperty(new _bailouttocsr.BailoutToCSRError('Render in Browser'), "__NEXT_ERROR_CODE", {
+        value: "E721",
+        enumerable: false,
+        configurable: true
+    }));
+    return controller.signal;
+}
+function createHangingInputAbortSignal(workUnitStore) {
+    switch(workUnitStore.type){
+        case 'prerender':
+        case 'prerender-runtime':
+            const controller = new AbortController();
+            if (workUnitStore.cacheSignal) {
+                // If we have a cacheSignal it means we're in a prospective render. If
+                // the input we're waiting on is coming from another cache, we do want
+                // to wait for it so that we can resolve this cache entry too.
+                workUnitStore.cacheSignal.inputReady().then(()=>{
+                    controller.abort();
+                });
+            } else {
+                // Otherwise we're in the final render and we should already have all
+                // our caches filled.
+                // If the prerender uses stages, we have wait until the runtime stage,
+                // at which point all runtime inputs will be resolved.
+                // (otherwise, a runtime prerender might consider `cookies()` hanging
+                //  even though they'd resolve in the next task.)
+                //
+                // We might still be waiting on some microtasks so we
+                // wait one tick before giving up. When we give up, we still want to
+                // render the content of this cache as deeply as we can so that we can
+                // suspend as deeply as possible in the tree or not at all if we don't
+                // end up waiting for the input.
+                const runtimeStagePromise = (0, _workunitasyncstorageexternal.getRuntimeStagePromise)(workUnitStore);
+                if (runtimeStagePromise) {
+                    runtimeStagePromise.then(()=>(0, _scheduler.scheduleOnNextTick)(()=>controller.abort()));
+                } else {
+                    (0, _scheduler.scheduleOnNextTick)(()=>controller.abort());
+                }
+            }
+            return controller.signal;
+        case 'prerender-client':
+        case 'prerender-ppr':
+        case 'prerender-legacy':
+        case 'request':
+        case 'cache':
+        case 'private-cache':
+        case 'unstable-cache':
+            return undefined;
+        default:
+            workUnitStore;
+    }
+}
+function annotateDynamicAccess(expression, prerenderStore) {
+    const dynamicTracking = prerenderStore.dynamicTracking;
+    if (dynamicTracking) {
+        dynamicTracking.dynamicAccesses.push({
+            stack: dynamicTracking.isDebugDynamicAccesses ? new Error().stack : undefined,
+            expression
+        });
+    }
+}
+function useDynamicRouteParams(expression) {
+    const workStore = _workasyncstorageexternal.workAsyncStorage.getStore();
+    const workUnitStore = _workunitasyncstorageexternal.workUnitAsyncStorage.getStore();
+    if (workStore && workUnitStore) {
+        switch(workUnitStore.type){
+            case 'prerender-client':
+            case 'prerender':
+                {
+                    const fallbackParams = workUnitStore.fallbackRouteParams;
+                    if (fallbackParams && fallbackParams.size > 0) {
+                        // We are in a prerender with cacheComponents semantics. We are going to
+                        // hang here and never resolve. This will cause the currently
+                        // rendering component to effectively be a dynamic hole.
+                        _react.default.use((0, _dynamicrenderingutils.makeHangingPromise)(workUnitStore.renderSignal, workStore.route, expression));
+                    }
+                    break;
+                }
+            case 'prerender-ppr':
+                {
+                    const fallbackParams = workUnitStore.fallbackRouteParams;
+                    if (fallbackParams && fallbackParams.size > 0) {
+                        return postponeWithTracking(workStore.route, expression, workUnitStore.dynamicTracking);
+                    }
+                    break;
+                }
+            case 'prerender-runtime':
+                throw Object.defineProperty(new _invarianterror.InvariantError(`\`${expression}\` was called during a runtime prerender. Next.js should be preventing ${expression} from being included in server components statically, but did not in this case.`), "__NEXT_ERROR_CODE", {
+                    value: "E771",
+                    enumerable: false,
+                    configurable: true
+                });
+            case 'cache':
+            case 'private-cache':
+                throw Object.defineProperty(new _invarianterror.InvariantError(`\`${expression}\` was called inside a cache scope. Next.js should be preventing ${expression} from being included in server components statically, but did not in this case.`), "__NEXT_ERROR_CODE", {
+                    value: "E745",
+                    enumerable: false,
+                    configurable: true
+                });
+            case 'prerender-legacy':
+            case 'request':
+            case 'unstable-cache':
+                break;
+            default:
+                workUnitStore;
+        }
+    }
+}
+function useDynamicSearchParams(expression) {
+    const workStore = _workasyncstorageexternal.workAsyncStorage.getStore();
+    const workUnitStore = _workunitasyncstorageexternal.workUnitAsyncStorage.getStore();
+    if (!workStore) {
+        // We assume pages router context and just return
+        return;
+    }
+    if (!workUnitStore) {
+        (0, _workunitasyncstorageexternal.throwForMissingRequestStore)(expression);
+    }
+    switch(workUnitStore.type){
+        case 'prerender-client':
+            {
+                _react.default.use((0, _dynamicrenderingutils.makeHangingPromise)(workUnitStore.renderSignal, workStore.route, expression));
+                break;
+            }
+        case 'prerender-legacy':
+        case 'prerender-ppr':
+            {
+                if (workStore.forceStatic) {
+                    return;
+                }
+                throw Object.defineProperty(new _bailouttocsr.BailoutToCSRError(expression), "__NEXT_ERROR_CODE", {
+                    value: "E394",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        case 'prerender':
+        case 'prerender-runtime':
+            throw Object.defineProperty(new _invarianterror.InvariantError(`\`${expression}\` was called from a Server Component. Next.js should be preventing ${expression} from being included in server components statically, but did not in this case.`), "__NEXT_ERROR_CODE", {
+                value: "E795",
+                enumerable: false,
+                configurable: true
+            });
+        case 'cache':
+        case 'unstable-cache':
+        case 'private-cache':
+            throw Object.defineProperty(new _invarianterror.InvariantError(`\`${expression}\` was called inside a cache scope. Next.js should be preventing ${expression} from being included in server components statically, but did not in this case.`), "__NEXT_ERROR_CODE", {
+                value: "E745",
+                enumerable: false,
+                configurable: true
+            });
+        case 'request':
+            return;
+        default:
+            workUnitStore;
+    }
+}
+const hasSuspenseRegex = /\n\s+at Suspense \(<anonymous>\)/;
+// Common implicit body tags that React will treat as body when placed directly in html
+const bodyAndImplicitTags = 'body|div|main|section|article|aside|header|footer|nav|form|p|span|h1|h2|h3|h4|h5|h6';
+// Detects when RootLayoutBoundary (our framework marker component) appears
+// after Suspense in the component stack, indicating the root layout is wrapped
+// within a Suspense boundary. Ensures no body/html/implicit-body components are in between.
+//
+// Example matches:
+//   at Suspense (<anonymous>)
+//   at __next_root_layout_boundary__ (<anonymous>)
+//
+// Or with other components in between (but not body/html/implicit-body):
+//   at Suspense (<anonymous>)
+//   at SomeComponent (<anonymous>)
+//   at __next_root_layout_boundary__ (<anonymous>)
+const hasSuspenseBeforeRootLayoutWithoutBodyOrImplicitBodyRegex = new RegExp(`\\n\\s+at Suspense \\(<anonymous>\\)(?:(?!\\n\\s+at (?:${bodyAndImplicitTags}) \\(<anonymous>\\))[\\s\\S])*?\\n\\s+at ${_boundaryconstants.ROOT_LAYOUT_BOUNDARY_NAME} \\([^\\n]*\\)`);
+const hasMetadataRegex = new RegExp(`\\n\\s+at ${_boundaryconstants.METADATA_BOUNDARY_NAME}[\\n\\s]`);
+const hasViewportRegex = new RegExp(`\\n\\s+at ${_boundaryconstants.VIEWPORT_BOUNDARY_NAME}[\\n\\s]`);
+const hasOutletRegex = new RegExp(`\\n\\s+at ${_boundaryconstants.OUTLET_BOUNDARY_NAME}[\\n\\s]`);
+function trackAllowedDynamicAccess(workStore, componentStack, dynamicValidation, clientDynamic) {
+    if (hasOutletRegex.test(componentStack)) {
+        // We don't need to track that this is dynamic. It is only so when something else is also dynamic.
+        return;
+    } else if (hasMetadataRegex.test(componentStack)) {
+        dynamicValidation.hasDynamicMetadata = true;
+        return;
+    } else if (hasViewportRegex.test(componentStack)) {
+        dynamicValidation.hasDynamicViewport = true;
+        return;
+    } else if (hasSuspenseBeforeRootLayoutWithoutBodyOrImplicitBodyRegex.test(componentStack)) {
+        // For Suspense within body, the prelude wouldn't be empty so it wouldn't violate the empty static shells rule.
+        // But if you have Suspense above body, the prelude is empty but we allow that because having Suspense
+        // is an explicit signal from the user that they acknowledge the empty shell and want dynamic rendering.
+        dynamicValidation.hasAllowedDynamic = true;
+        dynamicValidation.hasSuspenseAboveBody = true;
+        return;
+    } else if (hasSuspenseRegex.test(componentStack)) {
+        // this error had a Suspense boundary above it so we don't need to report it as a source
+        // of disallowed
+        dynamicValidation.hasAllowedDynamic = true;
+        return;
+    } else if (clientDynamic.syncDynamicErrorWithStack) {
+        // This task was the task that called the sync error.
+        dynamicValidation.dynamicErrors.push(clientDynamic.syncDynamicErrorWithStack);
+        return;
+    } else {
+        const message = `Route "${workStore.route}": Uncached data was accessed outside of ` + '<Suspense>. This delays the entire page from rendering, resulting in a ' + 'slow user experience. Learn more: ' + 'https://nextjs.org/docs/messages/blocking-route';
+        const error = createErrorWithComponentOrOwnerStack(message, componentStack);
+        dynamicValidation.dynamicErrors.push(error);
+        return;
+    }
+}
+/**
+ * In dev mode, we prefer using the owner stack, otherwise the provided
+ * component stack is used.
+ */ function createErrorWithComponentOrOwnerStack(message, componentStack) {
+    const ownerStack = ("TURBOPACK compile-time value", "development") !== 'production' && _react.default.captureOwnerStack ? _react.default.captureOwnerStack() : null;
+    const error = Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+        value: "E394",
+        enumerable: false,
+        configurable: true
+    });
+    error.stack = error.name + ': ' + message + (ownerStack ?? componentStack);
+    return error;
+}
+var PreludeState = /*#__PURE__*/ function(PreludeState) {
+    PreludeState[PreludeState["Full"] = 0] = "Full";
+    PreludeState[PreludeState["Empty"] = 1] = "Empty";
+    PreludeState[PreludeState["Errored"] = 2] = "Errored";
+    return PreludeState;
+}({});
+function logDisallowedDynamicError(workStore, error) {
+    console.error(error);
+    if (!workStore.dev) {
+        if (workStore.hasReadableErrorStacks) {
+            console.error(`To get a more detailed stack trace and pinpoint the issue, start the app in development mode by running \`next dev\`, then open "${workStore.route}" in your browser to investigate the error.`);
+        } else {
+            console.error(`To get a more detailed stack trace and pinpoint the issue, try one of the following:
+  - Start the app in development mode by running \`next dev\`, then open "${workStore.route}" in your browser to investigate the error.
+  - Rerun the production build with \`next build --debug-prerender\` to generate better stack traces.`);
+        }
+    }
+}
+function throwIfDisallowedDynamic(workStore, prelude, dynamicValidation, serverDynamic) {
+    if (serverDynamic.syncDynamicErrorWithStack) {
+        logDisallowedDynamicError(workStore, serverDynamic.syncDynamicErrorWithStack);
+        throw new _staticgenerationbailout.StaticGenBailoutError();
+    }
+    if (prelude !== 0) {
+        if (dynamicValidation.hasSuspenseAboveBody) {
+            // This route has opted into allowing fully dynamic rendering
+            // by including a Suspense boundary above the body. In this case
+            // a lack of a shell is not considered disallowed so we simply return
+            return;
+        }
+        // We didn't have any sync bailouts but there may be user code which
+        // blocked the root. We would have captured these during the prerender
+        // and can log them here and then terminate the build/validating render
+        const dynamicErrors = dynamicValidation.dynamicErrors;
+        if (dynamicErrors.length > 0) {
+            for(let i = 0; i < dynamicErrors.length; i++){
+                logDisallowedDynamicError(workStore, dynamicErrors[i]);
+            }
+            throw new _staticgenerationbailout.StaticGenBailoutError();
+        }
+        // If we got this far then the only other thing that could be blocking
+        // the root is dynamic Viewport. If this is dynamic then
+        // you need to opt into that by adding a Suspense boundary above the body
+        // to indicate your are ok with fully dynamic rendering.
+        if (dynamicValidation.hasDynamicViewport) {
+            console.error(`Route "${workStore.route}" has a \`generateViewport\` that depends on Request data (\`cookies()\`, etc...) or uncached external data (\`fetch(...)\`, etc...) without explicitly allowing fully dynamic rendering. See more info here: https://nextjs.org/docs/messages/next-prerender-dynamic-viewport`);
+            throw new _staticgenerationbailout.StaticGenBailoutError();
+        }
+        if (prelude === 1) {
+            // If we ever get this far then we messed up the tracking of invalid dynamic.
+            // We still adhere to the constraint that you must produce a shell but invite the
+            // user to report this as a bug in Next.js.
+            console.error(`Route "${workStore.route}" did not produce a static shell and Next.js was unable to determine a reason. This is a bug in Next.js.`);
+            throw new _staticgenerationbailout.StaticGenBailoutError();
+        }
+    } else {
+        if (dynamicValidation.hasAllowedDynamic === false && dynamicValidation.hasDynamicMetadata) {
+            console.error(`Route "${workStore.route}" has a \`generateMetadata\` that depends on Request data (\`cookies()\`, etc...) or uncached external data (\`fetch(...)\`, etc...) when the rest of the route does not. See more info here: https://nextjs.org/docs/messages/next-prerender-dynamic-metadata`);
+            throw new _staticgenerationbailout.StaticGenBailoutError();
+        }
+    }
+}
+function delayUntilRuntimeStage(prerenderStore, result) {
+    if (prerenderStore.runtimeStagePromise) {
+        return prerenderStore.runtimeStagePromise.then(()=>result);
+    }
+    return result;
+} //# sourceMappingURL=dynamic-rendering.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/unstable-rethrow.server.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "unstable_rethrow", {
+    enumerable: true,
+    get: function() {
+        return unstable_rethrow;
+    }
+});
+const _dynamicrenderingutils = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/dynamic-rendering-utils.js [app-ssr] (ecmascript)");
+const _ispostpone = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/lib/router-utils/is-postpone.js [app-ssr] (ecmascript)");
+const _bailouttocsr = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-ssr] (ecmascript)");
+const _isnextroutererror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/is-next-router-error.js [app-ssr] (ecmascript)");
+const _dynamicrendering = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-ssr] (ecmascript)");
+const _hooksservercontext = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/hooks-server-context.js [app-ssr] (ecmascript)");
+function unstable_rethrow(error) {
+    if ((0, _isnextroutererror.isNextRouterError)(error) || (0, _bailouttocsr.isBailoutToCSRError)(error) || (0, _hooksservercontext.isDynamicServerError)(error) || (0, _dynamicrendering.isDynamicPostpone)(error) || (0, _ispostpone.isPostpone)(error) || (0, _dynamicrenderingutils.isHangingPromiseRejectionError)(error) || (0, _dynamicrendering.isPrerenderInterruptedError)(error)) {
+        throw error;
+    }
+    if (error instanceof Error && 'cause' in error) {
+        unstable_rethrow(error.cause);
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=unstable-rethrow.server.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/unstable-rethrow.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * This function should be used to rethrow internal Next.js errors so that they can be handled by the framework.
+ * When wrapping an API that uses errors to interrupt control flow, you should use this function before you do any error handling.
+ * This function will rethrow the error if it is a Next.js error so it can be handled, otherwise it will do nothing.
+ *
+ * Read more: [Next.js Docs: `unstable_rethrow`](https://nextjs.org/docs/app/api-reference/functions/unstable_rethrow)
+ */ Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "unstable_rethrow", {
+    enumerable: true,
+    get: function() {
+        return unstable_rethrow;
+    }
+});
+const unstable_rethrow = ("TURBOPACK compile-time truthy", 1) ? __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/unstable-rethrow.server.js [app-ssr] (ecmascript)").unstable_rethrow : "TURBOPACK unreachable";
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=unstable-rethrow.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/navigation.react-server.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    ReadonlyURLSearchParams: null,
+    RedirectType: null,
+    forbidden: null,
+    notFound: null,
+    permanentRedirect: null,
+    redirect: null,
+    unauthorized: null,
+    unstable_isUnrecognizedActionError: null,
+    unstable_rethrow: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    ReadonlyURLSearchParams: function() {
+        return _readonlyurlsearchparams.ReadonlyURLSearchParams;
+    },
+    RedirectType: function() {
+        return _redirecterror.RedirectType;
+    },
+    forbidden: function() {
+        return _forbidden.forbidden;
+    },
+    notFound: function() {
+        return _notfound.notFound;
+    },
+    permanentRedirect: function() {
+        return _redirect.permanentRedirect;
+    },
+    redirect: function() {
+        return _redirect.redirect;
+    },
+    unauthorized: function() {
+        return _unauthorized.unauthorized;
+    },
+    unstable_isUnrecognizedActionError: function() {
+        return unstable_isUnrecognizedActionError;
+    },
+    unstable_rethrow: function() {
+        return _unstablerethrow.unstable_rethrow;
+    }
+});
+const _readonlyurlsearchparams = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/readonly-url-search-params.js [app-ssr] (ecmascript)");
+const _redirect = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect.js [app-ssr] (ecmascript)");
+const _redirecterror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/redirect-error.js [app-ssr] (ecmascript)");
+const _notfound = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/not-found.js [app-ssr] (ecmascript)");
+const _forbidden = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/forbidden.js [app-ssr] (ecmascript)");
+const _unauthorized = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/unauthorized.js [app-ssr] (ecmascript)");
+const _unstablerethrow = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/unstable-rethrow.js [app-ssr] (ecmascript)");
+function unstable_isUnrecognizedActionError() {
+    throw Object.defineProperty(new Error('`unstable_isUnrecognizedActionError` can only be used on the client.'), "__NEXT_ERROR_CODE", {
+        value: "E776",
+        enumerable: false,
+        configurable: true
+    });
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=navigation.react-server.js.map
+}),
+"[project]/School Management System/node_modules/next/dist/client/components/navigation.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    ReadonlyURLSearchParams: null,
+    RedirectType: null,
+    ServerInsertedHTMLContext: null,
+    forbidden: null,
+    notFound: null,
+    permanentRedirect: null,
+    redirect: null,
+    unauthorized: null,
+    unstable_isUnrecognizedActionError: null,
+    unstable_rethrow: null,
+    useParams: null,
+    usePathname: null,
+    useRouter: null,
+    useSearchParams: null,
+    useSelectedLayoutSegment: null,
+    useSelectedLayoutSegments: null,
+    useServerInsertedHTML: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    ReadonlyURLSearchParams: function() {
+        return _navigationreactserver.ReadonlyURLSearchParams;
+    },
+    RedirectType: function() {
+        return _navigationreactserver.RedirectType;
+    },
+    ServerInsertedHTMLContext: function() {
+        return _serverinsertedhtmlsharedruntime.ServerInsertedHTMLContext;
+    },
+    forbidden: function() {
+        return _navigationreactserver.forbidden;
+    },
+    notFound: function() {
+        return _navigationreactserver.notFound;
+    },
+    permanentRedirect: function() {
+        return _navigationreactserver.permanentRedirect;
+    },
+    redirect: function() {
+        return _navigationreactserver.redirect;
+    },
+    unauthorized: function() {
+        return _navigationreactserver.unauthorized;
+    },
+    unstable_isUnrecognizedActionError: function() {
+        return _unrecognizedactionerror.unstable_isUnrecognizedActionError;
+    },
+    unstable_rethrow: function() {
+        return _navigationreactserver.unstable_rethrow;
+    },
+    useParams: function() {
+        return useParams;
+    },
+    usePathname: function() {
+        return usePathname;
+    },
+    useRouter: function() {
+        return useRouter;
+    },
+    useSearchParams: function() {
+        return useSearchParams;
+    },
+    useSelectedLayoutSegment: function() {
+        return useSelectedLayoutSegment;
+    },
+    useSelectedLayoutSegments: function() {
+        return useSelectedLayoutSegments;
+    },
+    useServerInsertedHTML: function() {
+        return _serverinsertedhtmlsharedruntime.useServerInsertedHTML;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/School Management System/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)"));
+const _approutercontextsharedruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/app-router-context.js [app-ssr] (ecmascript)");
+const _hooksclientcontextsharedruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/hooks-client-context.js [app-ssr] (ecmascript)");
+const _segment = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/shared/lib/segment.js [app-ssr] (ecmascript)");
+const _readonlyurlsearchparams = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/readonly-url-search-params.js [app-ssr] (ecmascript)");
+const _serverinsertedhtmlsharedruntime = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/server-inserted-html.js [app-ssr] (ecmascript)");
+const _unrecognizedactionerror = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/unrecognized-action-error.js [app-ssr] (ecmascript)");
+const _navigationreactserver = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/navigation.react-server.js [app-ssr] (ecmascript)");
+const useDynamicRouteParams = ("TURBOPACK compile-time truthy", 1) ? __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-ssr] (ecmascript)").useDynamicRouteParams : "TURBOPACK unreachable";
+const useDynamicSearchParams = ("TURBOPACK compile-time truthy", 1) ? __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-ssr] (ecmascript)").useDynamicSearchParams : "TURBOPACK unreachable";
+function useSearchParams() {
+    useDynamicSearchParams?.('useSearchParams()');
+    const searchParams = (0, _react.useContext)(_hooksclientcontextsharedruntime.SearchParamsContext);
+    // In the case where this is `null`, the compat types added in
+    // `next-env.d.ts` will add a new overload that changes the return type to
+    // include `null`.
+    const readonlySearchParams = (0, _react.useMemo)(()=>{
+        if (!searchParams) {
+            // When the router is not ready in pages, we won't have the search params
+            // available.
+            return null;
+        }
+        return new _readonlyurlsearchparams.ReadonlyURLSearchParams(searchParams);
+    }, [
+        searchParams
+    ]);
+    // Instrument with Suspense DevTools (dev-only)
+    if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
+        const navigationPromises = (0, _react.use)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
+        if (navigationPromises) {
+            return (0, _react.use)(navigationPromises.searchParams);
+        }
+    }
+    return readonlySearchParams;
+}
+function usePathname() {
+    useDynamicRouteParams?.('usePathname()');
+    // In the case where this is `null`, the compat types added in `next-env.d.ts`
+    // will add a new overload that changes the return type to include `null`.
+    const pathname = (0, _react.useContext)(_hooksclientcontextsharedruntime.PathnameContext);
+    // Instrument with Suspense DevTools (dev-only)
+    if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
+        const navigationPromises = (0, _react.use)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
+        if (navigationPromises) {
+            return (0, _react.use)(navigationPromises.pathname);
+        }
+    }
+    return pathname;
+}
+function useRouter() {
+    const router = (0, _react.useContext)(_approutercontextsharedruntime.AppRouterContext);
+    if (router === null) {
+        throw Object.defineProperty(new Error('invariant expected app router to be mounted'), "__NEXT_ERROR_CODE", {
+            value: "E238",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    return router;
+}
+function useParams() {
+    useDynamicRouteParams?.('useParams()');
+    const params = (0, _react.useContext)(_hooksclientcontextsharedruntime.PathParamsContext);
+    // Instrument with Suspense DevTools (dev-only)
+    if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
+        const navigationPromises = (0, _react.use)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
+        if (navigationPromises) {
+            return (0, _react.use)(navigationPromises.params);
+        }
+    }
+    return params;
+}
+function useSelectedLayoutSegments(parallelRouteKey = 'children') {
+    useDynamicRouteParams?.('useSelectedLayoutSegments()');
+    const context = (0, _react.useContext)(_approutercontextsharedruntime.LayoutRouterContext);
+    // @ts-expect-error This only happens in `pages`. Type is overwritten in navigation.d.ts
+    if (!context) return null;
+    // Instrument with Suspense DevTools (dev-only)
+    if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
+        const navigationPromises = (0, _react.use)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
+        if (navigationPromises) {
+            const promise = navigationPromises.selectedLayoutSegmentsPromises?.get(parallelRouteKey);
+            if (promise) {
+                // We should always have a promise here, but if we don't, it's not worth erroring over.
+                // We just won't be able to instrument it, but can still provide the value.
+                return (0, _react.use)(promise);
+            }
+        }
+    }
+    return (0, _segment.getSelectedLayoutSegmentPath)(context.parentTree, parallelRouteKey);
+}
+function useSelectedLayoutSegment(parallelRouteKey = 'children') {
+    useDynamicRouteParams?.('useSelectedLayoutSegment()');
+    const navigationPromises = (0, _react.useContext)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
+    const selectedLayoutSegments = useSelectedLayoutSegments(parallelRouteKey);
+    // Instrument with Suspense DevTools (dev-only)
+    if (("TURBOPACK compile-time value", "development") !== 'production' && navigationPromises && 'use' in _react.default) {
+        const promise = navigationPromises.selectedLayoutSegmentPromises?.get(parallelRouteKey);
+        if (promise) {
+            // We should always have a promise here, but if we don't, it's not worth erroring over.
+            // We just won't be able to instrument it, but can still provide the value.
+            return (0, _react.use)(promise);
+        }
+    }
+    return (0, _segment.computeSelectedLayoutSegment)(selectedLayoutSegments, parallelRouteKey);
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=navigation.js.map
+}),
+"[project]/School Management System/node_modules/next/navigation.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/School Management System/node_modules/next/dist/client/components/navigation.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "hasA11yProp",
+    ()=>hasA11yProp,
+    "mergeClasses",
+    ()=>mergeClasses,
+    "toCamelCase",
+    ()=>toCamelCase,
+    "toKebabCase",
+    ()=>toKebabCase,
+    "toPascalCase",
+    ()=>toPascalCase
+]);
+const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+const toCamelCase = (string)=>string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2)=>p2 ? p2.toUpperCase() : p1.toLowerCase());
+const toPascalCase = (string)=>{
+    const camelCase = toCamelCase(string);
+    return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+};
+const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
+        return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+    }).join(" ").trim();
+const hasA11yProp = (props)=>{
+    for(const prop in props){
+        if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+            return true;
+        }
+    }
+};
+;
+ //# sourceMappingURL=utils.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>defaultAttributes
+]);
+var defaultAttributes = {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+};
+;
+ //# sourceMappingURL=defaultAttributes.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>Icon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/defaultAttributes.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+;
+;
+;
+const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])("svg", {
+        ref,
+        ...__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
+        width: size,
+        height: size,
+        stroke: color,
+        strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])("lucide", className),
+        ...!children && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["hasA11yProp"])(rest) && {
+            "aria-hidden": "true"
+        },
+        ...rest
+    }, [
+        ...iconNode.map(([tag, attrs])=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(tag, attrs)),
+        ...Array.isArray(children) ? children : [
+            children
+        ]
+    ]));
+;
+ //# sourceMappingURL=Icon.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "default",
+    ()=>createLucideIcon
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/shared/src/utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/Icon.js [app-ssr] (ecmascript)");
+;
+;
+;
+const createLucideIcon = (iconName, iconNode)=>{
+    const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+            ref,
+            iconNode,
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toKebabCase"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName))}`, `lucide-${iconName}`, className),
+            ...props
+        }));
+    Component.displayName = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toPascalCase"])(iconName);
+    return Component;
+};
+;
+ //# sourceMappingURL=createLucideIcon.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>GraduationCap
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z",
+            key: "j76jl0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 10v6",
+            key: "1lu8f3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5",
+            key: "1r8lef"
+        }
+    ]
+];
+const GraduationCap = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("graduation-cap", __iconNode);
+;
+ //# sourceMappingURL=graduation-cap.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript) <export default as GraduationCap>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GraduationCap",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/graduation-cap.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users-round.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>UsersRound
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M18 21a8 8 0 0 0-16 0",
+            key: "3ypg7q"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "10",
+            cy: "8",
+            r: "5",
+            key: "o932ke"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3",
+            key: "10s06x"
+        }
+    ]
+];
+const UsersRound = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("users-round", __iconNode);
+;
+ //# sourceMappingURL=users-round.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users-round.js [app-ssr] (ecmascript) <export default as UsersRound>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "UsersRound",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2d$round$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users-round.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-round-plus.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>UserRoundPlus
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M2 21a8 8 0 0 1 13.292-6",
+            key: "bjp14o"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "10",
+            cy: "8",
+            r: "5",
+            key: "o932ke"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M19 16v6",
+            key: "tddt3s"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 19h-6",
+            key: "vcuq98"
+        }
+    ]
+];
+const UserRoundPlus = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("user-round-plus", __iconNode);
+;
+ //# sourceMappingURL=user-round-plus.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-round-plus.js [app-ssr] (ecmascript) <export default as UserRoundPlus>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "UserRoundPlus",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$round$2d$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$round$2d$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-round-plus.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layout-dashboard.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>LayoutDashboard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "rect",
+        {
+            width: "7",
+            height: "9",
+            x: "3",
+            y: "3",
+            rx: "1",
+            key: "10lvy0"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "7",
+            height: "5",
+            x: "14",
+            y: "3",
+            rx: "1",
+            key: "16une8"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "7",
+            height: "9",
+            x: "14",
+            y: "12",
+            rx: "1",
+            key: "1hutg5"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "7",
+            height: "5",
+            x: "3",
+            y: "16",
+            rx: "1",
+            key: "ldoo1y"
+        }
+    ]
+];
+const LayoutDashboard = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("layout-dashboard", __iconNode);
+;
+ //# sourceMappingURL=layout-dashboard.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layout-dashboard.js [app-ssr] (ecmascript) <export default as LayoutDashboard>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "LayoutDashboard",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layout$2d$dashboard$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layout$2d$dashboard$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layout-dashboard.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Users
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+            key: "1yyitq"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 3.128a4 4 0 0 1 0 7.744",
+            key: "16gr8j"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M22 21v-2a4 4 0 0 0-3-3.87",
+            key: "kshegd"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "9",
+            cy: "7",
+            r: "4",
+            key: "nufk8"
+        }
+    ]
+];
+const Users = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("users", __iconNode);
+;
+ //# sourceMappingURL=users.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript) <export default as Users>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Users",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/users.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chart-pie.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ChartPie
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z",
+            key: "pzmjnu"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M21.21 15.89A10 10 0 1 1 8 2.83",
+            key: "k2fpak"
+        }
+    ]
+];
+const ChartPie = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chart-pie", __iconNode);
+;
+ //# sourceMappingURL=chart-pie.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chart-pie.js [app-ssr] (ecmascript) <export default as PieChart>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "PieChart",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$pie$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$pie$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chart-pie.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/table.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Table
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 3v18",
+            key: "108xh3"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "18",
+            height: "18",
+            x: "3",
+            y: "3",
+            rx: "2",
+            key: "afitv7"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 9h18",
+            key: "1pudct"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 15h18",
+            key: "5xshup"
+        }
+    ]
+];
+const Table = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("table", __iconNode);
+;
+ //# sourceMappingURL=table.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/table.js [app-ssr] (ecmascript) <export default as Table>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Table",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$table$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$table$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/table.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/credit-card.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>CreditCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "rect",
+        {
+            width: "20",
+            height: "14",
+            x: "2",
+            y: "5",
+            rx: "2",
+            key: "ynyp8z"
+        }
+    ],
+    [
+        "line",
+        {
+            x1: "2",
+            x2: "22",
+            y1: "10",
+            y2: "10",
+            key: "1b3vmo"
+        }
+    ]
+];
+const CreditCard = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("credit-card", __iconNode);
+;
+ //# sourceMappingURL=credit-card.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/credit-card.js [app-ssr] (ecmascript) <export default as CreditCard>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CreditCard",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/credit-card.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/list.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>List
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M3 5h.01",
+            key: "18ugdj"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 12h.01",
+            key: "nlz23k"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 19h.01",
+            key: "noohij"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 5h13",
+            key: "1pao27"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 12h13",
+            key: "1za7za"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 19h13",
+            key: "m83p4d"
+        }
+    ]
+];
+const List = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("list", __iconNode);
+;
+ //# sourceMappingURL=list.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/list.js [app-ssr] (ecmascript) <export default as List>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "List",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$list$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$list$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/list.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-chart-column-increasing.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>FileChartColumnIncreasing
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+            key: "1oefj6"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M14 2v5a1 1 0 0 0 1 1h5",
+            key: "wfsgrz"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 18v-2",
+            key: "qcmpov"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M12 18v-4",
+            key: "q1q25u"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 18v-6",
+            key: "15y0np"
+        }
+    ]
+];
+const FileChartColumnIncreasing = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("file-chart-column-increasing", __iconNode);
+;
+ //# sourceMappingURL=file-chart-column-increasing.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-chart-column-increasing.js [app-ssr] (ecmascript) <export default as FileBarChart>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FileBarChart",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$chart$2d$column$2d$increasing$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$chart$2d$column$2d$increasing$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-chart-column-increasing.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ClipboardCheck
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "rect",
+        {
+            width: "8",
+            height: "4",
+            x: "8",
+            y: "2",
+            rx: "1",
+            ry: "1",
+            key: "tgr4d6"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
+            key: "116196"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m9 14 2 2 4-4",
+            key: "df797q"
+        }
+    ]
+];
+const ClipboardCheck = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("clipboard-check", __iconNode);
+;
+ //# sourceMappingURL=clipboard-check.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-ssr] (ecmascript) <export default as ClipboardCheck>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ClipboardCheck",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>FileText
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+            key: "1oefj6"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M14 2v5a1 1 0 0 0 1 1h5",
+            key: "wfsgrz"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 9H8",
+            key: "b1mrlr"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 13H8",
+            key: "t4e002"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 17H8",
+            key: "z1uh3a"
+        }
+    ]
+];
+const FileText = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("file-text", __iconNode);
+;
+ //# sourceMappingURL=file-text.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript) <export default as FileText>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "FileText",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/file-text.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-plus.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>UserPlus
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",
+            key: "1yyitq"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "9",
+            cy: "7",
+            r: "4",
+            key: "nufk8"
+        }
+    ],
+    [
+        "line",
+        {
+            x1: "19",
+            x2: "19",
+            y1: "8",
+            y2: "14",
+            key: "1bvyxn"
+        }
+    ],
+    [
+        "line",
+        {
+            x1: "22",
+            x2: "16",
+            y1: "11",
+            y2: "11",
+            key: "1shjgl"
+        }
+    ]
+];
+const UserPlus = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("user-plus", __iconNode);
+;
+ //# sourceMappingURL=user-plus.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-plus.js [app-ssr] (ecmascript) <export default as UserPlus>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "UserPlus",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-plus.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ShieldCheck
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+            key: "oel41y"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m9 12 2 2 4-4",
+            key: "dzmm74"
+        }
+    ]
+];
+const ShieldCheck = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("shield-check", __iconNode);
+;
+ //# sourceMappingURL=shield-check.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-ssr] (ecmascript) <export default as ShieldCheck>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ShieldCheck",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-cog.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>UserCog
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M10 15H6a4 4 0 0 0-4 4v2",
+            key: "1nfge6"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m14.305 16.53.923-.382",
+            key: "1itpsq"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m15.228 13.852-.923-.383",
+            key: "eplpkm"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m16.852 12.228-.383-.923",
+            key: "13v3q0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m16.852 17.772-.383.924",
+            key: "1i8mnm"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m19.148 12.228.383-.923",
+            key: "1q8j1v"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m19.53 18.696-.382-.924",
+            key: "vk1qj3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m20.772 13.852.924-.383",
+            key: "n880s0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m20.772 16.148.924.383",
+            key: "1g6xey"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "18",
+            cy: "15",
+            r: "3",
+            key: "gjjjvw"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "9",
+            cy: "7",
+            r: "4",
+            key: "nufk8"
+        }
+    ]
+];
+const UserCog = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("user-cog", __iconNode);
+;
+ //# sourceMappingURL=user-cog.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-cog.js [app-ssr] (ecmascript) <export default as UserCog>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "UserCog",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$cog$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/user-cog.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>BookOpen
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12 7v14",
+            key: "1akyts"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+            key: "ruj8y"
+        }
+    ]
+];
+const BookOpen = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("book-open", __iconNode);
+;
+ //# sourceMappingURL=book-open.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript) <export default as BookOpen>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BookOpen",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/book-open.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-clock.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>CalendarClock
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M16 14v2.2l1.6 1",
+            key: "fo4ql5"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M16 2v4",
+            key: "4m81vk"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5",
+            key: "1osxxc"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 10h5",
+            key: "r794hk"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 2v4",
+            key: "1cmpym"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "16",
+            cy: "16",
+            r: "6",
+            key: "qoo3c4"
+        }
+    ]
+];
+const CalendarClock = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("calendar-clock", __iconNode);
+;
+ //# sourceMappingURL=calendar-clock.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-clock.js [app-ssr] (ecmascript) <export default as CalendarClock>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CalendarClock",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2d$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/calendar-clock.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Layers
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+            key: "zw3jo"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+            key: "1wduqc"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+            key: "kqbvx6"
+        }
+    ]
+];
+const Layers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("layers", __iconNode);
+;
+ //# sourceMappingURL=layers.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript) <export default as Layers>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Layers",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/layers.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>ChevronRight
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m9 18 6-6-6-6",
+            key: "mthhwq"
+        }
+    ]
+];
+const ChevronRight = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("chevron-right", __iconNode);
+;
+ //# sourceMappingURL=chevron-right.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-ssr] (ecmascript) <export default as ChevronRight>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ChevronRight",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-ssr] (ecmascript)");
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/log-out.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v0.561.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ __turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>LogOut
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "m16 17 5-5-5-5",
+            key: "1bji2h"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M21 12H9",
+            key: "dn1m92"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4",
+            key: "1uf3rs"
+        }
+    ]
+];
+const LogOut = (0, __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("log-out", __iconNode);
+;
+ //# sourceMappingURL=log-out.js.map
+}),
+"[project]/School Management System/node_modules/lucide-react/dist/esm/icons/log-out.js [app-ssr] (ecmascript) <export default as LogOut>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "LogOut",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$School__Management__System$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$log$2d$out$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/School Management System/node_modules/lucide-react/dist/esm/icons/log-out.js [app-ssr] (ecmascript)");
+}),
 ];
 
-//# sourceMappingURL=290b9_0397ee7d._.js.map
+//# sourceMappingURL=290b9_4cde4172._.js.map
