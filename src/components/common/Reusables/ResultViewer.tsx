@@ -73,10 +73,6 @@ export default function ResultViewer({ data }: { data: any }) {
   }
 };
 
-<<<<<<< HEAD
-  const filteredResults = results.filter((r) => r.term === activeTerm);
-=======
->>>>>>> Axios-with-nest_js
 
   const getGradeColor = (grade: string) => {
     switch (grade) {
