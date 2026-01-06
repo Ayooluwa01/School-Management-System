@@ -1,9 +1,0 @@
-{
-  "/(admin)/(Class)/classes/page": "app/(admin)/(Class)/classes/page.js",
-  "/(admin)/(Examinations)/Exams/Entry/page": "app/(admin)/(Examinations)/Exams/Entry/page.js",
-  "/(admin)/(Examinations)/Exams/Report-cards/page": "app/(admin)/(Examinations)/Exams/Report-cards/page.js",
-  "/(admin)/(Students)/students/allstudents/page": "app/(admin)/(Students)/students/allstudents/page.js",
-  "/(admin)/(Students)/students/profile/[id]/page": "app/(admin)/(Students)/students/profile/[id]/page.js",
-  "/(admin)/page": "app/(admin)/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
-}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/hayoroluwa/Softwares%20Dev/School%20Management%20System/src/app/%28admin%29/loading.tsx"],"sourcesContent":["export default function Loading() {\n  // Add fallback UI that will be shown while the route is loading.\n  return (\n    <div>\n        <p>loading....</p>\n    </div>\n  )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,iEAAiE;IACjE,qBACE,4QAAC;kBACG,cAAA,4QAAC;sBAAE;;;;;;;;;;;AAGX"}}]
-}
