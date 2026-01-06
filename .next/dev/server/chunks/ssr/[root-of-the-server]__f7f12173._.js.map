@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///Users/hayoroluwa/Softwares%20Dev/School%20Management%20System/src/app/%28admin%29/%28teachers%29/teachers/assign/page.tsx"],"sourcesContent":["import React from 'react'\n\nexport default function AssignTeachers() {\n  return (\n    <div>AssignTeachers</div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACE,4QAAC;kBAAI;;;;;;AAET"}}]
-}

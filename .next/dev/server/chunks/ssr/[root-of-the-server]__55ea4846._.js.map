@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///Users/hayoroluwa/Softwares%20Dev/School%20Management%20System/src/app/%28admin%29/page.tsx"],"sourcesContent":["import { Animations } from \"@/components/common/Animations\";\n\n\n\nexport default function Ecommerce() {\n  return (\n   <div>\n    <Animations />\n   </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAIe,SAAS;IACtB,qBACC,4QAAC;kBACA,cAAA,4QAAC,sLAAU;;;;;;;;;;AAGf"}}]
-}

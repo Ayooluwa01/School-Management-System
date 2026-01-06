@@ -1,9 +1,0 @@
-{
-  "[project]/School Management System/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/School Management System/node_modules/react-apexcharts/dist/react-apexcharts.esm.js [app-client] (ecmascript, next/dynamic entry)",
-    "files": [
-      "static/chunks/290b9_a23f5aca._.js",
-      "static/chunks/290b9_react-apexcharts_dist_react-apexcharts_esm_8decd27a.js"
-    ]
-  }
-}

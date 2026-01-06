@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":["file:///Users/hayoroluwa/Softwares%20Dev/School%20Management%20System/src/app/%28admin%29/%28Students%29/students/add/page.tsx"],"sourcesContent":["\nexport default function Registerstudent() {\n  return (\n    <div>\n{/* Header Text */}\n<div>\n    <h3>Add New Student</h3>\n</div>\n\n{/* Registration Form -Side by Side  */}\n<div className=\"grid grid-cols-2 \">\n\n    {/* Right hand side */}\n<div>\n<h3>Basic informations</h3>\n</div>\n\n{/* Left Hand Side */}\n</div>\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AACe,SAAS;IACtB,qBACE,4QAAC;;0BAEL,4QAAC;0BACG,cAAA,4QAAC;8BAAG;;;;;;;;;;;0BAIR,4QAAC;gBAAI,WAAU;0BAGf,cAAA,4QAAC;8BACD,cAAA,4QAAC;kCAAG;;;;;;;;;;;;;;;;;;;;;;AAOJ"}}]
-}
