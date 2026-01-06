@@ -72,42 +72,6 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
-// Validate ../../../src/app/(admin)/(Examinations)/exams/Entry/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/exams/Entry">> = Specific
-  const handler = {} as typeof import("../../../src/app/(admin)/(Examinations)/exams/Entry/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/app/(admin)/(Examinations)/exams/Report-cards/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/exams/Report-cards">> = Specific
-  const handler = {} as typeof import("../../../src/app/(admin)/(Examinations)/exams/Report-cards/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/app/(admin)/(Examinations)/exams/Schedule/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/exams/Schedule">> = Specific
-  const handler = {} as typeof import("../../../src/app/(admin)/(Examinations)/exams/Schedule/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../src/app/(admin)/(Examinations)/exams/schedule/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/exams/schedule">> = Specific
-  const handler = {} as typeof import("../../../src/app/(admin)/(Examinations)/exams/schedule/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../../src/app/(admin)/(Students)/students/add/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/students/add">> = Specific
