@@ -1,220 +1,315 @@
 "use client";
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { 
-  Search, Plus, Users, MoreVertical, 
-  Trash2, Edit3, Hash, ShieldCheck, 
-  X, AlertCircle, ChevronDown
+  Search, Plus, Users, Trash2, Edit3, 
+  Hash, X, AlertCircle, ChevronDown, 
+  LayoutGrid, ArrowRight
 } from "lucide-react";
+import api from "../../../../../libs/axios"; 
 
-const ALPHABET = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+const ARM_OPTIONS = ["A", "B", "C", "D", "Science", "Art", "Commercial"];
 
-const StatCard = React.memo(({ icon, label, value }: any) => (
-  <div className="bg-white p-5 rounded-xl border border-zinc-200 flex items-center gap-4">
-    <div className="w-10 h-10 rounded-lg bg-zinc-50 flex items-center justify-center text-zinc-500 border border-zinc-100">
+// --- COMPONENTS ---
+
+const TabItem = React.memo(({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) => (
+  <button 
+    onClick={onClick}
+    type="button"
+    className={`px-6 py-3 text-sm font-bold transition-all duration-200 border-b-2 relative ${
+      active ? "border-indigo-600 text-indigo-900" : "border-transparent text-zinc-400 hover:text-zinc-600"
+    }`}
+  >
+    {label}
+    {active && <span className="absolute inset-x-0 -bottom-[2px] h-[2px] bg-indigo-600 shadow-[0_0_8px_rgba(79,70,229,0.4)]" />}
+  </button>
+));
+TabItem.displayName = "TabItem";
+
+const SectionHeader = React.memo(({ icon, title, subtitle }: { icon: any, title: string, subtitle: string }) => (
+  <div className="flex items-start gap-5 mb-8 pb-6 border-b border-zinc-100">
+    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-50 to-white flex items-center justify-center text-indigo-600 shadow-sm border border-indigo-100/50">
       {icon}
     </div>
-    <div>
-      <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider leading-none mb-1">{label}</p>
-      <p className="text-xl font-bold text-zinc-900">{value}</p>
+    <div className="pt-1">
+      <h2 className="text-xl font-bold text-zinc-900">{title}</h2>
+      <p className="text-sm text-zinc-500 mt-1 leading-relaxed">{subtitle}</p>
     </div>
   </div>
 ));
-StatCard.displayName = "StatCard";
+SectionHeader.displayName = "SectionHeader";
 
-const TableRow = React.memo(({ item, onEdit, onDelete }: any) => (
-  <tr className="hover:bg-zinc-50/50 transition-colors border-b border-zinc-100 last:border-0">
-    <td className="px-6 py-4">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded bg-zinc-900 text-white flex items-center justify-center font-bold text-xs">
-          {item.code}
-        </div>
-        <span className="text-sm font-semibold text-zinc-800">{item.name} {item.code}</span>
+const MetricCard = React.memo(({ icon, label, value }: any) => (
+    <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm flex items-center gap-4 hover:border-indigo-200 transition-all">
+      <div className="w-12 h-12 rounded-xl bg-zinc-50 flex items-center justify-center text-zinc-400">
+        {icon}
       </div>
-    </td>
-    <td className="px-6 py-4 text-sm text-zinc-600">{item.teacher || "Unassigned"}</td>
-    <td className="px-6 py-4 text-sm text-zinc-500">{item.students} Students</td>
-    <td className="px-6 py-4 text-right">
-      <div className="flex justify-end gap-1">
-        <button onClick={() => onEdit(item)} className="p-2 text-zinc-400 hover:text-zinc-900 rounded-md transition-colors">
-          <Edit3 size={16} />
-        </button>
-        <button onClick={() => onDelete(item.id)} className="p-2 text-zinc-400 hover:text-red-600 rounded-md transition-colors">
-          <Trash2 size={16} />
-        </button>
+      <div>
+        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">{label}</p>
+        <p className="text-2xl font-bold text-zinc-900 leading-none">{value}</p>
       </div>
-    </td>
-  </tr>
+    </div>
 ));
-TableRow.displayName = "TableRow";
+MetricCard.displayName = "MetricCard";
 
+const InputGroup = React.memo(({ label, value, onChange, placeholder, type = "text", options, required }: any) => (
+    <div className="space-y-1.5">
+      <label className="text-xs font-semibold text-zinc-500 uppercase tracking-wider pl-1">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <div className="relative group">
+        {type === "select" ? (
+          <>
+            <select 
+              value={value}
+              onChange={onChange}
+              className="w-full px-4 py-3 rounded-xl bg-zinc-50/50 border border-zinc-200 text-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all appearance-none cursor-pointer"
+            >
+              <option value="" disabled>Select {label}</option>
+              {options?.map((opt: string) => <option key={opt} value={opt}>{opt}</option>)}
+            </select>
+            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none group-focus-within:text-indigo-500" size={16} />
+          </>
+        ) : (
+          <input 
+            type={type} value={value} onChange={onChange} placeholder={placeholder}
+            className="w-full px-4 py-3 rounded-xl bg-zinc-50/50 border border-zinc-200 text-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all placeholder:text-zinc-300" 
+          />
+        )}
+      </div>
+    </div>
+));
+InputGroup.displayName = "InputGroup";
 
-export default function Classes() {
-  const [classes, setClasses] = useState([
-    { id: 1, name: "JSS 2", code: "A", teacher: "Abraham Smith", students: 32 },
-    { id: 2, name: "JSS 2", code: "B", teacher: "Deborah Cole", students: 28 },
-  ]);
-  
+// MAIN COMPONENT 
 
-  // const Staffs=await Fetch('staff')
-
+export default function ClassManagement() {
+  const [activeSection, setActiveSection] = useState("overview");
+  const [classes, setClasses] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingClass, setEditingClass] = useState<any>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
-  const [formData, setFormData] = useState({ name: "", code: "A", teacher: "" });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  }, []);
+  const [formData, setFormData] = useState({ name: "", code: "A" });
 
-  const closeModal = useCallback(() => {
-    setIsModalOpen(false);
-    setEditingClass(null);
-  }, []);
-
-  const handleSave = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (editingClass) {
-      setClasses(prev => prev.map(c => c.id === editingClass.id ? { ...c, ...formData } : c));
-    } else {
-      setClasses(prev => [{ id: Date.now(), ...formData, students: 0 }, ...prev]);
+  const fetchClasses = async () => {
+    try {
+      const response = await api.get("/class/all_classes");
+      setClasses(response.data);
+    } catch (error) {
+      console.error("Error fetching classes:", error);
     }
-    closeModal();
   };
 
+  useEffect(() => {
+    fetchClasses();
+  }, []);
+
   const filteredClasses = useMemo(() => {
-    return classes.filter(c => 
-      c.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      c.teacher.toLowerCase().includes(searchTerm.toLowerCase())
+    if (!searchTerm) return classes;
+    return classes.filter((cls) =>
+      cls.class_name?.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [classes, searchTerm]);
+  }, [searchTerm, classes]);
+
+  // Openmodal
+  const openModal = (cls?: any) => {
+    if (cls) {
+      setEditingClass(cls);
+      setFormData({ 
+        name: cls.class_name, 
+        code: cls.arm
+      });
+    } else {
+      setEditingClass(null);
+      setFormData({ name: "", code: "A" });
+    }
+    setIsModalOpen(true);
+  };
+
+  // Create & Update Logic
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    const payload = {
+      className: formData.name,
+      arm: formData.code,
+      classCode:`${formData.name}-${formData.code}`
+    };
+
+    try {
+      if (editingClass) {
+        await api.patch(`/class/update/${editingClass.class_id}`, payload);
+      } else {
+        await api.post("/class/createClass", payload);
+      }
+      await fetchClasses();
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("Failed to save class:", error);
+      alert("Failed to save class. Check console.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!deleteConfirm) return;
+    setIsLoading(true);
+    try {
+      await api.delete(`/class/delete/${deleteConfirm}`);
+      await fetchClasses();
+      setDeleteConfirm(null);
+    } catch (error) {
+      console.error("Failed to delete class:", error);
+      alert("Failed to delete. Check console.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-white min-h-screen text-zinc-900">
+    <div className="min-h-screen bg-[#FDFDFE] text-zinc-900 font-sans selection:bg-indigo-100">
       
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8 pb-6 border-b border-zinc-100">
-        <div>
-          <h1 className="text-xl font-bold tracking-tight">Classes</h1>
-          <p className="text-xs text-zinc-500">Manage academic levels and arm assignments</p>
+      {/* --- HEADER --- */}
+      <div className="sticky top-0 z-40 bg-white border-b border-zinc-100">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+             <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-200">CM</div>
+             <div>
+                <h1 className="text-xl font-bold text-zinc-900 tracking-tight leading-none">Class Manager</h1>
+                <p className="text-xs font-medium text-zinc-500 pt-1 hidden sm:block">Academic Structure</p>
+             </div>
+          </div>
+          <button 
+            onClick={() => openModal()}
+            className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-800 transition-all flex items-center gap-2 rounded-xl shadow-xl shadow-zinc-200"
+          >
+            <Plus size={18} /> <span className="hidden sm:inline">Add Class</span>
+          </button>
         </div>
-        <button 
-          onClick={() => setIsModalOpen(true)}
-          className="bg-zinc-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800 transition-colors flex items-center gap-2"
-        >
-          <Plus size={16} /> Add Class
-        </button>
+
+        <div className="max-w-6xl mx-auto px-6 md:px-8 flex gap-2">
+            <TabItem active={activeSection === "overview"} label="Overview" onClick={() => setActiveSection("overview")} />
+            <TabItem active={activeSection === "manage"} label="Manage Classes" onClick={() => setActiveSection("manage")} />
+        </div>
       </div>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        <StatCard icon={<Hash size={18}/>} label="Total" value={classes.length} />
-        <StatCard icon={<Users size={18}/>} label="Students" value="60" />
-        <StatCard icon={<ShieldCheck size={18}/>} label="Staff" value={classes.length} />
+      <div className="max-w-5xl mx-auto p-6 md:p-12">
+        <main className="min-h-[500px]">
+
+          {/* SECTION: OVERVIEW */}
+          {activeSection === 'overview' && (
+            <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <SectionHeader icon={<LayoutGrid size={24}/>} title="Academic Summary" subtitle="Current school population metrics." />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                <MetricCard icon={<Hash size={20}/>} label="Total Classes" value={classes.length} />
+                <MetricCard icon={<Users size={20}/>} label="Total Students" value={classes.reduce((acc, curr) => acc + (curr.student_count || 0), 0)} />
+              </div>
+            </section>
+          )}
+
+          {/* SECTION: MANAGE TABLE */}
+          {activeSection === 'manage' && (
+            <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <SectionHeader icon={<Users size={24}/>} title="Class Records" subtitle="Manage specific class divisions." />
+              
+              <div className="mb-6 relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
+                <input 
+                  type="text" 
+                  placeholder="Search by class name..." 
+                  className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 shadow-sm"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+
+              <div className="bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-sm">
+                <table className="w-full text-left">
+                  <thead className="bg-zinc-50/50 border-b border-zinc-100">
+                    <tr>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Identity</th>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Population</th>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100">
+                    {filteredClasses.map((item) => (
+                      <tr key={item.class_id} className="group hover:bg-zinc-50/50 transition-colors">
+                        <td className="px-8 py-5">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center font-bold text-sm shadow-md">
+                              {item.arm?.charAt(0) || "C"}
+                            </div>
+                            <div>
+                                <p className="font-bold text-zinc-800">{item.class_name}</p>
+                                <p className="text-xs text-zinc-500 font-medium tracking-wide">Arm: {item.arm}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-8 py-5">
+                            <span className="bg-zinc-100 text-zinc-600 px-2 py-1 rounded text-[10px] font-black mr-2 uppercase tracking-tighter">Active</span>
+                        </td>
+                        <td className="px-8 py-5 text-right">
+                          <div className="flex justify-end gap-2">
+                            <button onClick={() => openModal(item)} className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
+                              <Edit3 size={16} />
+                            </button>
+                            <button onClick={() => setDeleteConfirm(item.class_id)} className="p-2 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
+        </main>
       </div>
 
-      {/* Toolbar */}
-      <div className="mb-4 relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={16} />
-        <input 
-          type="text" 
-          placeholder="Filter classes..." 
-          className="w-full pl-10 pr-4 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm outline-none focus:border-zinc-400 transition-all"
-          onChange={handleSearch}
-        />
-      </div>
-
-      {/* Table */}
-      <div className="border border-zinc-200 rounded-xl overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead className="bg-zinc-50 text-[10px] uppercase font-bold text-zinc-500 tracking-wider">
-            <tr>
-              <th className="px-6 py-3">Class & Arm</th>
-              <th className="px-6 py-3">Teacher</th>
-              <th className="px-6 py-3">Population</th>
-              <th className="px-6 py-3 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredClasses.map((item) => (
-              <TableRow 
-                key={item.id} 
-                item={item} 
-                onEdit={(cls: any) => { setEditingClass(cls); setFormData(cls); setIsModalOpen(true); }}
-                onDelete={setDeleteConfirm}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Modal */}
+      {/* --- MODAL (CREATE/EDIT) --- */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/20 backdrop-blur-[2px]">
-          <div className="bg-white rounded-xl w-full max-w-sm p-6 shadow-xl border border-zinc-200">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="font-bold text-lg">{editingClass ? "Edit Class" : "New Class"}</h2>
-              <button onClick={closeModal} className="text-zinc-400 hover:text-zinc-900"><X size={20}/></button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl w-full max-w-sm p-8 shadow-2xl border border-zinc-100 animate-in zoom-in-95 duration-200">
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-lg font-bold text-zinc-900">{editingClass ? "Edit Class" : "New Class"}</h2>
+              <button onClick={() => setIsModalOpen(false)} className="text-zinc-400 hover:text-zinc-900 bg-zinc-50 p-2 rounded-full transition-colors"><X size={18}/></button>
             </div>
-
-            <form onSubmit={handleSave} className="space-y-4">
-              <div>
-                <label className="block text-[10px] font-bold text-zinc-400 uppercase mb-1">Class Name</label>
-                <input 
-                  required
-                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm outline-none focus:border-zinc-900"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  placeholder="e.g. JSS 3"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold text-zinc-400 uppercase mb-1">Select Arm</label>
-                <div className="relative">
-                  <select 
-                    className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm outline-none appearance-none focus:border-zinc-900"
-                    value={formData.code}
-                    onChange={(e) => setFormData({...formData, code: e.target.value})}
-                  >
-                    {ALPHABET.map(l => <option key={l} value={l}>{l}</option>)}
-                  </select>
-                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" size={14}/>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-[10px] font-bold text-zinc-400 uppercase mb-1">Class Teacher</label>
-                <input 
-                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-lg text-sm outline-none focus:border-zinc-900"
-                  value={formData.teacher}
-                  onChange={(e) => setFormData({...formData, teacher: e.target.value})}
-                  placeholder="Full Name"
-                />
-              </div>
-
-              <button className="w-full py-2.5 bg-zinc-900 text-white rounded-lg font-bold text-sm hover:bg-zinc-800 transition-colors mt-2">
-                Save Class Arm
+            <form onSubmit={handleSave} className="space-y-5">
+              <InputGroup label="Class Name" value={formData.name} onChange={(e: any) => setFormData({...formData, name: e.target.value})} placeholder="e.g. JSS 3" required />
+              <InputGroup label="Select Arm" type="select" options={ARM_OPTIONS} value={formData.code} onChange={(e: any) => setFormData({...formData, code: e.target.value})} required />
+              
+              <button disabled={isLoading} className="w-full py-4 bg-zinc-900 text-white rounded-2xl font-bold text-sm hover:bg-zinc-800 shadow-xl shadow-zinc-200 transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-50">
+                {isLoading ? "Processing..." : (editingClass ? "Update Record" : "Create Class")} <ArrowRight size={16} />
               </button>
             </form>
           </div>
         </div>
       )}
 
-      {/* Delete Confirmation */}
+      {/* --- CONFIRM DELETE MODAL --- */}
       {deleteConfirm && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/10 backdrop-blur-[1px]">
-          <div className="bg-white rounded-xl p-6 max-w-xs w-full shadow-xl border border-zinc-200 text-center">
-            <AlertCircle size={32} className="mx-auto text-zinc-300 mb-3" />
-            <h3 className="font-bold">Confirm Deletion</h3>
-            <p className="text-xs text-zinc-500 mt-1 mb-6">Are you sure? This cannot be undone.</p>
-            <div className="flex gap-2">
-              <button onClick={() => setDeleteConfirm(null)} className="flex-1 py-2 bg-zinc-100 rounded-lg text-xs font-bold">Cancel</button>
-              <button onClick={() => { if(deleteConfirm) setClasses(classes.filter(c => c.id !== deleteConfirm)); setDeleteConfirm(null); }} className="flex-1 py-2 bg-zinc-900 text-white rounded-lg text-xs font-bold">Delete</button>
+        <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-zinc-900/20 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl p-8 max-w-xs w-full shadow-2xl border border-zinc-100 text-center animate-in zoom-in-95 duration-200">
+            <div className="w-14 h-14 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4"><AlertCircle size={28} /></div>
+            <h3 className="font-bold text-zinc-900 text-lg">Confirm Delete</h3>
+            <p className="text-sm text-zinc-500 mt-2 mb-8 leading-relaxed">This action will remove the class record permanently.</p>
+            <div className="flex gap-3">
+              <button onClick={() => setDeleteConfirm(null)} className="flex-1 py-3 bg-zinc-50 text-zinc-600 rounded-xl text-xs font-bold hover:bg-zinc-100 transition-colors">Cancel</button>
+              <button onClick={handleDelete} className="flex-1 py-3 bg-red-600 text-white rounded-xl text-xs font-bold hover:bg-red-700 shadow-lg shadow-red-200 transition-colors">
+                {isLoading ? "..." : "Delete"}
+              </button>
             </div>
           </div>
         </div>
       )}
+
     </div>
   );
 }
