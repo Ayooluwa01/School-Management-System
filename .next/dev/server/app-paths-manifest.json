@@ -1,6 +1,0 @@
-{
-  "/(admin)/(Students)/students/allstudents/page": "app/(admin)/(Students)/students/allstudents/page.js",
-  "/(admin)/(Students)/students/profile/[id]/page": "app/(admin)/(Students)/students/profile/[id]/page.js",
-  "/(admin)/page": "app/(admin)/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
-}
