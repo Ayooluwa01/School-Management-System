@@ -62,22 +62,9 @@ const SubjectRow = React.memo(({ subject, onEdit, onDelete }: any) => (
         </div>
       </div>
     </td>
-    <td className="px-8 py-5">
-      <div className="flex flex-wrap gap-1.5">
-        {subject.classes.map((cls: string) => (
-          <span key={cls} className="px-2.5 py-1 bg-white border border-zinc-200 text-zinc-600 rounded-lg text-[10px] font-bold shadow-sm">
-            {cls}
-          </span>
-        ))}
-      </div>
-    </td>
-    <td className="px-8 py-5">
-      <div className="flex items-center gap-2 text-sm font-bold text-zinc-500">
-        <Users size={14} className="text-zinc-300" /> {subject.students}
-      </div>
-    </td>
+
     <td className="px-8 py-5 text-right">
-      <div className="flex justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all">
+      <div className="flex justify-end gap-2 opacity-100  sm:group-hover:opacity-100 transition-all">
         <button onClick={() => onEdit(subject)} className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
           <Edit3 size={16} />
         </button>
@@ -198,8 +185,6 @@ export default function SubjectManagement() {
                   <thead className="bg-zinc-50/50 border-b border-zinc-100">
                     <tr>
                       <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Identity</th>
-                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Offered In</th>
-                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Students</th>
                       <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider text-right">Actions</th>
                     </tr>
                   </thead>
