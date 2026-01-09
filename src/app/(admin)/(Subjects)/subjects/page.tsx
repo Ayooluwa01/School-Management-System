@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import { 
   Search, Plus, BookOpen, Trash2, 
   Edit3, X, AlertCircle, ChevronDown, 
@@ -7,21 +7,11 @@ import {
   GraduationCap, Check,
   Users
 } from "lucide-react";
+import api from "../../../../../libs/axios";
 
-// --- MOCK DATA ---
-const NIGERIAN_SUBJECTS = [
-  { id: 1, title: "Mathematics", category: "Core", classes: ["JSS 1", "JSS 2", "SSS 1"], students: 120 },
-  { id: 2, title: "English Language", category: "Core", classes: ["JSS 1", "JSS 2", "SSS 3"], students: 115 },
-  { id: 3, title: "Civic Education", category: "General", classes: ["JSS 1", "SSS 1"], students: 85 },
-  { id: 4, title: "Biology", category: "Science", classes: ["SSS 1", "SSS 2", "SSS 3"], students: 45 },
-  { id: 5, title: "Financial Accounting", category: "Commercial", classes: ["SSS 1", "SSS 2"], students: 32 },
-];
-
-const AVAILABLE_CLASSES = ["JSS 1", "JSS 2", "JSS 3", "SSS 1", "SSS 2", "SSS 3"];
 const CATEGORIES = ["Core", "Science", "Arts", "Commercial", "General", "Vocational"];
 
-// --- REUSABLE COMPONENTS ---
-
+// REUSABLE COMPONENTS
 const TabItem = React.memo(({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) => (
   <button 
     onClick={onClick}
@@ -49,69 +39,96 @@ const MetricCard = React.memo(({ icon, label, value }: any) => (
 ));
 MetricCard.displayName = "MetricCard";
 
-const SubjectRow = React.memo(({ subject, onEdit, onDelete }: any) => (
-  <tr className="group border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors">
-    <td className="px-8 py-5">
-      <div className="flex items-center gap-4">
-        <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center shadow-md">
-          <BookOpen size={18} />
-        </div>
-        <div>
-          <p className="font-bold text-zinc-800">{subject.title}</p>
-          <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider">{subject.category}</p>
-        </div>
-      </div>
-    </td>
-
-    <td className="px-8 py-5 text-right">
-      <div className="flex justify-end gap-2 opacity-100  sm:group-hover:opacity-100 transition-all">
-        <button onClick={() => onEdit(subject)} className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
-          <Edit3 size={16} />
-        </button>
-        <button onClick={() => onDelete(subject.id)} className="p-2 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
-          <Trash2 size={16} />
-        </button>
-      </div>
-    </td>
-  </tr>
-));
-SubjectRow.displayName = "SubjectRow";
-
 export default function SubjectManagement() {
   const [activeSection, setActiveSection] = useState("overview");
-  const [subjects, setSubjects] = useState(NIGERIAN_SUBJECTS);
+  const [subjects, setSubjects] = useState<any[]>([]);
+  const [availableClasses, setAvailableClasses] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [editingSubject, setEditingSubject] = useState<any>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
 
-  const [formData, setFormData] = useState({ title: "", category: "Core", classes: [] as string[] });
+  const [formData, setFormData] = useState({ 
+    title: "", 
+    category: "Core", 
+    classIds: [] as number[] 
+  });
 
-  const toggleClassSelection = (cls: string) => {
+  //  API
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const [subRes, classRes] = await Promise.all([
+        api.get("/subjects"),
+        api.get("/class/all_classes")
+      ]);
+      setSubjects(subRes.data);
+      setAvailableClasses(classRes.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { fetchData(); }, [fetchData]);
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const payload = {
+      subjectName: formData.title,
+      category: formData.category,
+      subjectCode: `${formData.title}`,
+      classIds: formData.classIds 
+    };
+
+    try {
+      if (editingSubject) {
+        await api.patch(`/subjects/${editingSubject.subject_id}`, payload);
+      } else {
+        await api.post("/subjects/create", payload);
+      }
+      await fetchData();
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("Save error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!deleteConfirm) return;
+    try {
+      await api.delete(`/subjects/${deleteConfirm}`);
+      await fetchData();
+      setDeleteConfirm(null);
+    } catch (error) {
+      console.error("Delete error:", error);
+    }
+  };
+
+  //toogle code
+  const toggleClassSelection = (id: number) => {
     setFormData(prev => ({
       ...prev,
-      classes: prev.classes.includes(cls) ? prev.classes.filter(c => c !== cls) : [...prev.classes, cls]
+      classIds: prev.classIds.includes(id) 
+        ? prev.classIds.filter(c => c !== id) 
+        : [...prev.classIds, id]
     }));
   };
 
-  const handleSave = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (editingSubject) {
-      setSubjects(prev => prev.map(s => s.id === editingSubject.id ? { ...s, ...formData } : s));
-    } else {
-      setSubjects(prev => [{ id: Date.now(), ...formData, students: 0 }, ...prev]);
-    }
-    setIsModalOpen(false);
-  };
-
   const filteredSubjects = useMemo(() => {
-    return subjects.filter(s => s.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    return subjects.filter(s => s.subject_name?.toLowerCase().includes(searchTerm.toLowerCase()));
   }, [subjects, searchTerm]);
 
   return (
     <div className="min-h-screen bg-[#FDFDFE] text-zinc-900 font-sans selection:bg-indigo-100">
       
-      {/* --- TOP NAV --- */}
+      {/* Top Nav */}
       <div className="sticky top-0 z-40 bg-white border-b border-zinc-100">
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -122,7 +139,7 @@ export default function SubjectManagement() {
              </div>
           </div>
           <button 
-            onClick={() => { setEditingSubject(null); setFormData({ title: "", category: "Core", classes: [] }); setIsModalOpen(true); }}
+            onClick={() => { setEditingSubject(null); setFormData({ title: "", category: "Core", classIds: [] }); setIsModalOpen(true); }}
             className="px-5 py-2.5 bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-800 transition-all flex items-center gap-2 rounded-xl shadow-xl shadow-zinc-200"
           >
             <Plus size={18} /> <span className="hidden sm:inline">New Subject</span>
@@ -168,13 +185,13 @@ export default function SubjectManagement() {
           )}
 
           {activeSection === 'manage' && (
-            <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="animate-in fade-in duration-500">
               <div className="mb-6 relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
                 <input 
                   type="text" 
-                  placeholder="Filter by subject title..." 
-                  className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 shadow-sm transition-all"
+                  placeholder="Search database..." 
+                  className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500/20 shadow-sm"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -182,30 +199,66 @@ export default function SubjectManagement() {
 
               <div className="bg-white border border-zinc-200 rounded-3xl overflow-hidden shadow-sm">
                 <table className="w-full text-left">
-                  <thead className="bg-zinc-50/50 border-b border-zinc-100">
+                  <thead className="bg-zinc-50 border-b border-zinc-100">
                     <tr>
-                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Identity</th>
-                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase tracking-wider text-right">Actions</th>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase">Subject</th>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase">Classes</th>
+                      <th className="px-8 py-5 text-[10px] font-bold text-zinc-400 uppercase text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-100">
                     {filteredSubjects.map(s => (
-                      <SubjectRow 
-                        key={s.id} 
-                        subject={s} 
-                        onEdit={(subj: any) => { setEditingSubject(subj); setFormData(subj); setIsModalOpen(true); }}
-                        onDelete={setDeleteConfirm}
-                      />
+                      <tr key={s.subject_id} className="group hover:bg-zinc-50/50 transition-colors">
+                        <td className="px-8 py-5">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center shadow-md">
+                              <BookOpen size={18} />
+                            </div>
+                            <div>
+                              <p className="font-bold text-zinc-800">{s.subject_name}</p>
+                              <p className="text-xs text-zinc-400 font-bold uppercase tracking-wider">{s.category}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-8 py-5">
+                          <div className="flex flex-wrap gap-1 max-w-[200px]">
+                            {s.assigned_classes?.map((c: string,index) => (
+                              <span key={index} className="px-2 py-0.5 bg-zinc-100 text-[9px] font-bold rounded-md text-zinc-600 border border-zinc-200">{c}</span>
+                            ))}
+                          </div>
+                        </td>
+                        <td className="px-8 py-5 text-right">
+                          <div className="flex justify-end gap-2">
+<button 
+  onClick={() => { 
+    setEditingSubject(s); 
+    setFormData({ 
+      title: s.subject_name, 
+      category: s.category, 
+      classIds: Array.isArray(s.class_ids) ? s.class_ids : [] 
+    }); 
+    setIsModalOpen(true); 
+  }} 
+  className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+>
+  <Edit3 size={16} />
+</button>
+                            <button onClick={() => setDeleteConfirm(s.subject_id)} className="p-2 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            </section>
+            </div>
           )}
         </main>
       </div>
 
-      {/* --- MODAL --- */}
+      {/* MODAL*/}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm">
           <div className="bg-white rounded-3xl w-full max-w-sm p-8 shadow-2xl border border-zinc-100 animate-in zoom-in-95 duration-200">
@@ -241,32 +294,32 @@ export default function SubjectManagement() {
 
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-zinc-500 uppercase tracking-wider pl-1">Assign to Classes</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {AVAILABLE_CLASSES.map(cls => (
+                <div className="grid grid-cols-3 gap-2 max-h-32 overflow-y-auto pr-1 custom-scrollbar">
+                  {availableClasses.map(cls => (
                     <button
-                      key={cls} type="button"
-                      onClick={() => toggleClassSelection(cls)}
+                      key={cls.class_id} type="button"
+                      onClick={() => toggleClassSelection(cls.class_id)}
                       className={`py-2 rounded-xl text-[10px] font-bold border transition-all ${
-                        formData.classes.includes(cls) 
+                        formData.classIds.includes(cls.class_id) 
                           ? "bg-zinc-900 border-zinc-900 text-white shadow-md" 
                           : "bg-white border-zinc-200 text-zinc-400 hover:border-zinc-400"
                       }`}
                     >
-                      {cls}
+                      {cls.class_code}
                     </button>
                   ))}
                 </div>
               </div>
 
-              <button className="w-full py-4 bg-zinc-900 text-white rounded-2xl font-bold text-sm hover:bg-zinc-800 shadow-xl shadow-zinc-200 transition-all flex items-center justify-center gap-2 mt-4">
-                {editingSubject ? "Save Changes" : "Create Subject"} <ArrowRight size={16} />
+              <button disabled={isLoading} className="w-full py-4 bg-zinc-900 text-white rounded-2xl font-bold text-sm hover:bg-zinc-800 shadow-xl shadow-zinc-200 transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-50">
+                {isLoading ? "Saving..." : editingSubject ? "Save Changes" : "Create Subject"} <ArrowRight size={16} />
               </button>
             </form>
           </div>
         </div>
       )}
 
-      {/* --- DELETE ALERT --- */}
+      {/*DELETE ALERT*/}
       {deleteConfirm && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-zinc-900/20 backdrop-blur-sm">
           <div className="bg-white rounded-3xl p-8 max-w-xs w-full text-center shadow-2xl border border-zinc-100 animate-in zoom-in-95 duration-200">
@@ -277,7 +330,7 @@ export default function SubjectManagement() {
             <p className="text-sm text-zinc-500 mt-2 mb-8">This will de-register this subject from all associated student report cards.</p>
             <div className="flex gap-3">
               <button onClick={() => setDeleteConfirm(null)} className="flex-1 py-3 bg-zinc-50 text-zinc-600 rounded-xl text-xs font-bold hover:bg-zinc-100 transition-colors">Cancel</button>
-              <button onClick={() => { setSubjects(subjects.filter(s => s.id !== deleteConfirm)); setDeleteConfirm(null); }} className="flex-1 py-3 bg-red-600 text-white rounded-xl text-xs font-bold hover:bg-red-700 shadow-lg shadow-red-200 transition-colors">Delete</button>
+              <button onClick={handleDelete} className="flex-1 py-3 bg-red-600 text-white rounded-xl text-xs font-bold hover:bg-red-700 shadow-lg shadow-red-200 transition-colors">Delete</button>
             </div>
           </div>
         </div>

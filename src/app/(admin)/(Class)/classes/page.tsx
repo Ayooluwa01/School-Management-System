@@ -113,7 +113,6 @@ export default function ClassManagement() {
     );
   }, [searchTerm, classes]);
 
-  // Openmodal
   const openModal = (cls?: any) => {
     if (cls) {
       setEditingClass(cls);
@@ -172,7 +171,7 @@ export default function ClassManagement() {
   return (
     <div className="min-h-screen bg-[#FDFDFE] text-zinc-900 font-sans selection:bg-indigo-100">
       
-      {/* --- HEADER --- */}
+      {/*  HEADER --- */}
       <div className="sticky top-0 z-40 bg-white border-b border-zinc-100">
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -236,34 +235,44 @@ export default function ClassManagement() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-100">
-                    {filteredClasses.map((item) => (
-                      <tr key={item.class_id} className="group hover:bg-zinc-50/50 transition-colors">
-                        <td className="px-8 py-5">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center font-bold text-sm shadow-md">
-                              {item.arm?.charAt(0) || "C"}
-                            </div>
-                            <div>
-                                <p className="font-bold text-zinc-800">{item.class_name}</p>
-                                <p className="text-xs text-zinc-500 font-medium tracking-wide">Arm: {item.arm}</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-8 py-5">
-                            <span className="bg-zinc-100 text-zinc-600 px-2 py-1 rounded text-[10px] font-black mr-2 uppercase tracking-tighter">Active</span>
-                        </td>
-                        <td className="px-8 py-5 text-right">
-                          <div className="flex justify-end gap-2">
-                            <button onClick={() => openModal(item)} className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors">
-                              <Edit3 size={16} />
-                            </button>
-                            <button onClick={() => setDeleteConfirm(item.class_id)} className="p-2 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
-                              <Trash2 size={16} />
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
+{filteredClasses.map((item) => (
+  <tr key={`class-row-${item.class_id}`} className="group hover:bg-zinc-50/50 transition-colors">
+    <td className="px-8 py-5">
+      <div className="flex items-center gap-4">
+        <div className="w-10 h-10 rounded-xl bg-zinc-900 text-white flex items-center justify-center font-bold text-sm shadow-md">
+          {item.arm?.charAt(0) || "C"}
+        </div>
+        <div>
+            <p className="font-bold text-zinc-800">{item.class_name}</p>
+            <p className="text-xs text-zinc-500 font-medium tracking-wide">Arm: {item.arm}</p>
+        </div>
+      </div>
+    </td>
+    <td className="px-8 py-5">
+        <span className="bg-zinc-100 text-zinc-600 px-2 py-1 rounded text-[10px] font-black mr-2 uppercase tracking-tighter">Active</span>
+    </td>
+    <td className="px-8 py-5 text-right">
+      <div className="flex justify-end gap-2">
+        <button 
+          onClick={() => {
+            setEditingClass(item);
+            setFormData({ 
+              name: item.class_name, 
+              code: item.arm,
+            });
+            setIsModalOpen(true);
+          }} 
+          className="p-2 text-zinc-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+        >
+          <Edit3 size={16} />
+        </button>
+        <button onClick={() => setDeleteConfirm(item.class_id)} className="p-2 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+          <Trash2 size={16} />
+        </button>
+      </div>
+    </td>
+  </tr>
+))}
                   </tbody>
                 </table>
               </div>
