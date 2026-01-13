@@ -1,192 +1,239 @@
+/* eslint-disable react/display-name */
 "use client";
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { 
+  BookOpen, 
+  GraduationCap, 
   Search, 
-  UserPlus, 
   CheckCircle2, 
-  School, 
-  Users, 
-  Filter,
-  ArrowRightLeft
+  ChevronRight, 
+  LayoutGrid 
 } from "lucide-react";
+import api from "../../../../../../libs/axios";
 
-// --- MOCK DATA ---
-const MOCK_TEACHERS = [
-  { id: 101, name: "Dr. Alexander Marcus" },
-  { id: 102, name: "Mrs. Deborah Cole" },
-  { id: 103, name: "Mr. Abraham Smith" },
-  { id: 104, name: "Prof. Sarah Jenkins" },
-];
+// --- REUSABLE COMPONENTS ---
 
-const MOCK_CLASSES = [
-  { id: 1, name: "JSS 1", code: "A", currentTeacherId: 103 },
-  { id: 2, name: "JSS 1", code: "B", currentTeacherId: 102 },
-  { id: 3, name: "JSS 2", code: "A", currentTeacherId: null },
-  { id: 4, name: "JSS 2", code: "B", currentTeacherId: 101 },
-  { id: 5, name: "SSS 3", code: "C", currentTeacherId: null },
-];
+const TabItem = React.memo(({ label, active, onClick }: any) => (
+  <button 
+    onClick={onClick} 
+    className={`px-6 py-3 text-sm font-bold border-b-2 relative transition-all ${
+      active ? "border-indigo-600 text-indigo-900" : "border-transparent text-zinc-400 hover:text-zinc-600"
+    }`}
+  >
+    {label}
+    {active && <span className="absolute inset-x-0 -bottom-[2px] h-[2px] bg-indigo-600 shadow-[0_0_8px_rgba(79,70,229,0.4)]" />}
+  </button>
+));
 
-// --- MEMOIZED ROW COMPONENT ---
-// This prevents the entire list from re-rendering when only one class assignment changes
-const AssignmentRow = React.memo(({ cls, teachers, onAssign }: any) => {
-  return (
-    <tr className="border-b border-zinc-100 hover:bg-zinc-50/50 transition-colors">
-      <td className="px-6 py-4">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-zinc-100 flex items-center justify-center text-zinc-900 font-bold text-xs border border-zinc-200">
-            {cls.code}
-          </div>
-          <div>
-            <p className="text-sm font-bold text-zinc-800">{cls.name} {cls.code}</p>
-            <p className="text-[10px] text-zinc-400 uppercase font-medium tracking-wider">Main Classroom</p>
-          </div>
-        </div>
-      </td>
-      
-      <td className="px-6 py-4">
-        <div className="relative max-w-[240px]">
-          <select 
-            value={cls.currentTeacherId || ""}
-            onChange={(e) => onAssign(cls.id, e.target.value)}
-            className={`w-full pl-3 pr-8 py-2 text-sm rounded-lg border appearance-none outline-none transition-all font-medium
-              ${cls.currentTeacherId 
-                ? "bg-white border-zinc-200 text-zinc-700" 
-                : "bg-orange-50/50 border-orange-100 text-orange-600 italic"
-              } focus:border-zinc-900 focus:ring-2 focus:ring-zinc-100`}
-          >
-            <option value="">Unassigned — Select Teacher</option>
-            {teachers.map((t: any) => (
-              <option key={t.id} value={t.id}>{t.name}</option>
-            ))}
-          </select>
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-400">
-            <UserPlus size={14} />
-          </div>
-        </div>
-      </td>
+const MetricCard = React.memo(({ icon, label, value }: any) => (
+    <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm flex items-center gap-4">
+      <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600">{icon}</div>
+      <div>
+        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">{label}</p>
+        <p className="text-2xl font-bold text-zinc-900 leading-none">{value}</p>
+      </div>
+    </div>
+));
 
-      <td className="px-6 py-4">
-        {cls.currentTeacherId ? (
-          <div className="flex items-center gap-2 text-emerald-600 bg-emerald-50 w-fit px-3 py-1 rounded-full border border-emerald-100">
-            <CheckCircle2 size={12} />
-            <span className="text-[10px] font-bold uppercase tracking-wider">Assigned</span>
-          </div>
-        ) : (
-          <div className="flex items-center gap-2 text-zinc-400 bg-zinc-100 w-fit px-3 py-1 rounded-full border border-zinc-200">
-            <div className="w-1.5 h-1.5 rounded-full bg-zinc-300" />
-            <span className="text-[10px] font-bold uppercase tracking-wider">Pending</span>
-          </div>
-        )}
-      </td>
-    </tr>
-  );
-});
-AssignmentRow.displayName = "AssignmentRow";
-
-// --- MAIN PAGE COMPONENT ---
-export default function AssigningClasses() {
-  const [classes, setClasses] = useState(MOCK_CLASSES);
+export default function TeachingAssignmentPage() {
+  const [activeTab, setActiveTab] = useState("overview");
+  const [teachers, setTeachers] = useState([]);
+  const [subjects, setSubjects] = useState([]);
+  const [selectedTeacher, setSelectedTeacher] = useState<any>(null);
+  const [activeSubjectIds, setActiveSubjectIds] = useState<number[]>([]);
+  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Handler for updating assignment
-  const handleAssign = useCallback((classId: number, teacherId: string) => {
-    setClasses(prev => prev.map(c => 
-      c.id === classId ? { ...c, currentTeacherId: teacherId ? parseInt(teacherId) : null } : c
-    ));
+  useEffect(() => {
+    fetchInitialData();
   }, []);
 
-  // Filter logic
-  const filteredClasses = useMemo(() => {
-    return classes.filter(c => 
-      c.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [classes, searchTerm]);
+  const fetchInitialData = async () => {
+    try {
+      const [tRes, sRes] = await Promise.all([
+        api.get('/staffs/teachers/all'),
+        api.get('/subjects'), 
+      ]);
+      setTeachers(tRes.data);
+      setSubjects(sRes.data);
+    } catch (err) {
+      console.error("Fetch failed", err);
+    }
+  };
 
-  // Assignment Stats
-  const stats = useMemo(() => {
-    const assigned = classes.filter(c => c.currentTeacherId).length;
-    return {
-      total: classes.length,
-      assigned,
-      pending: classes.length - assigned
-    };
-  }, [classes]);
+  const loadTeacherSubjects = async (staffId: number) => {
+    setLoading(true);
+    console.log("sTAFF ID",staffId)
+    try {
+      const res = await api.get(`/staffs/assignments/${staffId}`);
+      console.log(res)
+      setActiveSubjectIds(res.data.map((a: any) => a.subject_id));
+    } catch (err) {
+      console.error(err);
+      setActiveSubjectIds([]);
+    } finally {
+      setLoading(false);
+    }
+  }
+  useEffect(()=>{
+console.log(activeSubjectIds)
+  },[activeSubjectIds])
+  const handleToggle = async (subjectId: number) => {
+    if (!selectedTeacher) return;
+    const isAssigned = activeSubjectIds.includes(subjectId);
+
+    try {
+      if (isAssigned) {
+        await api.delete(`/staffs/assignments/remove/${selectedTeacher.staff_id}/${subjectId}`);
+        setActiveSubjectIds(prev => prev.filter(id => id !== subjectId));
+      } else {
+        await api.post('/staffs/assignments/create', {
+          staff_id: selectedTeacher.staff_id,
+          subject_id: subjectId        });
+        setActiveSubjectIds(prev => [...prev, subjectId]);
+      }
+    } catch (err) {
+      console.error("Toggle failed", err);
+    }
+  };
+
+  const filteredTeachers = useMemo(() => {
+    return teachers.filter((t: any) => t.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }, [teachers, searchTerm]);
 
   return (
-    <div className="p-6 max-w-5xl mx-auto bg-white min-h-screen text-zinc-900">
+    <div className="h-screen flex flex-col bg-[#FDFDFE] text-zinc-900 overflow-hidden">
       
-      {/* HEADER */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-zinc-100">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Class Assignments</h1>
-          <p className="text-sm text-zinc-500">Connect classrooms to primary instructors for the 2025 session.</p>
-        </div>
-        
-        <div className="flex gap-2">
-            <div className="px-4 py-2 bg-zinc-50 rounded-lg border border-zinc-100 text-center">
-                <p className="text-[10px] font-bold text-zinc-400 uppercase">Assigned</p>
-                <p className="text-lg font-bold">{stats.assigned}/{stats.total}</p>
+      <header className="flex-none bg-white border-b border-zinc-100">
+        <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-200">
+              <BookOpen size={20}/>
             </div>
-            <div className="px-4 py-2 bg-orange-50 rounded-lg border border-orange-100 text-center">
-                <p className="text-[10px] font-bold text-orange-400 uppercase">Pending</p>
-                <p className="text-lg font-bold text-orange-600">{stats.pending}</p>
+            <h1 className="text-xl font-bold text-zinc-900 italic">Teaching Assignments</h1>
+          </div>
+          <div className="flex gap-2">
+            <TabItem active={activeTab === "overview"} label="Overview" onClick={() => setActiveTab("overview")} />
+            <TabItem active={activeTab === "manage"} label="Manage Assignments" onClick={() => setActiveTab("manage")} />
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-1 overflow-hidden p-8">
+        <div className="max-w-7xl mx-auto h-full">
+          
+          {activeTab === "overview" ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <MetricCard icon={<GraduationCap size={20}/>} label="Total Teachers" value={teachers.length} />
+              <MetricCard icon={<BookOpen size={20}/>} label="Subjects Offered" value={subjects.length} />
+              <MetricCard icon={<CheckCircle2 size={20}/>} label="Global Assignments" value="--" />
             </div>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full animate-in fade-in duration-500">
+              
+              <div className="lg:col-span-4 flex flex-col h-full overflow-hidden bg-white border border-zinc-200 rounded-2xl shadow-sm">
+                <div className="flex-none p-4 border-b border-zinc-100 bg-zinc-50/30">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={14} />
+                    <input 
+                      type="text" 
+                      placeholder="Search teacher..." 
+                      className="w-full pl-9 pr-4 py-2 bg-white border border-zinc-200 rounded-xl text-xs outline-none focus:ring-2 focus:ring-indigo-500/10"
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                  </div>
+                </div>
+                
+                <div className="flex-1 overflow-y-auto divide-y divide-zinc-50 scrollbar-thin scrollbar-thumb-zinc-200">
+                  {filteredTeachers.map((t: any) => (
+                    <button
+                      key={t.staff_id}
+                      onClick={() => { setSelectedTeacher(t); loadTeacherSubjects(t.staff_id); }}
+                      className={`w-full p-4 flex items-center justify-between transition-all ${
+                        selectedTeacher?.staff_id === t.staff_id ? "bg-indigo-50 border-r-4 border-r-indigo-600" : "hover:bg-zinc-50"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-[10px] ${
+                          selectedTeacher?.staff_id === t.staff_id ? "bg-indigo-600 text-white" : "bg-zinc-100 text-zinc-500"
+                        }`}>
+                          {t.name.substring(0, 2).toUpperCase()}
+                        </div>
+                        <div className="text-left">
+                          <p className={`text-sm font-bold ${selectedTeacher?.staff_id === t.staff_id ? "text-indigo-900" : "text-zinc-900"}`}>{t.name}</p>
+                          <p className="text-[10px] text-zinc-400">{t.staff_no}</p>
+                        </div>
+                      </div>
+                      <ChevronRight size={14} className={selectedTeacher?.staff_id === t.staff_id ? "text-indigo-400" : "text-zinc-200"} />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-8 h-full overflow-hidden">
+                {selectedTeacher ? (
+                  <div className="bg-white border border-zinc-200 rounded-3xl p-8 shadow-sm h-full flex flex-col">
+                    <div className="flex-none flex items-center justify-between mb-8 pb-4 border-b border-zinc-100">
+                      <div>
+                        <h2 className="text-lg font-bold text-zinc-900 italic">{selectedTeacher.name}</h2>
+                        <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-1">Matrix Management</p>
+                      </div>
+                      <div className="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-indigo-100">
+                        {activeSubjectIds.length} Subjects ON
+                      </div>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-200 pr-2">
+                      {loading ? (
+                        <div className="py-20 text-center text-zinc-400 text-sm italic animate-pulse">Synchronizing assignments...</div>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4">
+                          {subjects.map((s: any) => {
+                            const isActive = activeSubjectIds.includes(s.subject_id);
+                            return (
+                              <div 
+                                key={s.subject_id}
+                                onClick={() => handleToggle(s.subject_id)}
+                                className={`group flex items-center justify-between p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
+                                  isActive 
+                                  ? "bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100" 
+                                  : "bg-white border-zinc-100 text-zinc-600 hover:border-indigo-200 shadow-sm"
+                                }`}
+                              >
+                                <div className="flex items-center gap-4">
+                                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                                    isActive ? "bg-white/20 text-white" : "bg-zinc-50 text-zinc-400 group-hover:text-indigo-600"
+                                  }`}>
+                                    <BookOpen size={16} />
+                                  </div>
+                                  <div>
+                                    <p className={`text-sm font-bold ${isActive ? "text-white" : "text-zinc-800"}`}>{s.subject_name}</p>
+                                    <p className={`text-[10px] font-bold uppercase ${isActive ? "text-indigo-100" : "text-zinc-400"}`}>{s.subject_code}</p>
+                                  </div>
+                                </div>
+                                
+                                <div className={`w-8 h-4 rounded-full relative transition-colors ${isActive ? "bg-white/30" : "bg-zinc-200"}`}>
+                                  <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-all ${isActive ? "right-0.5" : "left-0.5"}`} />
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="bg-white border border-zinc-200 border-dashed rounded-3xl h-full flex flex-col items-center justify-center text-center p-8">
+                    <LayoutGrid size={48} className="text-zinc-100 mb-4" />
+                    <h3 className="text-lg font-bold text-zinc-400 tracking-tight">Select a teacher</h3>
+                    <p className="text-xs text-zinc-300 mt-2">Pick a staff member from the left to manage toggles</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-
-      {/* TOOLBAR */}
-      <div className="flex items-center gap-4 mb-6">
-        <div className="relative flex-1 group">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-zinc-900 transition-colors" size={16} />
-          <input 
-            type="text" 
-            placeholder="Filter by class name (e.g. JSS 1)..." 
-            className="w-full pl-10 pr-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm outline-none focus:bg-white focus:border-zinc-900 transition-all"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <button className="p-2.5 border border-zinc-200 rounded-xl hover:bg-zinc-50 transition-colors text-zinc-500">
-          <Filter size={18} />
-        </button>
-      </div>
-
-      {/* TABLE */}
-      <div className="bg-white border border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
-        <table className="w-full text-left border-collapse">
-          <thead className="bg-zinc-50 text-[10px] uppercase font-bold text-zinc-400 tracking-[0.1em]">
-            <tr>
-              <th className="px-6 py-4">Classroom</th>
-              <th className="px-6 py-4">Assigned Teacher</th>
-              <th className="px-6 py-4">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredClasses.length > 0 ? filteredClasses.map((cls) => (
-              <AssignmentRow 
-                key={cls.id} 
-                cls={cls} 
-                teachers={MOCK_TEACHERS} 
-                onAssign={handleAssign} 
-              />
-            )) : (
-              <tr>
-                <td colSpan={3} className="px-6 py-20 text-center text-zinc-400 italic text-sm">
-                  No classes found matching your search.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      {/* FOOTER ACTION */}
-      <div className="mt-8 flex justify-end">
-        <button className="flex items-center gap-2 bg-zinc-900 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-zinc-800 transition-all shadow-lg active:scale-95">
-          <ArrowRightLeft size={16} /> Update All Assignments
-        </button>
-      </div>
-
+      </main>
     </div>
   );
 }

@@ -54,22 +54,40 @@ const navItems: NavItem[] = [
       // { name: "Results", path: "/students/results", icon: <BookOpenCheck/> },
     ],
   },
+
+  {
+  name: "Staffs",
+  icon: <UserCog size={18} />,
+  subItems: [
+    {
+      name: "All Staff",
+      path: "/staff",
+      icon: <List size={16} />,
+    },
+    {
+      name: "Add Staff",
+      path: "/staff/add",
+      icon: <UserPlus size={16} />,
+    },
+    {
+      name: "Roles & Permissions",
+      path: "/staff/roles",
+      icon: <ShieldCheck size={16} />,
+    },
+  ],
+}
+,
   {
   name: "Teachers",
   icon: <Users size={18} />,
   subItems: [
+{
+ name: "Assign Subjects",
+      path: "/teachers/assign",
+      icon: <Table size={16} />,
+},
     {
-      name: "All Teachers",
-      path: "/teachers/all",
-      icon: <List size={16} />,
-    },
-    {
-      name: "Add / Remove Teacher",
-      path: "/teachers/add",
-      icon: <UserPlus size={16} />,
-    },
-    {
-      name: "Assign Classes",
+      name: "Assign Classes -(Class Teacher)",
       path: "/teachers/assign",
       icon: <Table size={16} />,
     },
@@ -113,28 +131,7 @@ const navItems: NavItem[] = [
   ],
 }
 ,
-{
-  name: "Staffs",
-  icon: <UserCog size={18} />,
-  subItems: [
-    {
-      name: "All Staff",
-      path: "/staff",
-      icon: <List size={16} />,
-    },
-    {
-      name: "Add Staff",
-      path: "/staff/add",
-      icon: <UserPlus size={16} />,
-    },
-    {
-      name: "Roles & Permissions",
-      path: "/staff/roles",
-      icon: <ShieldCheck size={16} />,
-    },
-  ],
-}
-,
+
 
 
  

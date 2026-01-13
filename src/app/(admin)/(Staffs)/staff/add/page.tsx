@@ -7,7 +7,6 @@ import {
 import { SaveModal } from "@/components/common/Reusables/Preloader";
 import api from "../../../../../../libs/axios";
 
-// --- OPTIONS ---
 const ROLE_OPTIONS = ["Teacher", "Principal", "Vice Principal", "Administrator", "Bursar", "Lab Technician", "Other"];
 const STATUS_OPTIONS = ["Permanent", "Contract", "Probation", "Part-time"];
 const MARITAL_OPTIONS = ["Single", "Married", "Divorced", "Widowed"];
