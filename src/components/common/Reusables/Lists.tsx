@@ -232,7 +232,6 @@ console.log(first_name)
             {/* Row 1 */}
             <div>
             <Label>First Name</Label>
-  {/* Using standard 'input' instead of custom 'Input' component */}
   <input 
     type="text" 
     className="w-full rounded-lg border border-gray-300 p-2" // add your styling

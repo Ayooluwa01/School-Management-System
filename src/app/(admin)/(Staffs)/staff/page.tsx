@@ -28,7 +28,7 @@ export default function AllStaffPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [roleFilter, setRoleFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 54;
 
   // Modal States
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -76,6 +76,7 @@ export default function AllStaffPage() {
     if (!editingStaff) return;
     
     setIsSaving(true);
+    console.log(editingStaff)
     try {
       const response = await api.patch(`/staffs/${editingStaff.staff_id}`, editingStaff);
       setStaffs(prev => prev.map(s => s.staff_id === editingStaff.staff_id ? response.data : s));
@@ -220,14 +221,14 @@ export default function AllStaffPage() {
                       <option value="Administrator">Administrator</option>
                     </select>
                   </div>
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <label className="text-[10px] font-bold uppercase text-zinc-400 tracking-wider">Employment Status</label>
                     <select className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-sm focus:border-indigo-500 outline-none" value={editingStaff.status} onChange={(e) => setEditingStaff({...editingStaff, status: e.target.value as any})}>
                       <option value="Active">Active</option>
                       <option value="On Leave">On Leave</option>
                       <option value="Suspended">Suspended</option>
                     </select>
-                  </div>
+                  </div> */}
                   <div className="md:col-span-2 space-y-2">
                     <label className="text-[10px] font-bold uppercase text-zinc-400 tracking-wider">Address</label>
                     <textarea className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-sm focus:border-indigo-500 outline-none resize-none" rows={2} value={editingStaff.address} onChange={(e) => setEditingStaff({...editingStaff, address: e.target.value})} />

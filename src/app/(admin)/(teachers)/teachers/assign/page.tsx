@@ -75,9 +75,7 @@ export default function TeachingAssignmentPage() {
       setLoading(false);
     }
   }
-  useEffect(()=>{
-console.log(activeSubjectIds)
-  },[activeSubjectIds])
+
   const handleToggle = async (subjectId: number) => {
     if (!selectedTeacher) return;
     const isAssigned = activeSubjectIds.includes(subjectId);

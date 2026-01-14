@@ -1,25 +1,17 @@
 "use client";
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import { 
   User, Users, ArrowRight, Camera, ChevronDown, 
-  Loader2, CheckCircle2, AlertCircle
 } from "lucide-react";
-import axios from "../../../../../../libs/axios";
+import axios from "../../../../../../libs/axios"; 
 import { SaveModal } from "@/components/common/Reusables/Preloader";
 
-const CLASS_OPTIONS = [
-  "JSS1", "JSS2", "JSS3", 
-  "SSS 1 (Science)", "SSS 1 (Art)", "SSS 1 (Commercial)",
-  "SSS 2 (Science)", "SSS 2 (Art)", "SSS 2 (Commercial)",
-  "SSS 3 (Science)", "SSS 3 (Art)", "SSS 3 (Commercial)"
-];
-
-const ARM_OPTIONS = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+// --- REMOVED ARM_OPTIONS ---
 const GENDER_OPTIONS = ["Male", "Female"];
 
 const INITIAL_STATE = {
   // Personal
-  firstName: "", lastName: "", assignedClass: "", arm: "",
+  firstName: "", lastName: "", assignedClass: "",
   dob: "", gender: "", nationality: "Nigerian", 
   religion: "", 
   address: "", city: "",
@@ -32,7 +24,6 @@ const INITIAL_STATE = {
 };
 
 // --- MEMOIZED COMPONENTS ---
-;
 
 const NavItem = React.memo(({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) => (
   <button 
@@ -62,7 +53,6 @@ const SectionHeader = React.memo(({ icon, title, subtitle }: { icon: any, title:
 ));
 SectionHeader.displayName = "SectionHeader";
 
-// OPTIMIZED INPUT GROUP: Uses defaultValue to prevent re-renders
 const InputGroup = React.memo(({ 
   label, name, defaultValue, onChange, placeholder, 
   type = "text", required, options, fullWidth, className
@@ -83,7 +73,13 @@ const InputGroup = React.memo(({
               className="w-full px-4 py-3 rounded-xl bg-zinc-50/50 border border-zinc-200 text-zinc-800 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all appearance-none cursor-pointer"
             >
               <option value="" disabled>Select {label}</option>
-              {options?.map((opt: string) => <option key={opt} value={opt}>{opt}</option>)}
+              {options?.map((opt: any, idx: number) => {
+                const value = typeof opt === 'object' ? opt.value : opt;
+                const display = typeof opt === 'object' ? opt.label : opt;
+                return (
+                  <option key={`${value}-${idx}`} value={value}>{display}</option>
+                );
+              })}
             </select>
             <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none group-focus-within:text-indigo-500" size={16} />
           </>
@@ -108,10 +104,29 @@ InputGroup.displayName = "InputGroup";
 
 export default function RegisterStudent() {
   const [activeSection, setActiveSection] = useState("personal");
+  const [classes, setClasses] = useState<any[]>([]);
   const formRef = useRef(INITIAL_STATE);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
 
-  // PERFORMANCE FIX: This updates the Ref silently without triggering a re-render
+  useEffect(() => {
+    const fetchClasses = async () => {
+      try {
+        const response = await axios.get("/class/all_classes");
+        if (Array.isArray(response.data)) {
+            setClasses(response.data);
+        }
+      } catch (error) {
+        console.error("Error fetching classes:", error);
+      }
+    };
+    fetchClasses();
+  }, []);
+
+  const classOptions = classes.map((cls) => ({
+    value: cls.class_id,
+    label: `${cls.class_code}`
+  }));
+
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     formRef.current = { ...formRef.current, [name]: value };
@@ -134,8 +149,9 @@ export default function RegisterStudent() {
       lga: formData.lga,
       bloodGroup: formData.bloodGroup,
       genotype: formData.genotype,
+      
       class_id: formData.assignedClass,
-      class_arm: formData.arm, 
+      
       fatherName: formData.fatherName,
       fatherPhone: formData.fatherPhone,
       motherName: formData.motherName,
@@ -148,14 +164,12 @@ export default function RegisterStudent() {
 
     try {
       const response = await axios.post("/students/register", payload);
-
-      console.log("Backend response:", response.data);
       setSaveStatus('success');
-      
       setTimeout(() => {
         setSaveStatus('idle');
-  
+
       }, 2000);
+      
 
     } catch (error: any) {
       console.error("Error submitting form:", error.response?.data || error.message);
@@ -222,15 +236,16 @@ export default function RegisterStudent() {
                 <InputGroup label="First Name" name="firstName" placeholder="e.g. Daniel" required defaultValue={INITIAL_STATE.firstName} onChange={handleInputChange} />
                 <InputGroup label="Last Name" name="lastName" placeholder="e.g. Adebayo" required defaultValue={INITIAL_STATE.lastName} onChange={handleInputChange} />
                 
-                {/* CLASS & ARM ROW */}
-                <div className="md:col-span-2 grid grid-cols-3 gap-4">
-                    <div className="col-span-2">
-                      <InputGroup label="Class" name="assignedClass" type="select" options={CLASS_OPTIONS} required defaultValue={INITIAL_STATE.assignedClass} onChange={handleInputChange} />
-                    </div>
-                    <div className="col-span-1">
-                      <InputGroup label="Arm" name="arm" type="select" options={ARM_OPTIONS} required defaultValue={INITIAL_STATE.arm} onChange={handleInputChange} />
-                    </div>
-                </div>
+                <InputGroup 
+                  label="Class" 
+                  name="assignedClass" 
+                  type="select" 
+                  options={classOptions} 
+                  required 
+                  defaultValue={INITIAL_STATE.assignedClass} 
+                  onChange={handleInputChange}
+                  fullWidth // This ensures it spans 2 columns in the grid
+                />
                 
                 <InputGroup label="Gender" name="gender" type="select" options={GENDER_OPTIONS} defaultValue={INITIAL_STATE.gender} onChange={handleInputChange} />
                 <InputGroup label="Date of Birth" name="dob" type="date" required defaultValue={INITIAL_STATE.dob} onChange={handleInputChange} />
