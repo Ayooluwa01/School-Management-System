@@ -129,7 +129,6 @@ export default function SingleClassAssignmentPage() {
           </div>
         </aside>
 
-        {/* Right Panel: Work Area */}
         <main className="flex-1 p-8 overflow-y-auto bg-zinc-50/30">
           {selectedTeacher ? (
             <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
@@ -150,7 +149,6 @@ export default function SingleClassAssignmentPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                {/* Current Class Slot */}
                 <div className="space-y-4">
                     <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
                         <Info size={14} /> Current Assignment
@@ -209,7 +207,7 @@ export default function SingleClassAssignmentPage() {
                                     }`}
                                 >
                                     <div>
-                                        <p className="text-sm font-bold text-zinc-800">{c.class_name}</p>
+                                        <p className="text-sm font-bold text-zinc-800">{c.class_code}</p>
                                         <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
                                           {isTaken ? "Occupied" : c.class_code}
                                         </p>

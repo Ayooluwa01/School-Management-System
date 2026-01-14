@@ -28,7 +28,7 @@ export default function AllStaffPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [roleFilter, setRoleFilter] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 54;
+  const itemsPerPage = 100;
 
   // Modal States
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
