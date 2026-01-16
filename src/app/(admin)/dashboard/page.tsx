@@ -16,7 +16,6 @@ import Alert from "@/components/ui/alert/Alert";
 
 export default async function Dashboard() {
 
-  const studentData = await fetchStudents();
   
   return (
     <div className="p-4 md:p-6 space-y-2 min-h-screen bg-gray-25 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
@@ -27,7 +26,7 @@ export default async function Dashboard() {
         <StatCard 
           icon={<GraduationCap className="w-5 h-5 text-blue-600" />}
           label="Students"
-          value={studentData.studentCount||0}
+          value='---'
           color="blue"
         />
         <StatCard 
