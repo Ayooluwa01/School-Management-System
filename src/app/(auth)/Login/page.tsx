@@ -75,7 +75,8 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     const { accessToken } = response.data;
     useAuthStore.getState().setAccessToken(accessToken);
     console.log('Login successful!', accessToken);
-
+    
+router.replace('/dashboard')
     setErrors({});
 
   } catch (error: any) {

@@ -95,7 +95,7 @@ export default function ClassManagement() {
 
   const fetchClasses = async () => {
     try {
-      const response = await api.get("/class/all_classes");
+      const response = await api.get("/class/");
       setClasses(response.data);
     } catch (error) {
       console.error("Error fetching classes:", error);

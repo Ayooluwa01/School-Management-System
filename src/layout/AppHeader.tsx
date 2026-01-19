@@ -5,10 +5,11 @@ import NotificationDropdown from "@/components/header/NotificationDropdown";
 import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuthStore } from "../../zustand/store";
 
 const AppHeader: React.FC = () => {
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
-
+const {user}=useAuthStore()
   const handleToggle = () => {
     if (window.innerWidth >= 1024) {
       toggleSidebar();
@@ -66,10 +67,10 @@ const AppHeader: React.FC = () => {
 
             <div className="leading-tight">
               <p className="text-sm font-medium text-gray-800 dark:text-white">
-                Admin User
+              {user?.role }
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                Admin · 2nd Term
+                {user?.user_id} · 2nd Term
               </p>
             </div>
           </div>

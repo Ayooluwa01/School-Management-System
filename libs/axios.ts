@@ -1,10 +1,47 @@
 // libs/axios.ts
 import axios from 'axios';
 import type { InternalAxiosRequestConfig } from 'axios';
+import { useAuthStore } from '../zustand/store';
+import { Trykker } from 'next/font/google';
+
+
 
 const api = axios.create({
   baseURL: 'http://localhost:4000',withCredentials:true
 });
+
+api.interceptors.request.use((config) => {
+  const token = useAuthStore.getState().accessToken;
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  async (error) => {
+    const originalRequest = error.config;
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      
+      console.error("Access Token expired. Attempting silent refresh...");
+
+      try {
+    
+        await api.post("/auth/refresh");
+        return api(originalRequest);
+      } catch (refreshError) {
+        console.error("Refresh Token expired. Logging out...");
+        return Promise.reject(refreshError);
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
 
 // api.interceptors.request.use(
 //   (config: InternalAxiosRequestConfig) => {

@@ -12,9 +12,10 @@ import {
 } from "lucide-react";
 
 import SidebarWidget from "./SidebarWidget";
+import { useAuthStore } from "../../zustand/store";
 
 // --- Roles ---
-type UserRole = "ADMIN" | "TEACHER" | "STUDENT" | "PARENT";
+type UserRole = "ADMIN" | "TEACHER" | "STUDENT" | "PARENT" |"STAFF";
 
 // --- Types ---
 type SubNavItem = {
@@ -42,14 +43,14 @@ const navItems: NavItem[] = [
     path: "/dashboard",
     iconColor: "text-sky-600",
     bgColor: "bg-sky-100",
-    allowedRoles: ["ADMIN", "TEACHER", "STUDENT", "PARENT"],
+    allowedRoles: ["ADMIN", "TEACHER", "STUDENT", "PARENT","STAFF"],
   },
   {
     name: "Students",
     icon: <GraduationCap size={20} />,
     iconColor: "text-violet-600",
     bgColor: "bg-violet-100",
-    allowedRoles: ["ADMIN", "TEACHER"],
+    allowedRoles: ["ADMIN", "TEACHER","STAFF"],
     subItems: [
       { name: "All Students", path: "/students/allstudents", icon: <UsersRound size={18} /> },
       { name: "Register Student", path: "/students/add", icon: <UserRoundPlus size={18} />, allowedRoles: ["ADMIN"] },
@@ -79,16 +80,16 @@ const navItems: NavItem[] = [
       { name: "Assign Classes", path: "/teachers/assignClass", icon: <Table size={18} /> },
     ],
   },
-  { name: "Class", icon: <Layers size={20} />, path: "/classes", iconColor: "text-emerald-600", bgColor: "bg-emerald-100", allowedRoles: ["ADMIN", "TEACHER"] },
-  { name: "Subject", icon: <BookOpen size={20} />, path: "/subjects", iconColor: "text-cyan-600", bgColor: "bg-cyan-100", allowedRoles: ["ADMIN", "TEACHER"] },
-  { name: "Attendance", icon: <CalendarCheck size={20} />, path: "/attendance", iconColor: "text-orange-600", bgColor: "bg-orange-100", allowedRoles: ["STUDENT", "PARENT"] },
+  { name: "Class", icon: <Layers size={20} />, path: "/classes", iconColor: "text-emerald-600", bgColor: "bg-emerald-100", allowedRoles: ["ADMIN", "TEACHER","STAFF"] },
+  { name: "Subject", icon: <BookOpen size={20} />, path: "/subjects", iconColor: "text-cyan-600", bgColor: "bg-cyan-100", allowedRoles: ["ADMIN", "TEACHER","STAFF"] },
+  { name: "Attendance", icon: <CalendarCheck size={20} />, path: "/attendance", iconColor: "text-orange-600", bgColor: "bg-orange-100", allowedRoles: ["STUDENT", "PARENT","ADMIN","STAFF"] },
   { name: "Timetable", icon: <CalendarClock size={20} />, path: "/timetable", iconColor: "text-fuchsia-600", bgColor: "bg-fuchsia-100", allowedRoles: ["ADMIN", "TEACHER", "STUDENT", "PARENT"] },
   {
     name: "Examinations",
     icon: <FileText size={20} />,
     iconColor: "text-rose-600",
     bgColor: "bg-rose-100",
-    allowedRoles: ["ADMIN", "TEACHER", "STUDENT", "PARENT"],
+    allowedRoles: ["ADMIN", "TEACHER", "STUDENT", "PARENT","STAFF"],
     subItems: [
       { name: "Result Entry", path: "/Exams/Entry", icon: <Table size={18} />, allowedRoles: ["ADMIN", "TEACHER"] },
       { name: "Report Cards", path: "/Exams/Report-cards", icon: <ClipboardCheck size={18} /> },
@@ -115,7 +116,7 @@ const othersItems: NavItem[] = [
     icon: <Plug size={20} />,
     iconColor: "text-orange-600",
     bgColor: "bg-orange-100",
-    allowedRoles: ["ADMIN", "TEACHER"],
+    allowedRoles: ["ADMIN", "TEACHER","STAFF"],
     subItems: [
       { name: "Announcements", path: "/communication/announcements", icon: <Megaphone size={18} /> },
       { name: "Broadcasts", path: "/communication/broadcast", icon: <Plug size={18} /> },
@@ -141,9 +142,8 @@ const AppSidebar: React.FC = () => {
   const pathname = usePathname();
   const [openSubmenu, setOpenSubmenu] = useState<{ type: "main" | "others"; index: number } | null>(null);
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
-
-  // Mock User Role - Replace this with your actual Auth state/context
-  const userRole: UserRole = "ADMIN"; 
+const user = useAuthStore((state) => state.user);
+const userRole = (user?.role as UserRole)
 
   const isActive = useCallback((path: string) => pathname === path || pathname.startsWith(path + '/'), [pathname]);
   const isSidebarOpen = isExpanded || isHovered || isMobileOpen;
@@ -159,7 +159,6 @@ const AppSidebar: React.FC = () => {
         return { ...item, subItems: filteredSubItems };
       })
       .filter(item => {
-        // Filter main item: must have role permission AND (if it has sub-items, at least one must be visible)
         const hasRole = !item.allowedRoles || item.allowedRoles.includes(userRole);
         const hasVisibleChildren = item.subItems ? item.subItems.length > 0 : true;
         return hasRole && hasVisibleChildren;
@@ -275,7 +274,7 @@ const AppSidebar: React.FC = () => {
           {isSidebarOpen && (
             <div className="flex flex-col">
               <span className="text-xl font-black text-zinc-800 leading-none tracking-tight">Schl<span className="text-indigo-600">Mgs</span></span>
-              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mt-1">{userRole.toLowerCase()} Portal</span>
+              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mt-1">{userRole} Portal</span>
             </div>
           )}
         </Link>
