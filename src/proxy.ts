@@ -7,11 +7,11 @@ import {jwtDecode} from "jwt-decode"
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (pathname.startsWith('/Login') || pathname.startsWith('/api')) {
+  if (pathname.startsWith('/Login') || pathname.startsWith('/Signup')) {
     return NextResponse.next();
   }
 
-  const refreshToken = request.cookies.get('refreshToken')?.value; // optional: or refresh token
+  const refreshToken = request.cookies.get('refreshToken')?.value; 
 
   if (!refreshToken) {
     return NextResponse.redirect(new URL('/Login', request.url));

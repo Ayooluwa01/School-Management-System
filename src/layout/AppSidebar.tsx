@@ -13,6 +13,8 @@ import {
 
 import SidebarWidget from "./SidebarWidget";
 import { useAuthStore } from "../../zustand/store";
+import Image from "next/image";
+import { useSchoolProfile } from "../../hooks/useSchool";
 
 // --- Roles ---
 type UserRole = "ADMIN" | "TEACHER" | "STUDENT" | "PARENT" |"STAFF";
@@ -144,8 +146,9 @@ const AppSidebar: React.FC = () => {
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 const user = useAuthStore((state) => state.user);
 const userRole = (user?.role as UserRole)
+  const { data: school, isLoading } = useSchoolProfile();
 
-  const isActive = useCallback((path: string) => pathname === path || pathname.startsWith(path + '/'), [pathname]);
+const isActive = useCallback((path: string) => pathname === path || pathname.startsWith(path + '/'), [pathname]);
   const isSidebarOpen = isExpanded || isHovered || isMobileOpen;
 
   // --- Filter Logic ---
@@ -267,17 +270,26 @@ const userRole = (user?.role as UserRole)
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`h-20 flex items-center flex-none px-6 mb-2 ${!isSidebarOpen ? "justify-center px-0" : "justify-between"}`}>
-        <Link href="/" className="flex items-center gap-3 overflow-hidden group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white flex-none shadow-sm transition-transform group-hover:scale-105">
-            <School className="w-6 h-6" />
-          </div>
-          {isSidebarOpen && (
-            <div className="flex flex-col">
-              <span className="text-xl font-black text-zinc-800 leading-none tracking-tight">Schl<span className="text-indigo-600">Mgs</span></span>
-              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider mt-1">{userRole} Portal</span>
-            </div>
-          )}
-        </Link>
+        <Link href="/" className="flex items-center gap-2 sm:flex">
+                    {isLoading ? (
+                      <div className="h-8 w-8 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+                    ) : (
+                      <>
+                        {school?.logo_url && (
+                          <Image
+                            src={school.logo_url}
+                            alt="School Logo"
+                            width={32}
+                            height={32}
+                            className="rounded object-contain"
+                          />
+                        )}
+                        <span className="hidden font-semibold text-gray-800 dark:text-white md:block">
+                          {school?.name}
+                        </span>
+                      </>
+                    )}
+                  </Link>
       </div>
 
       <div className="flex-1 overflow-y-auto overflow-x-hidden py-4 custom-scrollbar space-y-6">

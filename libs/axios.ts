@@ -18,30 +18,30 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  async (error) => {
-    const originalRequest = error.config;
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      
-      console.error("Access Token expired. Attempting silent refresh...");
-
-      try {
+// api.interceptors.response.use(
+//   (response) => {
+//     return response;
+//   },
+//   async (error) => {
+//     const originalRequest = error.config;
     
-        await api.post("/auth/refresh");
-        return api(originalRequest);
-      } catch (refreshError) {
-        console.error("Refresh Token expired. Logging out...");
-        return Promise.reject(refreshError);
-      }
-    }
+//     if (error.response?.status === 401 && !originalRequest._retry) {
+//       originalRequest._retry = true;
 
-    return Promise.reject(error);
-  }
-);
+
+//       try {
+//     console.log('refreshing with cookies')
+//         await api.post("/auth/refresh");
+//         return api(originalRequest);
+//       } catch (refreshError) {
+//         console.error("Refresh Token expired. Logging out...");
+//         return Promise.reject(refreshError);
+//       }
+//     }
+
+//     return Promise.reject(error);
+//   }
+// );
 
 // api.interceptors.request.use(
 //   (config: InternalAxiosRequestConfig) => {
