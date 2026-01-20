@@ -19,7 +19,12 @@ export function useSchoolProfile() {
 
 const updateProfile = useMutation({
     mutationFn: async (updatedData: any) => {
-      const response = await api.patch(`/school-profile/updateProfile/${user?.school_id}`, updatedData);
+        console.log(updatedData)
+      const response = await api.patch(`/school-profile/updateProfile/${user?.school_id}`, updatedData,{
+        headers:{
+            'Content-Type': 'multipart/form-data',
+        }
+      });
       return response.data;
     },
     onSuccess: () => {

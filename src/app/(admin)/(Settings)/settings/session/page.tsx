@@ -32,7 +32,6 @@ export default function AcademicDatabaseManager() {
     const termToUpdate = currentSession.terms.find((t: any) => t.term_id === termId);
     const isCurrentlyActive = termToUpdate?.is_active;
 
-    // RULE: If trying to activate, check if another term is already active
     if (!isCurrentlyActive) {
       const activeTerm = currentSession.terms.find((t: any) => t.is_active);
       if (activeTerm) {

@@ -13,9 +13,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'encrypted-tbn0.gstatic.com',
+        hostname: 'res.cloudinary.com',
         port: '',
-        pathname: '/**', // This allows all images from this host
+        pathname: '/**', 
       },
     ],
   },

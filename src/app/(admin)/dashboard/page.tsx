@@ -25,7 +25,7 @@ export default async function Dashboard() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">System Overview</h1>
-          <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">Welcome back, Admin. Here's what's happening today.</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">Welcome back, Admin. Here&rsquo;s what&rsquo;s happening today.</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="relative hidden md:block">

@@ -37,6 +37,7 @@ function ProfileForm({ school, updateProfile }: any) {
     logoUrl: school?.logo_url || null,
     isActive: school?.is_active ?? true,
   });
+  const [logoFile, setLogoFile] = useState<File | null>(null);
 
   const [showStatusModal, setShowStatusModal] = useState(false);
 
@@ -58,11 +59,30 @@ function ProfileForm({ school, updateProfile }: any) {
   const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+        setLogoFile(file);
+
+        // For localpreview
       const imageUrl = URL.createObjectURL(file);
       setFormData(prev => ({ ...prev, logoUrl: imageUrl }));
     }
   };
 
+
+  const handleSave = () => {
+  const data = new FormData();
+ 
+
+  data.append('instituteName', formData.instituteName);
+  data.append('email', formData.email);
+  data.append('phone', formData.phone);
+  data.append('address', formData.address);
+  data.append('country', formData.country);
+ data.append('logoUrl',formData.logoUrl)
+  if (logoFile) {
+    data.append('logo', logoFile); 
+  }
+  updateProfile.mutate(data);
+}
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       
@@ -101,7 +121,7 @@ function ProfileForm({ school, updateProfile }: any) {
             </div>
           </div>
           <button 
-            onClick={() => updateProfile.mutate(formData)}
+            onClick={handleSave}
             disabled={updateProfile.isPending}
             className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-lg disabled:opacity-70"
           >

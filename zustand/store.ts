@@ -30,7 +30,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         const decoded = jwtDecode<JWTPayload>(token);
         set({ accessToken: token, user: decoded });
 
-
+// Fectch  school data
       } catch (error) {
         console.error("Failed to decode token", error);
         set({ accessToken: null, user: null });
