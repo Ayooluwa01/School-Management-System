@@ -15,7 +15,6 @@ export default function SignupPage() {
   const [step, setStep] = useState(1);
   const [showPassword, setShowPassword] = useState(false);
   
-  // Persistent random seed for the ID
   const randomIdSeed = useRef(Math.floor(100 + Math.random() * 900));
 
   const [formData, setFormData] = useState({
@@ -36,7 +35,6 @@ export default function SignupPage() {
     plan: "professional"
   });
 
-  // --- Auto-ID Logic (XXX|000|SCH) ---
   useEffect(() => {
     const name = formData.school.name;
     if (name && name.length >= 3) {
