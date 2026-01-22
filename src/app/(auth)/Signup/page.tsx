@@ -90,6 +90,8 @@ useEffect(() => {
       alert("Please ensure all fields are filled correctly across all steps.",result.error.issues);
       return;
     }
+
+    
     registerMutation.mutate(formData);
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -7,6 +8,8 @@ import {
   AlertTriangle, Save, Hash, Loader2
 } from "lucide-react";
 import { useSession_Terms } from "../../../../../../hooks/useSchool";
+import { DateInput } from "@/components/common/Dateinput";
+import DatePicker from "react-datepicker";
 
 export default function AcademicDatabaseManager() {
   const { data: sessionsData, isLoading, refetch } = useSession_Terms();
@@ -73,7 +76,7 @@ export default function AcademicDatabaseManager() {
             <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tight">Connected to Database</p>
           </div>
         </div>
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all flex items-center gap-2">
+        <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all flex items-center gap-2" disabled={true}>
           <Plus size={14} /> New Session
         </button>
       </header>
@@ -125,19 +128,27 @@ export default function AcademicDatabaseManager() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">Session Start</label>
-                    <input 
-                      type="date"
-                      value={currentSession.start_date}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm font-medium outline-none cursor-pointer"
-                    />
+                     <DatePicker
+        disabled={true}
+          selected={currentSession.start_date}
+          // onChange={onChange}
+          // minDate={minDate}
+          placeholderText={currentSession.start_date}
+          dateFormat="dd/MM/yyyy"
+          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600 transition-all cursor-pointer"
+        />  
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">Session End</label>
-                    <input 
-                      type="date"
-                      value={currentSession.end_date}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm font-medium outline-none cursor-pointer"
-                    />
+                               <DatePicker
+        disabled={true}
+          selected={currentSession.end_date}
+          // onChange={onChange}
+          // minDate={minDate}
+          placeholderText={currentSession.end_date}
+          dateFormat="dd/MM/yyyy"
+          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600 transition-all cursor-pointer"
+        />  
                   </div>
                 </div>
               </section>
@@ -146,7 +157,7 @@ export default function AcademicDatabaseManager() {
               <section className="space-y-4">
                 <div className="flex items-center justify-between px-2">
                   <h3 className="text-sm font-black uppercase tracking-widest text-slate-800">Session Terms</h3>
-                  <button className="text-xs font-bold text-indigo-600 flex items-center gap-1">
+                  <button className="text-xs font-bold text-indigo-600 flex items-center gap-1" disabled={true}>
                     <Plus size={14} /> Add Term
                   </button>
                 </div>
@@ -179,36 +190,50 @@ export default function AcademicDatabaseManager() {
                         </button>
                       </div>
 
-                      {/* Numerical Title & Date Pickers */}
                       <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="space-y-1">
                           <label className="text-[9px] font-black text-slate-400 uppercase flex items-center gap-1">
                             <Hash size={10} /> Term (No.)
                           </label>
-                          <input 
-                            type="number"
+
+                          <p                             className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm font-bold outline-none"
+> {term.term_name}</p>
+                          {/* <input 
+
+                            type=""
                             value={term.term_name}
                             onChange={(e) => updateTerm(term.term_id, 'term_name', e.target.value)}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-sm font-bold outline-none"
-                          />
+                          /> */}
                         </div>
                         <div className="space-y-1">
                           <label className="text-[9px] font-black text-slate-400 uppercase">Start Date</label>
-                          <input 
+ <DatePicker
+        disabled={true}
+          selected={term.start_date}
+          // onChange={onChange}
+          // minDate={minDate}
+          placeholderText={term.start_date}
+          dateFormat="dd/MM/yyyy"
+          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600 transition-all cursor-pointer"
+        />                       
+                          {/* <input 
                             type="date"
                             value={term.start_date}
                             onChange={(e) => updateTerm(term.term_id, 'start_date', e.target.value)}
                             className="w-full bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] outline-none cursor-pointer"
-                          />
+                          /> */}
                         </div>
                         <div className="space-y-1">
                           <label className="text-[9px] font-black text-slate-400 uppercase">End Date</label>
-                          <input 
-                            type="date"
-                            value={term.end_date}
-                            onChange={(e) => updateTerm(term.term_id, 'end_date', e.target.value)}
-                            className="w-full bg-white border border-slate-200 rounded-lg px-2 py-1 text-[11px] outline-none cursor-pointer"
-                          />
+                         <DatePicker
+        disabled={true}
+          selected={term.end_date}
+          // onChange={onChange}
+          // minDate={minDate}
+          placeholderText={term.end_date}
+          dateFormat="dd/MM/yyyy"
+          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600 transition-all cursor-pointer"
+        />     
                         </div>
                       </div>
                     </div>
@@ -219,12 +244,10 @@ export default function AcademicDatabaseManager() {
               {/* Sync Footer */}
               <div className="flex items-center justify-between p-4 bg-slate-900 rounded-2xl text-white shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-indigo-500/20 rounded-lg">
-                    <Save size={20} className="text-indigo-400" />
-                  </div>
-                  <p className="text-xs font-medium">Ready to save changes to the central database?</p>
+                  
+                  <p className="text-xs font-medium"> You cannot modify changes until end session or term</p>
                 </div>
-                <button className="bg-white text-slate-900 text-xs font-bold px-6 py-2 rounded-lg hover:bg-slate-100 transition-all">
+                <button className="bg-white text-slate-900 text-xs font-bold px-6 py-2 rounded-lg hover:bg-slate-100 transition-all" disabled={true}>
                   Update Academic Structure
                 </button>
               </div>

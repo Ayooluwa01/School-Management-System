@@ -42,6 +42,7 @@ export function useSession_Terms() {
     queryKey: ["academic-calendar", user?.school_id],
     queryFn: async () => {
       const { data } = await api.get(`/school-profile/session/${user?.school_id}`);
+   console.log(data)
       return data;
     },
     enabled: !!user?.school_id, 
