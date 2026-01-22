@@ -20,7 +20,6 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       }
 
       try {
-        console.log("re attempt")
         const response = await axios.post("/auth/refresh");
         setAccessToken(response.data.accessToken);
       } catch (error) {
