@@ -74,7 +74,6 @@ export default function SignupPage() {
   return (
     <div className="min-h-screen w-full relative bg-white flex items-center justify-center p-4 sm:p-6 overflow-x-hidden selection:bg-indigo-100 font-sans">
       
-      {/* Exact Background Pattern from Login */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`, backgroundSize: '24px 24px' }} 
       />
@@ -85,7 +84,6 @@ export default function SignupPage() {
 
       <div className={`w-full relative z-10 transition-all duration-500 ${step === 4 ? 'max-w-[920px]' : 'max-w-[460px]'}`}>
         
-        {/* Exact Header from Login */}
         <div className="text-center mb-6 sm:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 mb-4 sm:mb-6">
             <Sparkles size={12} className="text-indigo-600" />
@@ -97,7 +95,6 @@ export default function SignupPage() {
           <p className="text-zinc-500 text-xs sm:text-sm font-medium">Initialize your academic management system</p>
         </div>
 
-        {/* Step Selector - Mirrored from Login Role Selector */}
         <div className="flex p-1 bg-zinc-100/80 rounded-2xl sm:rounded-[24px] mb-6 sm:mb-8 border border-zinc-200/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
           {steps.map(item => (
             <button
@@ -113,13 +110,13 @@ export default function SignupPage() {
           ))}
         </div>
 
-        {/* Form Card - Exact radius and shadow from Login */}
+        {/* Form  */}
         <div className="bg-white border border-zinc-200/60 rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
           <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-zinc-100">
             
             <div className={`transition-all duration-500 ${step === 4 ? 'md:w-1/2 md:pr-10 pb-8 md:pb-0' : 'w-full'}`}>
               
-              {/* Step 1: Admin */}
+              {/*  Admin */}
               {step === 1 && (
                 <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
                   <FormInput label="Full Name" icon={User} placeholder="e.g. Albert Okon" value={formData.admin.name} onChange={(e:any) => updateForm('admin', 'name', e.target.value)} />
@@ -135,7 +132,7 @@ export default function SignupPage() {
                 </div>
               )}
 
-              {/* Step 2: School */}
+              {/*  School */}
               {step === 2 && (
                 <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
                   <FormInput label="Institute Name" icon={Building2} placeholder="School Name" value={formData.school.name} onChange={(e:any) => updateForm('school', 'name', e.target.value)} />
@@ -154,7 +151,7 @@ export default function SignupPage() {
                 </div>
               )}
 
-              {/* Step 3: Academic */}
+              {/* Academic */}
               {step === 3 && (
                 <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
                   <FormInput label="Current Session" icon={BookOpen} placeholder="e.g. 2024/2025" value={formData.academic.sessionName} onChange={(e:any) => updateForm('academic', 'sessionName', e.target.value)} />
@@ -172,7 +169,7 @@ export default function SignupPage() {
                 </div>
               )}
 
-              {/* Step 4: Plan */}
+              {/*  Plan */}
               {step === 4 && (
                 <div className="space-y-4 animate-in fade-in duration-500">
                   {Object.keys(planData).map((key) => {
@@ -210,7 +207,7 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Plan Sidebar (Step 4 only) */}
+            {/* Plans */}
             {step === 4 && (
               <div className="hidden md:flex flex-1 md:pl-10 flex-col animate-in slide-in-from-right-4">
                 <h3 className="text-2xl font-black text-zinc-900 mb-6">Plan Breakdown</h3>
@@ -242,7 +239,6 @@ export default function SignupPage() {
   );
 }
 
-// Sub-components matching Login UI exact style
 function FormInput({ label, icon: Icon, type = "text", ...props }: any) {
   const [show, setShow] = useState(false);
   const inputType = type === "password" ? (show ? "text" : "password") : type;
