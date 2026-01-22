@@ -2,6 +2,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useAuthStore } from '../zustand/store';
 import api from '../libs/axios';
+import { useRouter } from 'next/navigation';
 
 export function useSchoolProfile() {
   const { user } = useAuthStore();
@@ -47,3 +48,20 @@ export function useSession_Terms() {
     refetchOnWindowFocus: false
   });
 }
+
+
+export const useRegisterSchool = () => {
+  const router=useRouter()
+  return useMutation({
+    mutationFn: async (data: any) => {
+      const response = await api.post("/school-profile/register-full", data);
+      return response.data;
+    },
+    onSuccess: () => {
+      router.replace('/Login')
+    },
+    onError: (error: any) => {
+      alert(error.response?.data?.message || "Registration failed");
+    }
+  });
+};

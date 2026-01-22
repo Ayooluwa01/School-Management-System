@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { 
   Lock, Mail, Eye, EyeOff, 
   ShieldCheck, User, GraduationCap, Users,
-  Loader2, ArrowRight, Sparkles
+  Loader2, ArrowRight, Sparkles,
+  BookOpen
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -62,7 +63,12 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   const result = loginSchema.safeParse(fd);
 
   if (!result.success) {
-    setErrors(result.error.flatten().fieldErrors);
+  const formatted = result.error.format();
+  setErrors({
+    login_id: formatted.login_id?._errors[0],
+    password: formatted.password?._errors[0],
+  });
+
     setLoading(false);
     return;
   }
@@ -136,9 +142,9 @@ router.replace('/dashboard')
 
             {/* Email */}
             <div className="space-y-1.5 sm:space-y-2">
-              <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Official Email</label>
+              <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">LOGIN ID</label>
               <div className="relative group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
+                <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
                 <input 
                   name='login_id'
                   type="text"
