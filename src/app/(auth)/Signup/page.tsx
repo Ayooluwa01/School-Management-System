@@ -285,7 +285,6 @@ useEffect(() => {
   );
 }
 
-// Reuse the FormInput and DateInput from your provided source
 function FormInput({ label, icon: Icon, type = "text", ...props }: any) {
   const [show, setShow] = useState(false);
   const inputType = type === "password" ? (show ? "text" : "password") : type;

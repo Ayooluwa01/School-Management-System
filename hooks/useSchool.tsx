@@ -20,7 +20,6 @@ export function useSchoolProfile() {
 
 const updateProfile = useMutation({
     mutationFn: async (updatedData: any) => {
-        console.log(updatedData)
       const response = await api.patch(`/school-profile/updateProfile/${user?.school_id}`, updatedData,{
         headers:{
             'Content-Type': 'multipart/form-data',
@@ -42,7 +41,6 @@ export function useSession_Terms() {
     queryKey: ["academic-calendar", user?.school_id],
     queryFn: async () => {
       const { data } = await api.get(`/school-profile/session/${user?.school_id}`);
-   console.log(data)
       return data;
     },
     enabled: !!user?.school_id, 
@@ -52,6 +50,7 @@ export function useSession_Terms() {
 
 
 export const useRegisterSchool = () => {
+  
   const router=useRouter()
   return useMutation({
     mutationFn: async (data: any) => {
@@ -65,4 +64,54 @@ export const useRegisterSchool = () => {
       alert(error.response?.data?.message || "Registration failed");
     }
   });
+};
+
+
+export const useClasses = () => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  const {
+    data: classes = [],
+    isLoading,
+  } = useQuery({
+    queryKey: ['classes', user?.school_id],
+    queryFn: async () => {
+      const { data } = await api.get(`/class/all_classes/${user?.school_id}`);
+      return data;
+    },
+    enabled: !!user?.school_id,
+  });
+
+  const createClass = useMutation({
+    mutationFn: (payload: any) =>
+      api.post('/class/createClass', payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['classes', user?.school_id] as any);
+    },
+  });
+
+  const updateClass = useMutation({
+    mutationFn: ({ id, payload }: any) =>
+      api.patch(`/class/update/${id}`, payload),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['classes', user?.school_id] as any);
+    },
+  });
+
+  const deleteClass = useMutation({
+    mutationFn: (data) =>
+      api.post(`/class/delete`,data),
+    onSuccess: () => {
+      queryClient.invalidateQueries(['classes', user?.school_id] as any);
+    },
+  });
+
+  return {
+    classes,
+    isLoading,
+    createClass,
+    updateClass,
+    deleteClass,
+  };
 };

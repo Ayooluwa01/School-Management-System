@@ -14,6 +14,7 @@ export function DateInput({ label, selected, onChange,minDate }: any) {
       <div className="relative group">
         <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 z-10" size={18} />
         <DatePicker
+        disabled={false}
           selected={selected}
           onChange={onChange}
           minDate={minDate}

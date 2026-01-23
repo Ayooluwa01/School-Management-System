@@ -1,9 +1,11 @@
 {
 	"folders": [
 		{
+			"name": "School Management System",
 			"path": ".."
 		},
 		{
+			"name": "Backend",
 			"path": "../../Backend"
 		}
 	],
