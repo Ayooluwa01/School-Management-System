@@ -115,6 +115,7 @@ const { classes, isLoading, createClass, updateClass, deleteClass } = useClasses
  
   const filteredClasses = useMemo(() => {
     if (!searchTerm) return classes;
+
     return classes.filter((cls) =>
       cls.class_name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       cls.arm?.toLowerCase().includes(searchTerm.toLowerCase())

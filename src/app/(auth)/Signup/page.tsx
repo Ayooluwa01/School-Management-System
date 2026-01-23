@@ -82,7 +82,6 @@ useEffect(() => {
   }, [formData]);
 
   const handleFinalSubmit = () => {
-    console.log(formData)
 
     const result = RegistrationSchema.safeParse(formData);
     if (!result.success) {
