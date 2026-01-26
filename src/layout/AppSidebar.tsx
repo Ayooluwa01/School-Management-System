@@ -82,6 +82,7 @@ const navItems: NavItem[] = [
       { name: "Assign Classes", path: "/teachers/assignClass", icon: <Table size={18} /> },
     ],
   },
+ 
   { name: "Class", icon: <Layers size={20} />, path: "/classes", iconColor: "text-emerald-600", bgColor: "bg-emerald-100", allowedRoles: ["ADMIN", "TEACHER","STAFF"] },
   { name: "Subject", icon: <BookOpen size={20} />, path: "/subjects", iconColor: "text-cyan-600", bgColor: "bg-cyan-100", allowedRoles: ["ADMIN", "TEACHER","STAFF"] },
   { name: "Attendance", icon: <CalendarCheck size={20} />, path: "/attendance", iconColor: "text-orange-600", bgColor: "bg-orange-100", allowedRoles: ["STUDENT", "PARENT","ADMIN","STAFF"] },
