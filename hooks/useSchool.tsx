@@ -115,3 +115,64 @@ export const useClasses = () => {
     deleteClass,
   };
 };
+
+
+export const useStudent = (
+  page = 0, 
+  filters?: { name?: string; gender?: string; class_id?: string }
+) => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  const studentQuery = useQuery({
+    queryKey: ['students', user?.school_id, page, filters],
+    queryFn: async () => {
+      if (!user?.school_id) return [];
+
+      const hasFilters = 
+        filters?.name || 
+        (filters?.gender && filters.gender !== 'All') || 
+        (filters?.class_id && filters.class_id !== 'All');
+
+      const endpoint = hasFilters 
+        ? '/students/filter_student' 
+        : '/students/all_students';
+
+      const { data } = await api.get(endpoint, {
+        params: { 
+          school_id: user.school_id, 
+          limit: 15, 
+          offset: page * 15,
+          name: filters?.name,
+          gender: filters?.gender === 'All' ? '' : filters?.gender,
+          class_id: filters?.class_id === 'All' ? '' : filters?.class_id
+        }
+      });
+      return data;
+    },
+    enabled: !!user?.school_id,
+  });
+
+  const registerStudent = useMutation<any, any, any>({
+    mutationFn: async (newStudent) => {
+      const payload = { ...newStudent, school_id: user?.school_id };
+      const { data } = await api.post('/students/register', payload);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['students', user?.school_id] });
+    },
+  });
+
+  const deleteStudent = useMutation({
+    mutationFn: async (id: number) => {
+      const { data } = await api.delete(`/students/delete/${id}/${user?.school_id}`);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['students', user?.school_id] });
+    },
+  });
+
+  return { ...studentQuery, registerStudent, deleteStudent };
+};

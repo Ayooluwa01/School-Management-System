@@ -5,7 +5,7 @@ import axios from "../../../../../../libs/axios";
 import { SaveModal } from "@/components/common/Reusables/Preloader";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { useClasses, useStudent } from "../../../../../../hooks/useSchool";
 const GENDER_OPTIONS = ["Male", "Female"];
 const INITIAL_STATE = {
   first_name: "", last_name: "", class_id: "", date_of_birth: "", 
@@ -49,21 +49,22 @@ const FormField = ({ label, name, type = "text", options, onChange, placeholder,
 
 export default function RegisterStudent() {
   const [activeTab, setActiveTab] = useState("personal");
-  const [classes, setClasses] = useState<any[]>([]);
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const formRef = useRef(INITIAL_STATE);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
-
-  useEffect(() => {
-    const fetchClasses = async () => {
-      try {
-        const response = await axios.get("/class/all_classes");
-        if (Array.isArray(response.data)) setClasses(response.data);
-      } catch (e) { console.error(e); }
-    };
-    fetchClasses();
-  }, []);
+const {classes}=useClasses()
+const { registerStudent } = useStudent()
+// 
+ // useEffect(() => {
+  //   const fetchClasses = async () => {
+  //     try {
+  //       const response = await axios.get("/class/all_classes");
+  //       if (Array.isArray(response.data)) setClasses(response.data);
+  //     } catch (e) { console.error(e); }
+  //   };
+  //   fetchClasses();
+  // }, []);
 
   const handleInputChange = useCallback((e: any) => {
     formRef.current = { ...formRef.current, [e.target.name]: e.target.value };
@@ -83,23 +84,28 @@ export default function RegisterStudent() {
     }
   };
 
-  const handleSave = async () => {
-    setSaveStatus('saving');
-    try {
-      if (activeTab === 'batch' && selectedFile) {
-        const formData = new FormData();
-        formData.append("file", selectedFile);
-        await axios.post("/students/batch-register", formData);
-      } else {
-        await axios.post("/students/register", formRef.current);
-      }
-      setSaveStatus('success');
-      setTimeout(() => setSaveStatus('idle'), 2000);
-    } catch (e) { 
-        setSaveStatus('error'); 
-        setTimeout(() => setSaveStatus('idle'), 2500); 
+
+const handleSave = async () => {
+  setSaveStatus('saving');
+  try {
+    if (activeTab === 'batch' && selectedFile) {
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      await axios.post("/students/batch-register", formData);
+    } else {
+      await registerStudent.mutateAsync(formRef.current);
+      
+      formRef.current = INITIAL_STATE;
+      setStartDate(null);
     }
-  };
+    
+    setSaveStatus('success');
+    setTimeout(() => setSaveStatus('idle'), 2000);
+  } catch (e) { 
+    setSaveStatus('error'); 
+    setTimeout(() => setSaveStatus('idle'), 2500); 
+  }
+};
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans">
