@@ -38,6 +38,7 @@
     "react-dom": "^19.2.0",
     "react-dropzone": "^14.3.8",
     "react-modal": "^3.16.3",
+    "react-papaparse": "^4.4.0",
     "react-toastify": "^11.0.5",
     "swiper": "^11.2.10",
     "tailwind-merge": "^2.6.0",
