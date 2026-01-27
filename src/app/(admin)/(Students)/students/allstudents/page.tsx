@@ -22,26 +22,21 @@ export default function Allstudents() {
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
 
   const itemsPerPage = 15;
-  // Note: For real pagination, your backend should return a total count. 
-  // Using 3000 as a placeholder as per your original code.
   const totalCount = 3000; 
   const totalPages = Math.ceil(totalCount / itemsPerPage);
 
-  // 1. Fetch Classes using Hook
   const { classes } = useClasses();
 
-  // 2. Fetch Students using Hook (Passing dynamic filters and page)
   const { 
     data: students = [], 
     isLoading, 
-    deleteStudent 
+    deleteStudent ,updateStudent
   } = useStudent(currentPage - 1, {
     name: debouncedSearch,
     gender: selectedSex,
     class_id: selectedClass
   });
 
-  // Debounce search input
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchTerm);

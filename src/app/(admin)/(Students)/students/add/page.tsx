@@ -78,11 +78,6 @@ const { registerStudent } = useStudent()
     }
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setSelectedFile(e.target.files[0]);
-    }
-  };
 
 
 const handleSave = async () => {
@@ -104,7 +99,7 @@ const handleSave = async () => {
   } catch (e) { 
     setSaveStatus('error'); 
     setTimeout(() => setSaveStatus('idle'), 2500); 
-  }
+}
 };
 
   return (
@@ -135,7 +130,6 @@ const handleSave = async () => {
         <div className="flex border-b border-zinc-200 mb-6 overflow-x-auto no-scrollbar">
           <button onClick={() => setActiveTab("personal")} className={`px-6 py-2 text-xs font-bold uppercase tracking-wide border-b-2 transition-all whitespace-nowrap ${activeTab === 'personal' ? 'border-blue-600 text-blue-600' : 'border-transparent text-zinc-400 hover:text-zinc-600'}`}>1. Student Info</button>
           <button onClick={() => setActiveTab("guardian")} className={`px-6 py-2 text-xs font-bold uppercase tracking-wide border-b-2 transition-all whitespace-nowrap ${activeTab === 'guardian' ? 'border-blue-600 text-blue-600' : 'border-transparent text-zinc-400 hover:text-zinc-600'}`}>2. Guardian Details</button>
-          <button onClick={() => setActiveTab("batch")} className={`px-6 py-2 text-xs font-bold uppercase tracking-wide border-b-2 transition-all whitespace-nowrap ${activeTab === 'batch' ? 'border-blue-600 text-blue-600' : 'border-transparent text-zinc-400 hover:text-zinc-600'}`}>3. Batch Upload</button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -145,7 +139,7 @@ const handleSave = async () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   <FormField label="First Name" name="first_name" onChange={handleInputChange} />
                   <FormField label="Last Name" name="last_name" onChange={handleInputChange} />
-                  <FormField label="Class" name="class_id" type="select" options={classes.map(c => ({value: c.class_id, label: c.class_code}))} onChange={handleInputChange} />
+                  <FormField label="Class" name="class_id" type="select" options={classes.map((c: { class_id: any; class_code: any; }) => ({value: c.class_id, label: c.class_code}))} onChange={handleInputChange} />
                   <FormField label="Gender" name="gender" type="select" options={GENDER_OPTIONS} onChange={handleInputChange} />
                   <div className="flex flex-col gap-1">
                     <label className="text-[11px] font-bold text-zinc-600 uppercase tracking-tight">Date of Birth</label>
@@ -186,39 +180,7 @@ const handleSave = async () => {
               </div>
             )}
 
-            {activeTab === 'batch' && (
-              <div className="animate-in fade-in duration-300">
-                <div className="border-2 border-dashed border-zinc-200 rounded-lg p-10 flex flex-col items-center justify-center bg-zinc-50 hover:bg-zinc-100 transition-colors relative">
-                  <input type="file" accept=".csv" onChange={handleFileChange} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
-                  <div className={`p-4 rounded-full mb-4 ${selectedFile ? 'bg-green-100 text-green-600' : 'bg-zinc-200 text-zinc-500'}`}>
-                    {selectedFile ? <FileText size={32} /> : <FileUp size={32} />}
-                  </div>
-                  <h3 className="text-sm font-bold text-zinc-700">
-                    {selectedFile ? selectedFile.name : "Click or drag CSV file to upload"}
-                  </h3>
-                  
-                  {selectedFile && (
-                    <button onClick={(e) => {e.stopPropagation(); setSelectedFile(null);}} className="mt-4 text-[10px] font-bold text-red-500 uppercase flex items-center gap-1">
-                      <X size={12}/> Remove File
-                    </button>
-                  )}
-                </div>
-
-{/* Preview upload csv file */}
-                {/* <div className="mt-6 p-4 border border-blue-100 bg-blue-50/50 rounded flex items-center justify-between">
-                  <div className="flex gap-3 items-center">
-                    <Download className="text-blue-600" size={18} />
-                    <div>
-                      <p className="text-xs font-bold text-zinc-800 uppercase tracking-tight">Need a template?</p>
-                      <p className="text-[11px] text-zinc-500">Download the pre-formatted CSV structure to ensure a smooth upload.</p>
-                    </div>
-                  </div>
-                  <button className="bg-white border border-blue-200 text-blue-600 text-[10px] font-bold px-4 py-2 rounded hover:bg-blue-50">
-                    DOWNLOAD CSV
-                  </button>
-                </div> */}
-              </div>
-            )}
+    
           </div>
 
           {/* --- SIDEBAR --- */}

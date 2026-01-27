@@ -1,22 +1,22 @@
 import { create } from 'zustand'
 
 export interface Student {
-    student_id: number
-    info_id: number
+    student_id: string
     admission_no: string
     class_id: number
+    class_code:string
     class_name: string
-
+    school_id:string
+user_id:string
+arm:string
     // --- Personal ---
-    name: string
     first_name: string
     last_name: string
-    sex: string
     gender: string 
     date_of_birth: string
     nationality: string
     religion: string
-    
+    surname:string
     blood_group: string
     genotype: string
     state_of_origin: string
@@ -30,43 +30,38 @@ export interface Student {
 
   
     setStudent: (data: Partial<Student>) => void
-        setstudent_id: (value: number) => void
-    setadmission_no: (value: string) => void
-    setname: (value: string) => void
-    setsex: (value: string) => void
-    setdob: (value: string) => void
-    setclass_id: (value: number) => void
+   
  
 }
 
 export const Activestudent = create<Student>((set) => ({
-student_id: 0,
-admission_no: '',
-name: '',
-sex: '', 
-date_of_birth: '',  
-class_id: 0,
-class_name: '',
-info_id: 0,
-first_name: '',
-last_name: '',
-gender: '',
-nationality: '', 
-religion: '', 
-blood_group: '',
-genotype: '', 
-state_of_origin: '',
-lga: '',
-fathers_name: '',
-mothers_name: '',  
-fathers_number: '',
-mothers_number: '',
-address: '',
+address: "",
+admission_no:"",
+arm: "",
+blood_group: "",
+class_code: "",
+class_id:0, 
+class_name: "",
+created_at: "",
+date_of_birth:"" ,
+fathers_name:"" ,
+fathers_number: "",
+first_name: "",
+gender: "Male",
+genotype: "",
+last_name: "Deborah",
+lga: "ss",
+mothers_name: "JD",
+mothers_number: "",
+nationality: "Nigerian",
+other_names: '',
+religion: "",
+school_id: "",
+state_of_origin:'' ,
+status: "",
+student_id:"" ,
+surname:"", 
+user_id:"" ,
     setStudent: (data) => set((state) => ({ ...state, ...data })),
-    setstudent_id: (value) => set({ student_id: value }),
-    setadmission_no: (value) => set({ admission_no: value }),
-    setname: (value) => set({ name: value }),
-    setsex: (value) => set({ sex: value }),
-    setdob: (value) => set({ date_of_birth: value }),
-    setclass_id: (value) => set({ class_id: value }),
+  
 }))
