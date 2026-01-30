@@ -1,27 +1,34 @@
 import { create } from 'zustand'
 
-// 1. Define only the data fields
+// 1. PURE DATA INTERFACE (Matches DB Columns)
 export interface StudentData {
     student_id: string
     admission_no: string
-    class_id: number
-    class_code: string
-    class_name: string
     school_id: string
     user_id: string
-    arm: string
+    
+    // Class Data
+    class_id: number
+    class_name?: string // Optional, for display only
+    class_code?: string // Optional, for display only
+    arm?: string        // Optional, derived from class table
+
+    // Personal
     first_name: string
     last_name: string
+    surname: string
+    other_names: string
     gender: string 
-    date_of_birth: string
+    date_of_birth: string | null
     nationality: string
     religion: string
-    surname: string
     blood_group: string
     genotype: string
     state_of_origin: string
     lga: string
     address: string
+
+    // Parents
     fathers_name: string
     mothers_name: string
     fathers_number: string
@@ -34,30 +41,31 @@ interface StudentStore extends StudentData {
 }
 
 const initialState: StudentData = {
-    address: "",
+    student_id: "",
     admission_no: "",
-    arm: "",
-    blood_group: "",
-    class_code: "",
+    school_id: "",
+    user_id: "",
     class_id: 0,
     class_name: "",
-    date_of_birth: "",
-    fathers_name: "",
-    fathers_number: "",
+    class_code: "",
+    arm: "",
     first_name: "",
-    gender: "",
-    genotype: "",
     last_name: "",
-    lga: "",
-    mothers_name: "",
-    mothers_number: "",
+    surname: "",
+    other_names: "",
+    gender: "Male",
+    date_of_birth: null,
     nationality: "",
     religion: "",
-    school_id: "",
+    blood_group: "",
+    genotype: "",
     state_of_origin: "",
-    student_id: "",
-    surname: "",
-    user_id: "",
+    lga: "",
+    address: "",
+    fathers_name: "",
+    mothers_name: "",
+    fathers_number: "",
+    mothers_number: "",
 };
 
 export const Activestudent = create<StudentStore>((set) => ({
