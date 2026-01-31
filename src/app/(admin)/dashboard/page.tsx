@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { 
   GraduationCap, 
@@ -16,8 +17,9 @@ import MonthlySalesChart from "@/components/common/Financialchart";
 import NotificationsPanel from "@/components/common/Notification";
 import TopStudentsList from "@/components/common/Topstudents";
 import TinyCalendar from "@/components/calendar/Calendar";
-
-export default async function Dashboard() {
+import { useStaffs } from "../../../../hooks/useSchool";
+export default  function Dashboard() {
+  const {staffs,teachers}=useStaffs()
   return (
     <div className="p-4 md:p-8 space-y-8 min-h-screen bg-[#F8FAFC] dark:bg-gray-950 text-slate-900 dark:text-slate-100 font-sans">
       
@@ -53,14 +55,14 @@ export default async function Dashboard() {
         <PremiumStatCard 
           icon={<Users className="w-6 h-6" />}
           label="Active Teachers"
-          value="156"
+          value={teachers.length}
           trend=""
           accentColor="emerald"
         />
         <PremiumStatCard 
           icon={<UserCog className="w-6 h-6" />}
           label="Staff Members"
-          value="470"
+          value={staffs.length}
           trend=""
           accentColor="violet"
         />

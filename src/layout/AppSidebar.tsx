@@ -70,7 +70,7 @@
       subItems: [
         { name: "All Staff", path: "/staff", icon: <List size={18} /> },
         { name: "Add Staff", path: "/staff/add", icon: <UserPlus size={18} /> },
-        { name: "Roles & Permissions", path: "/staff/roles", icon: <ShieldCheck size={18} /> },
+        // { name: "Roles & Permissions", path: "/staff/roles", icon: <ShieldCheck size={18} /> },
       ],
     },
     {
@@ -81,7 +81,7 @@
       allowedRoles: ["ADMIN"],
       subItems: [
         { name: "Assign Subjects", path: "/teachers/assign", icon: <Table size={18} /> },
-        { name: "Assign Classes", path: "/teachers/assignClass", icon: <Table size={18} /> },
+        { name: "Class Teachers", path: "/teachers/assignClass", icon: <Table size={18} /> },
       ],
     },
   

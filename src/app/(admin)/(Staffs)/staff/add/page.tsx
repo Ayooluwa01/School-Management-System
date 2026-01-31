@@ -3,10 +3,10 @@ import React, { useState, useCallback, useRef } from "react";
 import { User, Briefcase, GraduationCap, Save, Camera, ChevronDown, Info, Calendar } from "lucide-react";
 import axios from "../../../../../../libs/axios"; 
 import { SaveModal } from "@/components/common/Reusables/Preloader";
-
 // Datepicker imports
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useStaffs } from "../../../../../../hooks/useSchool";
 
 const ROLE_OPTIONS = ["Teacher", "Principal", "Vice Principal", "Administrator", "Bursar", "Lab Technician", "Other"];
 const STATUS_OPTIONS = ["Permanent", "Contract", "Probation", "Part-time"];
@@ -26,12 +26,11 @@ export default function RegisterStaff() {
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'success' | 'error'>('idle');
   const [otherRole, setOtherRole] = useState("");
   
-  // Date States
   const [dob, setDob] = useState<Date | null>(null);
   const [doa, setDoa] = useState<Date | null>(null);
 
   const formRef = useRef(INITIAL_STATE);
-
+const { registerStaff } = useStaffs();
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     formRef.current = { 
@@ -50,29 +49,39 @@ export default function RegisterStaff() {
     }
   };
 
-  const handleSave = async () => {
+const handleSave = async () => {
+    if(!formRef.current.surname || !formRef.current.first_name || !formRef.current.date_of_birth) {
+        alert("Please fill in all required fields marked with *");
+        return;
+    }
+
     setSaveStatus('saving');
+    
+    const fullName = `${formRef.current.surname} ${formRef.current.first_name} ${formRef.current.other_names}`.trim();
+
     const finalData = {
         ...formRef.current,
+        name: fullName, 
         role: formRef.current.role === "Other" ? otherRole : formRef.current.role
     };
 
     try {
-      await axios.post("/staffs/register", finalData);
+      await registerStaff.mutateAsync(finalData);
+      
       setSaveStatus('success');
       setTimeout(() => setSaveStatus('idle'), 2000);
     } catch (e) { 
+        console.error(e);
         setSaveStatus('error'); 
         setTimeout(() => setSaveStatus('idle'), 2500); 
     }
   };
-
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans">
       <SaveModal status={saveStatus} />
 
       {/* --- HEADER --- */}
-      <div className="border-b border-zinc-200 sticky top-0 bg-white z-50">
+      <div className="border-b border-zinc-200  top-0 bg-white z-50">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded flex items-center justify-center text-white text-xs font-bold bg-blue-600">HR</div>
@@ -119,7 +128,7 @@ export default function RegisterStaff() {
                           onChange={(date) => handleDateChange(date, 'date_of_birth')} 
                           dateFormat="yyyy-MM-dd" 
                           placeholderText="YYYY-MM-DD" 
-                          className="w-full h-9 px-3 bg-white border border-zinc-300 rounded text-sm focus:outline-none focus:border-blue-600 placeholder:text-zinc-300"
+                          className="w-full z-99 h-9 px-3 bg-white border border-zinc-300 rounded text-sm focus:outline-none focus:border-blue-600 placeholder:text-zinc-300"
                           wrapperClassName="w-full"
                         />
                         <Calendar className="absolute right-2 top-2.5 text-zinc-400 pointer-events-none" size={14} />
