@@ -4,6 +4,7 @@ import { useAuthStore } from '../zustand/store';
 import api from '../libs/axios';
 import { useRouter } from 'next/navigation';
 import { Student, StudentData } from '../zustand/Activestudent';
+import { Subject, SubjectPayload } from '@/app/(admin)/(Subjects)/subjects/page';
 
 export function useSchoolProfile() {
   const { user } = useAuthStore();
@@ -199,5 +200,261 @@ export const useStudent = (
     enabled: !!student_id && !!user?.school_id,
   });
 
-  return { ...studentQuery, registerStudent, deleteStudent, updateStudent, getStudentProfile };
+
+ 
+  return { ...studentQuery, registerStudent, deleteStudent, updateStudent, getStudentProfile,registerSubject };
 };
+
+interface SubjectPayload {
+  schoolId: string;
+  subjectName: string;
+  category: string;
+  subjectCode: string;
+  classIds: number[];
+  isCore?: boolean;
+}
+
+interface UpdateSubjectPayload {
+  subjectName?: string;
+  category?: string;
+  subjectCode?: string;
+  classIds?: number[];
+  isCore?: boolean;
+}
+
+interface Subject {
+  subject_id: number;
+  school_id: string;
+  subject_name: string;
+  category: string;
+  subject_code: string;
+  is_core: boolean;
+  assigned_classes?: string[];
+  class_ids?: number[];
+  created_at: string;
+}
+
+export const useSubjects = () => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  // Fetch all subjects for the school
+  const {
+    data: subjects = [],
+    isLoading,
+    isError,
+    error,
+    refetch
+  } = useQuery<Subject[]>({
+    queryKey: ["subjects", user?.school_id],
+    queryFn: async () => {
+      const { data } = await api.post("/subjects/all", {
+        schoolId: user?.school_id
+      });
+      return data;
+    },
+    enabled: !!user?.school_id,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+
+  // Create new subject
+  const registerSubject = useMutation({
+    mutationFn: async (payload: Omit<SubjectPayload, 'schoolId'>) => {
+      const fullPayload = {
+        ...payload,
+        schoolId: user?.school_id
+      };
+      const { data } = await api.post("/subjects/create", fullPayload);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    },
+    onError: (error: any) => {
+      console.error("Failed to create subject:", error);
+      throw error;
+    },
+  });
+
+  // Update existing subject
+  const updateSubject = useMutation({
+    mutationFn: async ({ 
+      subjectId, 
+      payload 
+    }: { 
+      subjectId: number; 
+      payload: UpdateSubjectPayload 
+    }) => {
+      const { data } = await api.patch(`/subjects/${subjectId}`, payload);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    },
+    onError: (error: any) => {
+      console.error("Failed to update subject:", error);
+      throw error;
+    },
+  });
+
+  // Delete subject
+  const deleteSubject = useMutation({
+    mutationFn: async (subjectId: number) => {
+      const { data } = await api.delete(`/subjects/${subjectId}`);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    },
+    onError: (error: any) => {
+      console.error("Failed to delete subject:", error);
+      throw error;
+    },
+  });
+
+  // Assign subject to class
+  const assignToClass = useMutation({
+    mutationFn: async ({ 
+      subjectId, 
+      classId 
+    }: { 
+      subjectId: number; 
+      classId: number 
+    }) => {
+      const { data } = await api.post(`/subjects/${subjectId}/assign/${classId}`);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    },
+  });
+
+  // Remove subject from class
+  const removeFromClass = useMutation({
+    mutationFn: async ({ 
+      subjectId, 
+      classId 
+    }: { 
+      subjectId: number; 
+      classId: number 
+    }) => {
+      const { data } = await api.delete(`/subjects/${subjectId}/remove/${classId}`);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    },
+  });
+
+  // Get subjects by class
+  const getSubjectsByClass = async (classId: number) => {
+    const { data } = await api.get(`/subjects/class/${classId}`);
+    return data;
+  };
+
+  return {
+    // Data
+    subjects,
+    isLoading,
+    isError,
+    error,
+    
+    // Actions
+    registerSubject,
+    updateSubject,
+    deleteSubject,
+    assignToClass,
+    removeFromClass,
+    getSubjectsByClass,
+    refetch,
+  };
+};
+//   const { user } = useAuthStore();
+//   const queryClient = useQueryClient();
+
+//   const {
+//     data: subjects = [],
+//     isLoading,
+//     isError,
+//     error,
+//     refetch
+//   } = useQuery<Subject[]>({
+//     queryKey: ["subjects", user?.school_id],
+//     queryFn: async () => {
+//       const { data } = await api.get("/subjects/allSubjects",{
+//         user?.school_id
+//       });
+//       return data;
+//     },
+//     enabled: !!user?.school_id,
+//     staleTime: 5 * 60 * 1000, // 5 minutes
+//   });
+
+//   // Create new subject
+//   const registerSubject = useMutation({
+//     mutationFn: async (payload: SubjectPayload) => {
+//       console.log(payload)
+//       // const { data } = await api.post("/subjects/create", payload);
+//       // return data;
+//     },
+//     onSuccess: () => {
+//       // Invalidate and refetch subjects
+//       // queryClient.invalidateQueries({ queryKey: ["subjects"] });
+    
+//     },
+//     onError: (error: any) => {
+//       console.error("Failed to create subject:", error);
+//       throw error;
+//     },
+//   });
+
+//   // Update existing subject
+//   const updateSubject = useMutation({
+//     mutationFn: async ({ 
+//       subjectId, 
+//       payload 
+//     }: { 
+//       subjectId: number; 
+//       payload: SubjectPayload 
+//     }) => {
+//       const { data } = await api.patch(`/subjects/${subjectId}`, payload);
+//       return data;
+//     },
+//     onSuccess: () => {
+//       queryClient.invalidateQueries({ queryKey: ["subjects"] });
+//     },
+//     onError: (error: any) => {
+//       console.error("Failed to update subject:", error);
+//       throw error;
+//     },
+//   });
+
+//   // Delete subject
+//   const deleteSubject = useMutation({
+//     mutationFn: async (subjectId: number) => {
+//       const { data } = await api.delete(`/subjects/${subjectId}`);
+//       return data;
+//     },
+//     onSuccess: () => {
+//       queryClient.invalidateQueries({ queryKey: ["subjects"] });
+//     },
+//     onError: (error: any) => {
+//       console.error("Failed to delete subject:", error);
+//       throw error;
+//     },
+//   });
+
+//   return {
+//     // Data
+//     subjects,
+//     isLoading,
+//     isError,
+//     error,
+    
+//     // Actions
+//     registerSubject,
+//     updateSubject,
+//     deleteSubject,
+//     refetch,
+//   };
+// };
