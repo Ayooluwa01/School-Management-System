@@ -4,6 +4,7 @@ import { useAuthStore } from '../zustand/store';
 import api from '../libs/axios';
 import { useRouter } from 'next/navigation';
 import { StudentData } from '../zustand/Activestudent';
+import { useMemo } from 'react';
 
 export function useSchoolProfile() {
   const { user } = useAuthStore();
@@ -80,6 +81,7 @@ export const useClasses = () => {
       return data;
     },
     enabled: !!user?.school_id,
+    staleTime: 5 * 60 * 1000,
   });
 
   const createClass = useMutation({
@@ -179,7 +181,6 @@ export const useStudent = (
         `/students/update/student/${data.student_id}/${data.school_id}`,
         data
       );
-      console.log(data)
       return response.data;
     },
     onSuccess: () => {
@@ -233,7 +234,7 @@ interface Subject {
   created_at: string;
 }
 
-export const useSubjects = () => {
+export const useSubjects = (selectedStaffId?: string) => {
   const { user } = useAuthStore();
   const queryClient = useQueryClient();
 
@@ -256,6 +257,31 @@ export const useSubjects = () => {
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
+
+
+  //  Fetch ALL subjects assigned to classes school-wide
+  const fetchAssignedSubjects = useQuery({
+    queryKey: ['assigned-subjects', user?.school_id],
+    queryFn: async () => {
+      console.log("fetching all subjects")
+      const { data } = await api.post('/subjects/assignedSubjects', {
+        schoolId: user?.school_id
+      });
+      console.log("assigned subjects",data)
+      return data; 
+    },
+    enabled: !!user?.school_id
+  });
+
+  //  Derive which IDs the current teacher owns
+  const assignedIds = useMemo(() => {
+    if (!fetchAssignedSubjects.data || !selectedStaffId) return [];
+    return fetchAssignedSubjects.data
+      .filter((item: any) => item.staff_id === selectedStaffId)
+      .map((item: any) => `${item.class_id}-${item.subject_id}`); 
+  }, [fetchAssignedSubjects.data, selectedStaffId]);
+
+
   // Create new subject
   const registerSubject = useMutation({
     mutationFn: async (payload: Omit<SubjectPayload, 'schoolId'>) => {
@@ -270,13 +296,13 @@ export const useSubjects = () => {
       queryClient.invalidateQueries({ queryKey: ["subjects"] });
     },
     onError: (error: any) => {
-      console.error("Failed to create subject:", error);
       throw error;
     },
   });
 
   // Update existing subject
   const updateSubject = useMutation({
+
     mutationFn: async ({ 
       subjectId, 
       payload 
@@ -284,14 +310,19 @@ export const useSubjects = () => {
       subjectId: number; 
       payload: UpdateSubjectPayload 
     }) => {
-      const { data } = await api.patch(`/subjects/${subjectId}`, payload);
+ const fullPayload = {
+        ...payload,
+        schoolId: user?.school_id
+      };
+      const { data } = await api.patch(`/subjects/${subjectId}`,fullPayload);
       return data;
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["subjects"] });
-    },
+onSuccess: () => {
+  queryClient.invalidateQueries({ queryKey: ["subjects"] });
+  
+  queryClient.invalidateQueries({ queryKey: ["assigned-subjects"] });
+},
     onError: (error: any) => {
-      console.error("Failed to update subject:", error);
       throw error;
     },
   });
@@ -306,7 +337,6 @@ export const useSubjects = () => {
       queryClient.invalidateQueries({ queryKey: ["subjects"] });
     },
     onError: (error: any) => {
-      console.error("Failed to delete subject:", error);
       throw error;
     },
   });
@@ -357,7 +387,8 @@ export const useSubjects = () => {
     isLoading,
     isError,
     error,
-    
+     fetchAssignedSubjects,
+    assignedIds, // New helper
     // Actions
     registerSubject,
     updateSubject,
@@ -384,16 +415,13 @@ export const useStaffs = () => {
   } = useQuery({
     queryKey: ["staffs", user?.school_id],
     queryFn: async () => {
-      console.log("querying db with id", user?.school_id);
       const schoolId = user?.school_id;
       const { data } = await api.get(`/staffs/all/${schoolId}`);
-      console.log("staff data", data);
       return data;
     },
     enabled: !!user?.school_id 
   });
 
-  // 2. Get all teachers
   const { 
     data: teachers = [], 
     isLoading: isLoadingTeachers 
@@ -420,6 +448,7 @@ export const useStaffs = () => {
         return data;
       },
       enabled: !!staffId,
+      staleTime: 5 * 60 * 1000,
     });
   };
 
@@ -482,5 +511,41 @@ export const useStaffs = () => {
     updateStaff,
     deleteStaff,
     assignSubject
+  };
+};
+
+
+
+
+
+export const useSubjectAssignments = (selectedStaffId?: string) => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+
+
+  const assignSubject = useMutation({
+    mutationFn: async (payload: { subject_id: number, class_id: number, staff_id: string }) => {
+      return api.post("/staffs/assignments/assign", { ...payload, school_id: user?.school_id });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["assigned-subjects"] });
+    }
+  });
+
+  const unassignSubject = useMutation({
+    mutationFn: async (payload: { subject_id: number, class_id: number, staff_id: string }) => {
+      return api.post("/staffs/assignments/unassign", payload);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["assigned-subjects"] });
+    }
+  });
+
+  return {
+    assignSubject,
+    unassignSubject,
+
+    isSyncing:  assignSubject.isPending || unassignSubject.isPending
   };
 };
