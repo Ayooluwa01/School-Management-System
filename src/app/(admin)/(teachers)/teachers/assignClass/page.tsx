@@ -1,236 +1,214 @@
-/* eslint-disable react/display-name */
 "use client";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { 
-  Users, Search, CheckCircle2, School,
-  UserPlus, XCircle, ArrowRightLeft, Info, Loader2
+  Users, Search, CheckCircle2, School, XCircle, 
+  ArrowRightLeft, Info, Loader2, Menu, X 
 } from "lucide-react";
-import api from "../../../../../../libs/axios";
+import { useStaffs, useClasses, useClassTeacher } from "../../../../../../hooks/useSchool";
 
 export default function SingleClassAssignmentPage() {
-  const [teachers, setTeachers] = useState([]);
-  const [classes, setClasses] = useState<any>([]);
-  const [selectedTeacher, setSelectedTeacher] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  const [selectedTeacherId, setSelectedTeacherId] = useState<string | null>(null);
   const [staffSearch, setStaffSearch] = useState("");
   const [classSearch, setClassSearch] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Mobile sidebar state
 
-  useEffect(() => {
-    fetchInitialData();
-  }, []);
+  const { teachers, isLoadingTeachers } = useStaffs();
+  const { classes, isLoading: isLoadingClasses } = useClasses();
+  const { assignClassTeacher } = useClassTeacher();
 
-  const fetchInitialData = async () => {
-    try {
-      const [tRes, cRes] = await Promise.all([
-        api.get('/staffs/teachers/all'),
-        api.get('/class/all_classes'), 
-      ]);
-      setTeachers(tRes.data);
-      setClasses(cRes.data);
-    } catch (err) {
-      console.error("Fetch failed", err);
-    }
+  const selectedTeacher = useMemo(() => 
+    teachers?.find((t: any) => t.staff_id === selectedTeacherId), 
+  [teachers, selectedTeacherId]);
+
+  const currentAssignedClass = useMemo(() => 
+    classes?.find((c: any) => c.classroom_staff_id === selectedTeacherId),
+  [classes, selectedTeacherId]);
+
+  const filteredTeachers = useMemo(() => 
+    teachers?.filter((t: any) => `${t.surname} ${t.first_name}`.toLowerCase().includes(staffSearch.toLowerCase())), 
+  [teachers, staffSearch]);
+
+  const filteredClasses = useMemo(() => 
+    classes?.filter((c: any) => c.class_name.toLowerCase().includes(classSearch.toLowerCase())), 
+  [classes, classSearch]);
+
+  const handleAction = (classId: number | null) => {
+    if (!selectedTeacherId) return;
+    assignClassTeacher.mutate({ staff_id: selectedTeacherId, class_id: classId });
   };
 
-  const handleAssignment = async (classId: number | null) => {
-    if (!selectedTeacher) return;
-    setLoading(true);
-    try {
-     
-      await api.post('/staffs/assignClass', {
-        staff_id: selectedTeacher.staff_id,
-        class_id: classId 
-      });
-      
-     
-      const updatedClasses: any = classes.map((c: any) => {
-        if (c.class_id === classId) return { ...c, classroom_staff_id: selectedTeacher.staff_id };
-        if (c.classroom_staff_id === selectedTeacher.staff_id) return { ...c, classroom_staff_id: null };
-        return c;
-      });
-
-      setClasses(updatedClasses);
-      setSelectedTeacher({ ...selectedTeacher, assigned_class: classId });
-      
-    } catch (err) {
-      console.error("Assignment failed", err);
-      alert("Failed to assign class. Ensure the backend endpoint is active.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const filteredTeachers = useMemo(() => {
-    return teachers.filter((t: any) => t.name.toLowerCase().includes(staffSearch.toLowerCase()));
-  }, [teachers, staffSearch]);
-
-  const filteredClasses = useMemo(() => {
-    return classes.filter((c: any) => 
-      c.class_name.toLowerCase().includes(classSearch.toLowerCase())
+  if (isLoadingTeachers || isLoadingClasses) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-zinc-50">
+        <Loader2 className="animate-spin text-indigo-600" size={32} />
+      </div>
     );
-  }, [classes, classSearch]);
-
-  const currentAssignedClass = classes.find((c: any) => c.classroom_staff_id === selectedTeacher?.staff_id);
+  }
 
   return (
-    <div className="h-screen bg-[#F8F9FC] flex flex-col font-sans">
+    <div className="h-screen bg-[#F8F9FC] flex flex-col overflow-hidden font-sans">
       
       {/* Header */}
-      <header className="bg-white border-b border-zinc-200 px-8 py-4 flex justify-between items-center shadow-sm z-10">
-        <div>
-          <h1 className="text-xl font-extrabold text-zinc-900 tracking-tight">Class Placement</h1>
-          <p className="text-xs text-zinc-500 font-medium">Assign one primary class per educator</p>
-        </div>
-        <div className="flex items-center gap-4">
-            <span className="text-xs font-bold text-zinc-400">{teachers.length} Staff Loaded</span>
+      <header className="bg-white border-b border-zinc-200 px-4 md:px-8 py-4 flex justify-between items-center z-30">
+        <div className="flex items-center gap-3">
+          <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden p-2 hover:bg-zinc-100 rounded-lg">
+            <Menu size={20} />
+          </button>
+          <div>
+            <h1 className="text-lg md:text-xl font-bold text-zinc-900 leading-tight">Class Placement</h1>
+            <p className="hidden sm:block text-[10px] md:text-xs text-zinc-500 font-medium uppercase tracking-wider">Form Teacher Management</p>
+          </div>
         </div>
       </header>
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex overflow-hidden relative">
         
-        {/* Left Panel: Staff Navigation */}
-        <aside className="w-80 bg-white border-r border-zinc-200 flex flex-col shadow-sm">
-          <div className="p-4 border-b border-zinc-50">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={16} />
+        {/* Mobile Sidebar Overlay */}
+        {isSidebarOpen && (
+          <div className="fixed inset-0 bg-black/40 z-40 lg:hidden" onClick={() => setIsSidebarOpen(false)} />
+        )}
+
+        {/* Sidebar */}
+        <aside className={`
+          absolute lg:relative z-50 inset-y-0 left-0 w-72 md:w-80 bg-white border-r border-zinc-200 flex flex-col transition-transform duration-300
+          ${isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+        `}>
+          <div className="p-4 border-b border-zinc-100 flex items-center justify-between">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={14} />
               <input 
                 onChange={(e) => setStaffSearch(e.target.value)}
-                className="w-full bg-zinc-100 border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-indigo-500/20 transition-all"
-                placeholder="Find teacher..."
+                className="w-full bg-zinc-100 border-none rounded-xl py-2 pl-9 pr-4 text-sm focus:ring-2 focus:ring-indigo-500/20 outline-none"
+                placeholder="Search staff..."
               />
             </div>
+            <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden ml-2 p-2 text-zinc-400">
+              <X size={20} />
+            </button>
           </div>
           <div className="flex-1 overflow-y-auto">
-            {filteredTeachers.map((t: any) => {
-              const hasAssignment = classes.some((c: any) => c.classroom_staff_id === t.staff_id);
-              return (
-                <button
-                  key={t.staff_id}
-                  onClick={() => setSelectedTeacher(t)}
-                  className={`w-full px-6 py-4 flex items-center justify-between group transition-colors ${
-                    selectedTeacher?.staff_id === t.staff_id ? "bg-indigo-50 border-r-4 border-r-indigo-600" : "hover:bg-zinc-50"
-                  }`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm ${
-                      selectedTeacher?.staff_id === t.staff_id ? "bg-indigo-600 text-white" : "bg-zinc-100 text-zinc-500"
-                    }`}>
-                      {t.name[0]}
-                    </div>
-                    <div className="text-left">
-                      <p className={`text-sm font-bold ${selectedTeacher?.staff_id === t.staff_id ? "text-indigo-900" : "text-zinc-900"}`}>{t.name}</p>
-                      <p className="text-[10px] font-medium text-zinc-400 uppercase tracking-tighter">{t.staff_no}</p>
-                    </div>
+            {filteredTeachers?.map((t: any) => (
+              <button
+                key={t.staff_id}
+                onClick={() => {
+                  setSelectedTeacherId(t.staff_id);
+                  setIsSidebarOpen(false);
+                }}
+                className={`w-full px-5 py-4 flex items-center justify-between transition-all border-b border-zinc-50 ${
+                  selectedTeacherId === t.staff_id ? "bg-indigo-50 border-r-4 border-r-indigo-600" : "hover:bg-zinc-50"
+                }`}
+              >
+                <div className="flex items-center gap-3 truncate">
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center font-bold text-xs ${
+                    selectedTeacherId === t.staff_id ? "bg-indigo-600 text-white" : "bg-zinc-100 text-zinc-500"
+                  }`}>
+                    {t.surname[0]}{t.first_name[0]}
                   </div>
-                  {hasAssignment && <CheckCircle2 size={16} className="text-indigo-500" />}
-                </button>
-              );
-            })}
+                  <div className="text-left truncate">
+                    <p className={`text-sm font-bold truncate ${selectedTeacherId === t.staff_id ? "text-indigo-900" : "text-zinc-900"}`}>
+                      {t.surname} {t.first_name}
+                    </p>
+                    <p className="text-[10px] text-zinc-400 font-mono">{t.staff_code}</p>
+                  </div>
+                </div>
+                {classes?.some((c: any) => c.classroom_staff_id === t.staff_id) && (
+                  <CheckCircle2 size={14} className="text-indigo-500 flex-shrink-0 ml-2" />
+                )}
+              </button>
+            ))}
           </div>
         </aside>
 
-        <main className="flex-1 p-8 overflow-y-auto bg-zinc-50/30">
+        {/* Main Content */}
+        <main className="flex-1 p-4 md:p-8 overflow-y-auto bg-zinc-50/30">
           {selectedTeacher ? (
-            <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <div className="max-w-4xl mx-auto space-y-6">
               
               {/* Profile Card */}
-              <div className="bg-white rounded-3xl p-6 shadow-sm border border-zinc-100 flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl font-black">
-                        {selectedTeacher.name[0]}
-                    </div>
-                    <div>
-                        <h2 className="text-2xl font-black text-zinc-900">{selectedTeacher.name}</h2>
-                        <p className="text-sm text-zinc-500 font-medium">{selectedTeacher.email || 'No Email Provided'}</p>
-                    </div>
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-zinc-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-5 text-center md:text-left flex-col md:flex-row">
+                  <div className="w-16 h-16 rounded-2xl bg-indigo-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-indigo-100">
+                    {selectedTeacher.surname[0]}
+                  </div>
+                  <div>
+                    <h2 className="text-xl md:text-2xl font-black text-zinc-900">{selectedTeacher.surname} {selectedTeacher.first_name}</h2>
+                    <p className="text-xs text-zinc-500 font-medium tracking-wide uppercase">{selectedTeacher.role} • {selectedTeacher.email || 'No Email'}</p>
+                  </div>
                 </div>
-                {loading && <Loader2 className="animate-spin text-indigo-600" size={24} />}
+                {assignClassTeacher.isPending && <Loader2 className="animate-spin text-indigo-600" size={24} />}
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
-                <div className="space-y-4">
-                    <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
-                        <Info size={14} /> Current Assignment
-                    </h3>
-                    {currentAssignedClass ? (
-                        <div className="bg-indigo-600 rounded-3xl p-8 text-white shadow-xl shadow-indigo-100 relative overflow-hidden group">
-                            <School className="absolute -right-4 -bottom-4 w-32 h-32 text-white/10 rotate-12" />
-                            <h4 className="text-3xl font-black tracking-tight">{currentAssignedClass.class_name}</h4>
-                            <p className="text-indigo-100 font-medium mt-1">{currentAssignedClass.class_code} — {currentAssignedClass.arm}</p>
-                            
-                            <button 
-                                onClick={() => handleAssignment(null)}
-                                className="mt-8 flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-bold transition-all"
-                            >
-                                <XCircle size={14} /> Remove From Class
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="h-48 border-2 border-dashed border-zinc-200 rounded-3xl flex flex-col items-center justify-center text-zinc-400 bg-white">
-                            <School size={32} className="mb-2 opacity-20" />
-                            <p className="text-sm font-bold tracking-tight">No Class Assigned</p>
-                        </div>
-                    )}
+                {/* Current Responsibility */}
+                <div className="space-y-3">
+                  <h3 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest flex items-center gap-2">
+                    <Info size={12} /> Current Assignment
+                  </h3>
+                  {currentAssignedClass ? (
+                    <div className="bg-indigo-600 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden group">
+                      <School className="absolute -right-4 -bottom-4 w-32 h-32 text-white/10 rotate-12 transition-transform group-hover:scale-110" />
+                      <h4 className="text-3xl font-black mb-1">{currentAssignedClass.class_name}</h4>
+                      <p className="text-indigo-100 font-medium text-xs mb-8">{currentAssignedClass.class_code} — {currentAssignedClass.arm || 'General'}</p>
+                      
+                      <button 
+                        onClick={() => handleAction(null)}
+                        disabled={assignClassTeacher.isPending}
+                        className="relative z-10 flex items-center gap-2 bg-red-500/20 hover:bg-red-500/40 px-4 py-2.5 rounded-xl text-xs font-bold transition-all border border-white/10"
+                      >
+                        <XCircle size={14} /> Remove Responsibility
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="h-48 border-2 border-dashed border-zinc-200 rounded-3xl flex flex-col items-center justify-center text-zinc-400 bg-white">
+                      <School size={32} className="mb-2 opacity-10" />
+                      <p className="text-xs font-bold uppercase tracking-widest">Unassigned</p>
+                    </div>
+                  )}
                 </div>
 
-                {/* Selection List */}
-                <div className="space-y-4 flex flex-col">
-                    <div className="flex items-center justify-between">
-                        <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Available Classes</h3>
-                        <div className="relative">
-                            <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-zinc-400" size={12} />
-                            <input 
-                                onChange={(e) => setClassSearch(e.target.value)}
-                                className="bg-white border border-zinc-200 rounded-lg py-1 pl-7 pr-2 text-xs focus:ring-1 focus:ring-indigo-500 outline-none"
-                                placeholder="Search..."
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex-1 overflow-y-auto space-y-2 max-h-[400px] pr-2">
-                        {filteredClasses.map((c: any) => {
-                            const isThisTeacher = c.classroom_staff_id === selectedTeacher.staff_id;
-                            const isTaken = c.classroom_staff_id !== null && !isThisTeacher;
-
-                            return (
-                                <button
-                                    key={c.class_id}
-                                    disabled={loading || isThisTeacher}
-                                    onClick={() => handleAssignment(c.class_id)}
-                                    className={`w-full p-4 rounded-2xl border text-left flex items-center justify-between transition-all ${
-                                        isThisTeacher 
-                                        ? "border-indigo-600 bg-indigo-50" 
-                                        : isTaken 
-                                          ? "border-zinc-100 bg-zinc-50 opacity-60 cursor-not-allowed"
-                                          : "border-white bg-white hover:border-indigo-200 shadow-sm"
-                                    }`}
-                                >
-                                    <div>
-                                        <p className="text-sm font-bold text-zinc-800">{c.class_code}</p>
-                                        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-                                          {isTaken ? "Occupied" : c.class_code}
-                                        </p>
-                                    </div>
-                                    {!isTaken && !isThisTeacher && (
-                                        <ArrowRightLeft size={16} className="text-zinc-300" />
-                                    )}
-                                    {isThisTeacher && <CheckCircle2 size={18} className="text-indigo-600" />}
-                                </button>
-                            );
-                        })}
-                    </div>
+                {/* Class Selection */}
+                <div className="space-y-3 flex flex-col">
+                  <div className="flex items-center justify-between px-1">
+                    <h3 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Assign Class</h3>
+                    <input 
+                      onChange={(e) => setClassSearch(e.target.value)}
+                      className="bg-white border border-zinc-200 rounded-lg py-1 px-3 text-[10px] focus:ring-1 focus:ring-indigo-500 outline-none w-32"
+                      placeholder="Filter..."
+                    />
+                  </div>
+                  <div className="space-y-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {filteredClasses?.map((c: any) => {
+                      const isMine = c.classroom_staff_id === selectedTeacherId;
+                      const isTaken = c.classroom_staff_id !== null && !isMine;
+                      return (
+                        <button
+                          key={c.class_id}
+                          disabled={assignClassTeacher.isPending || isMine}
+                          onClick={() => handleAction(c.class_id)}
+                          className={`w-full p-4 rounded-2xl border text-left flex items-center justify-between transition-all ${
+                            isMine ? "border-indigo-600 bg-indigo-50" : isTaken ? "bg-zinc-50 opacity-40 cursor-not-allowed" : "bg-white hover:border-indigo-200 shadow-sm"
+                          }`}
+                        >
+                          <div className="truncate">
+                            <p className="text-sm font-bold text-zinc-800 truncate">{c.class_name}</p>
+                            <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">{isTaken ? "Occupied" : c.class_code}</p>
+                          </div>
+                          {!isTaken && !isMine && <ArrowRightLeft size={14} className="text-zinc-300" />}
+                          {isMine && <CheckCircle2 size={16} className="text-indigo-600" />}
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
 
               </div>
             </div>
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-center">
-                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4">
-                    <Users size={32} className="text-zinc-200" />
-                </div>
-                <h3 className="text-lg font-bold text-zinc-400">Select a staff member</h3>
-                <p className="text-xs text-zinc-300 mt-1">to manage classroom placement</p>
+              <Users size={48} className="text-zinc-200 mb-4" />
+              <h3 className="text-lg font-bold text-zinc-400">Select a Staff Member</h3>
+              <p className="text-xs text-zinc-300 mt-1 max-w-[200px]">Choose an educator from the list to manage their classroom placement.</p>
             </div>
           )}
         </main>

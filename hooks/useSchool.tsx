@@ -501,6 +501,8 @@ export const useStaffs = () => {
     }
   });
 
+  // 
+
   return {
     staffs,
     teachers,
@@ -548,4 +550,28 @@ export const useSubjectAssignments = (selectedStaffId?: string) => {
 
     isSyncing:  assignSubject.isPending || unassignSubject.isPending
   };
+};
+
+
+
+export const useClassTeacher = () => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  const assignClassTeacher = useMutation({
+    mutationFn: async (payload: { staff_id: string; class_id: number | null }) => {
+      const { data } = await api.post("/staffs/assignClass", {
+        ...payload,
+        school_id: user?.school_id,
+      });
+      return data;
+    },
+    onSuccess: () => {
+      // Invalidate both classes and staff lists to refresh UI
+      queryClient.invalidateQueries({ queryKey: ["classes", user?.school_id] });
+      queryClient.invalidateQueries({ queryKey: ["teachers", user?.school_id] });
+    },
+  });
+
+  return { assignClassTeacher };
 };
