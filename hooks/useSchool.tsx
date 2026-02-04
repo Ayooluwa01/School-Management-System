@@ -37,6 +37,9 @@ export function useSchoolProfile() {
   return { ...query, updateProfile };
 }
 
+
+
+
 export function useSession_Terms() {
   const { user } = useAuthStore();
   return useQuery({
@@ -263,11 +266,9 @@ export const useSubjects = (selectedStaffId?: string) => {
   const fetchAssignedSubjects = useQuery({
     queryKey: ['assigned-subjects', user?.school_id],
     queryFn: async () => {
-      console.log("fetching all subjects")
       const { data } = await api.post('/subjects/assignedSubjects', {
         schoolId: user?.school_id
       });
-      console.log("assigned subjects",data)
       return data; 
     },
     enabled: !!user?.school_id
@@ -574,4 +575,38 @@ export const useClassTeacher = () => {
   });
 
   return { assignClassTeacher };
+
+
+
+
+
 };
+
+
+
+export const useUserProfile=()=>{
+  const { user } = useAuthStore();
+  
+  const query = useQuery({
+    queryKey: ['user-details', user?.school_id, user?.user_id],
+    queryFn: async () => {
+      console.log("FETCHING NOW..."); // Add this to verify execution
+      const { data } = await api.post('/staffs/loggeduser/profile', {
+        role: user?.role,
+        user_id: user?.user_id,
+        school_id: user?.school_id
+      });
+      console.log(data)
+      return data;
+
+    },
+    enabled: !!user?.user_id && !!user?.role && !!user?.school_id,
+    // staleTime: 30 * 60 * 1000,
+    // gcTime: 60 * 60 * 1000,    
+    // refetchOnWindowFocus: false,
+    // refetchOnReconnect: true   
+  });
+
+  // Return the query directly so it behaves like useSchoolProfile
+  return query; 
+}

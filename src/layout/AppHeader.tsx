@@ -6,14 +6,16 @@ import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useAuthStore } from "../../zustand/store";
-import { useSchoolProfile } from "../../hooks/useSchool";
-
+import { useSchoolProfile, useSession_Terms, useStaffs, useUserProfile } from "../../hooks/useSchool";
 const AppHeader: React.FC = () => {
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
   const { user } = useAuthStore();
-  
+  const{data:session}=useSession_Terms()
+  console.log(session)
   const { data: school, isLoading } = useSchoolProfile();
 
+
+  const { data: profile, isLoading:loading, isError } = useUserProfile();
   const handleToggle = () => {
     if (window.innerWidth >= 1024) {
       toggleSidebar();
@@ -65,15 +67,15 @@ const AppHeader: React.FC = () => {
           <div className="flex items-center gap-3 pl-3 border-l border-gray-200 dark:border-gray-800">
             <div className="text-right leading-tight">
               <p className="text-sm font-bold text-gray-800 dark:text-white capitalize">
-                {user?.role}
-              </p>
+{profile?.surname || profile?.first_name }              </p>
               <p className="text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                {school?.current_term_id ? `Term ${school.current_term_id}` : "No Active Term"}
+                {`Term ${school?.current_term_id}` || "No Active Term"}
               </p>
             </div>
             
             <div className="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
-              {user?.role?.charAt(0).toUpperCase() || "U"}
+          {loading ? "Loading..." : user?.role.slice(0,1) || "User"}
+          
             </div>
           </div>
         </div>

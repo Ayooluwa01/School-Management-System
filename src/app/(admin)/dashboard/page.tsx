@@ -96,7 +96,7 @@ export default function Dashboard() {
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-[11px] font-black flex items-center gap-2 uppercase tracking-wider">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-            {sessionData?.current_session || '2024/2025'} • {sessionData?.current_term || 'Term'}
+            {sessionData?.current_session} • {sessionData?.current_term || 'Term'}
           </p>
         </div>
         <div className="flex items-center gap-3">

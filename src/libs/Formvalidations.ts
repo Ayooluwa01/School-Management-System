@@ -33,6 +33,14 @@ export const RegistrationSchema = z.object({
     email: z.email("Invalid official email"),
     password: z.string().min(3, "Password must be at least 8 characters"),
     role: z.string().default("SUPER_ADMIN"),
+    surname:z.string('Surname is required'),
+    firstName:z.string('First Name is required'),
+gender: z.enum(["Male", "Female"], { 
+      errorMap: () => ({ message: "Please select a valid gender" }) 
+    }),phone: z.string().min(10, "Phone number must be at least 10 digits"),
+
+    user_id: z.string().optional(),
+    otherNames:z.string().optional()
   }),
   school: z.object({
     schoolId: z.string().min(1, "School ID is required"),

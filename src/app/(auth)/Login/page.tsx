@@ -4,7 +4,7 @@ import {
   Lock, Mail, Eye, EyeOff, 
   ShieldCheck, User, GraduationCap, Users,
   Loader2, ArrowRight, Sparkles,
-  BookOpen
+  BookOpen, CheckCircle2, AlertCircle
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -25,187 +25,300 @@ export default function LoginPage() {
   const [errors, setErrors] = useState<{ login_id?: string; password?: string }>({});
 
   const roles = [
-    { id: 'admin', label: 'Admin', icon: ShieldCheck, color: 'text-indigo-600' },
-    { id: 'teacher', label: 'Teacher', icon: User, color: 'text-emerald-600' },
-    { id: 'student', label: 'Student', icon: GraduationCap, color: 'text-amber-600' },
-    { id: 'parent', label: 'Parent', icon: Users, color: 'text-rose-600' },
+    { id: 'admin', label: 'Admin', icon: ShieldCheck, gradient: 'from-blue-500 to-cyan-500', emoji: '👨‍💼' },
+    { id: 'teacher', label: 'Teacher', icon: User, gradient: 'from-purple-500 to-pink-500', emoji: '👨‍🏫' },
+    { id: 'student', label: 'Student', icon: GraduationCap, gradient: 'from-emerald-500 to-teal-500', emoji: '🎓' },
+    { id: 'parent', label: 'Parent', icon: Users, gradient: 'from-orange-500 to-red-500', emoji: '👨‍👩‍👧' },
   ];
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, value } = e.target;
-  setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
 
-  const fd = new FormData();
-  fd.append(name, value);
+    const fd = new FormData();
+    fd.append(name, value);
 
-  let result: any;
-  if (name === "login_id") result = login_idFieldSchema.safeParse(fd);
-  else if (name === "password") result = passwordFieldSchema.safeParse(fd);
+    let result: any;
+    if (name === "login_id") result = login_idFieldSchema.safeParse(fd);
+    else if (name === "password") result = passwordFieldSchema.safeParse(fd);
 
-  if (!result?.success) {
-    setErrors(prev => ({
-      ...prev,
-      [name]: result?.error.flatten().fieldErrors[name]?.[0]
-    }));
-  } else {
-    setErrors(prev => ({ ...prev, [name]: undefined }));
-  }
-};
+    if (!result?.success) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: result?.error.flatten().fieldErrors[name]?.[0]
+      }));
+    } else {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
 
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
 
+    const fd = new FormData(e.currentTarget);
+    const result = loginSchema.safeParse(fd);
 
-const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setLoading(true);
+    if (!result.success) {
+      const formatted = result.error.format();
+      setErrors({
+        login_id: formatted.login_id?._errors[0],
+        password: formatted.password?._errors[0],
+      });
 
-  const fd = new FormData(e.currentTarget);
-  const result = loginSchema.safeParse(fd);
+      setLoading(false);
+      return;
+    }
 
-  if (!result.success) {
-  const formatted = result.error.format();
-  setErrors({
-    login_id: formatted.login_id?._errors[0],
-    password: formatted.password?._errors[0],
-  });
+    try {
+      const response = await axios.post('/auth/login', {
+        ...result.data,
+        role, 
+      });
+      const { accessToken } = response.data;
+      useAuthStore.getState().setAccessToken(accessToken);
+      
+      router.replace('/dashboard')
+      setErrors({});
 
-    setLoading(false);
-    return;
-  }
+    } catch (error: any) {
+      setErrors({
+        password: 'Invalid login id or password',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  try {
-    const response = await axios.post('/auth/login', {
-      ...result.data,
-      role, 
-    });
-    const { accessToken } = response.data;
-    useAuthStore.getState().setAccessToken(accessToken);
-    
-router.replace('/dashboard')
-    setErrors({});
-
-  } catch (error: any) {
-
-    setErrors({
-      password: 'Invalid login id or password',
-    });
-  } finally {
-    setLoading(false);
-  }
-};
-
+  const currentRole = roles.find(r => r.id === role);
 
   return (
-    <div className="min-h-screen w-full relative bg-white flex items-center justify-center p-4 sm:p-6 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-900 font-sans">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-gray-950 dark:via-blue-950/20 dark:to-purple-950/10 flex items-center justify-center p-4 sm:p-6 overflow-x-hidden">
       
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`, backgroundSize: '24px 24px' }} 
-      />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-5%] right-[-10%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-indigo-50 rounded-full blur-[80px] sm:blur-[100px] opacity-60" />
-        <div className="absolute bottom-[-5%] left-[-10%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-blue-50 rounded-full blur-[80px] sm:blur-[100px] opacity-60" />
-      </div>
-
-      <div className="w-full max-w-[460px] relative z-10 animate-in fade-in zoom-in-95 duration-500">
-        <div className="text-center mb-6 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 mb-4 sm:mb-6">
-            <Sparkles size={12} className="text-indigo-600" />
-            <span className="text-[9px] sm:text-[10px] font-bold text-zinc-600 uppercase tracking-widest">School Made Easy</span>
+      <div className="w-full max-w-[540px] relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 mb-6">
+            <Sparkles className="w-4 h-4 text-indigo-600" />
+            <span className="text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">School Management System</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-zinc-900 tracking-tight mb-2">
-            Manage <span className="text-indigo-600">School</span>
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-3">
+            Welcome <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Back</span>
           </h1>
-          <p className="text-zinc-500 text-xs sm:text-sm font-medium">Manage your academic excellence</p>
+          <p className="text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider">Sign in to access your dashboard</p>
         </div>
 
         {/* Role Selection */}
-        <div className="flex p-1 bg-zinc-100/80 rounded-2xl sm:rounded-[24px] mb-6 sm:mb-8 border border-zinc-200/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
-          {roles.map(item => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setRole(item.id)}
-              className={`flex-1 min-w-[70px] flex flex-col items-center gap-1 sm:gap-1.5 py-2.5 sm:py-3 rounded-xl sm:rounded-[18px] transition-all duration-300 ${
-                role === item.id ? "bg-white text-zinc-900 shadow-sm border border-zinc-200" : "text-zinc-500 hover:text-zinc-800"
-              }`}
-            >
-              <item.icon size={16} className={role === item.id ? item.color : "opacity-40"} />
-              <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-wider">{item.label}</span>
-            </button>
-          ))}
+        <div className="grid grid-cols-4 gap-3 mb-8 animate-fade-in-up">
+          {roles.map((item) => {
+            const isActive = role === item.id;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setRole(item.id)}
+                className={`
+                  relative bg-white dark:bg-gray-900 border-2 p-4 transition-all duration-300
+                  ${isActive 
+                    ? 'border-indigo-600 shadow-lg shadow-indigo-100 dark:shadow-indigo-900/20 -translate-y-1' 
+                    : 'border-slate-200 dark:border-gray-800 hover:border-slate-300 dark:hover:border-gray-700'
+                  }
+                `}
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <div className={`
+                    w-12 h-12 flex items-center justify-center bg-gradient-to-br ${item.gradient} shadow-lg
+                    ${!isActive && 'opacity-30'}
+                  `}>
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-xl">{item.emoji}</span>
+                  <p className={`text-[9px] font-black uppercase tracking-wider text-center ${isActive ? 'text-indigo-600' : 'text-slate-400'}`}>
+                    {item.label}
+                  </p>
+                </div>
+                
+                {isActive && (
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-indigo-600 flex items-center justify-center">
+                    <CheckCircle2 className="w-4 h-4 text-white" strokeWidth={3} />
+                  </div>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         {/* Login Form */}
-        <div className="bg-white border border-zinc-200/60 rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
-          <form className="space-y-4 sm:space-y-6" onSubmit={handleLogin}>
+        <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-slate-100 dark:border-gray-800 p-8 shadow-xl animate-fade-in-up">
+          
+          {/* Selected Role Header */}
+          <div className="mb-8 pb-6 border-b border-slate-100 dark:border-gray-800">
+            <div className="flex items-center gap-4">
+              <div className={`w-14 h-14 bg-gradient-to-br ${currentRole?.gradient} flex items-center justify-center shadow-lg`}>
+                {currentRole && <currentRole.icon className="w-7 h-7 text-white" />}
+              </div>
+              <div>
+                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Signing in as</p>
+                <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase">{currentRole?.label}</h2>
+              </div>
+            </div>
+          </div>
 
-            {/* Email */}
-            <div className="space-y-1.5 sm:space-y-2">
-              <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">LOGIN ID</label>
+          <form className="space-y-6" onSubmit={handleLogin}>
+
+            {/* Login ID */}
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-slate-400 dark:text-gray-500 uppercase tracking-widest ml-1">Login ID</label>
               <div className="relative group">
-                <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
+                <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={20} />
                 <input 
                   name='login_id'
                   type="text"
-                  placeholder="Your login id"
+                  placeholder="Enter your login ID"
                   value={formData.login_id}
                   onChange={handleChange}
-                  className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 pr-4 py-3.5 sm:py-4 text-zinc-900 text-sm outline-none focus:bg-white focus:border-indigo-600/50 focus:ring-4 focus:ring-indigo-600/5 transition-all"
+                  className={`
+                    w-full bg-slate-50 dark:bg-gray-800 border-2 pl-12 pr-4 py-4 
+                    text-slate-900 dark:text-white text-sm font-bold outline-none 
+                    focus:bg-white dark:focus:bg-gray-900 transition-all 
+                    placeholder:text-slate-300 dark:placeholder:text-gray-600
+                    ${errors.login_id 
+                      ? 'border-red-500 focus:border-red-600' 
+                      : 'border-slate-200 dark:border-gray-700 focus:border-indigo-600'
+                    }
+                  `}
                 />
-                {errors.login_id && <p className="text-red-500 text-[9px] ml-1">{errors.login_id}</p>}
               </div>
+              {errors.login_id && (
+                <div className="flex items-center gap-2 mt-2 ml-1">
+                  <AlertCircle className="w-3 h-3 text-red-500" />
+                  <p className="text-red-500 text-[10px] font-bold uppercase tracking-wider">{errors.login_id}</p>
+                </div>
+              )}
             </div>
 
             {/* Password */}
-            <div className="space-y-1.5 sm:space-y-2">
-              <div className="flex justify-between items-center px-1">
-                <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest">Secret Password</label>
-                <button type="button" className="text-[9px] sm:text-[10px] font-bold text-indigo-600 hover:underline">Forgot Key?</button>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center ml-1 mr-1">
+                <label className="text-[10px] font-black text-slate-400 dark:text-gray-500 uppercase tracking-widest">Password</label>
+                <button 
+                  type="button" 
+                  className="text-[10px] font-black text-indigo-600 hover:text-indigo-700 uppercase tracking-wider transition-colors"
+                >
+                  Forgot?
+                </button>
               </div>
               <div className="relative group">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={20} />
                 <input 
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
+                  placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 pr-11 py-3.5 sm:py-4 text-zinc-900 text-sm outline-none focus:bg-white focus:border-indigo-600/50 focus:ring-4 focus:ring-indigo-600/5 transition-all"
+                  className={`
+                    w-full bg-slate-50 dark:bg-gray-800 border-2 pl-12 pr-12 py-4 
+                    text-slate-900 dark:text-white text-sm font-bold outline-none 
+                    focus:bg-white dark:focus:bg-gray-900 transition-all 
+                    placeholder:text-slate-300 dark:placeholder:text-gray-600
+                    ${errors.password 
+                      ? 'border-red-500 focus:border-red-600' 
+                      : 'border-slate-200 dark:border-gray-700 focus:border-indigo-600'
+                    }
+                  `}
                 />
-                {errors.password && <p className="text-red-500 text-[9px] ml-1">{errors.password}</p>}
-
                 <button 
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
                 >
-                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
+              {errors.password && (
+                <div className="flex items-center gap-2 mt-2 ml-1">
+                  <AlertCircle className="w-3 h-3 text-red-500" />
+                  <p className="text-red-500 text-[10px] font-bold uppercase tracking-wider">{errors.password}</p>
+                </div>
+              )}
             </div>
 
-            {/* Submit */}
-            <div className="pt-2">
+            {/* Submit Button */}
+            <div className="pt-4">
               <button 
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3.5 sm:py-4 rounded-xl sm:rounded-[20px] font-black text-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2 sm:gap-3 shadow-lg sm:shadow-xl shadow-indigo-100 disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-4 font-black text-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 uppercase tracking-wider"
               >
-                {loading ? <Loader2 className="animate-spin" size={18} /> : "Sign into Dashboard"}
-                {!loading && <ArrowRight size={18} className="hidden sm:block" />}
+                {loading ? (
+                  <>
+                    <Loader2 className="animate-spin" size={18} />
+                    Authenticating...
+                  </>
+                ) : (
+                  <>
+                    Sign Into Dashboard
+                    <ArrowRight size={18} />
+                  </>
+                )}
               </button>
             </div>
           </form>
+
+          {/* Additional Info */}
+          <div className="mt-8 pt-6 border-t border-slate-100 dark:border-gray-800">
+            <div className="grid grid-cols-2 gap-4 text-center">
+              <div className="p-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700">
+                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Secure Login</p>
+                <div className="flex items-center justify-center gap-1">
+                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="text-[10px] font-bold text-emerald-500 uppercase">Protected</span>
+                </div>
+              </div>
+              <div className="p-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700">
+                <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">System Status</p>
+                <div className="flex items-center justify-center gap-1">
+                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="text-[10px] font-bold text-emerald-500 uppercase">Online</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-8 sm:mt-10 flex items-center justify-center gap-4 sm:gap-6 text-zinc-400">
-          <p className="text-center mt-10 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-            Dont have an account? <Link href='/Signup' className="text-indigo-600">Signup</Link>
+        <div className="text-center mt-8 animate-fade-in">
+          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+            Don't have an account? <Link href='/Signup' className="text-indigo-600 hover:text-indigo-700 transition-colors">Create Account</Link>
           </p>
+          
+          <div className="mt-6 flex items-center justify-center gap-6">
+            <button className="text-[9px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider transition-colors">Help</button>
+            <div className="w-px h-3 bg-slate-200 dark:bg-gray-800" />
+            <button className="text-[9px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider transition-colors">Privacy</button>
+            <div className="w-px h-3 bg-slate-200 dark:bg-gray-800" />
+            <button className="text-[9px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider transition-colors">Terms</button>
+          </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fade-in { 
+          from { opacity: 0; transform: translateY(10px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes fade-in-up { 
+          from { opacity: 0; transform: translateY(20px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-fade-in { 
+          animation: fade-in 0.5s ease-out forwards; 
+        }
+        .animate-fade-in-up { 
+          animation: fade-in-up 0.6s ease-out forwards; 
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,34 +1,48 @@
 "use client";
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { 
   Lock, Mail, Eye, EyeOff, ShieldCheck, User, 
   ArrowRight, Building2, Globe, MapPin, Phone, 
   Calendar, Zap, Rocket, Crown, ArrowLeft, Check, 
-  Info, ChevronRight, AlertCircle, BookOpen, Hash,
-  Sparkles, Server, GraduationCap,
-  Loader2
+  BookOpen, Hash, Sparkles, Loader2, Users, CheckCircle2
 } from "lucide-react";
 import Link from "next/link";
 import { useRegisterSchool } from "../../../../hooks/useSchool";
 import { RegistrationSchema } from "@/libs/Formvalidations";
 import { useRouter } from "next/navigation";
 
+
 export default function SignupPage() {
   const [step, setStep] = useState(1);
-  const [showPassword, setShowPassword] = useState(false);
   const registerMutation = useRegisterSchool();
-  const router=useRouter()
-  const randomIdSeed = useRef(Math.floor(100 + Math.random() * 900));
-  const randomUserSeed = useRef(Math.floor(1000 + Math.random() * 9000));
+  const router = useRouter();
+  
+  const [seeds] = useState(() => ({
+    id: Math.floor(100 + Math.random() * 900),
+    user: Math.floor(1000 + Math.random() * 9000)
+  }));
 
   const [formData, setFormData] = useState({
-    admin: { name: "", email: "", password: "", role: "ADMIN", user_id: "" },
+    admin: { 
+      surname: "", 
+      firstName: "", 
+      otherNames: "", 
+      gender: "", 
+      phone: "", 
+      email: "", 
+      password: "", 
+      role: "ADMIN", 
+      user_id: "" 
+    },
     school: { 
       schoolId: "", 
-      name: "", phone: "", email: "", 
-      country: "", address: "" 
+      name: "", 
+      phone: "", 
+      email: "", 
+      country: "", 
+      address: "" 
     },
     academic: {
       sessionName: "", 
@@ -41,14 +55,14 @@ export default function SignupPage() {
     plan: "professional"
   });
 
-useEffect(() => {
+  useEffect(() => {
     const sName = formData.school.name;
-    const aName = formData.admin.name;
+    const aName = formData.admin.surname; 
     let updates: any = {};
 
     if (sName && sName.length >= 3) {
       const prefix = sName.replace(/[^a-zA-Z]/g, "").substring(0, 3).toUpperCase() || "SCH";
-      const autoSchoolId = `${prefix}|${randomIdSeed.current}|SCH`;
+      const autoSchoolId = `${prefix}${seeds.user}`;
       
       if (formData.school.schoolId !== autoSchoolId) {
         updates.school = { ...formData.school, schoolId: autoSchoolId };
@@ -56,8 +70,8 @@ useEffect(() => {
     }
 
     if (aName && aName.length >= 3) {
-      const userPrefix = aName.replace(/[^a-zA-Z]/g, "").substring(0, 3).toUpperCase() || "ADM";
-      const autoUserId = `${userPrefix}|${randomUserSeed.current}|ADM`;
+      const userPrefix = aName.replace(/[^a-zA-Z]/g, "").toUpperCase() || "ADM";
+      const autoUserId = `${userPrefix}${seeds.id}`;
       
       if (formData.admin.user_id !== autoUserId) {
         updates.admin = { ...formData.admin, user_id: autoUserId };
@@ -72,136 +86,334 @@ useEffect(() => {
         admin: updates.admin ? { ...prev.admin, ...updates.admin } : prev.admin
       }));
     }
-  }, [formData.school.name, formData.admin.name]);
+  }, [formData.school.name, formData.admin.surname, seeds.id, seeds.user]);
 
   const updateForm = useCallback((section: string, field: string, value: any) => {
     setFormData(prev => ({
       ...prev,
       [section]: { ...prev[section as keyof typeof prev], [field]: value }
     }));
-  }, [formData]);
+  }, []);
 
   const handleFinalSubmit = () => {
-
     const result = RegistrationSchema.safeParse(formData);
+    
     if (!result.success) {
-      console.log(result.error.issues)
-      alert("Please ensure all fields are filled correctly across all steps.",result.error.issues);
-      return;
+      console.log(result.error.issues);
     }
 
-    
     registerMutation.mutate(formData);
   };
 
   const steps = [
-    { id: 1, label: 'Admin', icon: ShieldCheck, color: 'text-indigo-600' },
-    { id: 2, label: 'School', icon: Building2, color: 'text-emerald-600' },
-    { id: 3, label: 'Academic', icon: GraduationCap, color: 'text-amber-600' },
-    { id: 4, label: 'Plan', icon: Rocket, color: 'text-rose-600' },
+    { id: 1, label: 'Admin', icon: ShieldCheck, color: 'from-blue-500 to-cyan-500', emoji: '👨‍💼' },
+    { id: 2, label: 'School', icon: Building2, color: 'from-purple-500 to-pink-500', emoji: '🏫' },
+    { id: 3, label: 'Academic', icon: BookOpen, color: 'from-emerald-500 to-teal-500', emoji: '📚' },
+    { id: 4, label: 'Plan', icon: Rocket, color: 'from-orange-500 to-red-500', emoji: '🚀' },
   ];
 
   const planData: any = {
-    starter: { name: "Starter", price: "₦0", setup: "₦5,000", icon: Zap },
-    professional: { name: "Professional", price: "₦50,000", setup: "₦20,000", icon: Rocket },
-    enterprise: { name: "Enterprise", price: "Custom", setup: "₦50,000+", icon: Crown },
+    starter: { 
+      name: "Starter", 
+      price: "₦0", 
+      setup: "₦5,000", 
+      icon: Zap,
+      gradient: "from-blue-500 to-cyan-500",
+      features: ['Basic Result Management', 'Up to 100 Students', 'Email Support']
+    },
+    professional: { 
+      name: "Professional", 
+      price: "₦50,000", 
+      setup: "₦20,000", 
+      icon: Rocket,
+      gradient: "from-purple-500 to-pink-500",
+      features: ['Advanced Result Management', 'Unlimited Students', 'Fee Tracking', 'Parent Portal', 'Priority Support']
+    },
+    enterprise: { 
+      name: "Enterprise", 
+      price: "Custom", 
+      setup: "₦50,000+", 
+      icon: Crown,
+      gradient: "from-orange-500 to-red-500",
+      features: ['Full System Access', 'Custom Integrations', 'Dedicated Support', 'Staff Training', 'Custom Features']
+    },
   };
 
+  const currentStep = steps.find(s => s.id === step);
+
   return (
-    <div className="min-h-screen w-full relative bg-white flex items-center justify-center p-4 sm:p-6 overflow-x-hidden selection:bg-indigo-100 font-sans">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-gray-950 dark:via-blue-950/20 dark:to-purple-950/10 flex items-center justify-center p-4 sm:p-6 overflow-x-hidden">
       
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`, backgroundSize: '24px 24px' }} 
-      />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-5%] right-[-10%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-indigo-50 rounded-full blur-[80px] sm:blur-[100px] opacity-60" />
-        <div className="absolute bottom-[-5%] left-[-10%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-blue-50 rounded-full blur-[80px] sm:blur-[100px] opacity-60" />
-      </div>
-
-      <div className={`w-full relative z-10 transition-all duration-500 ${step === 4 ? 'max-w-[920px]' : 'max-w-[460px]'}`}>
+      <div className={`w-full relative z-10 transition-all duration-500 ${step === 4 ? 'max-w-[1100px]' : 'max-w-[600px]'}`}>
         
-        <div className="text-center mb-6 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 mb-4 sm:mb-6">
-            <Sparkles size={12} className="text-indigo-600" />
-            <span className="text-[9px] sm:text-[10px] font-bold text-zinc-600 uppercase tracking-widest">School Made Easy</span>
+        {/* Header */}
+        <div className="text-center mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 mb-6">
+            <Sparkles className="w-4 h-4 text-indigo-600" />
+            <span className="text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-widest">School Management System</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-zinc-900 tracking-tight mb-2">
-            Register <span className="text-indigo-600">School</span>
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-3">
+            Create Your <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">School Account</span>
           </h1>
-          <p className="text-zinc-500 text-xs sm:text-sm font-medium">Initialize your academic management system</p>
+          <p className="text-slate-600 dark:text-slate-400 text-sm font-bold uppercase tracking-wider">Initialize your academic management system in 4 simple steps</p>
         </div>
 
-        <div className="flex p-1 bg-zinc-100/80 rounded-2xl sm:rounded-[24px] mb-6 sm:mb-8 border border-zinc-200/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
-          {steps.map(item => (
-            <button
-              key={item.id}
-              type="button"
-              className={`flex-1 min-w-[70px] flex flex-col items-center gap-1 sm:gap-1.5 py-2.5 sm:py-3 rounded-xl sm:rounded-[18px] transition-all duration-300 ${
-                step === item.id ? "bg-white text-zinc-900 shadow-sm border border-zinc-200" : "text-zinc-400 opacity-60 cursor-default"
-              }`}
-            >
-              <item.icon size={16} className={step === item.id ? item.color : "opacity-40"} />
-              <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-wider">{item.label}</span>
-            </button>
-          ))}
+        {/* Progress Stepper */}
+        <div className="grid grid-cols-4 gap-3 mb-8 animate-fade-in-up">
+          {steps.map((item, index) => {
+            const isActive = step === item.id;
+            const isCompleted = step > item.id;
+            return (
+              <div key={item.id} className="relative">
+                <div className={`
+                  bg-white dark:bg-gray-900 border-2 p-4 transition-all duration-300
+                  ${isActive ? 'border-indigo-600 shadow-lg shadow-indigo-100 dark:shadow-indigo-900/20 -translate-y-1' : 'border-slate-200 dark:border-gray-800'}
+                  ${isCompleted ? 'border-emerald-500' : ''}
+                `}>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className={`
+                      w-12 h-12 flex items-center justify-center bg-gradient-to-br ${item.color} shadow-lg
+                      ${!isActive && !isCompleted ? 'opacity-30' : ''}
+                    `}>
+                      {isCompleted ? (
+                        <CheckCircle2 className="w-6 h-6 text-white" />
+                      ) : (
+                        <item.icon className="w-6 h-6 text-white" />
+                      )}
+                    </div>
+                    <span className="text-2xl">{item.emoji}</span>
+                    <p className={`text-[9px] font-black uppercase tracking-wider text-center ${isActive ? 'text-indigo-600' : 'text-slate-400'}`}>
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Connector Line */}
+                {index < steps.length - 1 && (
+                  <div className="absolute top-8 left-full w-3 h-0.5 bg-slate-200 dark:bg-gray-800 hidden lg:block">
+                    <div 
+                      className={`h-full bg-gradient-to-r from-indigo-600 to-purple-600 transition-all duration-500 ${isCompleted ? 'w-full' : 'w-0'}`}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        <div className="bg-white border border-zinc-200/60 rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
-          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-zinc-100">
+        {/* Form Container */}
+        <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-slate-100 dark:border-gray-800 p-8 shadow-xl animate-fade-in-up">
+          <div className={`flex flex-col ${step === 4 ? 'lg:flex-row lg:gap-8' : ''}`}>
             
-            <div className={`transition-all duration-500 ${step === 4 ? 'md:w-1/2 md:pr-10 pb-8 md:pb-0' : 'w-full'}`}>
+            {/* Main Form Area */}
+            <div className={`${step === 4 ? 'lg:w-1/2' : 'w-full'}`}>
               
+              {/* Step Header */}
+              <div className="mb-8 pb-6 border-b border-slate-100 dark:border-gray-800">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${currentStep?.color} flex items-center justify-center shadow-lg`}>
+                    {currentStep && <currentStep.icon className="w-6 h-6 text-white" />}
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Step {step} of 4</p>
+                    <h2 className="text-2xl font-black text-slate-900 dark:text-white">{currentStep?.label} Information</h2>
+                  </div>
+                </div>
+              </div>
+
               {/* Step 1: Admin */}
               {step === 1 && (
-                <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
-                  <FormInput label="Full Name" icon={User} placeholder="e.g. Albert Okon" value={formData.admin.name} onChange={(e:any) => updateForm('admin', 'name', e.target.value)} />
-                  <div className="space-y-1.5">
-                    <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Generated Admin ID</label>
+                <div className="space-y-6 animate-fade-in">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormInput 
+                      label="Surname" 
+                      icon={User} 
+                      placeholder="Enter surname" 
+                      value={formData.admin.surname} 
+                      onChange={(e:any) => updateForm('admin', 'surname', e.target.value)} 
+                    />
+                    <FormInput 
+                      label="First Name" 
+                      icon={User} 
+                      placeholder="Enter first name" 
+                      value={formData.admin.firstName} 
+                      onChange={(e:any) => updateForm('admin', 'firstName', e.target.value)} 
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormInput 
+                      label="Other Names" 
+                      icon={User} 
+                      placeholder="Optional" 
+                      value={formData.admin.otherNames} 
+                      onChange={(e:any) => updateForm('admin', 'otherNames', e.target.value)} 
+                    />
+                    <FormSelect 
+                      label="Gender" 
+                      icon={Users}
+                      value={formData.admin.gender} 
+                      onChange={(e:any) => updateForm('admin', 'gender', e.target.value)}
+                      options={[
+                        { label: "Select Gender", value: "" },
+                        { label: "Male", value: "Male" },
+                        { label: "Female", value: "Female" }
+                      ]}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormInput 
+                      label="Phone Number" 
+                      icon={Phone} 
+                      placeholder="080..." 
+                      value={formData.admin.phone} 
+                      onChange={(e:any) => updateForm('admin', 'phone', e.target.value)} 
+                    />
+                    <FormInput 
+                      label="Email Address" 
+                      icon={Mail} 
+                      placeholder="admin@school.com" 
+                      value={formData.admin.email} 
+                      onChange={(e:any) => updateForm('admin', 'email', e.target.value)} 
+                    />
+                  </div>
+
+                  <FormInput 
+                    label="Password" 
+                    icon={Lock} 
+                    type="password" 
+                    placeholder="Create secure password"
+                    value={formData.admin.password} 
+                    onChange={(e:any) => updateForm('admin', 'password', e.target.value)} 
+                  />
+
+                  <div className="bg-indigo-50 dark:bg-indigo-950/20 border-2 border-indigo-200 dark:border-indigo-900 p-4">
+                    <label className="text-[10px] font-black text-indigo-600 uppercase tracking-widest mb-2 block">Auto-Generated Admin ID</label>
                     <div className="relative">
-                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-600" size={18} />
-                      <input disabled value={formData.admin.user_id || "Waiting for Name..."} className="w-full bg-indigo-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-400 text-sm font-bold" />
+                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-600" size={20} />
+                      <input 
+                        disabled 
+                        value={formData.admin.user_id || "Waiting for name input..."} 
+                        className="w-full bg-white dark:bg-gray-800 border-2 border-indigo-300 dark:border-indigo-800 pl-12 pr-4 py-3 text-indigo-700 dark:text-indigo-400 text-sm font-mono font-bold outline-none"
+                      />
                     </div>
                   </div>
-                  <FormInput label="Official Email" icon={Mail} placeholder="admin@school.com" value={formData.admin.email} onChange={(e:any) => updateForm('admin', 'email', e.target.value)} />
-                  <FormInput label="Secret Password" icon={Lock} type="password" value={formData.admin.password} onChange={(e:any) => updateForm('admin', 'password', e.target.value)} />
                 </div>
               )}
 
               {/* Step 2: School */}
               {step === 2 && (
-                <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
-                  <FormInput label="Institute Name" icon={Building2} placeholder="School Name" value={formData.school.name} onChange={(e:any) => updateForm('school', 'name', e.target.value)} />
-                  <div className="space-y-1.5 ">
-                    <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">Auto-Generated ID</label>
-                    <div className="relative">
-                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 text-indigo-600" size={18} />
-                      <input  disabled value={formData.school.schoolId || "Generating ID..."} className="w-full bg-indigo-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-indigo-700 text-sm font-mono font-bold" />
-                    </div>
-
+                <div className="space-y-6 animate-fade-in">
+                  <FormInput 
+                    label="School Name" 
+                    icon={Building2} 
+                    placeholder="Enter school name" 
+                    value={formData.school.name} 
+                    onChange={(e:any) => updateForm('school', 'name', e.target.value)} 
+                  />
                   
+                  <div className="bg-purple-50 dark:bg-purple-950/20 border-2 border-purple-200 dark:border-purple-900 p-4">
+                    <label className="text-[10px] font-black text-purple-600 uppercase tracking-widest mb-2 block">Auto-Generated School ID</label>
+                    <div className="relative">
+                      <Hash className="absolute left-4 top-1/2 -translate-y-1/2 text-purple-600" size={20} />
+                      <input 
+                        disabled 
+                        value={formData.school.schoolId || "Generating ID..."} 
+                        className="w-full bg-white dark:bg-gray-800 border-2 border-purple-300 dark:border-purple-800 pl-12 pr-4 py-3 text-purple-700 dark:text-purple-400 text-sm font-mono font-bold outline-none"
+                      />
+                    </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <FormInput label="Phone" icon={Phone} placeholder="080..." value={formData.school.phone} onChange={(e:any) => updateForm('school', 'phone', e.target.value)} />
-                    <FormInput label="Country" icon={Globe} placeholder="Nigeria" value={formData.school.country} onChange={(e:any) => updateForm('school', 'country', e.target.value)} />
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormInput 
+                      label="School Phone" 
+                      icon={Phone} 
+                      placeholder="080..." 
+                      value={formData.school.phone} 
+                      onChange={(e:any) => updateForm('school', 'phone', e.target.value)} 
+                    />
+                    <FormInput 
+                      label="School Email" 
+                      icon={Mail} 
+                      placeholder="info@school.com"
+                      value={formData.school.email} 
+                      onChange={(e:any) => updateForm('school', 'email', e.target.value)} 
+                    />
                   </div>
-                                    <FormInput label="School email" icon={Mail} value={formData.school.email} onChange={(e:any) => updateForm('school', 'email', e.target.value)} />
-                  <FormInput label="Physical Address" icon={MapPin} value={formData.school.address} onChange={(e:any) => updateForm('school', 'address', e.target.value)} />
+
+                  <FormInput 
+                    label="Country" 
+                    icon={Globe} 
+                    placeholder="Nigeria" 
+                    value={formData.school.country} 
+                    onChange={(e:any) => updateForm('school', 'country', e.target.value)} 
+                  />
+                  
+                  <FormInput 
+                    label="Physical Address" 
+                    icon={MapPin} 
+                    placeholder="Enter complete address"
+                    value={formData.school.address} 
+                    onChange={(e:any) => updateForm('school', 'address', e.target.value)} 
+                  />
                 </div>
               )}
 
               {/* Step 3: Academic */}
               {step === 3 && (
-                <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-500">
-                  <FormInput label="Current Session" icon={BookOpen} placeholder="e.g. 2024/2025" value={formData.academic.sessionName} onChange={(e:any) => updateForm('academic', 'sessionName', e.target.value)} />
-                  <div className="grid grid-cols-2 gap-4">
-                    <DateInput label="Session Start" selected={formData.academic.sessionStart} onChange={(date:any) => updateForm('academic', 'sessionStart', date)} />
-                    <DateInput label="Session End" selected={formData.academic.sessionEnd} onChange={(date:any) => updateForm('academic', 'sessionEnd', date)} minDate={formData.academic.sessionStart}/>
+                <div className="space-y-6 animate-fade-in">
+                  <FormInput 
+                    label="Academic Session" 
+                    icon={BookOpen} 
+                    placeholder="e.g. 2024/2025" 
+                    value={formData.academic.sessionName} 
+                    onChange={(e:any) => updateForm('academic', 'sessionName', e.target.value)} 
+                  />
+                  
+                  <div className="bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-900 p-6">
+                    <h3 className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <Calendar size={14} /> Session Duration
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <DateInput 
+                        label="Session Start" 
+                        selected={formData.academic.sessionStart} 
+                        onChange={(date:any) => updateForm('academic', 'sessionStart', date)} 
+                      />
+                      <DateInput 
+                        label="Session End" 
+                        selected={formData.academic.sessionEnd} 
+                        onChange={(date:any) => updateForm('academic', 'sessionEnd', date)} 
+                        minDate={formData.academic.sessionStart}
+                      />
+                    </div>
                   </div>
-                  <div className="pt-4 border-t border-zinc-100 space-y-4">
-                    <FormInput label="Active Term (Number)" type="number" icon={Hash} placeholder="e.g. 1" value={formData.academic.termNumber} onChange={(e:any) => updateForm('academic', 'termNumber', e.target.value)} />
-                    <div className="grid grid-cols-2 gap-4">
-                      <DateInput label="Term Start" selected={formData.academic.termStart} onChange={(date:any) => updateForm('academic', 'termStart', date)} />
-                      <DateInput label="Term End" selected={formData.academic.termEnd} onChange={(date:any) => updateForm('academic', 'termEnd', date)} minDate={formData.academic.termStart} />
+
+                  <div className="bg-teal-50 dark:bg-teal-950/20 border-2 border-teal-200 dark:border-teal-900 p-6">
+                    <h3 className="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <Calendar size={14} /> Current Term
+                    </h3>
+                    <FormInput 
+                      label="Term Number" 
+                      type="number" 
+                      icon={Hash} 
+                      placeholder="e.g. 1, 2, or 3" 
+                      value={formData.academic.termNumber} 
+                      onChange={(e:any) => updateForm('academic', 'termNumber', e.target.value)} 
+                    />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                      <DateInput 
+                        label="Term Start" 
+                        selected={formData.academic.termStart} 
+                        onChange={(date:any) => updateForm('academic', 'termStart', date)} 
+                      />
+                      <DateInput 
+                        label="Term End" 
+                        selected={formData.academic.termEnd} 
+                        onChange={(date:any) => updateForm('academic', 'termEnd', date)} 
+                        minDate={formData.academic.termStart} 
+                      />
                     </div>
                   </div>
                 </div>
@@ -209,77 +421,160 @@ useEffect(() => {
 
               {/* Step 4: Plan */}
               {step === 4 && (
-                <div className="space-y-4 animate-in fade-in duration-500">
+                <div className="space-y-4 animate-fade-in">
                   {Object.keys(planData).map((key) => {
                     const plan = planData[key];
                     const active = formData.plan === key;
                     const Icon = plan.icon;
                     return (
-                      <div key={key} onClick={() => updateForm('plan', 'plan', key)}
-                        className={`p-5 rounded-[22px] border-2 cursor-pointer transition-all flex items-center justify-between ${active ? 'border-indigo-600 bg-indigo-50/30' : 'border-zinc-100 bg-zinc-50/50 hover:border-zinc-200'}`}
+                      <div 
+                        key={key} 
+                        onClick={() => setFormData(prev => ({ ...prev, plan: key }))}
+                        className={`
+                          group relative p-6 border-2 cursor-pointer transition-all duration-300
+                          ${active 
+                            ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/20 shadow-lg shadow-indigo-100 dark:shadow-indigo-900/20 -translate-y-1' 
+                            : 'border-slate-200 dark:border-gray-800 hover:border-slate-300 dark:hover:border-gray-700'
+                          }
+                        `}
                       >
-                        <div className="flex items-center gap-4">
-                           <div className={`p-3 rounded-xl ${active ? 'bg-indigo-600 text-white' : 'bg-white text-zinc-400'}`}><Icon size={20}/></div>
-                           <div>
-                              <h4 className="text-[11px] font-black uppercase text-zinc-900">{plan.name}</h4>
-                              <p className="text-xs font-bold text-indigo-600">{plan.price}</p>
-                           </div>
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex items-center gap-4">
+                            <div className={`w-14 h-14 bg-gradient-to-br ${plan.gradient} flex items-center justify-center shadow-lg ${!active && 'opacity-30'}`}>
+                              <Icon className="w-7 h-7 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="text-lg font-black uppercase text-slate-900 dark:text-white">{plan.name}</h4>
+                              <p className={`text-2xl font-black bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>{plan.price}</p>
+                              <p className="text-[10px] font-bold text-slate-500 uppercase">Setup: {plan.setup}</p>
+                            </div>
+                          </div>
+                          {active && (
+                            <div className="w-8 h-8 bg-indigo-600 flex items-center justify-center">
+                              <Check className="w-5 h-5 text-white" strokeWidth={3} />
+                            </div>
+                          )}
                         </div>
-                        {active && <Check size={18} className="text-indigo-600" />}
+                        
+                        <div className="space-y-2 pl-1">
+                          {plan.features.map((feature: string, idx: number) => (
+                            <div key={idx} className="flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-slate-400">
+                              <CheckCircle2 size={14} className={active ? 'text-indigo-600' : 'text-slate-300'} />
+                              {feature}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     );
                   })}
                 </div>
               )}
 
+              {/* Navigation Buttons */}
               <div className="pt-8 space-y-4">
-                  <button 
-                    disabled={registerMutation.isPending}
-                    onClick={() => step === 4 ? handleFinalSubmit() : setStep(step + 1)} 
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl sm:rounded-[20px] font-black text-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg shadow-indigo-100 disabled:opacity-70"
-                  >
-                      {registerMutation.isPending ? <Loader2 className="animate-spin" size={18} /> : (
-                        <>
-                          {step === 4 ? "Complete Setup" : "Continue Registration"} 
-                          <ArrowRight size={18} />
-                        </>
-                      )}
-                  </button>
-                  {step > 1 && (
-                    <button onClick={()=>setStep(step-1)} className="w-full text-zinc-400 font-bold text-[10px] uppercase tracking-widest hover:text-zinc-600 transition-colors py-2 flex items-center justify-center gap-2">
-                        <ArrowLeft size={12}/> Previous Step
-                    </button>
+                <button 
+                  disabled={registerMutation.isPending}
+                  onClick={() => step === 4 ? handleFinalSubmit() : setStep(step + 1)} 
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-4 font-black text-sm transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-lg disabled:opacity-70 uppercase tracking-wider"
+                >
+                  {registerMutation.isPending ? (
+                    <>
+                      <Loader2 className="animate-spin" size={18} />
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      {step === 4 ? "Complete Registration" : "Continue to Next Step"} 
+                      <ArrowRight size={18} />
+                    </>
                   )}
+                </button>
+                
+                {step > 1 && (
+                  <button 
+                    onClick={() => setStep(step - 1)} 
+                    className="w-full border-2 border-slate-200 dark:border-gray-800 text-slate-600 dark:text-slate-400 font-black text-[10px] uppercase tracking-widest hover:border-slate-300 dark:hover:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-800 transition-all py-3 flex items-center justify-center gap-2"
+                  >
+                    <ArrowLeft size={12} /> Previous Step
+                  </button>
+                )}
               </div>
             </div>
 
-            {/* Plan Sidebar */}
+            {/* Plan Breakdown Sidebar - Only visible on Step 4 */}
             {step === 4 && (
-              <div className="hidden md:flex flex-1 md:pl-10 flex-col animate-in slide-in-from-right-4">
-                <h3 className="text-2xl font-black text-zinc-900 mb-6">Plan Breakdown</h3>
-                <div className="space-y-6 flex-1">
-                   <div className="p-6 bg-zinc-50 border border-zinc-200 rounded-[24px]">
-                      <p className="text-[10px] font-black text-indigo-600 uppercase mb-2 tracking-widest">One-time Setup Fee</p>
-                      <p className="text-3xl font-black text-zinc-900">{planData[formData.plan].setup}</p>
-                   </div>
-                   <div className="space-y-3">
-                      <p className="text-[10px] font-black text-zinc-400 uppercase ml-1 tracking-widest">Core Features</p>
-                      {['Result Management', 'Fee Tracking', 'Parent Portal', 'Staff Attendance'].map(f => (
-                        <div key={f} className="flex items-center gap-3 text-xs font-bold text-zinc-600 bg-white p-3 border border-zinc-100 rounded-xl">
-                            <Check size={14} className="text-indigo-600" strokeWidth={3}/> {f}
-                        </div>
-                      ))}
-                   </div>
+              <div className="hidden lg:flex lg:w-1/2 flex-col gap-6 animate-fade-in mt-8 lg:mt-0">
+                <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+                  <h3 className="text-2xl font-black mb-6 uppercase">Selected Plan</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-baseline justify-between pb-4 border-b border-white/20">
+                      <span className="text-[10px] font-black uppercase tracking-widest opacity-80">Plan Name</span>
+                      <span className="text-xl font-black">{planData[formData.plan].name}</span>
+                    </div>
+                    <div className="flex items-baseline justify-between pb-4 border-b border-white/20">
+                      <span className="text-[10px] font-black uppercase tracking-widest opacity-80">Monthly Cost</span>
+                      <span className="text-3xl font-black">{planData[formData.plan].price}</span>
+                    </div>
+                    <div className="flex items-baseline justify-between">
+                      <span className="text-[10px] font-black uppercase tracking-widest opacity-80">Setup Fee</span>
+                      <span className="text-2xl font-black">{planData[formData.plan].setup}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-gray-900 border-2 border-slate-200 dark:border-gray-800 p-6">
+                  <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">What's Included</h4>
+                  <div className="space-y-3">
+                    {planData[formData.plan].features.map((feature: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700">
+                        <CheckCircle2 size={16} className="text-emerald-500 mt-0.5 flex-shrink-0" strokeWidth={3} />
+                        <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-emerald-50 dark:bg-emerald-950/20 border-2 border-emerald-200 dark:border-emerald-900 p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="w-5 h-5 text-emerald-600" />
+                    <h4 className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Next Steps</h4>
+                  </div>
+                  <ol className="space-y-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                    <li className="flex gap-2"><span className="text-emerald-600 font-black">1.</span> Complete registration</li>
+                    <li className="flex gap-2"><span className="text-emerald-600 font-black">2.</span> Verify your email</li>
+                    <li className="flex gap-2"><span className="text-emerald-600 font-black">3.</span> Complete payment</li>
+                    <li className="flex gap-2"><span className="text-emerald-600 font-black">4.</span> Start managing your school</li>
+                  </ol>
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        <p className="text-center mt-8 sm:mt-10 text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
-          Already have an account? <Link href='/Login' className="text-indigo-600">Login</Link>
-        </p>
+        {/* Footer */}
+        <div className="text-center mt-8 animate-fade-in">
+          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+            Already have an account? <Link href='/Login' className="text-indigo-600 hover:text-indigo-700 transition-colors">Login Here</Link>
+          </p>
+        </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fade-in { 
+          from { opacity: 0; transform: translateY(10px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes fade-in-up { 
+          from { opacity: 0; transform: translateY(20px); } 
+          to { opacity: 1; transform: translateY(0); } 
+        }
+        .animate-fade-in { 
+          animation: fade-in 0.5s ease-out forwards; 
+        }
+        .animate-fade-in-up { 
+          animation: fade-in-up 0.6s ease-out forwards; 
+        }
+      `}</style>
     </div>
   );
 }
@@ -287,19 +582,24 @@ useEffect(() => {
 function FormInput({ label, icon: Icon, type = "text", ...props }: any) {
   const [show, setShow] = useState(false);
   const inputType = type === "password" ? (show ? "text" : "password") : type;
+  
   return (
-    <div className="space-y-1.5 sm:space-y-2">
-      <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">{label}</label>
+    <div className="space-y-2">
+      <label className="text-[10px] font-black text-slate-400 dark:text-gray-500 uppercase tracking-widest ml-1">{label}</label>
       <div className="relative group">
-        <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 group-focus-within:text-indigo-600 transition-colors" size={18} />
+        <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors" size={20} />
         <input 
           type={inputType}
-          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 pr-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600/50 focus:ring-4 focus:ring-indigo-600/5 transition-all placeholder:text-zinc-300"
+          className="w-full bg-slate-50 dark:bg-gray-800 border-2 border-slate-200 dark:border-gray-700 pl-12 pr-12 py-4 text-slate-900 dark:text-white text-sm font-bold outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-indigo-600 transition-all placeholder:text-slate-300 dark:placeholder:text-gray-600"
           {...props} 
         />
         {type === "password" && (
-          <button type="button" onClick={() => setShow(!show)} className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400">
-            {show ? <EyeOff size={16} /> : <Eye size={16} />}
+          <button 
+            type="button" 
+            onClick={() => setShow(!show)} 
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+          >
+            {show ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
         )}
       </div>
@@ -307,19 +607,38 @@ function FormInput({ label, icon: Icon, type = "text", ...props }: any) {
   );
 }
 
-function DateInput({ label, selected, onChange,minDate }: any) {
+function FormSelect({ label, icon: Icon, options, ...props }: any) {
   return (
-    <div className="space-y-1.5 sm:space-y-2">
-      <label className="text-[9px] sm:text-[10px] font-black text-zinc-400 uppercase tracking-widest ml-1">{label}</label>
+    <div className="space-y-2">
+      <label className="text-[10px] font-black text-slate-400 dark:text-gray-500 uppercase tracking-widest ml-1">{label}</label>
       <div className="relative group">
-        <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 z-10" size={18} />
+        <Icon className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors z-10" size={20} />
+        <select
+          className="w-full bg-slate-50 dark:bg-gray-800 border-2 border-slate-200 dark:border-gray-700 pl-12 pr-4 py-4 text-slate-900 dark:text-white text-sm font-bold outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-indigo-600 transition-all appearance-none cursor-pointer"
+          {...props}
+        >
+          {options.map((opt: any) => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+}
+
+function DateInput({ label, selected, onChange, minDate }: any) {
+  return (
+    <div className="space-y-2">
+      <label className="text-[10px] font-black text-slate-400 dark:text-gray-500 uppercase tracking-widest ml-1">{label}</label>
+      <div className="relative group">
+        <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 z-10" size={20} />
         <DatePicker
           selected={selected}
           onChange={onChange}
           minDate={minDate}
-          placeholderText="-- / -- / ----"
+          placeholderText="DD/MM/YYYY"
           dateFormat="dd/MM/yyyy"
-          className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl sm:rounded-2xl pl-11 py-3.5 sm:py-4 text-zinc-900 text-sm font-semibold outline-none focus:bg-white focus:border-indigo-600 transition-all cursor-pointer"
+          className="w-full bg-slate-50 dark:bg-gray-800 border-2 border-slate-200 dark:border-gray-700 pl-12 pr-4 py-4 text-slate-900 dark:text-white text-sm font-bold outline-none focus:bg-white dark:focus:bg-gray-900 focus:border-indigo-600 transition-all cursor-pointer"
         />
       </div>
     </div>
