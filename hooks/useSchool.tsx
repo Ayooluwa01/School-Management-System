@@ -610,3 +610,133 @@ export const useUserProfile=()=>{
   // Return the query directly so it behaves like useSchoolProfile
   return query; 
 }
+
+
+// export const useFeeService = () => {
+//   const { user } = useAuthStore();
+//   const queryClient = useQueryClient();
+
+// // 1. Get all fee types (Tuition, ICT, etc.)
+//   const { data: feeTypes = [], isLoading: isLoadingTypes } = useQuery({
+//     queryKey: ['fee-types', user?.school_id],
+//     queryFn: async () => {
+//       const { data } = await api.get(`/fee-management/types/${user?.school_id}`);
+//       return data;
+//     },
+//     enabled: !!user?.school_id,
+//   });
+
+//   // 2. Get all active fee structures (The amounts per class/term)
+//   const { data: structures = [], isLoading: isLoadingStructures } = useQuery({
+//     queryKey: ['fee-structures', user?.school_id],
+//     queryFn: async () => {
+//       const { data } = await api.get(`/fee-management/all/${user?.school_id}`);
+//       return data;
+//     },
+//     enabled: !!user?.school_id,
+//   });
+
+// // Inside useFeeService hook
+// const createFee = useMutation({
+//   mutationFn: async (payload: { name: string; class_id: number; term_id: number; amount: number }) => {
+//     // We include school_id from our auth store
+//     const fullPayload = { ...payload, school_id: user?.school_id };
+//     const { data } = await api.post('/fee-management', fullPayload);
+//     return data;
+//   },
+//   onSuccess: () => {
+//     queryClient.invalidateQueries({ queryKey: ['fee-structures', user?.school_id] });
+//     // Also invalidate types in case a new one was created
+//     queryClient.invalidateQueries({ queryKey: ['fee-types', user?.school_id] });
+//   },
+// });
+
+//   // 4. Delete a fee structure
+//   const deleteFee = useMutation({
+//     mutationFn: async (id: number) => {
+//       const { data } = await api.delete(`/fee-management/${id}`);
+//       return data;
+//     },
+//     onSuccess: () => {
+//       queryClient.invalidateQueries({ queryKey: ['fee-structures', user?.school_id] });
+//     },
+//   });
+
+//   return {
+//     feeTypes,
+//     structures,
+//     isLoading: isLoadingTypes || isLoadingStructures,
+//     createFee,
+//     deleteFee,
+//   };
+// };
+
+
+export const useFeeService = () => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+
+  const { data: structures = [], isLoading, isError } = useQuery({
+    queryKey: ['fee-structures', user?.school_id],
+    queryFn: async () => {
+      const { data } = await api.get(`/fee-management/all/${user?.school_id}`);
+      return data;
+    },
+    enabled: !!user?.school_id
+  });
+
+  const createFee = useMutation({
+    mutationFn: (payload: any) => 
+      api.post('/fee-management', { ...payload, school_id: user?.school_id }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['fee-structures'] }),
+  });
+
+  const updateFee = useMutation({
+    mutationFn: ({ id, payload }: { id: number; payload: any }) => 
+      api.patch(`/fee-management/${id}`, { ...payload, school_id: user?.school_id }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['fee-structures'] }),
+  });
+
+  const deleteFee = useMutation({
+    mutationFn: (id: number) => 
+      api.delete(`/fee-management/${id}/${user?.school_id}`), // Added school_id for security
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['fee-structures'] }),
+  });
+
+  return { structures, isLoading, isError, createFee, deleteFee, updateFee };
+};
+
+
+
+export const useGradingService = () => {
+  const { user } = useAuthStore();
+  const queryClient = useQueryClient();
+  const school_id = user?.school_id;
+
+  const { data: gradings = [], isLoading } = useQuery({
+    queryKey: ['gradings', school_id],
+    queryFn: async () => {
+      const { data } = await api.get(`/grading-system/all/${school_id}`);
+      return data;
+    },
+    enabled: !!school_id,
+  });
+
+  const createGrade = useMutation({
+    mutationFn: (payload: any) => api.post('/grading-system', { ...payload, school_id }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['gradings'] }),
+  });
+
+  const updateGrade = useMutation({
+    mutationFn: ({ id, payload }: { id: number; payload: any }) => 
+      api.patch(`/grading-system/${id}`, { ...payload, school_id }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['gradings'] }),
+  });
+
+  const deleteGrade = useMutation({
+    mutationFn: (id: number) => api.delete(`/grading-system/${id}/${school_id}`),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['gradings'] }),
+  });
+
+  return { gradings, isLoading, createGrade, updateGrade, deleteGrade };
+};
