@@ -449,7 +449,7 @@ export const useStaffs = () => {
         return data;
       },
       enabled: !!staffId,
-      staleTime: 5 * 60 * 1000,
+      staleTime: 30 * 60 * 1000,
     });
   };
 

@@ -70,14 +70,14 @@ export default function StudentProfile() {
     );
   }
 
-  const fullName = `${student.surname || ''} ${student.first_name || ''} ${student.other_names || ""}`.trim();
+  const fullName = `${student.surname || ''} ${student.first_name || ''} ${student.other_names || ""}`.trim().toUpperCase();
   const initials = `${student.surname?.[0] || ''}${student.first_name?.[0] || ''}`.toUpperCase();
   const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=4f46e5&color=fff&bold=true&size=256`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
+ 
         {/* Hero Card */}
         <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200 overflow-hidden mb-8">
           {/* Header Gradient */}
@@ -97,7 +97,8 @@ export default function StudentProfile() {
               </div>
             </div>
           </div>
-
+ {/* Student Profile View Component */}
+     
           <div className="px-8 pb-8">
             {/* Profile Section */}
             <div className="flex flex-col md:flex-row gap-6 items-start md:items-end -mt-24 mb-8">
@@ -117,11 +118,11 @@ export default function StudentProfile() {
               </div>
 
               {/* Name & Info */}
-              <div className="flex-1">
-                <h1 className="text-2xl font-semibold text-slate-900 mb-2 tracking-tight">
+              <div className="flex-1 z-10">
+                <h1 className="text-2xl font-semibold text-slate-900 md:text-white  md:text-3xl mb-2 tracking-tight">
                   {fullName}
                 </h1>
-                <div className="flex flex-wrap items-center gap-2 mb-3">
+                <div className="flex flex-wrap items-center gap-2 mb-3 ">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-medium text-blue-700">
                     <BookOpen size={12} />
                     {student.class_name}
@@ -187,102 +188,8 @@ export default function StudentProfile() {
                 borderColor="border-red-200"
               />
             </div>
-          </div>
-        </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Left Column */}
-          <div className="space-y-6">
-            
-            {/* Personal Information */}
-            <InfoCard title="Personal Information" icon={User} iconColor="text-blue-600" bgColor="bg-blue-50" borderColor="border-blue-200">
-              <div className="space-y-4">
-                <InfoRow icon={User} label="Gender" value={student.gender} iconColor="text-blue-600" />
-                <InfoRow icon={Calendar} label="Date of Birth" value={student.date_of_birth ? new Date(student.date_of_birth).toLocaleDateString() : 'N/A'} iconColor="text-indigo-600" />
-                <InfoRow icon={Shield} label="Religion" value={student.religion || 'N/A'} iconColor="text-purple-600" />
-                <InfoRow icon={MapPin} label="Nationality" value={student.nationality || 'N/A'} iconColor="text-cyan-600" />
-              </div>
-            </InfoCard>
-
-            {/* Medical Information */}
-            <InfoCard title="Medical Information" icon={Heart} iconColor="text-red-600" bgColor="bg-red-50" borderColor="border-red-200">
-              <div className="space-y-4">
-                <InfoRow icon={Activity} label="Blood Group" value={student.blood_group || 'N/A'} iconColor="text-red-600" />
-                <InfoRow icon={Target} label="Genotype" value={student.genotype || 'N/A'} iconColor="text-rose-600" />
-              </div>
-            </InfoCard>
-
-          </div>
-
-          {/* Right Column */}
-          <div className="lg:col-span-2 space-y-6">
-            
-            {/* Academic Information */}
-            <InfoCard title="Academic Information" icon={BookOpen} iconColor="text-purple-600" bgColor="bg-purple-50" borderColor="border-purple-200">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <InfoRow icon={Hash} label="Admission No" value={student.admission_no} iconColor="text-blue-600" />
-                <InfoRow icon={BookOpen} label="Class" value={`${student.class_name} - ${student.arm}`} iconColor="text-indigo-600" />
-                <InfoRow icon={Activity} label="Status" value={student.status || 'Active'} iconColor="text-emerald-600" />
-              </div>
-            </InfoCard>
-
-            {/* Origin & Location */}
-            <InfoCard title="Origin & Location" icon={MapPin} iconColor="text-emerald-600" bgColor="bg-emerald-50" borderColor="border-emerald-200">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <InfoRow icon={MapPin} label="State of Origin" value={student.state_of_origin || 'N/A'} iconColor="text-emerald-600" />
-                <InfoRow icon={Target} label="LGA" value={student.lga || 'N/A'} iconColor="text-teal-600" />
-              </div>
-              <div className="mt-4">
-                <InfoRow icon={MapPin} label="Address" value={student.address || 'N/A'} iconColor="text-cyan-600" />
-              </div>
-            </InfoCard>
-
-            {/* Guardian Information */}
-            <div className="bg-white rounded-xl shadow-md shadow-slate-200/50 border border-slate-200 p-5">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center shadow-md shadow-orange-500/30">
-                  <Users size={18} className="text-white" />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-slate-900">Guardian Information</h3>
-                  <p className="text-xs text-slate-600">Parent/Guardian contacts</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                {/* Father's Info */}
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-xs font-medium text-blue-700 uppercase tracking-wide mb-3 flex items-center gap-1.5">
-                    <User size={12} />
-                    Father's Information
-                  </p>
-                  <div className="space-y-3">
-                    <InfoRow icon={User} label="Name" value={student.fathers_name || 'N/A'} iconColor="text-blue-600" />
-                    <InfoRow icon={Phone} label="Phone" value={student.fathers_number || 'N/A'} iconColor="text-indigo-600" />
-                  </div>
-                </div>
-
-                {/* Mother's Info */}
-                <div className="bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-200 rounded-lg p-4">
-                  <p className="text-xs font-medium text-pink-700 uppercase tracking-wide mb-3 flex items-center gap-1.5">
-                    <User size={12} />
-                    Mother's Information
-                  </p>
-                  <div className="space-y-3">
-                    <InfoRow icon={User} label="Name" value={student.mothers_name || 'N/A'} iconColor="text-pink-600" />
-                    <InfoRow icon={Phone} label="Phone" value={student.mothers_number || 'N/A'} iconColor="text-rose-600" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Student Profile View Component */}
-        <div className="mt-8">
+              <div className="mt-8">
           <StudentProfileView 
             results={[]} 
             profileData={student}
@@ -291,6 +198,12 @@ export default function StudentProfile() {
             remarks={mockRemarks}
           />
         </div>
+          </div>
+        </div>
+
+        {/* Content Grid */}
+      
+       
 
       </div>
     </div>
@@ -298,7 +211,7 @@ export default function StudentProfile() {
 }
 
 // Reusable Components
-const StatCard = ({ icon: Icon, label, value, gradient, bgColor, borderColor }: any) => (
+export const StatCard = ({ icon: Icon, label, value, gradient, bgColor, borderColor }: any) => (
   <div className={`${bgColor} border ${borderColor} rounded-xl p-3.5 hover:shadow-md transition-all group cursor-pointer`}>
     <div className="flex items-center gap-3">
       <div className={`w-10 h-10 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform`}>
@@ -312,7 +225,7 @@ const StatCard = ({ icon: Icon, label, value, gradient, bgColor, borderColor }: 
   </div>
 );
 
-const InfoCard = ({ title, icon: Icon, iconColor, bgColor, borderColor, children }: any) => (
+export const InfoCard = ({ title, icon: Icon, iconColor, bgColor, borderColor, children }: any) => (
   <div className="bg-white rounded-xl shadow-md shadow-slate-200/50 border border-slate-200 p-5">
     <div className="flex items-center gap-2.5 mb-5">
       <div className={`w-10 h-10 ${bgColor} border ${borderColor} rounded-lg flex items-center justify-center`}>
@@ -324,7 +237,7 @@ const InfoCard = ({ title, icon: Icon, iconColor, bgColor, borderColor, children
   </div>
 );
 
-const InfoRow = ({ icon: Icon, label, value, iconColor }: any) => (
+export const InfoRow = ({ icon: Icon, label, value, iconColor }: any) => (
   <div className="flex items-start gap-2.5 group">
     <div className="w-8 h-8 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-slate-100 transition-colors">
       <Icon size={13} className={iconColor} />

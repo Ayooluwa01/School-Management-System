@@ -3,10 +3,7 @@ import { LogOut } from "lucide-react";
 
 export default function SidebarLogout() {
   const handleLogout = () => {
-    // TODO:
-    // 1. Clear auth tokens (localStorage / cookies)
-    // 2. Reset user state
-    // 3. Redirect to login page
+  
     console.log("User logged out");
   };
 

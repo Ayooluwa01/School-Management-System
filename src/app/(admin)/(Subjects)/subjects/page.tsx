@@ -10,6 +10,7 @@ import api from "../../../../../libs/axios";
 import { useClasses, useSubjects, } from "../../../../../hooks/useSchool";
 // Types
 export interface Subject {
+  is_core: any;
   subject_id: number;
   subject_name: string;
   category: string;

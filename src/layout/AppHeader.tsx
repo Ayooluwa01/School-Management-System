@@ -24,7 +24,6 @@ const AppHeader: React.FC = () => {
     }
   };
 
-  // Get user role gradient based on role
   const getRoleGradient = (role?: string) => {
     switch (role?.toUpperCase()) {
       case "ADMIN":

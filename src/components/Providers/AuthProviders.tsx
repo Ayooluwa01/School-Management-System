@@ -23,8 +23,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
         const response = await axios.post("/auth/refresh");
         setAccessToken(response.data.accessToken);
       } catch (error) {
-        console.warn("Session recovery failed",error);
-        router.push("/Login");
+        router.replace("/Login");
       } finally {
         setIsLoading(false);
       }
