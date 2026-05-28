@@ -21,7 +21,6 @@ export default function FeeManagementSystem() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [form, setForm] = useState({ name: "", class_id: "", term_id: "", amount: "" });
 
-  // --- CURRENCY FORMATTING LOGIC ---
   const formatDisplayAmount = (val: string) => {
     if (!val) return "";
     const number = parseFloat(val.replace(/,/g, ""));
@@ -30,7 +29,6 @@ export default function FeeManagementSystem() {
   };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // Remove everything except numbers
     const rawValue = e.target.value.replace(/[^0-9]/g, "");
     setForm({ ...form, amount: rawValue });
   };
